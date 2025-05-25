@@ -1,4 +1,5 @@
 /* global styles */
+@use "./fonts" as *;
 
 * {
   padding: 0;
@@ -7,6 +8,7 @@
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
+  font-family: "Quicksand";
 }
 
 html {
@@ -22,4 +24,9 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
 }

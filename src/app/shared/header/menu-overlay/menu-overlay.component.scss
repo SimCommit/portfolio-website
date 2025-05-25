@@ -1,0 +1,22 @@
+@use "./../../../../styles/_mixins" as *;
+
+nav {
+  border: 2px solid black;
+  border-radius: 4px;
+  width: 16rem;
+  padding: 1rem;
+
+  >h3 {
+    font-size: 24px;
+  }
+  
+  > div {
+    @include dFlex($ai: flex-start, $fd: column);
+    > a {
+        font-size: 18px;
+      &:hover {
+        color: aquamarine;
+      }
+    }
+  }
+}

@@ -44,7 +44,7 @@ header {
   }
 }
 
-#lang {
+#btn-lang {
   @include bgImage(
     $url: "/../../assets/img/icons/lang-btns/lang-btn-en-default.svg"
   );
@@ -53,7 +53,7 @@ header {
   }
 }
 
-#burger {
+#btn-burger {
   @include bgImage(
     $url: "/../../assets/img/icons/burger-menu-btns/burger-default.svg"
   );
