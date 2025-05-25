@@ -1,0 +1,16 @@
+@mixin dFlex($jc: center, $ai: center, $g: 0) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin maxWidth1920() {
+  max-width: 1920px;
+}
+
+@mixin bgImage($url, $R: no-repeat, $P: center) {
+  background-image: url($url);
+  background-repeat: $R;
+  background-position: $P;
+}

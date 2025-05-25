@@ -1,8 +1,63 @@
-header {
+@use "./../../../styles/_mixins" as *;
 
-  div {
-    // @include dFlex($jc: space-between);
-    margin: min(1em, 1%);
+header {
+  @include maxWidth1920();
+  > div {
+    @include dFlex($jc: space-between);
+    padding: 1.5rem;
+
+    > div {
+      width: 14rem;
+
+      @include dFlex($g: 0.5rem);
+      > a {
+        height: 32px;
+        width: 32px;
+      }
+      > button {
+        margin-left: 0.5rem;
+        height: 48px;
+        width: 48px;
+      }
+    }
   }
 }
 
+#link-github {
+  @include bgImage("/../../assets/img/icons/social-btns/github-line.svg");
+  &:hover {
+    background-image: url("/../../assets/img/icons/social-btns/github-line hover.svg");
+  }
+}
+
+#link-linkedin {
+  @include bgImage("/../../assets/img/icons/social-btns/linkedin-box-line.svg");
+  &:hover {
+    background-image: url("/../../assets/img/icons/social-btns/linkedin-box-line hover.svg");
+  }
+}
+
+#link-mail {
+  @include bgImage("/../../assets/img/icons/social-btns/mail-line.svg");
+  &:hover {
+    background-image: url("/../../assets/img/icons/social-btns/mail-line hover.svg");
+  }
+}
+
+#lang {
+  @include bgImage(
+    $url: "/../../assets/img/icons/lang-btns/lang-btn-en-default.svg"
+  );
+  &:hover {
+    background-image: url("/../../assets/img/icons/lang-btns/lang-btn-en-hover.svg");
+  }
+}
+
+#burger {
+  @include bgImage(
+    $url: "/../../assets/img/icons/burger-menu-btns/burger-default.svg"
+  );
+  &:hover {
+    background-image: url("/../../assets/img/icons/burger-menu-btns/burger-hover.svg");
+  }
+}
