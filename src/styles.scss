@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+/* global styles */
+
+* {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+@mixin dFlex($jc: center, $ai: center, $g: 0px) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 16px;
+  background-color: #679aac;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
