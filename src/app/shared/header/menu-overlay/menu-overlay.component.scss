@@ -1,4 +1,6 @@
 @use "./../../../../styles/_mixins" as *;
+@use "./../../../../styles/_variables" as *;
+
 
 nav {
   border: 2px solid black;
@@ -15,7 +17,7 @@ nav {
     > a {
         font-size: 18px;
       &:hover {
-        color: aquamarine;
+        color: $main-coral;
       }
     }
   }
