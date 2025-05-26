@@ -2,15 +2,18 @@
 @use "./../../../../styles/_variables" as *;
 
 nav {
-  border: 2px solid $main-ivory;
+  // position: absolute;
+  // right: 0;
+  border: 1px solid $main-black;
   border-radius: 4px;
-  width: 160px;
+  width: 180px;
   padding: 10px;
   background-color: $main-ivory;
 }
 
 .nav-header {
-  @include dFlex($jc: space-between);
+  @include dFlex($jc: space-between, $ai: flex-start);
+  margin-bottom: 8px;
   > h3 {
     font-size: 24px;
     color: $main-blue;
@@ -19,37 +22,34 @@ nav {
   button {
     width: 32px;
     height: 32px;
-    @include bgImage(
-      "/../../assets/img/icons/burger-menu-btns/close-default.svg"
-    );
+    @include bgImage("/../../assets/img/icons/burger-menu-btns/close-default.svg");
 
     &:hover {
-      @include bgImage(
-        "/../../assets/img/icons/burger-menu-btns/close-hover.svg"
-      );
+    @include bgImage("/../../assets/img/icons/burger-menu-btns/close-hover.svg");
+
     }
   }
 }
 
-.nav-body {
-  @include dFlex($ai: flex-start, $fd: column);
-  > a {
-    color: $main-black;
-    font-size: 18px;
-    font-weight: bold;
-    &:hover {
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 1.8rem;
-        height: 1.8rem;
-        transform: scale(0.9); // Ausgangszustand
-        transition: transform 100ms ease-in, opacity 100ms ease-in;
-        @include bgImage(
-          "/../../assets/img/icons/burger-menu-btns/Capa_1.svg",
-          $s: contain
-        );
+ .nav-body {
+    @include dFlex($ai: flex-start, $fd: column);
+    > a {
+      margin: 2px;
+      color: $main-black;
+      font-size: 18px;
+      font-weight: bold;
+      &:hover {
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 1.8rem;
+          height: 1.8rem;
+          @include bgImage(
+            "/../../assets/img/icons/burger-menu-btns/Capa_1.svg",
+            $s: contain
+          );
+        }
       }
     }
   }
-}
+

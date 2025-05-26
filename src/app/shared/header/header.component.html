@@ -8,7 +8,8 @@
 
         <div>
             <button id="btn-lang"> </button>
-            <button (click) = "openBurgerMenu()" id="btn-burger"> </button>
+            <button (click) = "toggleMenu()" id="btn-burger"> </button>
         </div>
+            <app-menu-overlay [hidden]="hideMenu" id="app-menu-overlay"></app-menu-overlay>
     </div>
 </header>

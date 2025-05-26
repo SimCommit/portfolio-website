@@ -10,16 +10,22 @@ header {
       width: 14rem;
 
       @include dFlex($g: 0.5rem);
-
-      > button {
-        margin-left: 0.5rem;
-        height: 48px;
-        width: 48px;
-      }
     }
   }
 }
 
+#app-menu-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+#btn-lang,
+#btn-burger {
+  margin-left: 0.5rem;
+  height: 48px;
+  width: 48px;
+}
 
 #btn-lang {
   @include bgImage(
