@@ -10,8 +10,9 @@
   max-width: 1920px;
 }
 
-@mixin bgImage($url, $R: no-repeat, $P: center) {
+@mixin bgImage($url, $r: no-repeat, $p: center, $s: cover) {
   background-image: url($url);
-  background-repeat: $R;
-  background-position: $P;
+  background-repeat: $r;
+  background-position: $p;
+  background-size: $s;
 }

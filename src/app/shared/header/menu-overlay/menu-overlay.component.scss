@@ -1,23 +1,54 @@
 @use "./../../../../styles/_mixins" as *;
 @use "./../../../../styles/_variables" as *;
 
-
 nav {
-  border: 2px solid black;
+  border: 2px solid $main-ivory;
   border-radius: 4px;
-  width: 16rem;
-  padding: 1rem;
+  width: 160px;
+  padding: 10px;
+  background-color: $main-ivory;
+}
 
-  >h3 {
+.nav-header {
+  @include dFlex($jc: space-between);
+  > h3 {
     font-size: 24px;
+    color: $main-blue;
   }
-  
-  > div {
-    @include dFlex($ai: flex-start, $fd: column);
-    > a {
-        font-size: 18px;
-      &:hover {
-        color: $main-coral;
+
+  button {
+    width: 32px;
+    height: 32px;
+    @include bgImage(
+      "/../../assets/img/icons/burger-menu-btns/close-default.svg"
+    );
+
+    &:hover {
+      @include bgImage(
+        "/../../assets/img/icons/burger-menu-btns/close-hover.svg"
+      );
+    }
+  }
+}
+
+.nav-body {
+  @include dFlex($ai: flex-start, $fd: column);
+  > a {
+    color: $main-black;
+    font-size: 18px;
+    font-weight: bold;
+    &:hover {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1.8rem;
+        height: 1.8rem;
+        transform: scale(0.9); // Ausgangszustand
+        transition: transform 100ms ease-in, opacity 100ms ease-in;
+        @include bgImage(
+          "/../../assets/img/icons/burger-menu-btns/Capa_1.svg",
+          $s: contain
+        );
       }
     }
   }

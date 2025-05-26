@@ -1,8 +1,7 @@
 @use "./../../../styles/_mixins" as *;
 
 div {
-  display: flex;
-  justify-content: center;
+  @include dFlex($jc: flex-start);
   a {
     height: 32px;
     width: 32px;
