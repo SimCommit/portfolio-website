@@ -10,10 +10,7 @@ header {
       width: 14rem;
 
       @include dFlex($g: 0.5rem);
-      > a {
-        height: 32px;
-        width: 32px;
-      }
+
       > button {
         margin-left: 0.5rem;
         height: 48px;
@@ -23,26 +20,6 @@ header {
   }
 }
 
-#link-github {
-  @include bgImage("/../../assets/img/icons/social-btns/github-line.svg");
-  &:hover {
-    background-image: url("/../../assets/img/icons/social-btns/github-line hover.svg");
-  }
-}
-
-#link-linkedin {
-  @include bgImage("/../../assets/img/icons/social-btns/linkedin-box-line.svg");
-  &:hover {
-    background-image: url("/../../assets/img/icons/social-btns/linkedin-box-line hover.svg");
-  }
-}
-
-#link-mail {
-  @include bgImage("/../../assets/img/icons/social-btns/mail-line.svg");
-  &:hover {
-    background-image: url("/../../assets/img/icons/social-btns/mail-line hover.svg");
-  }
-}
 
 #btn-lang {
   @include bgImage(

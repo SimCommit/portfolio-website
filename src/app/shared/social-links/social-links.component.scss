@@ -1,0 +1,33 @@
+@use "./../../../styles/_mixins" as *;
+
+div {
+  display: flex;
+  justify-content: center;
+  a {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+#link-github {
+  @include bgImage("/../../assets/img/icons/social-btns/github-line.svg");
+  height: 32px;
+  width: 32px;
+  &:hover {
+    background-image: url("/../../assets/img/icons/social-btns/github-line hover.svg");
+  }
+}
+
+#link-linkedin {
+  @include bgImage("/../../assets/img/icons/social-btns/linkedin-box-line.svg");
+  &:hover {
+    background-image: url("/../../assets/img/icons/social-btns/linkedin-box-line hover.svg");
+  }
+}
+
+#link-mail {
+  @include bgImage("/../../assets/img/icons/social-btns/mail-line.svg");
+  &:hover {
+    background-image: url("/../../assets/img/icons/social-btns/mail-line hover.svg");
+  }
+}
