@@ -1,4 +1,4 @@
-import { Component, viewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { SocialLinksComponent } from '../social-links/social-links.component';
 import { MenuOverlayComponent } from './menu-overlay/menu-overlay.component';
 import { CommonModule } from '@angular/common';
@@ -10,11 +10,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  // @viewChild("menuOverlay") menuOverly: HTMLElement ;
+  // @ViewChild("menuOverlay") menuOverly: HTMLElement ;
 
   hideMenu: boolean = true;
 
-  toggleMenu():void {
+  toggleMenu(): void {
     this.hideMenu = !this.hideMenu;
   }
 }
