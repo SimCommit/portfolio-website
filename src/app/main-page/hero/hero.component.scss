@@ -4,21 +4,12 @@
 section {
   height: 100vh;
   height: 100dvh;
-  margin: 0 2rem;
   @include dFlex($jc: space-around);
   color: $main-ivory;
-
   div {
-    @include dFlex($fd: column, $ai: flex-start);
-
-    h1 {
-      font-family: "Eczar";
-      font-size: 6rem;
-      line-height: 7.5rem;
-    }
-
     img {
-      width: 75rem;
+      width: min(55rem, 80dvh);
+      object-position: bottom;
     }
 
     a {
@@ -30,11 +21,36 @@ section {
   }
 }
 
-.subtitle {
-  font-size: 3rem;
+#hero-content {
+  margin: 0 2rem;
+  @include dFlex($fd: column, $ai: flex-start, $g: 2rem);
 }
 
-.scroll-wheele {
+#headline {
+  h1 {
+    font-family: "Eczar";
+    font-size: 6rem;
+    line-height: 7.5rem;
+  }
+
+  p {
+    font-size: 3rem;
+  }
+}
+
+#scroll-widget img {
   height: 14rem;
   width: 14rem;
+}
+
+#hero-pic {
+  @include dFlex($ai: flex-end);
+  background: url("/assets/img/Capa_bg.svg") no-repeat right;
+  background-size: min(32rem, 50dvh);
+  height: 100vh;
+  height: 100dvh;
+
+  img {
+    align-self: flex-end;
+  }
 }

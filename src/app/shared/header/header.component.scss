@@ -7,7 +7,7 @@ header {
     padding: 1.5rem;
 
     > div {
-      width: 14rem;
+      width: 140px;
 
       @include dFlex($g: 0.5rem);
     }
