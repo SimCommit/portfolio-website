@@ -1,0 +1,43 @@
+<nav>
+    <div class="spacer">
+        @if (mainPageState.currentSection === 6) {
+        <a href="section-1}">
+            <img src="./assets/img/icons/section-nav/go-up-placeholder.svg" alt="Nope">
+        </a>
+        }
+    </div>
+
+    <div class="anchor-container">
+        @for (anchor of [1,2,3,4,5,6]; track anchor) {
+
+        @switch (true) {
+        @case (mainPageState.currentSection === anchor) {
+        @if (mainPageState.currentSection === 2 || mainPageState.currentSection === 4) {
+        <a href="section-{{anchor}}" class="icon-active">
+            <img src="./assets/img/icons/section-nav/icon-active-coral.svg" alt="Nope">
+        </a>
+        } @else {
+        <a href="section-{{anchor}}" class="icon-active">
+            <img src="./assets/img/icons/section-nav/icon-active-yellow.svg" alt="Nope">
+        </a>
+        }
+        }
+        @default {
+        @if (mainPageState.currentSection === 2 || mainPageState.currentSection === 4) {
+        <a href="section-{{anchor}}" class="icon-inactive">
+            <img src="./assets/img/icons/section-nav/icon-inactive-black.svg" alt="Nope">
+        </a>
+        } @else {
+        <a href="section-{{anchor}}" class="icon-inactive">
+            <img src="./assets/img/icons/section-nav/icon-inactive-ivory.svg" alt="Nope">
+        </a>
+        }
+        }
+
+        }
+        }
+    </div>
+
+    <div class="spacer"></div>
+
+</nav>

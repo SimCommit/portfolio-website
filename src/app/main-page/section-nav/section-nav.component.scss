@@ -1,0 +1,31 @@
+@use "./../../../styles/_mixins" as *;
+@use "./../../../styles/_variables" as *;
+
+nav {
+    height: 100vh;
+    height: 100dvh;
+  @include dFlex($fd: column, $jc:space-around);
+
+  a {
+    @include dFlex();
+  }
+}
+
+.anchor-container {
+      @include dFlex($fd: column, $g: 16px);
+}
+
+.icon-active img {
+  width: 13x;
+  height: 13px;
+}
+
+.icon-inactive img {
+  width: 10px;
+  height: 10px;
+}
+
+.spacer {
+    height: 48px;
+    width: 30px;
+}
