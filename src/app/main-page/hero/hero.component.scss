@@ -2,12 +2,13 @@
 @use "./../../../styles/_variables" as *;
 
 section {
+  background-color: $main-blue;
   height: 100vh;
   height: 100dvh;
   @include dFlex($jc: space-around);
   color: $main-ivory;
 
-    img {
+  img {
     width: min(55rem, 80dvh);
     object-position: bottom;
   }
@@ -18,8 +19,6 @@ section {
   height: 100vh;
   height: 100dvh;
   @include dFlex($fd: column, $ai: flex-start, $g: 2rem);
-
-
 
   button {
     padding: 1rem 2rem;
@@ -41,7 +40,7 @@ section {
 
 #headline {
   h1 {
-    font-family: "Eczar";
+    font-family: "Eczar", serif;
     font-size: 6rem;
     line-height: 1.2;
   }
@@ -60,14 +59,13 @@ section {
 
 #hero-pic {
   @include dFlex($ai: flex-end);
-  background: url("/assets/img/Capa_bg.svg") no-repeat right;
-  background-size: min(32rem, 50dvh);
   margin: 0 2rem;
   height: 100vh;
   height: 100dvh;
 
   img {
+    background: url("/assets/img/Capa_bg.svg") no-repeat top center;
+    background-size: min(32rem, 50dvh);
     align-self: flex-end;
   }
 }
-

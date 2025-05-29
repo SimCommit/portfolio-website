@@ -1,0 +1,60 @@
+@use "./../../../styles/_mixins" as *;
+@use "./../../../styles/_variables" as *;
+
+section {
+  background-color: $main-ivory;
+  height: 100vh;
+  height: 100dvh;
+  @include dFlex($ai: flex-end, $jc: space-between);
+  padding: 2rem 6rem 0 6rem;
+}
+
+#about-me-content {
+  height: 80vh;
+  height: 80dvh;
+  @include dFlex($fd: column, $ai: flex-end, $jc: flex-start, $g: 4rem);
+
+  h1 {
+    font-family: "Eczar", serif;
+    color: $main-black;
+    font-size: 6rem;
+    line-height: 1.2;
+  }
+
+  div {
+    margin-left: -6rem;
+    margin-right: 16rem;
+    align-self: flex-start;
+    padding: 2rem;
+    border-radius: 4px;
+    background-color: $main-black;
+
+    p {
+      color: $main-ivory;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.5rem 1.6rem;
+      margin: 2rem 0;
+      border: 1px solid $main-ivory;
+      border-radius: 50px;
+      color: $main-ivory;
+      font-weight: bold;
+      font-size: 1.2rem;
+
+      &:hover {
+        background-color: $main-coral;
+      }
+    }
+  }
+}
+
+#about-me-pic {
+  img {
+    height: 80vh;
+    height: 80dvh;
+    // width: auto;
+    object-position: bottom;
+  }
+}
