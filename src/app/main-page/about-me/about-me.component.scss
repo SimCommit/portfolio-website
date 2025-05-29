@@ -20,19 +20,23 @@ section {
     font-size: 6rem;
     line-height: 1.2;
   }
+}
+
+#about-me-card {
+  margin-left: -6rem;
+  margin-right: 16rem;
+  align-self: flex-start;
+  padding: 2rem;
+  border-radius: 4px;
+  background-color: $main-black;
+
+  p {
+    color: $main-ivory;
+    text-align: justify;
+  }
 
   div {
-    margin-left: -6rem;
-    margin-right: 16rem;
-    align-self: flex-start;
-    padding: 2rem;
-    border-radius: 4px;
-    background-color: $main-black;
-
-    p {
-      color: $main-ivory;
-    }
-
+    @include dFlex($jc: space-between);
     a {
       display: inline-block;
       padding: 0.5rem 1.6rem;
@@ -41,11 +45,14 @@ section {
       border-radius: 50px;
       color: $main-ivory;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: clamp(16px, 1.2rem, 24px);
 
       &:hover {
         background-color: $main-coral;
       }
+    }
+
+    img {
     }
   }
 }
