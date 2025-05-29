@@ -1,4 +1,5 @@
 @use "./../../../styles/_mixins" as *;
+@use "./../../../styles/_variables" as *;
 
 header {
   @include maxWidth1920();
@@ -12,6 +13,21 @@ header {
       @include dFlex($g: 0.5rem);
     }
   }
+}
+
+span {
+  font-size: 32px;
+  font-weight: bold;
+  color: $main-ivory;
+}
+
+.fuchs-font-black {
+  color: $main-black;
+}
+
+.fuchs-font-hover:hover {
+  cursor: pointer;
+  color: $main-coral;
 }
 
 #app-menu-overlay {

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class MainPageStateService {
 
-  currentSection:number = 1;
+  currentSection:number = 2;
 
   constructor() { }
 }

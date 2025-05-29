@@ -1,7 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SocialLinksComponent } from '../social-links/social-links.component';
 import { MenuOverlayComponent } from './menu-overlay/menu-overlay.component';
 import { CommonModule } from '@angular/common';
+import { MainPageStateService } from '../../main-page/main-page-state.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  // @ViewChild("menuOverlay") menuOverly: HTMLElement ;
+
+  mainPageState = inject(MainPageStateService);
 
   hideMenu: boolean = true;
 

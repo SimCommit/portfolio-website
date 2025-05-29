@@ -1,15 +1,21 @@
 <header>
     <div>
+        @if (mainPageState.currentSection === 1) {
         <app-social-links></app-social-links>
-        
+        }
+
         <div>
-            <img src="./assets/img/logo-default.svg" alt="">
+            <img src="./assets/img/logo-sf.svg" alt="Logo Simon Fuchs">
+            <span
+                [ngClass]="{'fuchs-font-hover': mainPageState.currentSection !== 1, 'fuchs-font-black': mainPageState.currentSection === 2 || mainPageState.currentSection === 4 }">
+                Fuchs
+            </span>
         </div>
 
         <div>
             <button id="btn-lang"> </button>
-            <button (click) = "toggleMenu()" id="btn-burger"> </button>
+            <button (click)="toggleMenu()" id="btn-burger"> </button>
         </div>
-            <app-menu-overlay [hidden]="hideMenu" id="app-menu-overlay"></app-menu-overlay>
+        <app-menu-overlay [hidden]="hideMenu" id="app-menu-overlay"></app-menu-overlay>
     </div>
 </header>
