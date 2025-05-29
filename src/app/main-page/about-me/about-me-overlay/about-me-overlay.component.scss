@@ -1,0 +1,48 @@
+@use "./../../../../styles/_variables" as *;
+@use "./../../../../styles/_mixins" as *;
+
+#more-about-me {
+  z-index: 9;
+  width: 272px;
+  padding: 32px 24px 24px 24px;
+  border-radius: 4px;
+  background-color: $main-blue;
+  color: $main-ivory;
+  border: 1px solid $main-black;
+
+  h3 {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  div {
+    p {
+      @include dFlex($jc: flex-start, $g: 10px);
+      margin: 6px;
+      font-size: 16px;
+    }
+  }
+}
+
+#more-about-me-header {
+  @include dFlex($jc: center);
+  margin-bottom: 14px;
+
+  button {
+    width: 32px;
+    height: 32px;
+    @include bgImage("/../../assets/img/icons/close-ivory.svg");
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      @include bgImage("/../../assets/img/icons/close-hover.svg");
+    }
+  }
+}
+
+#more-about-me-header:has(> :nth-child(2)) {
+  @include dFlex($jc: space-between);
+}

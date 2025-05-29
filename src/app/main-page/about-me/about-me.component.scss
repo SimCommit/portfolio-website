@@ -14,7 +14,7 @@ section {
   height: 80dvh;
   @include dFlex($fd: column, $ai: flex-end, $jc: flex-start, $g: 4rem);
 
-  h1 {
+  h2 {
     font-family: "Eczar", serif;
     color: $main-black;
     font-size: 6rem;
@@ -64,4 +64,10 @@ section {
     // width: auto;
     object-position: bottom;
   }
+}
+
+#about-me-overlay {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
 }
