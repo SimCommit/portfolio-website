@@ -1,3 +1,5 @@
+@use "./../styles/_variables" as *;
+
 @mixin dFlex($jc: center, $ai: center, $fd: row, $g: 0) {
   display: flex;
   justify-content: $jc;
@@ -15,4 +17,18 @@
   background-repeat: $r;
   background-position: $p;
   background-size: $s;
+}
+
+@mixin cardBoxStyle(
+  $p: 32px 24px 24px 24px,
+  $bw: 1px,
+  $bs: solid,
+  $bc: $main-black,
+  $br: 4px
+) {
+  padding: $p;
+  border-width: $bw;
+  border-style: $bs;
+  border-color: $bc;
+  border-radius: $br;
 }

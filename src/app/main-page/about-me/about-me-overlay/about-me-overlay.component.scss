@@ -4,11 +4,9 @@
 #more-about-me {
   z-index: 9;
   width: 272px;
-  padding: 32px 24px 24px 24px;
-  border-radius: 4px;
   background-color: $main-blue;
   color: $main-ivory;
-  border: 1px solid $main-black;
+  @include cardBoxStyle();
 
   h3 {
     text-align: center;
