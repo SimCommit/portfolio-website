@@ -9,14 +9,12 @@ section {
   color: $main-ivory;
   padding: 2rem 6rem 0 6rem;
 
-  h2 {
-    font-family: "Eczar", serif;
-    font-size: 6rem;
-    line-height: 1.2;
-  }
-
-  p {
-    width: 50%;
+  #skills-description {
+    background-color: $main-blue;
+    @include cardBoxStyle();
+    width: 40rem;
+    p {
+    }
   }
 }
 

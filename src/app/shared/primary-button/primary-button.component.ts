@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class PrimaryButtonComponent {
 
+  // logic to decide if a or button tag depending on purpose (link or submit)
+
 }

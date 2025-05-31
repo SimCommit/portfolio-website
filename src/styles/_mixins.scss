@@ -24,11 +24,13 @@
   $bw: 1px,
   $bs: solid,
   $bc: $main-black,
-  $br: 4px
+  $br: 4px,
+  $ta: justify,
 ) {
   padding: $p;
   border-width: $bw;
   border-style: $bs;
   border-color: $bc;
   border-radius: $br;
+  text-align: $ta;
 }

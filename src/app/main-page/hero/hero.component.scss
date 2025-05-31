@@ -19,23 +19,6 @@ section {
   height: 100vh;
   height: 100dvh;
   @include dFlex($fd: column, $ai: flex-start, $g: 2rem);
-
-  button {
-    padding: 1rem 2rem;
-    margin: 2rem 0;
-    border: 1px solid $main-ivory;
-    border-radius: 50px;
-
-    &:hover {
-      background-color: $main-coral;
-    }
-
-    a {
-      color: $main-ivory;
-      font-weight: bold;
-      font-size: 2rem;
-    }
-  }
 }
 
 #headline {
