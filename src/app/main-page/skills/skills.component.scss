@@ -28,11 +28,17 @@ section {
 }
 
 #tech-card {
-  width: 44rem;
+  width: 40rem;
   @include dFlex();
   flex-wrap: wrap;
 
   label {
     @include dFlex($fd: column);
   }
+}
+
+#app-growth-mindset {
+  position: absolute;
+  bottom: 16px;
+  left: 240px;
 }

@@ -1,2 +1,20 @@
 @use "./../../../../styles/_mixins" as *;
 @use "./../../../../styles/_variables" as *;
+
+#growth-mindset {
+  @include cardBoxStyle($bc: $main-ivory);
+  width: 24rem;
+  background-color: $main-yellow;
+
+  p {
+    margin-top: 16px;
+  }
+
+  div {
+    margin-top: 16px;
+    @include dFlex($g:24px);
+    label {
+      @include dFlex($fd: column);
+    }
+  }
+}

@@ -19,13 +19,18 @@
   background-size: $s;
 }
 
+@mixin sectionBoxStyle() {
+  height: 100vh;
+  height: 100dvh;
+}
+
 @mixin cardBoxStyle(
   $p: 32px 24px 24px 24px,
   $bw: 1px,
   $bs: solid,
   $bc: $main-black,
   $br: 4px,
-  $ta: justify,
+  $ta: justify
 ) {
   padding: $p;
   border-width: $bw;

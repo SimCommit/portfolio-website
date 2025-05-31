@@ -16,7 +16,6 @@ nav {
   @include dFlex($jc: space-between, $ai: flex-start);
   margin-bottom: 8px;
   > h3 {
-    font-size: 24px;
     color: $main-blue;
   }
 
