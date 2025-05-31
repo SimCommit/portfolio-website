@@ -19,6 +19,7 @@ section {
 }
 
 #skills-showcase {
+  width: 100%;
   @include dFlex($ai: flex-end, $jc: space-between);
 }
 
@@ -27,7 +28,11 @@ section {
 }
 
 #tech-card {
-  width: 60%;
+  width: 44rem;
   @include dFlex();
   flex-wrap: wrap;
+
+  label {
+    @include dFlex($fd: column);
+  }
 }
