@@ -29,11 +29,11 @@ section {
 
 #tech-card {
   width: 40rem;
-  @include dFlex();
+  @include dFlex($g: 40px);
   flex-wrap: wrap;
 
   label {
-    @include dFlex($fd: column);
+    @include dFlex($fd: column, $g: 20px);
   }
 }
 

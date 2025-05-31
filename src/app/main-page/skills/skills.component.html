@@ -11,10 +11,10 @@
     <div id="skills-showcase">
         <img id="cogwheel" src="./assets/img/Capa_bg.svg" alt="Placeholder Cogwheele">
         <div id="tech-card">
-            @for (tech of [1,2,3,4,5,6,7,8,9]; track $index) {
+            @for (tech of showcaseData.myTechs; track $index) {
             <label>
-                <img src="./assets/img/skills/angular.svg" alt="Placeholder Tech">
-                Angular
+                <img src="{{tech.imgUrl}}" alt="Placeholder Tech">
+                {{tech.name}}
             </label>
             }
         </div>

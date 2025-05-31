@@ -12,9 +12,15 @@
 
   div {
     margin-top: 16px;
-    @include dFlex($g:24px);
+    @include dFlex($ai: flex-start, $g: 24px);
     label {
-      @include dFlex($fd: column);
+      text-align: center;
+      @include dFlex($fd: column, $jc: flex-start, $g: 8px);
+      width: 56px;
+
+      img {
+        width: 40px;
+      }
     }
   }
 }

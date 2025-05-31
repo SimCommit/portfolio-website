@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { GrowthMindsetComponent } from './growth-mindset/growth-mindset.component';
+import { ShowcaseDataService } from '../showcase-data.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,4 +10,6 @@ import { GrowthMindsetComponent } from './growth-mindset/growth-mindset.componen
 })
 export class SkillsComponent {
 
+  showcaseData = inject(ShowcaseDataService)
 }
+
