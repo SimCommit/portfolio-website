@@ -7,14 +7,15 @@
 
 #p-preview {
   width: 32rem;
-  height: 32rem;
+  height: auto;
+  aspect-ratio: 1/1;
   @include dFlex($fd: column, $ai: flex-start);
   background-color: $main-yellow;
   border: 1px solid $main-black;
   border-radius: 4px;
 
   #p-pic {
-    width: 28rem;
+    width: 90%;
     // object-fit: contain;
     align-self: center;
     justify-self: center;
@@ -24,7 +25,7 @@
   #cogwheel-placeholder {
     position: absolute;
     bottom: 0;
-    width: 14rem;
+    width: 30%;
     // margin-top: -80px;
     z-index: 1;
 

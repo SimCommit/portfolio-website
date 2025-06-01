@@ -13,7 +13,7 @@
 }
 
 html {
-  font-size: clamp(0.25rem, 0.5vw + 0.9vh, 1.25rem);
+  font-size: clamp(0.25rem, 0.5vw + 0.9vh + 0.05rem, 1.25rem);
 
   // font-size: clamp(0.25rem, 1vw + 0.05rem, 1.25rem);
   // font-size: clamp(0.25rem, min(1vw + 0.05rem, 1vh + 0.1rem), 1.25rem);
