@@ -3,10 +3,20 @@
 
 section {
   @include sectionBoxStyle($bc: $main-ivory, $c: $main-black);
-  @include dFlex($ai: flex-start);
+  @include dFlex($fd: column, $ai: flex-start, $jc: flex-start);
 
   div {
-  @include dFlex($g: 8rem);
+    @include dFlex($g: 4rem);
 
+    p {
+      @include textPadding();
+      width: 36rem;
+      // Seltsame Ausnahme
+      font-weight: 400;
+    }
   }
+}
+
+#app-project {
+    width: 100%;
 }
