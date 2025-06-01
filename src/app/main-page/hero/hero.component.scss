@@ -12,7 +12,6 @@ section {
 }
 
 #hero-content {
-  margin: 0 2rem;
   height: 100vh;
   height: 100dvh;
   @include dFlex($fd: column, $ai: flex-start, $g: 2rem);

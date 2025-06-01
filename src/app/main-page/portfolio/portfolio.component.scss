@@ -3,4 +3,10 @@
 
 section {
   @include sectionBoxStyle($bc: $main-ivory, $c: $main-black);
+  @include dFlex($ai: flex-start);
+
+  div {
+  @include dFlex($g: 8rem);
+
+  }
 }

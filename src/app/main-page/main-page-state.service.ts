@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class MainPageStateService {
 
-  currentSection:number = 3;
+  currentSection:number = 4;
 
   mobileView:boolean = false;
 

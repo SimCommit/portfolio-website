@@ -4,7 +4,6 @@
 section {
   @include sectionBoxStyle($bc:$main-ivory);
   @include dFlex($ai: flex-end, $jc: space-between);
-  padding: 2rem 6rem 0 6rem;
 }
 
 #about-me-pic {
