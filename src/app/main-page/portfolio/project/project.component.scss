@@ -1,0 +1,73 @@
+@use "./../../../../styles/_mixins" as *;
+@use "./../../../../styles/_variables" as *;
+
+#project-showcase {
+  @include dFlex($g: 3rem, $jc: flex-start);
+}
+
+#p-preview {
+  width: 32rem;
+  height: 32rem;
+  @include dFlex($fd: column, $ai: flex-start);
+  background-color: $main-yellow;
+  border: 1px solid $main-black;
+  border-radius: 4px;
+
+  #p-pic {
+    width: 28rem;
+    // object-fit: contain;
+    align-self: center;
+    justify-self: center;
+    z-index: 2;
+  }
+
+  #cogwheel-placeholder {
+    position: absolute;
+    bottom: 0;
+    width: 14rem;
+    // margin-top: -80px;
+    z-index: 1;
+
+  }
+}
+
+#p-content {
+  width: 40rem;
+}
+
+#p-details {
+  @include dFlex($fd: column, $ai: flex-start, $jc: center);
+  @include cardBoxStyle();
+  background-color: $main-black;
+  color: $main-ivory;
+
+  #p-header {
+    @include dFlex($jc: space-between);
+    width: 100%;
+    h3 {
+      text-align: start;
+    }
+  }
+
+  p {
+    margin-top: 16px;
+  }
+}
+
+#p-used-skills {
+  color: $main-blue;
+}
+
+#p-links {
+  @include dFlex($g: 2rem);
+}
+
+#p-switch {
+  margin-top: 16px;
+  @include dFlex($jc: space-between);
+
+  button {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
