@@ -1,6 +1,8 @@
-/* global styles */
 @use "./fonts" as *;
+@use "./_variables" as *;
 
+
+// #region global style defaults
 * {
   padding: 0;
   margin: 0;
@@ -14,7 +16,6 @@
 
 html {
   font-size: clamp(0.25rem, 0.5vw + 0.9vh + 0.05rem, 1.25rem);
-
   // font-size: clamp(0.25rem, 1vw + 0.05rem, 1.25rem);
   // font-size: clamp(0.25rem, min(1vw + 0.05rem, 1vh + 0.1rem), 1.25rem);
   // font-size: 0.8vw;
@@ -52,4 +53,20 @@ a {
   cursor: pointer;
   text-decoration: none;
   color: unset;
+  // display: inline-block;
 }
+// #endregion
+
+// #region Utility Classes
+.secondary-button {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 2rem 0 0 0;
+  display: inline-block;
+
+  &:hover {
+    color: $main-coral;
+  }
+}
+
+// #endregion
