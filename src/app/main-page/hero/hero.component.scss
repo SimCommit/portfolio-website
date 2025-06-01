@@ -2,11 +2,8 @@
 @use "./../../../styles/_variables" as *;
 
 section {
-  background-color: $main-blue;
-  height: 100vh;
-  height: 100dvh;
+  @include sectionBoxStyle();
   @include dFlex($jc: space-around);
-  color: $main-ivory;
 
   img {
     width: min(55rem, 80dvh);

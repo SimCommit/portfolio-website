@@ -19,9 +19,11 @@
   background-size: $s;
 }
 
-@mixin sectionBoxStyle() {
+@mixin sectionBoxStyle($bc:$main-blue, $c:$main-ivory) {
+  background-color: $bc;
   height: 100vh;
   height: 100dvh;
+  color: $c;
 }
 
 @mixin cardBoxStyle(

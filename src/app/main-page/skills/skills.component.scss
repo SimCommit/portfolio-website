@@ -2,11 +2,8 @@
 @use "./../../../styles/_variables" as *;
 
 section {
-  height: 100vh;
-  height: 100dvh;
+  @include sectionBoxStyle($bc: $main-black);
   @include dFlex($fd: column, $ai: flex-start, $g: 4rem);
-  background-color: $main-black;
-  color: $main-ivory;
   padding: 2rem 6rem 0 6rem;
 
   #skills-description {

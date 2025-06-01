@@ -2,9 +2,7 @@
 @use "./../../../styles/_variables" as *;
 
 section {
-  background-color: $main-ivory;
-  height: 100vh;
-  height: 100dvh;
+  @include sectionBoxStyle($bc:$main-ivory);
   @include dFlex($ai: flex-end, $jc: space-between);
   padding: 2rem 6rem 0 6rem;
 }
