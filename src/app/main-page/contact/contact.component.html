@@ -25,8 +25,8 @@
 
         <div id="privacy-policy-container">
             <label id="checkbox-container">
-                <input id="checkbox" type="checkbox" [(ngModel)]="isChecked" required>
-                <span id="checkmark" (click)="toggleCheckedState()"></span>
+                <input id="checkbox" type="checkbox" [(ngModel)]="isChecked" name="checkbox" required>
+                <span id="checkmark" (click)="toggleCheckedState(); activateFirstTouch()"></span>
             </label>
             <span id="pp-effect">I've read the <a href="#">privacy policy</a> and agree to the
                 processing of my data.
@@ -35,7 +35,7 @@
 
 
         </div>
-        <p class="checkbox-warning-text" [ngClass]="{'warning': isChecked}">Please accept the privacy policy.</p>
+        <p class="checkbox-warning-text" [ngClass]="{'warning': !isChecked && firstTouch}">Please accept the privacy policy.</p>
 
         <app-primary-button></app-primary-button>
     </form>

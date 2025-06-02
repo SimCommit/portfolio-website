@@ -5,8 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
-  // ngModel in form tag requires standalone or name attribute
-  standalone: true,
   imports: [PrimaryButtonComponent, CommonModule, FormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
@@ -15,8 +13,14 @@ export class ContactComponent {
 
   isChecked:boolean = false;
 
-  toggleCheckedState(){
+  firstTouch:boolean = false;
+
+  toggleCheckedState():void {
     this.isChecked = !this.isChecked;
+  }
+
+  activateFirstTouch():void {
+    this.firstTouch = true;
   }
 
 }
