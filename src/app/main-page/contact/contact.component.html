@@ -7,7 +7,7 @@
     </div>
 
     <form>
-        <div>
+        <div id="contact-info-group">
             <label class="text-input">
                 <span>What's your name?</span>
                 <input type="text" placeholder="Your name goes here" required>
@@ -17,26 +17,23 @@
                 <input type="email" placeholder="youremail@email.com" required>
             </label>
         </div>
+
         <label class="text-input">
             <span>How can I help you?</span>
             <input type="text" placeholder="Hello Simon, I am interested in..." required>
         </label>
-
-
         <div id="privacy-policy-container">
             <label id="checkbox-container">
                 <input id="checkbox" type="checkbox" [(ngModel)]="isChecked" name="checkbox" required>
                 <span id="checkmark" (click)="toggleCheckedState(); activateFirstTouch()"></span>
+                <span id="pp-effect">I've read the <a href="#">privacy policy</a> and agree to the
+                    processing of my data.
+                </span>
             </label>
-            <span id="pp-effect">I've read the <a href="#">privacy policy</a> and agree to the
-                processing of my data.
-            </span>
-
-
-
         </div>
+
         <p class="checkbox-warning-text" [ngClass]="{'warning': !isChecked && firstTouch}">Please accept the privacy policy.</p>
 
-        <app-primary-button></app-primary-button>
+        <button type="submit" disabled>Drop a line</button>
     </form>
 </section>

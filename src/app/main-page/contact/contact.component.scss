@@ -29,7 +29,7 @@ section {
 form {
   width: 45%;
   align-self: flex-end;
-  @include dFlex($fd: column);
+  @include dFlex($fd: column, $g: 2rem);
 
   div {
     width: 100%;
@@ -41,6 +41,10 @@ form {
   }
 }
 
+#contact-info-group {
+  @include dFlex($g: 2rem);
+}
+
 .text-input {
   margin: 8px 4px 8px 0;
   width: 100%;
@@ -48,6 +52,7 @@ form {
   span {
     font-size: 20px;
     font-weight: bold;
+    padding-left: 16px;
   }
 
   input {
@@ -58,7 +63,7 @@ form {
     font-size: 16px;
     font-weight: 400;
     color: $main-ivory;
-    padding: 8px;
+    padding: 16px;
 
     &::placeholder {
       color: $main-ivory;
@@ -67,17 +72,22 @@ form {
 }
 
 .checkbox-warning-text {
-    width: 100%;
-    color: transparent;
-    transition: color 125ms;
+  width: 100%;
+  color: transparent;
+  transition: color 125ms;
 }
 
 .warning {
-    color: $main-warning;
+  color: $main-warning;
+}
+
+.warning::placeholder {
+  color: $main-warning;
 }
 
 #privacy-policy-container {
-    @include dFlex($ai: flex-start, $g: 8px);
+  width: 100%;
+  @include dFlex($ai: flex-start, $jc: flex-start, $g: 8px);
 }
 
 // #region custom checkbox input for privacy policy
@@ -167,3 +177,27 @@ form {
   }
 }
 // #endregion
+
+button {
+  padding: 0.5rem 1.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid $main-ivory;
+  border-radius: 50px;
+  color: $main-ivory;
+  font-weight: bold;
+  font-size: clamp(16px, 1.2rem, 24px);
+
+  &:hover {
+    background-color: $main-coral;
+  }
+
+  &:disabled {
+    color: $main-disabled;
+    border-color: $main-disabled;
+
+    &:hover {
+        cursor: unset;
+        background-color: transparent;
+    }
+  }
+}
