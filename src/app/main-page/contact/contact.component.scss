@@ -1,0 +1,59 @@
+@use "./../../../styles/_mixins" as *;
+@use "./../../../styles/_variables" as *;
+
+section {
+  @include sectionBoxStyle($bc: $main-black);
+  @include dFlex($ai: flex-start, $jc: space-between);
+}
+
+#contact-text {
+  width: 45%;
+  @include dFlex($fd: column, $ai: flex-start);
+
+  h2 {
+    color: $main-yellow;
+  }
+
+  p {
+    margin-top: 32px;
+  }
+}
+
+#c-question {
+  font-size: 24px;
+  font-weight: bold;
+  color: $main-coral;
+  //   text-align: start;
+}
+
+form {
+  width: 45%;
+  align-self: flex-end;
+  @include dFlex($fd: column);
+
+  div {
+    @include dFlex($jc: space-between);
+  }
+
+  label {
+    @include dFlex($fd: column, $ai: flex-start);
+  }
+}
+
+#input-checkbox {
+  @include dFlex($ai: center, $g: 8px);
+
+  a {
+    color: $main-coral;
+    -webkit-text-stroke: 0.2px $main-black;
+    font-weight: 600;
+
+    &:hover {
+      color: $main-ivory;
+      -webkit-text-stroke: 0.2px $main-ivory;
+    }
+  }
+}
+
+.input-field {
+}
