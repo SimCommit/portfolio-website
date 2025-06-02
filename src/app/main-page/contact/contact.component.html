@@ -8,23 +8,35 @@
 
     <form>
         <div>
-            <label>
-                What's your name?
+            <label class="text-input">
+                <span>What's your name?</span>
                 <input type="text" placeholder="Your name goes here" required>
             </label>
-            <label>
-                What's your email?
+            <label class="text-input">
+                <span>What's your email?</span>
                 <input type="email" placeholder="youremail@email.com" required>
             </label>
         </div>
-        <label>
-            How can I help you?
-            <input type="text" placeholder="Hello Lukas, I am interested in..." required>
+        <label class="text-input">
+            <span>How can I help you?</span>
+            <input type="text" placeholder="Hello Simon, I am interested in..." required>
         </label>
-        <label id="input-checkbox">
-            <input type="checkbox" required>
-            <span>I've read the <a href="#">privacy policy</a> and agree to the processing of my data.</span>
-        </label>
+
+
+        <div id="privacy-policy-container">
+            <label id="checkbox-container">
+                <input id="checkbox" type="checkbox" [(ngModel)]="isChecked" required>
+                <span id="checkmark" (click)="toggleCheckedState()"></span>
+            </label>
+            <span id="pp-effect">I've read the <a href="#">privacy policy</a> and agree to the
+                processing of my data.
+            </span>
+
+
+
+        </div>
+        <p class="checkbox-warning-text" [ngClass]="{'warning': isChecked}">Please accept the privacy policy.</p>
+
         <app-primary-button></app-primary-button>
     </form>
 </section>

@@ -32,6 +32,7 @@ form {
   @include dFlex($fd: column);
 
   div {
+    width: 100%;
     @include dFlex($jc: space-between);
   }
 
@@ -40,20 +41,129 @@ form {
   }
 }
 
-#input-checkbox {
-  @include dFlex($ai: center, $g: 8px);
+.text-input {
+  margin: 8px 4px 8px 0;
+  width: 100%;
 
-  a {
-    color: $main-coral;
-    -webkit-text-stroke: 0.2px $main-black;
-    font-weight: 600;
+  span {
+    font-size: 20px;
+    font-weight: bold;
+  }
 
-    &:hover {
+  input {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid $main-yellow;
+    font-size: 16px;
+    font-weight: 400;
+    color: $main-ivory;
+    padding: 8px;
+
+    &::placeholder {
       color: $main-ivory;
-      -webkit-text-stroke: 0.2px $main-ivory;
     }
   }
 }
 
-.input-field {
+.checkbox-warning-text {
+    width: 100%;
+    color: transparent;
+    transition: color 125ms;
 }
+
+.warning {
+    color: $main-warning;
+}
+
+#privacy-policy-container {
+    @include dFlex($ai: flex-start, $g: 8px);
+}
+
+// #region custom checkbox input for privacy policy
+#checkbox-container {
+  padding-left: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  #checkmark {
+    position: absolute;
+    z-index: 2;
+    top: 3px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border: 1.5px solid $main-coral;
+    border-radius: 2px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      height: 19px;
+      width: 19px;
+      border-radius: 50%;
+      background-color: transparent;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: background-color 125ms;
+    }
+  }
+}
+
+#checkbox-container input:checked ~ #checkmark:after {
+  display: block;
+}
+
+#checkbox-container #checkmark:after {
+  left: 4px;
+  top: 1.5px;
+  width: 3px;
+  height: 6px;
+  border: solid $main-coral;
+  border-width: 0 1.5px 1.5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#checkbox-container #checkmark:hover::before {
+  background-color: #fab04280;
+}
+
+// #endregion
+
+// #region privacy policy link hover effect
+#pp-effect {
+  a {
+    color: $main-coral;
+
+    &:hover {
+      color: $main-ivory;
+      -webkit-text-stroke: 0.7px $main-ivory;
+    }
+  }
+}
+// #endregion
