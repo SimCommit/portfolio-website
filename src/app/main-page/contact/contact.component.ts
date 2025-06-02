@@ -1,26 +1,36 @@
 import { Component } from '@angular/core';
-import { PrimaryButtonComponent } from '../../shared/primary-button/primary-button.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
-  imports: [PrimaryButtonComponent, CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+  firstClickName = false;
 
-  isChecked:boolean = false;
+  nameInput: InputField = {
+    isChecked: false,
+    isClickedFirstTime: false,
+  };
 
-  firstTouch:boolean = false;
+  checkboxInput: InputField = {
+    isChecked: false,
+    isClickedFirstTime: false,
+  };
 
-  toggleCheckedState():void {
-    this.isChecked = !this.isChecked;
+  toggleCheckedState(inputToToggle:InputField): void {
+    inputToToggle.isChecked = !inputToToggle.isChecked;
   }
 
-  activateFirstTouch():void {
-    this.firstTouch = true;
+  activateFirstClick(inputToActivate: InputField): void {
+    inputToActivate.isClickedFirstTime = true;
   }
+}
 
+interface InputField {
+  isChecked: boolean;
+  isClickedFirstTime: boolean;
 }

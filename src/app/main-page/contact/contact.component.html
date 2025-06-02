@@ -10,7 +10,8 @@
         <div id="contact-info-group">
             <label class="text-input">
                 <span>What's your name?</span>
-                <input type="text" placeholder="Your name goes here" required>
+                <input (click)="activateFirstClick(nameInput)" type="text"
+                    [ngClass]="{'warning': nameInput.isClickedFirstTime}" placeholder="Your name goes here" required>
             </label>
             <label class="text-input">
                 <span>What's your email?</span>
@@ -24,15 +25,22 @@
         </label>
         <div id="privacy-policy-container">
             <label id="checkbox-container">
-                <input id="checkbox" type="checkbox" [(ngModel)]="isChecked" name="checkbox" required>
-                <span id="checkmark" (click)="toggleCheckedState(); activateFirstTouch()"></span>
-                <span id="pp-effect">I've read the <a href="#">privacy policy</a> and agree to the
-                    processing of my data.
-                </span>
+                <input id="checkbox" type="checkbox" [(ngModel)]="checkboxInput.isChecked" name="checkbox" required>
+                <span id="checkmark"
+                    (click)="toggleCheckedState(checkboxInput); activateFirstClick(checkboxInput)"></span>
             </label>
+            <div>
+                <p id="checkbox-info-text">I've read the <a href="#">privacy policy</a> and agree to the
+                    processing of my data.
+                </p>
+                <p class="checkbox-warning-text"
+                    [ngClass]="{'warning': !checkboxInput.isChecked && checkboxInput.isClickedFirstTime}">Please accept
+                    the
+                    privacy policy.
+                </p>
+            </div>
         </div>
 
-        <p class="checkbox-warning-text" [ngClass]="{'warning': !isChecked && firstTouch}">Please accept the privacy policy.</p>
 
         <button type="submit" disabled>Drop a line</button>
     </form>

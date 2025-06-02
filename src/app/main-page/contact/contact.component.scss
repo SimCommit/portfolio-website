@@ -81,18 +81,23 @@ form {
   color: $main-warning;
 }
 
-.warning::placeholder {
+.warning-inside::placeholder {
   color: $main-warning;
 }
 
 #privacy-policy-container {
   width: 100%;
-  @include dFlex($ai: flex-start, $jc: flex-start, $g: 8px);
+  @include dFlex($fd: column, $ai: flex-start, $jc: flex-start, $g: 8px);
+
+  div {
+    @include dFlex($fd: column, $g: 1rem);
+  }
 }
 
 // #region custom checkbox input for privacy policy
 #checkbox-container {
-  padding-left: 20px;
+  @include dFlex($ai: flex-start, $jc: flex-start, $g: 8px);
+
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -109,7 +114,7 @@ form {
   #checkmark {
     position: absolute;
     z-index: 2;
-    top: 3px;
+    top: 11px;
     left: 0;
     height: 15px;
     width: 15px;
@@ -166,7 +171,9 @@ form {
 // #endregion
 
 // #region privacy policy link hover effect
-#pp-effect {
+#checkbox-info-text {
+  padding-left: 20px;
+
   a {
     color: $main-coral;
 
@@ -196,8 +203,8 @@ button {
     border-color: $main-disabled;
 
     &:hover {
-        cursor: unset;
-        background-color: transparent;
+      cursor: unset;
+      background-color: transparent;
     }
   }
 }
