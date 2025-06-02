@@ -23,8 +23,8 @@
             <span>How can I help you?</span>
             <input type="text" placeholder="Hello Simon, I am interested in..." required>
         </label>
-        <div id="privacy-policy-container">
-            <label id="checkbox-container">
+        <div id="checkbox-container">
+            <label id="checkbox-label">
                 <input id="checkbox" type="checkbox" [(ngModel)]="checkboxInput.isChecked" name="checkbox" required>
                 <span id="checkmark"
                     (click)="toggleCheckedState(checkboxInput); activateFirstClick(checkboxInput)"></span>

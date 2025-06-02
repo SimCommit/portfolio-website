@@ -31,17 +31,13 @@ form {
   align-self: flex-end;
   @include dFlex($fd: column, $g: 2rem);
 
-  div {
-    width: 100%;
-    @include dFlex($jc: space-between);
-  }
-
   label {
     @include dFlex($fd: column, $ai: flex-start);
   }
 }
 
 #contact-info-group {
+  width: 100%;
   @include dFlex($g: 2rem);
 }
 
@@ -85,7 +81,7 @@ form {
   color: $main-warning;
 }
 
-#privacy-policy-container {
+#checkbox-container {
   width: 100%;
   @include dFlex($fd: column, $ai: flex-start, $jc: flex-start, $g: 8px);
 
@@ -95,7 +91,7 @@ form {
 }
 
 // #region custom checkbox input for privacy policy
-#checkbox-container {
+#checkbox-label {
   @include dFlex($ai: flex-start, $jc: flex-start, $g: 8px);
 
   -webkit-user-select: none;
@@ -148,11 +144,11 @@ form {
   }
 }
 
-#checkbox-container input:checked ~ #checkmark:after {
+#checkbox-label input:checked ~ #checkmark:after {
   display: block;
 }
 
-#checkbox-container #checkmark:after {
+#checkbox-label #checkmark:after {
   left: 4px;
   top: 1.5px;
   width: 3px;
@@ -164,7 +160,7 @@ form {
   transform: rotate(45deg);
 }
 
-#checkbox-container #checkmark:hover::before {
+#checkbox-label #checkmark:hover::before {
   background-color: #fab04280;
 }
 
