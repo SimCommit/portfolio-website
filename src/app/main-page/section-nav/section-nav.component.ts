@@ -5,10 +5,12 @@ import { MainPageStateService } from '../main-page-state.service';
   selector: 'app-section-nav',
   imports: [],
   templateUrl: './section-nav.component.html',
-  styleUrl: './section-nav.component.scss'
+  styleUrl: './section-nav.component.scss',
 })
 export class SectionNavComponent {
   mainPageState = inject(MainPageStateService);
 
-  
+  scrollTo(id: string) {
+    document.getElementById(id)!.scrollIntoView({ behavior: 'smooth' });
+  }
 }
