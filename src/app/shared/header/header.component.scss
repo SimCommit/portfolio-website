@@ -2,10 +2,14 @@
 @use "./../../../styles/_variables" as *;
 
 header {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   @include maxWidth1920();
   > div {
     @include dFlex($jc: space-between);
-    padding: 1.5rem;
+    padding: 1.5rem 2.5rem;
 
     > div {
       width: 140px;

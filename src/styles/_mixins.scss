@@ -10,6 +10,7 @@
 
 @mixin maxWidth1920() {
   max-width: 1920px;
+  
 }
 
 @mixin bgImage($url, $r: no-repeat, $p: center, $s: cover) {
