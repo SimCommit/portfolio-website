@@ -1,10 +1,15 @@
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 #app-header {
-    position: absolute;
-    width: 100%;
-    z-index: 9;
+  width: 100%;
+  z-index: 9;
 }
 
 #app-main-page {
-    height: 100vh;
-    height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
 }

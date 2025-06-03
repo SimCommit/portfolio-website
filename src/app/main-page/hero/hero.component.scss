@@ -13,18 +13,12 @@ section {
 
 #hero-content {
   @include dFlex($fd: column, $ai: flex-start, $g: 2rem);
+  @include maxWidth1920();
 }
 
 #headline {
   p {
     font-size: 3rem;
-  }
-}
-
-#scroll-widget {
-  img {
-    height: 14rem;
-    width: 14rem;
   }
 }
 
@@ -39,3 +33,41 @@ section {
     align-self: flex-end;
   }
 }
+
+// #region cogwheel-scroll-down down animation
+#cogwheel-container {
+  width: 144px;
+  height: 144px;
+  // clip-path: circle(50% at 50% 50%);
+}
+
+#cogwheel-scroll-down {
+  width: 144px;
+  height: 144px;
+  z-index: 1;
+  animation: animateCogwheel linear 10s infinite;
+  transform-origin: center;
+  pointer-events: visible;
+}
+
+@keyframes animateCogwheel {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#arrow-down {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+}
+// #endregion

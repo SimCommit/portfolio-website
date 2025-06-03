@@ -1,4 +1,8 @@
-<app-header id="app-header"></app-header>
-<app-main-page id="app-main-page"></app-main-page>
-<!-- <app-footer></app-footer>  -->
-<router-outlet />
+<main [ngStyle]="{'background-color': mainPageState.currentBackground[mainPageState.currentSection]}">
+    <section>
+        <app-header id="app-header"></app-header>
+        <app-main-page id="app-main-page"></app-main-page>
+        <!-- <app-footer></app-footer>  -->
+        <router-outlet />
+    </section>
+</main>
