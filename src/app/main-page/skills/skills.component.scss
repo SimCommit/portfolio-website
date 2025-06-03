@@ -38,3 +38,42 @@ section {
   bottom: 16px;
   left: 240px;
 }
+
+// #region cogwheel learning animation
+#cogwheel-1 {
+  z-index: 1;
+  animation: animateCogwheel linear 10s infinite;
+  transform-origin: center;
+  pointer-events: visible;
+}
+
+@keyframes animateCogwheel {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#learning {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+}
+
+#cogwheel-container {
+  align-self: center;
+  clip-path: circle(50% at 50% 50%);
+
+  &:hover #cogwheel-1 {
+    animation-play-state: paused;
+  }
+}
+// #endregion
