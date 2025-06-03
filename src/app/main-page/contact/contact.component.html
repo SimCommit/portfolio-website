@@ -6,12 +6,11 @@
             their projects through your work. </p>
     </div>
 
-    <form>
+    <form id="contact-form">
         <div id="contact-info-group">
             <label class="text-input">
                 <span>What's your name?</span>
-                <input (click)="activateFirstClick(nameInput)" type="text"
-                    [ngClass]="{'warning': nameInput.isClickedFirstTime}" placeholder="Your name goes here" required>
+                <input (click)="activateFirstClick(nameInput)" type="text" placeholder="Your name goes here" required>
             </label>
             <label class="text-input">
                 <span>What's your email?</span>
@@ -44,4 +43,6 @@
 
         <button type="submit" disabled>Drop a line</button>
     </form>
+
+    <app-footer></app-footer>
 </section>

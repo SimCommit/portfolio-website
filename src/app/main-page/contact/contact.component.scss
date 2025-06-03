@@ -63,6 +63,7 @@ form {
 
     &::placeholder {
       color: $main-ivory;
+      opacity: 1; /* Firefox */
     }
   }
 }
