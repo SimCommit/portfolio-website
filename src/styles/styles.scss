@@ -1,7 +1,6 @@
 @use "./fonts" as *;
 @use "./_variables" as *;
 
-
 // #region global style defaults
 * {
   padding: 0;
@@ -35,6 +34,7 @@ h2 {
 
 h2 {
   font-size: 4.7rem;
+  line-height: 1;
 }
 
 h3 {
@@ -68,7 +68,5 @@ a {
     color: $main-coral;
   }
 }
-
-
 
 // #endregion

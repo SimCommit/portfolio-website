@@ -56,5 +56,11 @@
 // #endregion
 
 #footer-links {
-  @include dFlex($g:2.5rem);  
+  @include dFlex($g: 2.5rem);
+
+  a {
+  &:hover {
+    color: $main-coral;
+  }
+  }
 }
