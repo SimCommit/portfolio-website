@@ -2,14 +2,11 @@
 @use "./../../styles/_variables" as *;
 
 main {
-  @include dFlex();
-  width: 100%;
+  @include dFlex($fd:column);
+  // width: 100%;
 }
 
 #app-section-nav {
-  // überflüssig?
-  // height: 100vh;
-  // height: 100dvh;
   width: 32px;
   position: fixed;
   top: 0;
