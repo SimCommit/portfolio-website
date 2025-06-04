@@ -4,6 +4,7 @@
 section {
   @include sectionBoxStyle($bc: $main-black);
   @include dFlex($fd: column, $ai: flex-start, $g: 4rem);
+  width: 100%;
 
   #skills-description {
     background-color: $main-blue;
@@ -15,10 +16,6 @@ section {
 #skills-showcase {
   width: 100%;
   @include dFlex($ai: flex-end, $jc: space-between);
-}
-
-#cogwheel {
-  width: 120px;
 }
 
 #tech-card {
