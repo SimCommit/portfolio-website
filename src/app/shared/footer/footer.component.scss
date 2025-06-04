@@ -1,0 +1,60 @@
+@use "./../../../styles/_mixins" as *;
+@use "./../../../styles/_variables" as *;
+
+// footer {
+//   @include dFlex();
+//   width: 100%;
+// }
+
+#footer-content {
+  width: 100%;
+  @include dFlex($jc: space-between);
+}
+
+#cogwheel-container {
+  margin-top: -96px;
+}
+
+// #region cogwheel animations
+#cogwheel-coral {
+  width: 10rem;
+  z-index: 2;
+  animation: animateCogwheelCoral linear 10s infinite;
+  transform-origin: center;
+  pointer-events: visible;
+}
+
+@keyframes animateCogwheelCoral {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#cogwheel-blue {
+  width: 15rem;
+  z-index: 3;
+  margin-left: -60px;
+  animation: animateCogwheelBlue linear 10s infinite;
+  transform-origin: center;
+  pointer-events: visible;
+}
+
+@keyframes animateCogwheelBlue {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+// #endregion
+
+#footer-links {
+  @include dFlex($g:2.5rem);  
+}

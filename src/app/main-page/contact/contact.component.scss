@@ -3,6 +3,10 @@
 
 section {
   @include sectionBoxStyle($bc: $main-black);
+  @include dFlex($fd: column, $ai: flex-start, $jc: space-between);
+}
+
+main {
   @include dFlex($ai: flex-start, $jc: space-between);
 }
 
@@ -204,4 +208,8 @@ button {
       background-color: transparent;
     }
   }
+}
+
+#app-footer {
+  width: 100%;
 }
