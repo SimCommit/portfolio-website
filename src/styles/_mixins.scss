@@ -21,7 +21,6 @@
 }
 
 @mixin sectionBoxStyle($bc: $main-blue, $c: $main-ivory) {
-  // @include maxWidth1920();
   background-color: $bc;
   color: $c;
   height: 100vh;

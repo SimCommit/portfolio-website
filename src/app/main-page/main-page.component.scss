@@ -4,7 +4,6 @@
 main {
   @include dFlex($fd:column);
   @include maxWidth1920();
-  // align-items: stretch;
   width: 100%;
 }
 

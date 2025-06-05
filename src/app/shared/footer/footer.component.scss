@@ -2,13 +2,13 @@
 @use "./../../../styles/_variables" as *;
 
 // footer {
-//   @include dFlex();
 //   width: 100%;
 // }
 
 #footer-content {
   width: 100%;
   @include dFlex($jc: space-between);
+  padding: 1.5rem 2.5rem;
 }
 
 #cogwheel-container {
@@ -53,15 +53,19 @@
     transform: rotate(0deg);
   }
 }
-
 // #endregion
 
+#footer-links,
+#cogwheel-container {
+  width: 23rem;
+}
+
 #footer-links {
-  @include dFlex($g: 2.5rem);
+  @include dFlex($jc: flex-end, $g: 32px);
 
   a {
-  &:hover {
-    color: $main-coral;
-  }
+    &:hover {
+      color: $main-coral;
+    }
   }
 }
