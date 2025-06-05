@@ -1,29 +1,28 @@
 <section>
     <main>
         <div id="contact-text">
-            <h2>Let's build something cool together!</h2>
-            <p id="c-question">Got a problem to solve?</p>
-            <p>Encourage people to contact you and describe what role you are interested in. Show that you will add
-                value to
-                their projects through your work. </p>
+            <h2>Gemeinsam schaffen wir mehr!</h2>
+            <p id="c-question">Hast du eine Herausforderung?</p>
+            <p>In einem gemeinsamen Projekt, können wir sie meistern. Ich kann das Design der Sofrware umsetzen und interaktive Logik gestalten.
+                 </p>
         </div>
 
         <form id="contact-form">
             <div id="contact-info-group">
                 <label class="text-input">
-                    <span>What's your name?</span>
-                    <input (click)="activateFirstClick(nameInput)" type="text" placeholder="Your name goes here"
+                    <span>Wie heißt du?</span>
+                    <input (click)="activateFirstClick(nameInput)" type="text" placeholder="Deinen Name hier rein"
                         required>
                 </label>
                 <label class="text-input">
-                    <span>What's your email?</span>
-                    <input type="email" placeholder="youremail@email.com" required>
+                    <span>Wie ist deine Email?</span>
+                    <input type="email" placeholder="deineemail@email.com" required>
                 </label>
             </div>
 
             <label class="text-input">
-                <span>How can I help you?</span>
-                <input type="text" placeholder="Hello Simon, I am interested in..." required>
+                <span>Wie kann ich dir helfen?</span>
+                <input type="text" placeholder="Hallo Simon, ich bin interessiert an..." required>
             </label>
             <div id="checkbox-container">
                 <label id="checkbox-label">
@@ -32,8 +31,8 @@
                         (click)="toggleCheckedState(checkboxInput); activateFirstClick(checkboxInput)"></span>
                 </label>
                 <div>
-                    <p id="checkbox-info-text">I've read the <a routerLink="privacy-policy">privacy policy</a> and agree to the
-                        processing of my data.
+                    <p id="checkbox-info-text">Ich habe die <a routerLink="privacy-policy">Datenschutzerklärung</a>
+                        gelesen und bin einverstanden mit der Verarbeitung meiner Daten.
                     </p>
                     <p class="checkbox-warning-text"
                         [ngClass]="{'warning': !checkboxInput.isChecked && checkboxInput.isClickedFirstTime}">Please
@@ -45,7 +44,7 @@
             </div>
 
 
-            <button type="submit" disabled>Drop a line</button>
+            <button type="submit" disabled>Schicke eine Nachricht</button>
         </form>
     </main>
 
