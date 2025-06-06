@@ -26,7 +26,6 @@
     bottom: 0;
     width: 30%;
     z-index: 1;
-
   }
 }
 
@@ -47,6 +46,34 @@
       text-align: start;
     }
   }
+
+  // #region emoji jump animation
+  #emoji-container {
+    @include dFlex();
+    height: 50px;
+    width: 32px;
+    img {
+      animation: slide-up-and-down 1.8s ease-in-out infinite;
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  @keyframes slide-up-and-down {
+    0% {
+      transform: translateY(30%);
+    }
+
+    50% {
+      transform: translateY(0%);
+    }
+
+    100% {
+      transform: translateY(30%);
+    }
+  }
+  // #endregion
 
   p {
     margin-top: 16px;
@@ -77,5 +104,4 @@
 
 a {
   @include primaryButton();
-
 }
