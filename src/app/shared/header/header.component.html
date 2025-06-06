@@ -14,7 +14,7 @@
 
         <div>
             <button [ngClass]="isEnglish ? 'english' : 'german'" (click)="toggleLang()"></button>
-            <button (click)="toggleMenu()" id="btn-burger">
+            <button (click)="openMenu()" id="btn-burger">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_3_3371" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32"
                         height="32">
@@ -28,6 +28,6 @@
                 </svg>
             </button>
         </div>
-        <app-menu-overlay [hidden]="hideMenu" id="app-menu-overlay"></app-menu-overlay>
+        <app-menu-overlay (closeOrder)="closeMenu()" [hidden]="hideMenu" id="app-menu-overlay"></app-menu-overlay>
     </div>
 </header>

@@ -43,9 +43,10 @@ span {
 .english,
 .german,
 #btn-burger {
+  @include dFlex();
   margin-left: 0.5rem;
-  height: 48px;
-  width: 48px;
+  height: 40px;
+  width: 40px;
   transition: background-color 125ms ease;
 }
 

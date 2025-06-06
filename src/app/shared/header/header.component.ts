@@ -22,7 +22,11 @@ export class HeaderComponent {
     this.isEnglish = !this.isEnglish;
   }
 
-  toggleMenu(): void {
-    this.hideMenu = !this.hideMenu;
+  openMenu(): void {
+    this.hideMenu = false;
+  }
+
+  closeMenu():void {
+    this.hideMenu = true;
   }
 }
