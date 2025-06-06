@@ -71,10 +71,13 @@ span {
 }
 
 #btn-burger {
-  @include bgImage(
-    $url: "/../../assets/img/icons/burger-menu-btns/burger-default.svg"
-  );
-  &:hover {
-    background-image: url("/../../assets/img/icons/burger-menu-btns/burger-hover.svg");
+
+  &:hover svg path {
+      fill: $main-coral;
+    }
+
+  svg path {
+      fill: $main-ivory;
+      transition: fill 125ms ease;
   }
 }

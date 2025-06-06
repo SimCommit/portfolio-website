@@ -20,9 +20,8 @@ nav {
   height: 12px;
   object-position: center;
   object-fit: contain;
-
 }
-                          
+
 .icon-inactive img {
   width: 9px;
   height: 9px;
@@ -49,6 +48,7 @@ nav {
 // #region back-to-start jump animation
 svg path {
   fill: #f8f7e5;
+  transition: fill 125ms ease;
   animation: jumpAnimation 1.6s ease-in-out infinite;
 }
 
@@ -64,6 +64,10 @@ svg path {
   100% {
     transform: translateY(95%) scaleY(1);
   }
+}
+
+#back-to-start {
+  transition: border-bottom 125ms ease;
 }
 
 #back-to-start:hover svg path {

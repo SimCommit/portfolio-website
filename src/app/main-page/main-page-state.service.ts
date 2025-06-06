@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MainPageStateService {
-  currentSection: number = 3;
+  currentSection: number = 1;
 
   currentBackground: string[] = [
     '',
