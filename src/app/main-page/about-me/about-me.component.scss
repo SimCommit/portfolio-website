@@ -47,3 +47,7 @@ section {
   bottom: 12px;
   right: 12px;
 }
+
+a {
+  @include primaryButton();
+}

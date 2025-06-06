@@ -10,7 +10,6 @@
 
 @mixin maxWidth1920() {
   max-width: 1920px;
-  
 }
 
 @mixin bgImage($url, $r: no-repeat, $p: center, $s: cover) {
@@ -45,5 +44,20 @@
 }
 
 @mixin textPadding() {
-    padding: 32px 24px 24px 24px;
+  padding: 32px 24px 24px 24px;
+}
+
+@mixin primaryButton() {
+  display: inline-block;
+  padding: 0.5rem 1.6rem;
+  margin-top: 2rem;
+  border: 1px solid $main-ivory;
+  border-radius: 50px;
+  color: $main-ivory;
+  font-weight: bold;
+  font-size: clamp(16px, 1.2rem, 24px);
+
+  &:hover {
+    background-color: $main-coral;
+  }
 }

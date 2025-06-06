@@ -68,5 +68,14 @@
   button {
     font-size: 18px;
     font-weight: bold;
+
+    &:hover {
+      color: $main-coral;
+    }
   }
+}
+
+a {
+  @include primaryButton();
+
 }

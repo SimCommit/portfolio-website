@@ -189,17 +189,9 @@ form {
 // #endregion
 
 button {
-  padding: 0.5rem 1.6rem;
+  @include primaryButton();
+  margin-top: 0;
   margin-bottom: 1rem;
-  border: 1px solid $main-ivory;
-  border-radius: 50px;
-  color: $main-ivory;
-  font-weight: bold;
-  font-size: clamp(16px, 1.2rem, 24px);
-
-  &:hover {
-    background-color: $main-coral;
-  }
 
   &:disabled {
     color: $main-disabled;

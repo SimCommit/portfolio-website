@@ -72,3 +72,7 @@ section {
   height: 48px;
 }
 // #endregion
+
+a {
+  @include primaryButton();
+}
