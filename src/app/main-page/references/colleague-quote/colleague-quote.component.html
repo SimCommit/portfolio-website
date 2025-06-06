@@ -1,12 +1,12 @@
 <div id="colleague-quote">
     <div (mouseenter)="activateHover()" (mouseleave)="deactivateHover()" id="cq-card">
         <div id="cq-header">
-            <h3>{{showcaseData.colleagueQuotes[1].name}}</h3>
+            <h3>{{showcaseData.colleagueQuotes[testimonilaNumber].name}}</h3>
             <img [ngClass]="{'cogwheel-marker-hovered': isHovered, 'cogwheel-marker': !isHovered}" src="./assets/img/references/cogwheel-40.svg" alt="Cogwheel">
         </div>
-        <p>{{showcaseData.colleagueQuotes[1].quote}}</p>
-        <p id="title">{{showcaseData.colleagueQuotes[1].role}}</p>
+        <p>{{showcaseData.colleagueQuotes[testimonilaNumber].quote}}</p>
+        <p id="title">{{showcaseData.colleagueQuotes[testimonilaNumber].role}}</p>
     </div>
 
-    <a class="secondary-button" href="{{showcaseData.colleagueQuotes[1].profileUrl}}">Zum Linkedin Profil >></a>
+    <a class="secondary-button" href="{{showcaseData.colleagueQuotes[testimonilaNumber].profileUrl}}">Zum Linkedin Profil >></a>
 </div>

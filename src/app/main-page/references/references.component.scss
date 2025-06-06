@@ -2,21 +2,27 @@
 @use "./../../../styles/_variables" as *;
 
 section {
-    @include sectionBoxStyle();
-    @include dFlex($fd:column, $jc: flex-start, $g: 4rem);
+  @include sectionBoxStyle();
+  @include dFlex($fd: column, $jc: flex-start, $g: 4rem);
 
-    div {
-        width: 100%;
-        height: 64%;
-        @include dFlex($ai:flex-start, $g: 2rem);
-    }
+  div {
+    width: 100%;
+    height: 64%;
+    @include dFlex($ai: flex-start, $g: 2rem);
+  }
 }
+
+#app-colleague-quote-1,
+#app-colleague-quote-2,
+#app-colleague-quote-3 {
+    width: 30%;
+}
+
 
 #app-colleague-quote-2 {
-    align-self: center;
+  align-self: center;
 }
 
-
 #app-colleague-quote-3 {
-    align-self: flex-end;
+  align-self: flex-end;
 }

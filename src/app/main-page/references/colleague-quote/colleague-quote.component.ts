@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { ShowcaseDataService } from '../../showcase-data.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { ShowcaseDataService } from '../../showcase-data.service';
   styleUrl: './colleague-quote.component.scss',
 })
 export class ColleagueQuoteComponent {
+
+  @Input()testimonilaNumber:number = 0;
 
   showcaseData = inject(ShowcaseDataService);
 
