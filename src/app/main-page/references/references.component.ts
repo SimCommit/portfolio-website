@@ -8,5 +8,5 @@ import { ColleagueQuoteComponent } from './colleague-quote/colleague-quote.compo
   styleUrl: './references.component.scss'
 })
 export class ReferencesComponent {
-
+  
 }
