@@ -13,6 +13,8 @@ section {
   }
 }
 
+
+// #region skills-showcase 
 #skills-showcase {
   width: 100%;
   @include dFlex($ai: flex-end, $jc: space-between);
@@ -25,14 +27,17 @@ section {
 
   label {
     @include dFlex($fd: column, $g: 20px);
+
+    img {
+      transition: transform 225ms ease-in-out;
+      
+      &:hover {
+        transform: scale(1.25);
+      }
+    }
   }
 }
-
-#app-growth-mindset {
-  position: absolute;
-  bottom: 16px;
-  left: 240px;
-}
+// #endregion
 
 // #region cogwheel learning animation
 #cogwheel-1 {
@@ -72,3 +77,9 @@ section {
   }
 }
 // #endregion
+
+#app-growth-mindset {
+  position: absolute;
+  bottom: 16px;
+  left: 240px;
+}
