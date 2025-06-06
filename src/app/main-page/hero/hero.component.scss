@@ -37,6 +37,8 @@ section {
 
 // #region cogwheel-scroll-down down animation
 #cogwheel-container {
+  margin-top: 1rem;
+  overflow: hidden;
   width: 144px;
   height: 144px;
   // clip-path: circle(50% at 50% 50%);

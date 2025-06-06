@@ -13,7 +13,7 @@
         </div>
 
         <div>
-            <button id="btn-lang"> </button>
+            <button [ngClass]="isEnglish ? 'english' : 'german'" (click)="toggleLang()"></button>
             <button (click)="toggleMenu()" id="btn-burger"> </button>
         </div>
         <app-menu-overlay [hidden]="hideMenu" id="app-menu-overlay"></app-menu-overlay>

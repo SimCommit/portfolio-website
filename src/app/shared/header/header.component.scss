@@ -40,19 +40,33 @@ span {
   right: 8px;
 }
 
-#btn-lang,
+.english,
+.german,
 #btn-burger {
   margin-left: 0.5rem;
   height: 48px;
   width: 48px;
+  transition: background-color 125ms ease;
 }
 
-#btn-lang {
+.english {
+  border-radius: 50%;
+
   @include bgImage(
     $url: "/../../assets/img/icons/lang-btns/lang-btn-en-default.svg"
   );
   &:hover {
-    background-image: url("/../../assets/img/icons/lang-btns/lang-btn-en-hover.svg");
+    background-color: $main-coral;
+  }
+}
+
+.german {
+  border-radius: 50%;
+  @include bgImage(
+    $url: "/../../assets/img/icons/lang-btns/lang-btn-de-default.svg"
+  );
+  &:hover {
+    background-color: $main-coral;
   }
 }
 

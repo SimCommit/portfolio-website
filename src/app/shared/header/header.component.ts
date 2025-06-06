@@ -16,6 +16,12 @@ export class HeaderComponent {
 
   hideMenu: boolean = true;
 
+  isEnglish: Boolean = false; 
+
+  toggleLang():void {
+    this.isEnglish = !this.isEnglish;
+  }
+
   toggleMenu(): void {
     this.hideMenu = !this.hideMenu;
   }
