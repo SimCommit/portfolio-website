@@ -22,10 +22,37 @@ export class ShowcaseDataService {
     // { imgUrl: "./assets/img/skills/material-design.svg", name: "Material Design" },
   ];
 
+  colleagueQuotes: Testimonial[] = [
+        {
+      name: 'Vadim Michel',
+      quote:
+        'Simon created an amazing Dark Souls Remastered Zweihander Build. The coop was really efficiant and fun. The bosses fell like leaves in autumn.',
+      role: 'Frontend Developer',
+    },
+    {
+      name: 'Mirkan Polat',
+      quote:
+        'Die Zusammenarbeit mit Simon war für mich echt eine super Erfahrung. Er war total engagiert, hat immer mitgedacht und super zuverlässig gearbeitet. Vor allem seine kreativen Ideen haben unser Projekt richtig nach vorne gebracht. Ich hab in der Zeit viel gelernt und würde ohne Zögern nochmal mit ihm ein Projekt starten.',
+      role: 'Teamkollege',
+    },
+    {
+      name: 'Vadim Michel',
+      quote:
+        'Simon created an amazing Dark Souls Remastered Zweihander Build. The coop was really efficiant and fun. The bosses fell like leaves in autumn.',
+      role: 'Frontend Developer',
+    },
+  ];
+
   constructor() {}
 }
 
 interface Tech {
   imgUrl: string;
   name: string;
+}
+
+interface Testimonial {
+  name: string;
+  quote: string;
+  role: string;
 }

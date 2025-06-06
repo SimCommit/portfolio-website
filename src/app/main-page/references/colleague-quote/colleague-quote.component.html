@@ -1,12 +1,11 @@
 <div id="colleague-quote">
     <div (mouseenter)="activateHover()" (mouseleave)="deactivateHover()" id="cq-card">
         <div id="cq-header">
-            <h3>Vadim Michel</h3>
+            <h3>{{showcaseData.colleagueQuotes[1].name}}</h3>
             <img [ngClass]="{'cogwheel-marker-hovered': isHovered, 'cogwheel-marker': !isHovered}" src="./assets/img/references/cogwheel-40.svg" alt="Cogwheel">
         </div>
-        <p>Simon created an amazing Dark Souls Remastered Zweihander Build. The coop was really efficiant and fun. The
-            bosses fell like leaves in autumn.</p>
-        <p id="title">Team Partner</p>
+        <p>{{showcaseData.colleagueQuotes[1].quote}}</p>
+        <p id="title">{{showcaseData.colleagueQuotes[1].role}}</p>
     </div>
 
     <a class="secondary-button" href="#">Zum Linkedin Profil >></a>

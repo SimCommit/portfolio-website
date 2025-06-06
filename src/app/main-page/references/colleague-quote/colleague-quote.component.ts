@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ShowcaseDataService } from '../../showcase-data.service';
 
 @Component({
   selector: 'app-colleague-quote',
@@ -8,13 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './colleague-quote.component.scss',
 })
 export class ColleagueQuoteComponent {
+
+  showcaseData = inject(ShowcaseDataService);
+
   isHovered: boolean = false;
 
-  activateHover():void {
+  activateHover(): void {
     this.isHovered = true;
   }
 
-  deactivateHover():void {
+  deactivateHover(): void {
     this.isHovered = false;
   }
 }

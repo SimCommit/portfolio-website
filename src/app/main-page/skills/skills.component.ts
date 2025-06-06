@@ -10,6 +10,6 @@ import { ShowcaseDataService } from '../showcase-data.service';
 })
 export class SkillsComponent {
 
-  showcaseData = inject(ShowcaseDataService)
+  showcaseData = inject(ShowcaseDataService);
 }
 
