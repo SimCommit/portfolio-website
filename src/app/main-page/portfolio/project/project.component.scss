@@ -20,14 +20,29 @@
     justify-self: center;
     z-index: 2;
   }
+}
 
-  #cogwheel-placeholder {
-    position: absolute;
-    bottom: 0;
-    width: 30%;
-    z-index: 1;
+// #region cogwheel-bg animation
+#cogwheel-bg {
+  position: absolute;
+  bottom: 0;
+  width: 30%;
+  z-index: 1;
+  animation: animateCogwheel linear 10s infinite;
+  transform-origin: center;
+  pointer-events: visible;
+}
+
+@keyframes animateCogwheel {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
+// #endregion
 
 #p-content {
   width: 40rem;
@@ -40,7 +55,7 @@
   color: $main-ivory;
 
   #p-header {
-    @include dFlex($jc: space-between);
+    @include dFlex($jc: space-between, $ai: flex-end);
     width: 100%;
     h3 {
       text-align: start;
@@ -86,6 +101,18 @@
 
 #p-links {
   @include dFlex($g: 2rem);
+
+  a {
+
+    img {
+      width: 1.2rem;
+      transition: transform 125ms ease;
+    }
+
+    &:hover img {
+      transform: rotate(-45deg);
+    }
+  }
 }
 
 #p-switch {
