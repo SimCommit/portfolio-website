@@ -16,13 +16,18 @@ nav {
 }
 
 .icon-active img {
-  width: 13px;
-  height: 13px;
-}
+  width: 12px;
+  height: 12px;
+  object-position: center;
+  object-fit: contain;
 
+}
+                          
 .icon-inactive img {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
+  object-position: center;
+  object-fit: contain;
 }
 
 .spacer {
@@ -41,7 +46,7 @@ nav {
   }
 }
 
-// #region back-to-start animation
+// #region back-to-start jump animation
 svg path {
   fill: #f8f7e5;
   animation: jumpAnimation 1.6s ease-in-out infinite;
