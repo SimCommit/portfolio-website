@@ -1,15 +1,26 @@
 @use "./../../../styles/_mixins" as *;
 @use "./../../../styles/_variables" as *;
 
-#overlay-container {
+#overlay-wrapper {
+  height: 100vh;
   height: 100dvh;
   background-color: rgba(0, 0, 0, 0.2); //nur zum testen
 }
 
+#overlay-container {
+  @include maxWidth1920();
+  height: 100%;
+  padding: 1.5rem 0;
+  margin: 0 2.5rem;
+}
+
 nav {
+  position: absolute;
+  top: calc(1.5rem - 2px);
+  right: calc(2.5rem - 10px);
   border: 1px solid $main-black;
   border-radius: 4px;
-  width: 180px;
+  width: 208px;
   padding: 10px;
   background-color: $main-ivory;
   z-index: 10;
@@ -40,7 +51,7 @@ nav {
 .nav-body {
   @include dFlex($ai: flex-start, $fd: column);
   > a {
-    margin: 2px;
+    margin: 4px;
     color: $main-black;
     font-size: 18px;
     font-weight: bold;

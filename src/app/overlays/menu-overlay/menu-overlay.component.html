@@ -1,17 +1,18 @@
-<div id="overlay-container" (click)="closeFromOverlay()">
-    <nav (click)="prevent($event)">
-        <div class="nav-header">
-            <h3>Menu</h3>
-            <button (click)="closeFromOverlay()"></button>
-        </div>
-        <div class="nav-body">
-            <a href="#">About Me</a>
-            <a href="#">Skillset</a>
-            <a href="#">Portfolio</a>
-            <a href="#">References</a>
-            <a href="#">Contact Me</a>
-        </div>
-        <!-- <app-social-links></app-social-links> -->
-    </nav>
-
+<div id="overlay-wrapper" (click)="closeFromOverlay()">
+    <div id="overlay-container">
+        <nav (click)="prevent($event)">
+            <div class="nav-header">
+                <h3>Menu</h3>
+                <button (click)="closeFromOverlay()"></button>
+            </div>
+            <div class="nav-body">
+                <a href="#">About Me</a>
+                <a href="#">Skillset</a>
+                <a href="#">Portfolio</a>
+                <a href="#">References</a>
+                <a href="#">Contact Me</a>
+            </div>
+            <!-- <app-social-links></app-social-links> -->
+        </nav>
+    </div>
 </div>
