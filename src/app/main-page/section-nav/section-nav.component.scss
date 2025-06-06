@@ -2,9 +2,9 @@
 @use "./../../../styles/_variables" as *;
 
 nav {
-    height: 100vh;
-    height: 100dvh;
-  @include dFlex($fd: column, $jc:space-around);
+  height: 100vh;
+  height: 100dvh;
+  @include dFlex($fd: column, $jc: space-around);
 
   a {
     @include dFlex();
@@ -12,11 +12,11 @@ nav {
 }
 
 .anchor-container {
-      @include dFlex($fd: column, $g: 16px);
+  @include dFlex($fd: column, $g: 16px);
 }
 
 .icon-active img {
-  width: 13x;
+  width: 13px;
   height: 13px;
 }
 
@@ -26,6 +26,46 @@ nav {
 }
 
 .spacer {
+  height: 48px;
+  width: 30px;
+}
+
+#top-spacer {
+  a {
     height: 48px;
     width: 30px;
+
+    svg {
+      height: 48px;
+    }
+  }
 }
+
+// #region back-to-start animation
+svg path {
+  fill: #f8f7e5;
+  animation: jumpAnimation 1.6s ease-in-out infinite;
+}
+
+@keyframes jumpAnimation {
+  0% {
+    transform: translateY(95%) scaleY(1);
+  }
+
+  50% {
+    transform: translateY(-40%) scaleY(1.5);
+  }
+
+  100% {
+    transform: translateY(95%) scaleY(1);
+  }
+}
+
+#back-to-start:hover svg path {
+  fill: #ff5733;
+}
+
+#back-to-start:hover {
+  border-bottom: 1px solid #ff5733;
+}
+// #endregion
