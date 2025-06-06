@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SocialLinksComponent } from '../../social-links/social-links.component';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { SocialLinksComponent } from '../../shared/social-links/social-links.component';
 
 @Component({
   selector: 'app-menu-overlay',
   imports: [SocialLinksComponent],
   templateUrl: './menu-overlay.component.html',
-  styleUrl: './menu-overlay.component.scss',
+  styleUrl: './menu-overlay.component.scss'
 })
 export class MenuOverlayComponent {
 
@@ -14,5 +14,8 @@ export class MenuOverlayComponent {
   closeFromOverlay() {
     this.closeOrder.emit();
   }
-}
 
+  prevent(event:Event) {
+    event.stopPropagation();
+}
+}

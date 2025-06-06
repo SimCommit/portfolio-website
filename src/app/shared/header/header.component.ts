@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { SocialLinksComponent } from '../social-links/social-links.component';
-import { MenuOverlayComponent } from './menu-overlay/menu-overlay.component';
 import { CommonModule } from '@angular/common';
 import { MainPageStateService } from '../../main-page/main-page-state.service';
+import { MenuOverlayComponent } from '../../overlays/menu-overlay/menu-overlay.component';
 
 @Component({
   selector: 'app-header',
@@ -14,8 +14,6 @@ export class HeaderComponent {
 
   mainPageState = inject(MainPageStateService);
 
-  hideMenu: boolean = true;
-
   isEnglish: Boolean = false; 
 
   toggleLang():void {
@@ -23,10 +21,6 @@ export class HeaderComponent {
   }
 
   openMenu(): void {
-    this.hideMenu = false;
-  }
-
-  closeMenu():void {
-    this.hideMenu = true;
+    this.mainPageState.hideMenu = false;
   }
 }

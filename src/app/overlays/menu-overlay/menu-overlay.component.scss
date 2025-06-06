@@ -1,0 +1,60 @@
+@use "./../../../styles/_mixins" as *;
+@use "./../../../styles/_variables" as *;
+
+#overlay-container {
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.2); //nur zum testen
+}
+
+nav {
+  border: 1px solid $main-black;
+  border-radius: 4px;
+  width: 180px;
+  padding: 10px;
+  background-color: $main-ivory;
+  z-index: 10;
+}
+
+.nav-header {
+  @include dFlex($jc: space-between, $ai: flex-start);
+  margin-bottom: 8px;
+  > h3 {
+    color: $main-blue;
+  }
+
+  button {
+    width: 32px;
+    height: 32px;
+    @include bgImage("/../../assets/img/icons/close-default.svg");
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      @include bgImage("/../../assets/img/icons/close-hover.svg");
+    }
+  }
+}
+
+.nav-body {
+  @include dFlex($ai: flex-start, $fd: column);
+  > a {
+    margin: 2px;
+    color: $main-black;
+    font-size: 18px;
+    font-weight: bold;
+    &:hover {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1.8rem;
+        height: 1.8rem;
+        @include bgImage(
+          "/../../assets/img/icons/burger-menu-btns/Capa_1.svg",
+          $s: contain
+        );
+      }
+    }
+  }
+}

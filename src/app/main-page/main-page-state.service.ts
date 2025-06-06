@@ -16,6 +16,8 @@ export class MainPageStateService {
     '#1D1D1D',
   ];
 
+  hideMenu: boolean = true;
+
   mobileView: boolean = false;
 
   constructor() {}
