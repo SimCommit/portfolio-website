@@ -56,6 +56,7 @@
   color: $main-ivory;
   font-weight: bold;
   font-size: clamp(16px, 1.2rem, 24px);
+  transition: background-color 125ms ease;
 
   &:hover {
     background-color: $main-coral;

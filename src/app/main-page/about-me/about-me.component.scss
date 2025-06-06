@@ -2,7 +2,7 @@
 @use "./../../../styles/_variables" as *;
 
 section {
-  @include sectionBoxStyle($bc:$main-ivory);
+  @include sectionBoxStyle($bc: $main-ivory);
   @include dFlex($ai: flex-end, $jc: space-between);
 }
 
@@ -39,6 +39,29 @@ section {
 
   div {
     @include dFlex($jc: space-between);
+  }
+}
+
+#emoji-container {
+  img {
+    animation: slide-up-and-down 1.8s ease-in-out infinite;
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes slide-up-and-down {
+  0% {
+    transform: translateY(100%);
+  }
+
+  50% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(100%);
   }
 }
 
