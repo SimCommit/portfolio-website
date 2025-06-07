@@ -12,13 +12,13 @@
             <div id="contact-info-group">
                 <label for="name" class="text-input">
                     <span>Wie heißt du?</span>
-                    <input [(ngModel)]="submittedContact.name" id="name" name="name" type="text" placeholder="Deinen Name hier rein" required
+                    <input [(ngModel)]="contactData.name" id="name" name="name" type="text" placeholder="Deinen Name hier rein" required
                         #name="ngModel" minlength="3">
                 </label>
 
                 <label for="email" class="text-input">
                     <span>Wie ist deine Email?</span>
-                    <input [(ngModel)]="submittedContact.email" id="email" name="email" type="email"
+                    <input [(ngModel)]="contactData.email" id="email" name="email" type="email"
                         placeholder="deineemail@email.com" required
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
                 </label>
@@ -26,7 +26,7 @@
 
             <label for="message" class="text-input">
                 <span>Wie kann ich dir helfen?</span>
-                <textarea [(ngModel)]="submittedContact.message" id="message" name="message" type="text"
+                <textarea [(ngModel)]="contactData.message" id="message" name="message" type="text"
                     placeholder="Hallo Simon, ich bin interessiert an..." required #message="ngModel" minlength="16">
                 </textarea>
 
