@@ -11,6 +11,16 @@ import { RouterLink } from '@angular/router';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+  submittedContact: ContactData = {
+    name: '',
+    email: '',
+    message: '',
+  };
+
+  onSubmit() {
+    console.log(this.submittedContact);
+  }
+
   firstClickName = false;
 
   nameInput: InputFieldStates = {
@@ -23,7 +33,7 @@ export class ContactComponent {
     isClickedFirstTime: false,
   };
 
-  toggleCheckedState(inputToToggle:InputFieldStates): void {
+  toggleCheckedState(inputToToggle: InputFieldStates): void {
     inputToToggle.isChecked = !inputToToggle.isChecked;
   }
 
@@ -35,4 +45,10 @@ export class ContactComponent {
 interface InputFieldStates {
   isChecked: boolean;
   isClickedFirstTime: boolean;
+}
+
+interface ContactData {
+  name: string;
+  email: string;
+  message: string;
 }
