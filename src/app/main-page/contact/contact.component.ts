@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { RouterLink } from '@angular/router';
 
@@ -17,34 +17,28 @@ export class ContactComponent {
     message: '',
   };
 
-  onSubmit() {
-    console.log(this.submittedContact);
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.valid && ngForm.submitted) {
+      console.log(this.submittedContact);
+    }
   }
-
-  firstClickName = false;
 
   nameInput: InputFieldStates = {
     isChecked: false,
-    isClickedFirstTime: false,
   };
 
   checkboxInput: InputFieldStates = {
     isChecked: false,
-    isClickedFirstTime: false,
   };
 
   toggleCheckedState(inputToToggle: InputFieldStates): void {
     inputToToggle.isChecked = !inputToToggle.isChecked;
   }
 
-  activateFirstClick(inputToActivate: InputFieldStates): void {
-    inputToActivate.isClickedFirstTime = true;
-  }
 }
 
 interface InputFieldStates {
   isChecked: boolean;
-  isClickedFirstTime: boolean;
 }
 
 interface ContactData {
