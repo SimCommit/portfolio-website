@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +12,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+
+  http = inject(HttpClient);
   
   nameInput: InputFieldStates = {
     isChecked: false,
@@ -45,19 +48,20 @@ export class ContactComponent {
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      // this.http.post(this.post.endPoint, this.post.body(this.contactData))
-      //   .subscribe({
-      //     next: (response) => {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
 
-      //       ngForm.resetForm();
-      //     },
-      //     error: (error) => {
-      //       console.error(error);
-      //     },
-      //     complete: () => console.info('send post complete'),
-      //   });
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
+      console.log(this.contactData);
+      
       ngForm.resetForm();
     }
   }
