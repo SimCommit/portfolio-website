@@ -1,0 +1,9 @@
+{
+	"demo.interpolation.attribute-with-parameters": "Hello {{name}}, how are you?",
+	"demo.interpolation.id-as-content-with-parameters": "Hey {{name}}, how are things?\n",
+	"demo.interpolation.pipe-with-parameters": "Hello {{name}}, hope you're doing well!\n",
+	"demo.simple.text-as-attribute": "A simple text passing the ID as attribute.",
+	"demo.simple.text-as-content": "A simple test using the ID as content.",
+	"demo.simple.text-with-pipe": "A simple text using the pipe.",
+	"demo.title": "Translation Demo"
+}
