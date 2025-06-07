@@ -60,7 +60,7 @@ form {
   input,
   textarea {
     width: 100%;
-    background: none;
+    background: transparent;
     border: none;
     border-bottom: 1px solid $main-yellow;
     font-size: 16px;
@@ -70,7 +70,7 @@ form {
 
     &::placeholder {
       color: $main-ivory;
-      opacity: 1; /* Firefox */
+      opacity: 1;
     }
   }
 
@@ -81,6 +81,15 @@ form {
   }
 }
 
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  background-color: transparent !important;
+  color: $main-ivory !important;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: $main-ivory !important;
+}
+
 .warning-text {
   width: 100%;
   color: $main-warning;
@@ -88,7 +97,7 @@ form {
 }
 
 .text-input input.warning-border,
-.text-input textarea.warning-border{
+.text-input textarea.warning-border {
   border-bottom: 1px solid $main-warning;
 }
 
