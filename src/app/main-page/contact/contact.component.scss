@@ -81,14 +81,15 @@ form {
   }
 }
 
-.checkbox-warning-text {
+.warning-text {
   width: 100%;
-  color: transparent;
+  color: $main-warning;
   transition: color 125ms;
 }
 
-.warning {
-  color: $main-warning;
+.text-input input.warning-border,
+.text-input textarea.warning-border{
+  border-bottom: 1px solid $main-warning;
 }
 
 .warning-inside::placeholder {
