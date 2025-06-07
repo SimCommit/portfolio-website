@@ -24,14 +24,14 @@
   button {
     width: 32px;
     height: 32px;
-    @include bgImage("/../../assets/img/icons/close-ivory.svg");
+    background: url("/../../public/assets/img/icons/close-ivory.svg") no-repeat center / cover;
 
     &:hover {
       cursor: pointer;
     }
 
     &:active {
-      @include bgImage("/../../assets/img/icons/close-hover.svg");
+          background: url("/../../public/assets/img/icons/close-hover.svg") no-repeat center / cover;
     }
   }
 }

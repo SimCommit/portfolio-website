@@ -46,10 +46,9 @@ span {
 
 .english {
   border-radius: 50%;
+  background: url("./../../../../public/assets/img/icons/lang-btns/lang-btn-en-default.svg")
+    no-repeat center / cover;
 
-  @include bgImage(
-    $url: "/../../assets/img/icons/lang-btns/lang-btn-en-default.svg"
-  );
   &:hover {
     background-color: $main-coral;
   }
@@ -57,22 +56,20 @@ span {
 
 .german {
   border-radius: 50%;
-  @include bgImage(
-    $url: "/../../assets/img/icons/lang-btns/lang-btn-de-default.svg"
-  );
+  background: url("./../../../../public/assets/img/icons/lang-btns/lang-btn-de-default.svg")
+    no-repeat center / cover;
   &:hover {
     background-color: $main-coral;
   }
 }
 
 #btn-burger {
-
   &:hover svg path {
-      fill: $main-coral;
-    }
+    fill: $main-coral;
+  }
 
   svg path {
-      fill: $main-ivory;
-      transition: fill 125ms ease;
+    fill: $main-ivory;
+    transition: fill 125ms ease;
   }
 }

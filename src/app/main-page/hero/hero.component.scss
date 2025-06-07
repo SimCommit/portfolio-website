@@ -28,7 +28,7 @@ section {
   height: 100%;
 
   img {
-    background: url("/assets/img/Capa_bg.svg") no-repeat top center;
+    background: url("./../../../../public/assets/img/Capa_bg.svg") no-repeat top center;
     background-position: top 10% right 25%;
     background-size: min(32rem, 50dvh);
     align-self: flex-end;
@@ -41,7 +41,6 @@ section {
   overflow: hidden;
   width: 144px;
   height: 144px;
-  // clip-path: circle(50% at 50% 50%);
 }
 
 #cogwheel-scroll-down {

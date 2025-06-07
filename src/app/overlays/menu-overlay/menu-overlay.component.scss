@@ -36,14 +36,16 @@ nav {
   button {
     width: 32px;
     height: 32px;
-    @include bgImage("/../../assets/img/icons/close-default.svg");
+    background: url("./../../../../public/assets/img/icons/close-default.svg")
+      no-repeat center / cover;
 
     &:hover {
       cursor: pointer;
     }
 
     &:active {
-      @include bgImage("/../../assets/img/icons/close-hover.svg");
+      background: url("./../../../../public/assets/img/icons/close-hover.svg")
+        no-repeat center / cover;
     }
   }
 }
@@ -61,10 +63,8 @@ nav {
         display: inline-block;
         width: 1.8rem;
         height: 1.8rem;
-        @include bgImage(
-          "/../../assets/img/icons/burger-menu-btns/Capa_1.svg",
-          $s: contain
-        );
+        background: url("./../../../../public/assets/img/icons/burger-menu-btns/Capa_1.svg")
+          no-repeat center / cover;
       }
     }
   }

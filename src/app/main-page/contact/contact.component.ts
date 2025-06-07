@@ -12,28 +12,27 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-
   http = inject(HttpClient);
-  
+
   nameInput: InputFieldStates = {
     isChecked: false,
   };
-  
+
   checkboxInput: InputFieldStates = {
     isChecked: false,
   };
-  
+
   toggleCheckedState(inputToToggle: InputFieldStates): void {
     inputToToggle.isChecked = !inputToToggle.isChecked;
   }
-  
+
   contactData: ContactDataModel = {
     name: '',
     email: '',
     message: '',
   };
 
- mailTest = true;
+  mailTest = true;
 
   post = {
     endPoint: 'https://deineDomain.de/sendMail.php',
@@ -48,10 +47,10 @@ export class ContactComponent {
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+      this.http
+        .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
             ngForm.resetForm();
           },
           error: (error) => {
@@ -61,12 +60,10 @@ export class ContactComponent {
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       console.log(this.contactData);
-      
+
       ngForm.resetForm();
     }
   }
-
-
 }
 
 interface InputFieldStates {

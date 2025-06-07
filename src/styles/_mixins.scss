@@ -12,13 +12,6 @@
   max-width: 1920px;
 }
 
-@mixin bgImage($url, $r: no-repeat, $p: center, $s: cover) {
-  background-image: url($url);
-  background-repeat: $r;
-  background-position: $p;
-  background-size: $s;
-}
-
 @mixin sectionBoxStyle($bc: $main-blue, $c: $main-ivory) {
   background-color: $bc;
   color: $c;
