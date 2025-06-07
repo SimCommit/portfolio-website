@@ -25,55 +25,14 @@ import { Subscription } from 'rxjs';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  // title = 'portfolio-website';
+  title = 'portfolio-website';
 
   mainPageState = inject(MainPageStateService);
-
-  // #region ngx-translate demo
-  title = 'translation-demo';
-  name = 'Andreas';
-  private subscription: Subscription;
-
-  // #endregion
 
   constructor(private translate: TranslateService) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use(this.translate.getBrowserLang() || 'en');
-
-    // for testing ngx:
-    this.translate
-      .get(_('demo.interpolation.pipe-with-parameters'), { name: 'John' })
-      .subscribe((text: string) => {
-        console.log(`using get(): ${text}`);
-      });
-    const text = translate.instant(
-      _('demo.interpolation.pipe-with-parameters'),
-      { name: 'John' }
-    );
-    console.log(`using instant(): ${text}`);
-
-    translate
-      .get(_('demo.interpolation.pipe-with-parameters'), { name: 'John' })
-      .subscribe((text: string) => {
-        console.log(`using get(): ${text}`);
-
-        // translations are alreaedy loaded - you can now use instant()
-        const text2 = translate.instant(
-          _('demo.interpolation.pipe-with-parameters'),
-          { name: 'John' }
-        );
-        console.log(`using instant() inside the promise: ${text2}`);
-      });
-    this.subscription = translate
-      .stream(_('demo.interpolation.pipe-with-parameters'), { name: 'John' })
-      .subscribe((text: string) => {
-        console.log(`using stream(): ${text}`);
-      });
-  }
-  
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 
   useLanguage(language: string): void {
