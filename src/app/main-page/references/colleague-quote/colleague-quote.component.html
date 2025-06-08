@@ -4,9 +4,9 @@
             <h3>{{showcaseData.colleagueQuotes[testimonilaNumber].name}}</h3>
             <img [ngClass]="{'cogwheel-marker-hovered': isHovered, 'cogwheel-marker': !isHovered}" src="./assets/img/references/cogwheel-40.svg" alt="Cogwheel">
         </div>
-        <p>{{showcaseData.colleagueQuotes[testimonilaNumber].quote}}</p>
-        <p id="title">{{showcaseData.colleagueQuotes[testimonilaNumber].role}}</p>
+        <p>{{showcaseData.colleagueQuotes[testimonilaNumber].quote | translate}}</p>
+        <p id="title">{{showcaseData.colleagueQuotes[testimonilaNumber].role | translate}}</p>
     </div>
 
-    <a class="secondary-button" href="{{showcaseData.colleagueQuotes[testimonilaNumber].profileUrl}}">Zum Linkedin Profil >></a>
+    <a class="secondary-button" href="{{showcaseData.colleagueQuotes[testimonilaNumber].profileUrl}}">{{"main-page.references.button-linkedin" | translate}}</a>
 </div>

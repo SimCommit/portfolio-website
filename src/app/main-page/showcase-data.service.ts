@@ -23,28 +23,69 @@ export class ShowcaseDataService {
   ];
 
   colleagueQuotes: Testimonial[] = [
-        {
+    {
       name: 'Vadim Michel',
       quote:
-        'Simon created an amazing Dark Souls Remastered Zweihander Build. The coop was really efficiant and fun. The bosses fell like leaves in autumn.',
-      role: 'Frontend Developer',
-      profileUrl:"",
+        'main-page.references.colleague-quote.quote-1',
+      role: 'main-page.references.colleague-quote.role-1',
+      profileUrl: '',
     },
     {
       name: 'Mirkan Polat',
       quote:
-        'Die Zusammenarbeit mit Simon war für mich echt eine super Erfahrung. Er war total engagiert, hat immer mitgedacht und super zuverlässig gearbeitet. Vor allem seine kreativen Ideen haben unser Projekt richtig nach vorne gebracht.',
-      role: 'Teamkollege',
-      profileUrl:"https://github.com/MirkanPolat",
+        'main-page.references.colleague-quote.quote-2',
+      role: 'main-page.references.colleague-quote.role-2',
+      profileUrl: 'https://github.com/MirkanPolat',
     },
     {
       name: 'Vadim Michel',
       quote:
-        'Simon created an amazing Dark Souls Remastered Zweihander Build. The coop was really efficiant and fun. The bosses fell like leaves in autumn.',
-      role: 'Frontend Developer',
-      profileUrl:"",
+        'main-page.references.colleague-quote.quote-1',
+      role: 'main-page.references.colleague-quote.role-1',
+      profileUrl: '',
     },
   ];
+
+  myProjects: Project[] = [
+    {
+      backgroundColor: '#F9AF42',
+      picUrl: './assets/img/portfolio/project-preview-placeholder.svg',
+      cogwheelUrl: './assets/img/portfolio/project/cogwheel-180.svg',
+      learning:"",
+      name: 'Join',
+      emojiUrl: './assets/img/icons/project/emoji-checkmark.svg',
+      usedSkills: 'Angular | TypeScript | Firebase | HTML | CSS',
+      description: 'main-page.portfolio.project.description-join',
+      gitHubUrl: 'https://github.com/SimonMFuchs',
+      projectUrl: '',
+    },
+    {
+      backgroundColor: '#679AAC',
+      picUrl: './assets/img/portfolio/project/el-pollo-loco.svg',
+      cogwheelUrl: './assets/img/portfolio/project/cogwheel-180-yellow.svg',
+      learning:"",
+      name: 'El Pollo Loco',
+      emojiUrl: './assets/img/icons/project/emoji-chick.svg',
+      usedSkills: 'JavaScript | HTML | CSS',
+      description: 'main-page.portfolio.project.description-el-pollo-loco',
+      gitHubUrl: 'https://github.com/SimonMFuchs',
+      projectUrl: '',
+    },
+    {
+      backgroundColor: '#FF834F',
+      picUrl: './assets/img/portfolio/project/pokedex-3.svg',
+      cogwheelUrl: './assets/img/portfolio/project/cogwheel-180-yellow.svg',
+      learning:"",
+      name: 'Pokédex',
+      emojiUrl: './assets/img/icons/project/pokeball.svg',
+      usedSkills: 'JavaScript | CSS | HTML | API',
+      description: 'main-page.portfolio.project.description-pokedex',
+      gitHubUrl: 'https://github.com/SimonMFuchs',
+      projectUrl: '',
+    },
+  ];
+
+  currentProject: number = 0;
 
   constructor() {}
 }
@@ -59,4 +100,17 @@ interface Testimonial {
   quote: string;
   role: string;
   profileUrl: string;
+}
+
+interface Project {
+  backgroundColor: string;
+  picUrl: string;
+  cogwheelUrl: string;
+  learning:string;
+  name: string;
+  emojiUrl: string;
+  usedSkills: string;
+  description: string;
+  gitHubUrl: string;
+  projectUrl: string;
 }

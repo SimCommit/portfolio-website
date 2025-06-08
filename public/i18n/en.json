@@ -18,10 +18,34 @@
     "skills": {
       "headline": "Core Competencies",
       "description": "With TypeScript and Angular, I build dynamic single-page applications. My vanilla JavaScript projects are also responsive and interactive. I rely on modern HTML and CSS to create structured layouts and appealing designs.",
-	  "growth-mindset": {
-		"title": "Don't see the skill you are looking for?",
-		"text":"Feel free to contact me. I look forward to expanding on my previous knowledge. Also I have a special interest in learning:"
-	  }
+      "growth-mindset": {
+        "title": "Don't see the skill you are looking for?",
+        "text": "Feel free to contact me. I look forward to expanding on my previous knowledge. Also I have a special interest in learning:"
+      }
+    },
+    "portfolio": {
+      "headline": "My Work",
+      "text": "Take a look at a selection of my projects – You'll get the best sense of my skills by exploring my work yourself.",
+      "project": {
+		"learning":"",
+        "description-join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+        "description-pokedex": "Interactive Pokédex with data from the PokéAPI. Browse Pokémon by type, view details, and explore animated stats and sprites.",
+        "description-el-pollo-loco": "2D jump-and-run game built with JavaScript and canvas. Battle enemies, collect bottles, and defeat the final boss with strategic timing.",
+        "button-previous": "<< Previous project",
+        "button-next": "Next project >>"
+      }
+    },
+    "references": {
+      "headline": "What my colleagues say about me",
+      "colleague-quote": {
+        "quote-1": "Simon created an amazing Dark Souls Remastered Zweihander Build. The coop was really efficiant and fun. The bosses fell like leaves in autumn.",
+        "role-1": "Frontend Developer",
+        "quote-2": "Working with Simon was a truly great experience. He was highly committed, proactive, and consistently reliable. Most of all, his creative ideas really helped move our project forward.",
+        "role-2": "Team Colleague",
+        "quote-3": "",
+        "role-3": ""
+      },
+      "button-linkedin": "To Linkedin profile >>"
     }
   }
 }

@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { ShowcaseDataService } from '../../showcase-data.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-colleague-quote',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './colleague-quote.component.html',
   styleUrl: './colleague-quote.component.scss',
 })
