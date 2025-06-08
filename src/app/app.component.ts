@@ -1,22 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { MainPageComponent } from './main-page/main-page.component';
 import { MainPageStateService } from './main-page/main-page-state.service';
 import { CommonModule } from '@angular/common';
 import { MenuOverlayComponent } from './overlays/menu-overlay/menu-overlay.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { marker as _ } from '@colsen1991/ngx-translate-extract-marker';
-import { Subscription } from 'rxjs';
+// import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   imports: [
     RouterOutlet,
     HeaderComponent,
-    FooterComponent,
-    MainPageComponent,
     MenuOverlayComponent,
     CommonModule,
     TranslateModule,
