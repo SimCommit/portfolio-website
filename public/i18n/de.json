@@ -1,3 +1,19 @@
 {
-  "main-page.hero.subheadline-part-1": "Hallo, ich bin"
+  "main-page": {
+    "hero.subheadline-part-1": "Hallo, ich bin",
+    "hero.contact-button": "Kontaktiere mich",
+    "about-me": {
+      "card-part-1": "Hey, ich heiße Simon. Zu sehen, wie Ideen durch meinen Code Wirklichkeit werden, erfüllt mich. Von Projekt zu Projekt, sind nicht nur die Herausforderungen gewachsen, sondern auch ich. Und im Team können wir noch höher hinaus.",
+      "card-part-2": "Lass uns zusammen etwas neues erschaffen!",
+      "contact-button": "Zum Kontakt",
+      "about-me-overlay": {
+        "headline": "Mehr über mich",
+        "bp-1": "Team Player",
+        "bp-2": "Immer am Lernen",
+        "bp-3": "Kreativ",
+        "bp-4": "In München daheim",
+        "bp-5": "Offen für Home Office"
+      }
+    }
+  }
 }

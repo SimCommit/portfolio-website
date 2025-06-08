@@ -16,7 +16,7 @@ export class MainPageStateService {
     '#1D1D1D',
   ];
 
-  currentLanguage:string = "de";
+  currentLanguage:string = "en";
 
   hideMenu: boolean = true;
 

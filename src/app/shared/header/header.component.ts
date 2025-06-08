@@ -7,41 +7,27 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [
-    SocialLinksComponent,
-    CommonModule,
-    TranslateModule,
-    RouterLink
-  ],
+  imports: [SocialLinksComponent, CommonModule, TranslateModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   mainPageState = inject(MainPageStateService);
 
-  isEnglish: Boolean = false;
-
   constructor(private translate: TranslateService) {
-    this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use(this.translate.getBrowserLang() || 'en');
   }
-
-  // toggleLang(): void {
-  //   this.isEnglish = !this.isEnglish;
-  // }
 
   openMenu(): void {
     this.mainPageState.hideMenu = false;
   }
 
   toggleLanguage(): void {
-    if (this.isEnglish) {
-      this.isEnglish = false;
+    if (this.mainPageState.currentLanguage === 'en') {
       this.translate.use('de');
+      this.mainPageState.currentLanguage = 'de';
     } else {
-      this.isEnglish = true;
       this.translate.use('en');
+      this.mainPageState.currentLanguage = 'en';
     }
   }
 }

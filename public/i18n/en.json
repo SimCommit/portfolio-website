@@ -1,3 +1,19 @@
 {
-	"main-page.hero.subheadline-part-1": "Hello there, I'm"
+  "main-page": {
+    "hero.subheadline-part-1": "Hello there, I'm",
+    "hero.contact-button": "Get in Touch",
+    "about-me": {
+      "card-part-1": "Hey, my name is Simon. It’s incredibly rewarding to see ideas take shape through my code. From project to project, not only have the challenges grown, but so have I. And as a team, we can reach even greater heights.",
+      "card-part-2": "Let's connect and create something amazing together!",
+      "contact-button": "Let's talk",
+      "about-me-overlay": {
+        "headline": "More about me",
+        "bp-1": "Team Player",
+        "bp-2": "Continuosly learning",
+        "bp-3": "Creative Thinker",
+        "bp-4": "Based in Munich",
+        "bp-5": "Open to work remote"
+      }
+    }
+  }
 }
