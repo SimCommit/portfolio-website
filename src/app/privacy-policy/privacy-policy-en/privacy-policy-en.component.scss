@@ -1,7 +1,7 @@
 @use "./../../../styles/_mixins" as *;
 @use "./../../../styles/_variables" as *;
 
-main {
+section {
   @include dFlex($fd: column);
   @include maxWidth1920();
   color: $main-ivory;
@@ -9,19 +9,34 @@ main {
   padding: 160px 80px;
 }
 
-h1,
 h2,
 h3 {
   font-family: "Quicksand", sans-serif;
   line-height: unset;
 }
 
+h2 {
+    margin-top: 16px;
+    font-size: 32px;
+}
+
+h3 {
+    text-align: start;
+    margin-top: 8px;
+}
+
+ul {
+    padding-left: 24px;
+}
+
 strong {
   font-weight: bold;
 }
 
-#app-footer {
-  @include maxWidth1920();
-  width: 100%;
-  color: $main-ivory;
+a {
+    color: $main-yellow;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
