@@ -46,6 +46,30 @@
         "role-3": ""
       },
       "button-linkedin": "Zum Linkedin Profil >>"
+    },
+    "contact": {
+      "headline": "Gemeinsam schaffen wir mehr!",
+      "tagline": "Stehst du vor einer Herausforderung?",
+      "text": "In einem gemeinsamen Projekt, können wir sie meistern. Ich kann das Design der Sofrware umsetzen und interaktive Logik gestalten.",
+      "form": {
+        "name-title": "Wie heißt du?",
+        "name-placeholder": "Dein Name hier rein",
+        "name-placeholder-warning": "Ups, dein Name fehlt",
+        "email-title": "Wie ist deine Email?",
+        "email-placeholder": "deine-email@email.com",
+        "email-placeholder-warning": "Hoppla! Deine Email wird benötigt",
+        "message-title": "Wie kann ich dir helfen?",
+        "message-placeholder": "Hallo Simon, ich bin interessiert an...",
+        "message-placeholder-warning": "Was für Software brauchst du?",
+        "checkbox-text-1": "Ich habe die",
+        "checkbox-text-2": "Datenschutzerklärung",
+        "checkbox-text-3": "gelesen und bin einverstanden mit der Verarbeitung meiner Daten.",
+        "name-warning": "Ist dein Name so kurz?",
+        "email-warning": "Deine Email scheint unvollständig zu sein.",
+        "message-warning": "Bitte gib mir etwas mehr Informationen in deiner Nachricht mit.",
+        "checkbox-warning": "Bitte akzeptiere die Datenschutzerklärung.",
+        "button": "Schicke eine Nachricht"
+      }
     }
   }
 }

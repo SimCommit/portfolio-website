@@ -4,10 +4,11 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, FormsModule, FooterComponent, RouterLink],
+  imports: [CommonModule, FormsModule, FooterComponent, RouterLink, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })

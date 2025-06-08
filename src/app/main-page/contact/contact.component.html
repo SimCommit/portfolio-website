@@ -1,33 +1,31 @@
 <section>
     <main>
         <div id="contact-text">
-            <h2>Gemeinsam schaffen wir mehr!</h2>
-            <p id="c-question">Hast du eine Herausforderung?</p>
-            <p>In einem gemeinsamen Projekt, können wir sie meistern. Ich kann das Design der Sofrware umsetzen und
-                interaktive Logik gestalten.
-            </p>
+            <h2>{{"main-page.contact.headline" | translate}}</h2>
+            <p id="c-question">{{"main-page.contact.tagline" | translate}}</p>
+            <p>{{"main-page.contact.text" | translate}}</p>
         </div>
 
         <form id="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div id="contact-info-group">
                 <label for="name" class="text-input">
-                    <span>Wie heißt du?</span>
-                    <input [(ngModel)]="contactData.name" [ngClass]="{'warning-border': !name.valid && name.touched}" id="name" name="name" type="text" placeholder="Deinen Name hier rein" required
+                    <span>{{"main-page.contact.form.name-title" | translate}}</span>
+                    <input [(ngModel)]="contactData.name" [ngClass]="{'warning-border': !name.valid && name.touched}" id="name" name="name" type="text" placeholder="{{'main-page.contact.form.name-placeholder' | translate}}" required
                         #name="ngModel" minlength="3">
                 </label>
 
                 <label for="email" class="text-input">
-                    <span>Wie ist deine Email?</span>
+                    <span>{{'main-page.contact.form.email-title' | translate}}</span>
                     <input [(ngModel)]="contactData.email" [ngClass]="{'warning-border': !email.valid && email.touched}"  id="email" name="email" type="email"
-                        placeholder="deineemail@email.com" required
+                        placeholder="{{'main-page.contact.form.email-placeholder' | translate}}" required
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
                 </label>
             </div>
 
             <label for="message" class="text-input">
-                <span>Wie kann ich dir helfen?</span>
+                <span>{{'main-page.contact.form.message-title' | translate}}</span>
                 <textarea [(ngModel)]="contactData.message" [ngClass]="{'warning-border': !message.valid && message.touched}" id="message" name="message" type="text" rows="1" 
-                    placeholder="Hallo Simon, ich bin interessiert an..." required #message="ngModel" minlength="16">
+                    placeholder="{{'main-page.contact.form.message-placeholder' | translate}}" required #message="ngModel" minlength="16">
                 </textarea>
 
             </label>
@@ -40,31 +38,31 @@
                         (click)="toggleCheckedState(checkboxInput)"></span>
                 </label>
                 <div>
-                    <p id="checkbox-info-text">Ich habe die <a routerLink="privacy-policy">Datenschutzerklärung</a>
-                        gelesen und bin einverstanden mit der Verarbeitung meiner Daten.
+                    <p id="checkbox-info-text">{{'main-page.contact.form.checkbox-text-1' | translate}} <a routerLink="checkbox">{{'main-page.contact.form.checkbox-text-2' | translate}}</a>
+                        {{'main-page.contact.form.checkbox-text-3' | translate}}
                     </p>
                     @if (!name.valid && name.touched) {
                     <p class="warning-text">
-                        Ist dein Name so kurz?
+                        {{'main-page.contact.form.name-warning' | translate}}
                     </p>
                     } @else if (!email.valid && email.touched) {
                     <p class="warning-text">
-                        Deine Email scheint unvollständig zu sein.
+                        {{'main-page.contact.form.email-warning' | translate}}
                     </p>
                     } @else if (!message.valid && message.touched) {
                     <p class="warning-text">
-                        Bitte gib mir etwas mehr Informationen in deiner Nachricht mit.
+                        {{'main-page.contact.form.message-warning' | translate}}
                     </p>
                     } @else if (!checkbox.valid && checkbox.touched) {
                     <p class="warning-text">
-                        Bitte akzeptiere die Datenschutzerklärung.
+                        {{'main-page.contact.form.checkbox-warning' | translate}}
                     </p>
                     }
                 </div>
             </div>
 
 
-            <button type="submit" [disabled]="!contactForm.valid">Schicke eine Nachricht</button>
+            <button type="submit" [disabled]="!contactForm.valid">{{'main-page.contact.form.button' | translate}}</button>
         </form>
     </main>
 

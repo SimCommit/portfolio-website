@@ -27,7 +27,7 @@
       "headline": "My Work",
       "text": "Take a look at a selection of my projects – You'll get the best sense of my skills by exploring my work yourself.",
       "project": {
-		"learning":"",
+        "learning": "",
         "description-join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         "description-pokedex": "Interactive Pokédex with data from the PokéAPI. Browse Pokémon by type, view details, and explore animated stats and sprites.",
         "description-el-pollo-loco": "2D jump-and-run game built with JavaScript and canvas. Battle enemies, collect bottles, and defeat the final boss with strategic timing.",
@@ -46,6 +46,30 @@
         "role-3": ""
       },
       "button-linkedin": "To Linkedin profile >>"
+    },
+    "contact": {
+      "headline": "Together we can achieve more!",
+      "tagline": "Facing a challenge?",
+      "text": "In a shared project, we’ll make it work. I can bring your software design to life and implement interactive logic.",
+      "form": {
+        "name-title": "What's your name?",
+        "name-placeholder": "Your name goes here",
+        "name-placeholder-warning": "Oops! It seems your name is missing",
+        "email-title": "What's your email?",
+        "email-placeholder": "youremail@email.com",
+        "email-placeholder-warning": "Hoppla! your email is required",
+        "message-title": "How can I help you?",
+        "message-placeholder": "Hello Simon, I am interested in...",
+        "message-placeholder-warning": "What do you need to develop?",
+        "checkbox-text-1": "I've read the",
+        "checkbox-text-2": "privacy policy",
+        "checkbox-text-3": "and agree to the processing of my data.",
+        "name-warning": "Is your name really that short?",
+        "email-warning": "Your email seems incomplete.",
+        "message-warning": "Please include a bit more detail in your message.",
+        "checkbox-warning": "Please accept the privacy policy.",
+        "button": "Drop a Line"
+      }
     }
   }
 }
