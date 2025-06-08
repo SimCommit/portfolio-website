@@ -3,7 +3,6 @@
 
 section {
   @include dFlex($fd: column);
-  padding: 16px 80px;
 
 
   div {
@@ -16,4 +15,5 @@ section {
   @include maxWidth1920();
   width: 100%;
   color: $main-ivory;
+  padding: 0 40px;
 }
