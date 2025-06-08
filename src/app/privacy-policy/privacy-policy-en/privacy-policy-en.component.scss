@@ -1,0 +1,27 @@
+@use "./../../../styles/_mixins" as *;
+@use "./../../../styles/_variables" as *;
+
+main {
+  @include dFlex($fd: column);
+  @include maxWidth1920();
+  color: $main-ivory;
+  width: 100%;
+  padding: 160px 80px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Quicksand", sans-serif;
+  line-height: unset;
+}
+
+strong {
+  font-weight: bold;
+}
+
+#app-footer {
+  @include maxWidth1920();
+  width: 100%;
+  color: $main-ivory;
+}
