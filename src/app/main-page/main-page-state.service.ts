@@ -16,6 +16,8 @@ export class MainPageStateService {
     '#1D1D1D',
   ];
 
+  currentLanguage:string = "de";
+
   hideMenu: boolean = true;
 
   mobileView: boolean = false;

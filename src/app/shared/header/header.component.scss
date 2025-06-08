@@ -19,18 +19,29 @@ header {
   }
 }
 
-span {
+a {
   font-size: 32px;
   font-weight: bold;
   color: $main-ivory;
+}
+
+#fs-logo {
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover .fuchs-font {
+      color: $main-coral;
+
+  }
 }
 
 .fuchs-font-black {
   color: $main-black;
 }
 
-.fuchs-font-hover:hover {
-  cursor: pointer;
+.fuchs-font:hover {
   color: $main-coral;
 }
 

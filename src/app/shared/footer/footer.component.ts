@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { MainPageStateService } from '../../main-page/main-page-state.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,5 +9,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+
+    mainPageState = inject(MainPageStateService);
+
 
 }

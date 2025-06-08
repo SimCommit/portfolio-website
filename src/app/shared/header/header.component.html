@@ -4,12 +4,12 @@
         <app-social-links></app-social-links>
         }
 
-        <div>
+        <div id="fs-logo" [routerLink]="['/']">
             <img src="./assets/img/logo-sf.svg" alt="Logo Simon Fuchs">
-            <span
-                [ngClass]="{'fuchs-font-hover': mainPageState.currentSection !== 1, 'fuchs-font-black': mainPageState.currentSection === 2 || mainPageState.currentSection === 4 }">
+            <a
+                [ngClass]="{'fuchs-font': mainPageState.currentSection !== 1, 'fuchs-font-black': mainPageState.currentSection === 2 || mainPageState.currentSection === 4 }">
                 Fuchs
-            </span>
+            </a>
         </div>
 
         <div>
