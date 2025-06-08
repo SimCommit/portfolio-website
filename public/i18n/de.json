@@ -7,12 +7,20 @@
       "card-part-2": "Lass uns zusammen etwas neues erschaffen!",
       "contact-button": "Zum Kontakt",
       "about-me-overlay": {
-        "headline": "Mehr über mich",
+        "title": "Mehr über mich",
         "bp-1": "Team Player",
         "bp-2": "Immer am Lernen",
         "bp-3": "Kreativ",
         "bp-4": "In München daheim",
         "bp-5": "Offen für Home Office"
+      }
+    },
+    "skills": {
+      "headline": "Kernkompetenzen",
+      "description": "Mit TypeScript und Angular realisiere ich dynamische Single-Page-Anwendungen. Auch meine Projekte in vanilla JavaScript sind responsiv und interaktiv. Dabei setze ich auf modernes HTML und CSS, um strukturierte Layouts und ansprechende Designs umzusetzen.",
+      "growth-mindset": {
+        "title": "Du vermisst eine bestimmte Fähigkeit?",
+        "text": "Schreib mir gerne! Ich freue mich darauf, mein Wissen weiter auszubauen. Besonders interessiere ich mich für folgende Technologien:"
       }
     }
   }

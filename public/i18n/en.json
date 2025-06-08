@@ -7,13 +7,21 @@
       "card-part-2": "Let's connect and create something amazing together!",
       "contact-button": "Let's talk",
       "about-me-overlay": {
-        "headline": "More about me",
+        "title": "More about me",
         "bp-1": "Team Player",
         "bp-2": "Continuosly learning",
         "bp-3": "Creative Thinker",
         "bp-4": "Based in Munich",
         "bp-5": "Open to work remote"
       }
+    },
+    "skills": {
+      "headline": "Core Competencies",
+      "description": "With TypeScript and Angular, I build dynamic single-page applications. My vanilla JavaScript projects are also responsive and interactive. I rely on modern HTML and CSS to create structured layouts and appealing designs.",
+	  "growth-mindset": {
+		"title": "Don't see the skill you are looking for?",
+		"text":"Feel free to contact me. I look forward to expanding on my previous knowledge. Also I have a special interest in learning:"
+	  }
     }
   }
 }
