@@ -6,6 +6,16 @@ import { Injectable } from '@angular/core';
 export class MainPageStateService {
   currentSection: number = 6;
 
+  anchors: string[] = [
+    '#',
+    '#hero',
+    '#about-me',
+    '#skills',
+    '#portfolio',
+    '#references',
+    '#contact',
+  ];
+
   currentBackground: string[] = [
     '',
     '#679AAC',
@@ -16,11 +26,11 @@ export class MainPageStateService {
     '#1D1D1D',
   ];
 
-  currentLanguage: "de" | "en" = "en";
+  currentLanguage: 'de' | 'en' = 'en';
 
   hideMenu: boolean = true;
-  
-  burgerMenuIsOpen:boolean = false;
+
+  burgerMenuIsOpen: boolean = false;
 
   mobileView: boolean = false;
 
