@@ -1,15 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ShowcaseDataService } from '../../showcase-data.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-project',
-  imports: [TranslateModule],
+  imports: [TranslateModule, CommonModule],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss',
 })
 export class ProjectComponent {
   showcaseData = inject(ShowcaseDataService);
+
+  emojiIsHovered:boolean = false;
 
   previousProjcet(): void {
     if (this.showcaseData.currentProject > 0) {
@@ -27,5 +30,9 @@ export class ProjectComponent {
     } else {
       this.showcaseData.currentProject = 0;
     }
+  }
+
+  changeHoverState(state:boolean):void {
+    this.emojiIsHovered = state;   
   }
 }

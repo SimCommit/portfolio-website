@@ -1,23 +1,28 @@
 <div id="project-showcase">
     <div id="p-preview" [style.background-color]="showcaseData.myProjects[showcaseData.currentProject].backgroundColor">
         <img id="p-pic" src="{{showcaseData.myProjects[showcaseData.currentProject].picUrl}}" alt="Project-$ pic">
-        <img id="cogwheel-bg" src="{{showcaseData.myProjects[showcaseData.currentProject].cogwheelUrl}}" alt="cogwheel animation">
+        <img id="cogwheel-bg" src="{{showcaseData.myProjects[showcaseData.currentProject].cogwheelUrl}}"
+            alt="cogwheel animation">
     </div>
 
     <div id="p-content">
         <div id="p-details">
             <div id="p-header">
-                <div id="learning-card">
-                    <p id="learning-text">{{showcaseData.myProjects[showcaseData.currentProject].learning | translate}}</p>
+                <div class="disappear" [ngClass]="{'appear': emojiIsHovered}" id="learning-card">
+                    <p id="learning-text">{{showcaseData.myProjects[showcaseData.currentProject].learning | translate}}
+                    </p>
                 </div>
                 <h3>{{showcaseData.myProjects[showcaseData.currentProject].name}}</h3>
                 <div id="emoji-container">
-                    <img src="{{showcaseData.myProjects[showcaseData.currentProject].emojiUrl}}" alt="Checkmark Emoji">
-                </div>            </div>
+                    <img (mouseenter)="changeHoverState(true)" (mouseleave)="changeHoverState(false)"
+                        src="{{showcaseData.myProjects[showcaseData.currentProject].emojiUrl}}" alt="Checkmark Emoji">
+                </div>
+            </div>
             <p id="p-used-skills">{{showcaseData.myProjects[showcaseData.currentProject].usedSkills}}</p>
             <p id="p-description">{{showcaseData.myProjects[showcaseData.currentProject].description | translate }}</p>
             <div id="p-links">
-                <a href="{{showcaseData.myProjects[showcaseData.currentProject].gitHubUrl}}">GitHub <img src="./assets/img/icons/project/arrow-right.svg" alt="Icon Arrow Right"></a>
+                <a href="{{showcaseData.myProjects[showcaseData.currentProject].gitHubUrl}}">GitHub <img
+                        src="./assets/img/icons/project/arrow-right.svg" alt="Icon Arrow Right"></a>
                 <a>Live Test <img src="./assets/img/icons/project/arrow-right.svg" alt="Icon Arrow Right"></a>
             </div>
         </div>
