@@ -49,6 +49,7 @@
 }
 
 #learning-card {
+  z-index: 8;
   position: absolute;
   right: 0;
   top: 0;
@@ -56,7 +57,7 @@
   width: 80%;
   background-color: $main-blue;
   color: $main-ivory;
-  margin-top: -100px;
+  transform: translateY(-110%);
 
   #learning-text {
     margin-top: 0;
