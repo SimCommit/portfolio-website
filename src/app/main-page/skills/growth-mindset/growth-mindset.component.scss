@@ -4,6 +4,7 @@
 #growth-mindset {
   @include cardBoxStyle($bc: $main-ivory);
   width: 24rem;
+  max-width: 360px;
   background-color: $main-yellow;
 
   p {

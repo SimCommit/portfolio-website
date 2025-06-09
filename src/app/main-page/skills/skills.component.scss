@@ -78,8 +78,21 @@ section {
 }
 // #endregion
 
+// #region app-growth-mindset
 #app-growth-mindset {
+  z-index: 2;
   position: absolute;
-  bottom: 16px;
-  left: 240px;
+  bottom: 32px;
+  left: 160px;
+  transition: transform 225ms ease-in-out;
+  pointer-events: none;
 }
+
+.disappear {
+  transform: translateY(250%);
+}
+
+.appear {
+  transform: translateY(0%);
+}
+// #endregion

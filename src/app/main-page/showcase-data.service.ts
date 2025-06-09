@@ -62,14 +62,14 @@ export class ShowcaseDataService {
     {
       backgroundColor: '#679AAC',
       picUrl: './assets/img/portfolio/project/el-pollo-loco.svg',
-      cogwheelUrl: './assets/img/portfolio/project/cogwheel-180-yellow.svg',
+      cogwheelUrl: './assets/img/portfolio/project/cogwheel-180.svg',
       learning:"main-page.portfolio.project.learning-el-pollo-loco",
       name: 'El Pollo Loco',
       emojiUrl: './assets/img/icons/project/emoji-chick.svg',
       usedSkills: 'JavaScript | HTML | CSS',
       description: 'main-page.portfolio.project.description-el-pollo-loco',
-      gitHubUrl: 'https://github.com/SimonMFuchs',
-      projectUrl: '',
+      gitHubUrl: 'https://github.com/SimonMFuchs/el-pollo-loco',
+      projectUrl: 'https://simon-fuchs.developerakademie.net/el-pollo-loco/index.html',
     },
     {
       backgroundColor: '#FF834F',
@@ -80,12 +80,12 @@ export class ShowcaseDataService {
       emojiUrl: './assets/img/icons/project/pokeball.svg',
       usedSkills: 'JavaScript | CSS | HTML | API',
       description: 'main-page.portfolio.project.description-pokedex',
-      gitHubUrl: 'https://github.com/SimonMFuchs',
-      projectUrl: '',
+      gitHubUrl: 'https://github.com/SimonMFuchs/pokedex',
+      projectUrl: 'https://simon-fuchs.developerakademie.net/pokedex/index.html',
     },
   ];
 
-  currentProject: number = 0;
+  currentProject: number = 1;
 
   constructor() {}
 }

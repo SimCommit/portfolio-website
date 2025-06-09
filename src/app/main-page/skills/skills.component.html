@@ -6,11 +6,14 @@
 
     <div id="skills-showcase">
 
-        <div id="cogwheel-container">
+        <div  (mouseenter)="changeHoverState(true)" (mouseleave)="changeHoverState(false)" id="cogwheel-container">
             <img id="cogwheel-1" src="./assets/img/cogwheel/cogwheel-120.svg" alt="">
 
             <img id="learning" src="./assets/img/cogwheel/learning-40.svg" alt="">
         </div>
+        
+        <app-growth-mindset class="disappear" [ngClass]="{'appear': emojiIsHovered}"
+            id="app-growth-mindset"></app-growth-mindset>
 
         <div id="tech-card">
             @for (tech of showcaseData.myTechs; track $index) {
@@ -22,6 +25,5 @@
         </div>
     </div>
 
-    <app-growth-mindset id="app-growth-mindset"></app-growth-mindset>
 
 </section>
