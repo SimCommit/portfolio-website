@@ -51,6 +51,10 @@ form {
   margin: 8px 4px 8px 0;
   width: 100%;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   span {
     font-size: 20px;
     font-weight: bold;
@@ -72,6 +76,10 @@ form {
       color: $main-ivory;
       opacity: 1;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   textarea {
@@ -81,6 +89,11 @@ form {
   }
 }
 
+.text-input:hover span,
+.text-input:hover span,
+.text-input:hover span {
+  color: $main-coral;
+}
 
 input:-webkit-autofill,
 textarea:-webkit-autofill {
