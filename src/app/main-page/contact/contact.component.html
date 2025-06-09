@@ -8,13 +8,13 @@
 
         <form id="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div id="contact-info-group">
-                <label for="name" class="text-input">
+                <label class="text-input">
                     <span>{{"main-page.contact.form.name-title" | translate}}</span>
                     <input [(ngModel)]="contactData.name" [ngClass]="{'warning-border': !name.valid && name.touched}" id="name" name="name" type="text" placeholder="{{'main-page.contact.form.name-placeholder' | translate}}" required
                         #name="ngModel" minlength="3">
                 </label>
 
-                <label for="email" class="text-input">
+                <label class="text-input">
                     <span>{{'main-page.contact.form.email-title' | translate}}</span>
                     <input [(ngModel)]="contactData.email" [ngClass]="{'warning-border': !email.valid && email.touched}"  id="email" name="email" type="email"
                         placeholder="{{'main-page.contact.form.email-placeholder' | translate}}" required
@@ -22,7 +22,7 @@
                 </label>
             </div>
 
-            <label for="message" class="text-input">
+            <label class="text-input">
                 <span>{{'main-page.contact.form.message-title' | translate}}</span>
                 <textarea [(ngModel)]="contactData.message" [ngClass]="{'warning-border': !message.valid && message.touched}" id="message" name="message" type="text" rows="1" 
                     placeholder="{{'main-page.contact.form.message-placeholder' | translate}}" required #message="ngModel" minlength="16">
