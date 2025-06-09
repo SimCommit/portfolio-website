@@ -48,6 +48,21 @@
   width: 40rem;
 }
 
+#learning-card {
+  position: absolute;
+  right: 0;
+  top: 0;
+  @include cardBoxStyle($bc: $main-ivory);
+  width: 80%;
+  background-color: $main-blue;
+  color: $main-ivory;
+  margin-top: -100px;
+
+  #learning-text {
+    margin-top: 0;
+  }
+}
+
 #p-details {
   @include dFlex($fd: column, $ai: flex-start, $jc: center);
   @include cardBoxStyle();
