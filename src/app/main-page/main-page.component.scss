@@ -1,7 +1,7 @@
 @use "./../../styles/_mixins" as *;
 @use "./../../styles/_variables" as *;
 
-main {
+section {
   @include dFlex($fd:column);
   @include maxWidth1920();
   width: 100%;
@@ -10,12 +10,10 @@ main {
 #app-section-nav {
   width: 32px;
   position: fixed;
-  top: 0;
-  right: 2rem;
   z-index: 8;
+  right: 32px;
+  // right: calc(((100vw - 1920px) / 2) + 32px);
 }
-
-
 
 #app-hero,
 #app-about-me,

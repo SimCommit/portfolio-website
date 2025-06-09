@@ -38,11 +38,11 @@ export class ShowcaseDataService {
       profileUrl: 'https://github.com/MirkanPolat',
     },
     {
-      name: 'Vadim Michel',
+      name: 'Markus Fischer',
       quote:
-        'main-page.references.colleague-quote.quote-1',
-      role: 'main-page.references.colleague-quote.role-1',
-      profileUrl: '',
+        'main-page.references.colleague-quote.quote-3',
+      role: 'main-page.references.colleague-quote.role-3',
+      profileUrl: 'https://github.com/mideasdesign ',
     },
   ];
 

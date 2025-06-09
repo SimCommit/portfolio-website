@@ -3,6 +3,7 @@
     "hero.subheadline-part-1": "Hello there, I'm",
     "hero.contact-button": "Get in Touch",
     "about-me": {
+      "headline":"About Me",
       "card-part-1": "Hey, my name is Simon. It’s incredibly rewarding to see ideas take shape through my code. From project to project, not only have the challenges grown, but so have I. And as a team, we can reach even greater heights.",
       "card-part-2": "Let's connect and create something amazing together!",
       "contact-button": "Let's talk",
@@ -42,10 +43,10 @@
       "colleague-quote": {
         "quote-1": "Simon created an amazing Dark Souls Remastered Zweihander Build. The coop was really efficiant and fun. The bosses fell like leaves in autumn.",
         "role-1": "Frontend Developer",
-        "quote-2": "Working with Simon was a truly great experience. He was highly committed, proactive, and consistently reliable. Most of all, his creative ideas really helped move our project forward.",
+        "quote-2": "To work with Simon was a truly great experience. He was highly committed, proactive, and consistently reliable. Most of all, his creative ideas really helped move our project forward.",
         "role-2": "Team Colleague",
-        "quote-3": "",
-        "role-3": ""
+        "quote-3": "Working with Simon on our Kochwelt project was a real pleasure. His dedication and insightful questions truly pushed the project forward. I would gladly start another project with him anytime.",
+        "role-3": "Team Colleague"
       },
       "button-linkedin": "To Linkedin profile >>"
     },

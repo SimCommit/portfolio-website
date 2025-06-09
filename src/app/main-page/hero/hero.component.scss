@@ -4,9 +4,10 @@
 section {
   @include sectionBoxStyle();
   @include dFlex($jc: space-around);
+  width: 100%;
 
   img {
-    width: min(55rem, 80dvh);
+    width: 45rem;
     object-position: bottom;
   }
 }
@@ -14,6 +15,7 @@ section {
 #hero-content {
   @include dFlex($fd: column, $ai: flex-start, $g: 2rem);
   @include maxWidth1920();
+  width: 100%;
 }
 
 #headline {
@@ -26,11 +28,13 @@ section {
   @include dFlex($ai: flex-end);
   margin: 0 2rem;
   height: 100%;
+  width: 100%;
 
   img {
-    background: url("./../../../../public/assets/img/Capa_bg.svg") no-repeat top center;
+    background: url("./../../../../public/assets/img/Capa_bg.svg") no-repeat top
+      center;
     background-position: top 10% right 25%;
-    background-size: min(32rem, 50dvh);
+    background-size: 32rem;
     align-self: flex-end;
   }
 }
@@ -77,3 +81,30 @@ section {
 a {
   @include primaryButton();
 }
+
+// #region media queries
+@media (max-width: 1024px) {
+  section {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (max-aspect-ratio: 4/3) {
+  section {
+    flex-direction: column;
+    padding-left: 4rem;
+    padding-right: 4rem;
+
+    #hero-content {
+      align-self: flex-start;
+    }
+
+    #hero-pic {
+      align-self: flex-end;
+      margin-top: -24rem;
+    }
+  }
+}
+
+// #endregion
