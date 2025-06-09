@@ -17,8 +17,24 @@ export class HeaderComponent {
   constructor(private translate: TranslateService) {
   }
 
-  openMenu(): void {
+  openBurgerOverlay(): void {
     this.mainPageState.hideMenu = false;
+  }
+  
+  /**
+ * Opens the burger menu by setting the `burgerMenuIsOpen` flag after a short "delay".
+ *
+ * @property {boolean} mainPageState.burgerMenuIsOpen
+ *   Indicates whether the burger menu is currently open.
+ *
+ * Note: This uses a `setTimeout(..., 0)` workaround to defer the state change until
+ * the overlay is fully rendered. Without this delay, the menu might slide in too early,
+ * before the overlay becomes visible.
+ */
+  openBurgerMenu():void {
+    setTimeout(() => {
+          this.mainPageState.burgerMenuIsOpen = true;
+    }, 0);
   }
 
   toggleLanguage(): void {

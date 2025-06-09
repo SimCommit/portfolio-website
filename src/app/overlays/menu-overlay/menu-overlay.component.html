@@ -1,6 +1,6 @@
 <div id="overlay-wrapper" (click)="closeFromOverlay()">
     <div id="overlay-container">
-        <nav (click)="prevent($event)">
+        <nav class="disappear" [ngClass]="{'appear': mainPageState.burgerMenuIsOpen}" (click)="prevent($event)">
             <div class="nav-header">
                 <h3>Menu</h3>
                 <button (click)="closeFromOverlay()"></button>

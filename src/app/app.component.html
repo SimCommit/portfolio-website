@@ -1,6 +1,6 @@
 <main [ngStyle]="{'background-color': mainPageState.currentBackground[mainPageState.currentSection]}">
     <section>
-        <app-menu-overlay (closeOrder)="closeMenu()" [hidden]="mainPageState.hideMenu"
+        <app-menu-overlay (closeOrder)="closeBurgerOverlay()" [hidden]="mainPageState.hideMenu"
             id="app-menu-overlay"></app-menu-overlay>
         <app-header id="app-header"></app-header>
         <router-outlet id="router-outlet" />

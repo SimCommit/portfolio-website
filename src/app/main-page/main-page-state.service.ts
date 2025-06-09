@@ -19,6 +19,8 @@ export class MainPageStateService {
   currentLanguage: "de" | "en" = "en";
 
   hideMenu: boolean = true;
+  
+  burgerMenuIsOpen:boolean = false;
 
   mobileView: boolean = false;
 

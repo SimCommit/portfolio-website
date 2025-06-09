@@ -5,6 +5,7 @@
   height: 100vh;
   height: 100dvh;
   background-color: rgba(0, 0, 0, 0.2); //nur zum testen
+  overflow: hidden;
 }
 
 #overlay-container {
@@ -24,6 +25,7 @@ nav {
   padding: 10px;
   background-color: $main-ivory;
   z-index: 10;
+  transition: transform 225ms ease-in-out;
 }
 
 .nav-header {
@@ -69,3 +71,14 @@ nav {
     }
   }
 }
+
+// #region nav slide-in animation
+
+.disappear {
+  transform: translateX(200%);
+}
+
+.appear {
+transform: translateX(0%);
+}
+// #endregion

@@ -36,7 +36,9 @@ export class AppComponent {
     this.translate.use(language);
   }
 
-  closeMenu(): void {
-    this.mainPageState.hideMenu = true;
+  closeBurgerOverlay(): void {
+    setTimeout(() => {
+      this.mainPageState.hideMenu = true;
+    }, 300);
   }
 }
