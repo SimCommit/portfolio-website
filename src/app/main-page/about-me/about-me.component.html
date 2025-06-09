@@ -10,17 +10,19 @@
             <p>{{"main-page.about-me.card-part-1" | translate}}
                 <br>
                 <br>
-                {{"main-page.about-me.card-part-2" | translate}}                
+                {{"main-page.about-me.card-part-2" | translate}}
             </p>
             <div>
                 <a>{{"main-page.about-me.contact-button" | translate}}</a>
+                <app-about-me-overlay class="disappear" [ngClass]="{'appear': emojiIsHovered}" id="app-about-me-overlay">
+                </app-about-me-overlay>
                 <div id="emoji-container">
-                    <img src="./assets/img/icons/about-me/emoji-shh.svg" alt="Shush Emoji">
+                    <img (mouseenter)="changeHoverState(true)" (mouseleave)="changeHoverState(false)"
+                        src="./assets/img/icons/about-me/emoji-shh.svg" alt="Shush Emoji">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <app-about-me-overlay id="app-about-me-overlay"></app-about-me-overlay>
+        
 
 </section>

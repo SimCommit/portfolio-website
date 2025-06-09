@@ -4,6 +4,7 @@
 section {
   @include sectionBoxStyle($bc: $main-ivory);
   @include dFlex($ai: flex-end, $jc: space-between);
+  overflow: hidden;
 }
 
 #about-me-pic {
@@ -42,6 +43,7 @@ section {
   }
 }
 
+
 // #region emoji jump animation
 #emoji-container {
   @include dFlex();
@@ -70,12 +72,25 @@ section {
 }
 // #endregion
 
-#app-about-me-overlay {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-}
-
 a {
   @include primaryButton();
 }
+
+// #region app-about-me-overlay
+#app-about-me-overlay {
+  position: absolute;
+  top: -24px;
+  right: 48px;
+  transition: transform 225ms ease-in-out;
+  pointer-events: none;
+}
+
+.disappear {
+  transform: translateY(250%);
+}
+
+.appear {
+  transform: translateY(0%);
+}
+
+// #endregion
