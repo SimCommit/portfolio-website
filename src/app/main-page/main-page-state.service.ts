@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MainPageStateService {
-  currentSection: number = 1;
+  currentSection: number = 3;
 
   anchors: string[] = [
     '#',
@@ -32,7 +32,7 @@ export class MainPageStateService {
 
   burgerMenuIsOpen: boolean = false;
 
-  mobileView: boolean = false;
+  mobileView: boolean = true;
 
   constructor() {}
 }

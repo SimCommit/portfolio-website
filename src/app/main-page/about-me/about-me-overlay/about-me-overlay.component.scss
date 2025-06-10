@@ -24,14 +24,16 @@
   button {
     width: 32px;
     height: 32px;
-    background: url("/../../public/assets/img/icons/close-ivory.svg") no-repeat center / cover;
+    background: url("./../../../../../public/assets/img/icons/close-ivory.svg")
+      no-repeat center / cover;
 
     &:hover {
       cursor: pointer;
     }
 
     &:active {
-          background: url("/../../public/assets/img/icons/close-hover.svg") no-repeat center / cover;
+      background: url("./../../../../../public/assets/img/icons/close-hover.svg")
+        no-repeat center / cover;
     }
   }
 }
@@ -39,3 +41,26 @@
 #more-about-me-header:has(> :nth-child(2)) {
   @include dFlex($jc: space-between);
 }
+
+// #region media queries
+@media (max-width: 420px) {
+  #more-about-me {
+    justify-self: flex-end;
+    max-width: 80%;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  #more-about-me-header {
+    button {
+      width: 24px;
+    }
+  }
+
+  // p {
+  //   font-size: 16px;
+  // }
+}
+// #endregion

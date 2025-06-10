@@ -3,11 +3,10 @@
 
 section {
   @include sectionBoxStyle();
-  @include dFlex($jc: space-around);
+  @include dFlex();
   width: 100%;
 
   img {
-    width: 45rem;
     object-position: bottom;
   }
 }
@@ -30,15 +29,12 @@ section {
 
 #hero-pic {
   @include dFlex($ai: flex-end);
-  margin: 0 2rem;
+  // margin: 0 2rem;
   height: 100%;
   width: 100%;
 
   img {
-    background: url("./../../../../public/assets/img/Capa_bg.svg") no-repeat top
-      center;
-    background-position: top 10% right 15%;
-    background-size: 32rem;
+    width: 42rem;
     align-self: flex-end;
   }
 }
@@ -90,6 +86,7 @@ a {
 }
 
 // #region media queries
+
 // @media (max-width: 1024px) {
 //   section {
 //     padding-left: 4rem;
@@ -102,35 +99,20 @@ a {
     // flex-direction: column;
     padding-left: 4rem;
     padding-right: 4rem;
-
-    #hero-content {
-      // align-self: flex-start;
-      // justify-content: space-between;
-      // height: 100%;
-
-      // #cogwheel-container{
-      //   margin-bottom: -10rem;
-      // }
-    }
-
-    #hero-pic {
-      // align-self: flex-start;
-      // justify-content: flex-end;
-      // margin-top: -24rem;
-      // background-color: red;
-
-      img {
-        width: 55rem;
-        margin-left: -10rem;
-      }
-    }
   }
 }
 
+#hero-pic {
+  img {
+    min-width: 480px;
+    margin-left: -10rem;
+  }
+}
 @media (max-aspect-ratio: 7/6) {
   a {
     margin-top: 3rem;
-    font-size: 3rem;
+    font-size: 2.8rem;
+    padding: 1rem 3.2rem;
   }
 
   section {
@@ -143,7 +125,6 @@ a {
       margin-top: 10rem;
       height: 100%;
       justify-content: center;
-      // margin-bottom: -6rem;
 
       #headline {
         margin-top: unset;
@@ -157,18 +138,7 @@ a {
     }
 
     #cogwheel-container {
-      left: 0;
-      // bottom: 2rem;
-      // width: 96px;
-
-      // img {
-      //   width: 96px;
-      // }
-
-      // #arrow-down {
-      //   width: 32px;
-      //   height: 32px;
-      // }
+      left: 4rem;
     }
 
     #hero-pic {
@@ -177,7 +147,7 @@ a {
       // margin-right: 10rem;
 
       img {
-        width: 55rem;
+        // width: 55rem;
         margin-left: 0;
       }
     }
@@ -202,17 +172,26 @@ a {
 }
 
 @media (max-width: 580px) {
+  #hero-pic {
+    width: 62rem;
+
+    img {
+      min-width: unset;
+      height: unset;
+      width: 62rem;
+      margin-left: 0;
+    }
+  }
+
   #cogwheel-container {
     left: 0;
     bottom: 3rem;
-    width: 96px;
-        height: 96px;
-
+    width: 22rem;
+    height: 22rem;
 
     img {
-      width: 96px;
-          height: 96px;
-
+      width: 22rem;
+      height: 22rem;
     }
 
     #arrow-down {
@@ -226,17 +205,6 @@ a {
   #cogwheel-container {
     left: 0;
     bottom: 1rem;
-    // width: 96px;
-    // height: 96px;
-
-    img {
-      // width: 96px;
-    }
-
-    #arrow-down {
-      // width: 32px;
-      // height: 32px;
-    }
   }
 }
 
