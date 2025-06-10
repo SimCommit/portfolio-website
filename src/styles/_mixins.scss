@@ -39,6 +39,12 @@
   border-color: $bc;
   border-radius: $br;
   text-align: $ta;
+
+  @media (max-aspect-ratio: 7/6) {
+    padding: 16px 12px 12px 12px;
+    // border-color: red;
+    // border-width: 8px;
+  }
 }
 
 @mixin textPadding() {

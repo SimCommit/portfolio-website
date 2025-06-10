@@ -5,9 +5,30 @@ section {
   @include sectionBoxStyle($bc: $main-ivory);
   @include dFlex($ai: flex-end, $jc: space-between);
   overflow: hidden;
+  overflow: unset;
+}
+
+#about-me-headline {
+  @include dFlex();
+  height: 80vh;
+  height: 80dvh;
+  h2 {
+    color: $main-black;
+    line-height: 1.2;
+    align-self: flex-start;
+    min-width: 22rem;
+  }
+}
+
+#about-me-content {
+  height: 80vh;
+  height: 80dvh;
+  @include dFlex($ai: center, $jc: flex-start,);
 }
 
 #about-me-pic {
+  @include dFlex($fd: row-reverse);
+
   img {
     height: 80vh;
     height: 80dvh;
@@ -15,23 +36,12 @@ section {
   }
 }
 
-#about-me-content {
-  height: 80vh;
-  height: 80dvh;
-  @include dFlex($fd: column, $ai: flex-end, $jc: flex-start, $g: 4rem);
-
-  h2 {
-    color: $main-black;
-    font-size: 6rem;
-    line-height: 1.2;
-  }
-}
-
 #about-me-card {
-  margin-left: -6rem;
-  margin-right: 16rem;
-  align-self: flex-start;
+  z-index: 1;
+  margin-left: -12rem;
+  margin-right: -12rem;
   @include cardBoxStyle();
+  // width: 36rem;
   background-color: $main-black;
   p {
     color: $main-ivory;
@@ -42,7 +52,6 @@ section {
     @include dFlex($jc: space-between);
   }
 }
-
 
 // #region emoji jump animation
 #emoji-container {
@@ -91,5 +100,65 @@ a {
 
 .appear {
   transform: translateY(0%);
+}
+// #endregion
+
+// #region media-queries
+@media (max-aspect-ratio: 7/6) {
+  section {
+        height: unset;
+        padding-bottom: calc(48px + 3rem);
+
+    flex-direction: column-reverse;
+  }
+
+  #about-me-content {
+    flex-direction: column;
+    align-items: flex-start;
+    height: unset;
+  }
+
+  #about-me-pic {
+    width: 100%;
+        justify-content: flex-end;
+
+
+    img {
+      height: 60vh;
+      height: 60dvh;
+      object-position: bottom;
+    }
+  }
+
+  #about-me-card {
+    width: 80%;
+    margin-top: -6rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    // margin-bottom: 0;
+    align-self: flex-end;
+    background-color: $main-black;
+    p {
+      color: $main-ivory;
+      text-align: justify;
+    }
+
+    div {
+      @include dFlex($jc: space-between);
+    }
+  }
+
+  #about-me-headline {
+    // align-self: flex-end;
+    margin-bottom: 4rem;
+  height: unset;
+  h2 {
+    font-size: 10rem;
+    color: $main-black;
+    line-height: 1.2;
+    align-self: flex-start;
+    // min-width: 22rem;
+  }
+}
 }
 // #endregion
