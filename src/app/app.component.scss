@@ -3,12 +3,10 @@ section {
   align-items: center;
   flex-direction: column;
   // justify-content: flex-start;
+    aspect-ratio: 16/9;
+
 }
 
-#app-header {
-  width: 100%;
-  z-index: 9;
-}
 
 #app-menu-overlay {
   position: absolute;
@@ -21,5 +19,5 @@ section {
 #router-outlet {
   // height: 100vh;
   // height: 100dvh;
-  width: 100%;
+  width: 100%;    
 }

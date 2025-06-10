@@ -28,7 +28,7 @@ export class ShowcaseDataService {
       quote:
         'main-page.references.colleague-quote.quote-1',
       role: 'main-page.references.colleague-quote.role-1',
-      profileUrl: '',
+      profileUrl: 'https://github.com/VadimMichel',
     },
     {
       name: 'Mirkan Polat',

@@ -5,6 +5,8 @@ section {
   @include sectionBoxStyle();
   @include dFlex($jc: space-around);
   width: 100%;
+  // @include variableContentWidth();
+  // aspect-ratio: 16/9;
 
   img {
     width: 45rem;
