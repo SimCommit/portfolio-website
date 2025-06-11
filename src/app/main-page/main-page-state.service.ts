@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MainPageStateService {
-  currentSection: number = 1;
+  currentSection: number = 3;
 
   anchors: string[] = [
     '#',

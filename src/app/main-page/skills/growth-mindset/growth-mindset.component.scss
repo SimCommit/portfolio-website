@@ -5,10 +5,12 @@
   @include cardBoxStyle($bc: $main-ivory);
   width: 24rem;
   max-width: 360px;
+  min-width: 300px;
   background-color: $main-yellow;
 
   p {
     margin-top: 16px;
+    font-weight: 400;
   }
 
   div {
@@ -25,3 +27,13 @@
     }
   }
 }
+
+// #region media queries
+@media (max-width: 820px) {
+  #growth-mindset {
+    // width: 200px;
+    // box-sizing: border-box;
+  }
+}
+
+// #endregion

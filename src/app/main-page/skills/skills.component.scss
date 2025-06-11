@@ -5,32 +5,36 @@ section {
   @include sectionBoxStyle($bc: $main-black);
   @include dFlex($fd: column, $ai: flex-start, $g: 4rem);
   width: 100%;
-
-  #skills-description {
-    background-color: $main-blue;
-    @include cardBoxStyle();
-    width: 40rem;
-  }
 }
 
+#skills-description {
+  background-color: $main-blue;
+  @include cardBoxStyle();
+  width: 42rem;
+}
 
-// #region skills-showcase 
+// #region skills-showcase
 #skills-showcase {
   width: 100%;
   @include dFlex($ai: flex-end, $jc: space-between);
 }
 
 #tech-card {
-  width: 40rem;
-  @include dFlex($g: 40px);
+  width: 580px;
+  min-width: 516px;
+  @include dFlex($g: 30px);
   flex-wrap: wrap;
+  padding: 4rem;
 
   label {
     @include dFlex($fd: column, $g: 20px);
+    width: 78px;
 
     img {
+      width: 78px;
+
       transition: transform 225ms ease-in-out;
-      
+
       &:hover {
         transform: scale(1.25);
       }
@@ -95,4 +99,118 @@ section {
 .appear {
   transform: translateY(0%);
 }
+// #endregion
+
+// #region media queries
+
+@media (max-width: 820px) {
+  #skills-description {
+    background-color: $main-blue;
+    @include cardBoxStyle();
+    width: 52rem;
+  }
+
+  #tech-card {
+    width: 60rem;
+    min-width: unset;
+    @include dFlex($g: 30px);
+
+    label {
+      @include dFlex($fd: column, $g: 1.6rem);
+      width: 7rem;
+
+      span {
+        font-size: 1.6rem;
+      }
+
+      img {
+        width: 7rem;
+      }
+    }
+  }
+
+  #app-growth-mindset {
+    width: calc(90vw);
+    min-width: none;
+    bottom: 16px;
+    left: 180px;
+  }
+}
+
+@media (max-aspect-ratio: 7/6) {
+  #skills {
+    height: unset;
+    gap: 7rem;
+    padding-top: 100px;
+  }
+
+  h2 {
+    font-size: 8rem;
+  }
+
+  #skills-showcase {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  #skills-description {
+    width: unset;
+  }
+
+  #tech-card {
+    width: unset;
+    padding: 4rem;
+    gap: 5rem;
+
+    label {
+      @include dFlex($fd: column, $g: 20px);
+      width: 78px;
+
+      span {
+        font-size: 16px;
+      }
+
+      img {
+        width: 78px;
+
+        transition: transform 225ms ease-in-out;
+
+        &:hover {
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+
+  #cogwheel-container {
+    align-self: unset;
+  }
+
+}
+
+@media (max-height: 700px) {
+  section {
+    gap: 2rem;
+  }
+
+  #tech-card {
+    padding: 2rem;
+  }
+
+  
+  #app-growth-mindset {
+    bottom: 16px;
+    left: 150px;
+  }
+}
+
+@media (max-width: 520px) {
+  #app-growth-mindset {
+    bottom: 154px;
+    left: 0px;
+  }
+}
+
+
 // #endregion

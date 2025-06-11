@@ -1,5 +1,6 @@
 <section id="skills">
     <h2>{{"main-page.skills.headline" | translate}}</h2>
+    
     <div id="skills-description">
         <p>{{"main-page.skills.description" | translate}}</p>
     </div>
@@ -19,11 +20,10 @@
             @for (tech of showcaseData.myTechs; track $index) {
             <label>
                 <img src="{{tech.imgUrl}}" alt="Placeholder Tech">
-                {{tech.name}}
+                <span>{{tech.name}}</span>
             </label>
             }
         </div>
     </div>
-
 
 </section>
