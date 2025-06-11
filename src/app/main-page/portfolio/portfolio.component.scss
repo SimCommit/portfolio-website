@@ -3,20 +3,36 @@
 
 section {
   @include sectionBoxStyle($bc: $main-ivory, $c: $main-black);
-  @include dFlex($fd: column, $ai: flex-start, $jc: flex-start);
+  @include dFlex($fd: column, $ai: flex-start, $jc: space-between);
+
+  @media (max-aspect-ratio: 7/6) {
+    height: unset;
+    gap: 4rem;
+  }
 
   div {
     @include dFlex($g: 4rem);
+    align-items: flex-start;
+
+    @media (max-aspect-ratio: 7/6) {
+      flex-direction: column;
+    }
 
     p {
       @include textPadding();
       width: 36rem;
-      // Seltsame Ausnahme
       font-weight: 400;
+
+      @media (max-aspect-ratio: 7/6) {
+        width: 80%;
+        padding-left: 0;
+        padding-right: 0;
+        align-self: center;
+      }
     }
   }
 }
 
 #app-project {
-    width: 100%;
+  width: 100%;
 }

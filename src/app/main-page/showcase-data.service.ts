@@ -48,11 +48,12 @@ export class ShowcaseDataService {
 
   myProjects: Project[] = [
     {
+      name: 'Join',
       backgroundColor: '#F9AF42',
+      learningBgColor:"#679AAC",
       picUrl: './assets/img/portfolio/project-preview-placeholder.svg',
       cogwheelUrl: './assets/img/portfolio/project/cogwheel-180.svg',
       learning:"main-page.portfolio.project.learning-join",
-      name: 'Join',
       emojiUrl: './assets/img/icons/project/emoji-checkmark.svg',
       usedSkills: 'Angular | TypeScript | Firebase | HTML | CSS',
       description: 'main-page.portfolio.project.description-join',
@@ -60,11 +61,12 @@ export class ShowcaseDataService {
       projectUrl: '',
     },
     {
+      name: 'El Pollo Loco',
       backgroundColor: '#679AAC',
-      picUrl: './assets/img/portfolio/project/el-pollo-loco.svg',
+      learningBgColor:"#FF834F",
+      picUrl: './assets/img/portfolio/project/el-pollo-loco.png',
       cogwheelUrl: './assets/img/portfolio/project/cogwheel-180.svg',
       learning:"main-page.portfolio.project.learning-el-pollo-loco",
-      name: 'El Pollo Loco',
       emojiUrl: './assets/img/icons/project/emoji-chick.svg',
       usedSkills: 'JavaScript | HTML | CSS',
       description: 'main-page.portfolio.project.description-el-pollo-loco',
@@ -72,11 +74,12 @@ export class ShowcaseDataService {
       projectUrl: 'https://simon-fuchs.developerakademie.net/el-pollo-loco/index.html',
     },
     {
+      name: 'Pokédex',
       backgroundColor: '#FF834F',
-      picUrl: './assets/img/portfolio/project/pokedex-3.svg',
+      learningBgColor:"#679AAC",
+      picUrl: './assets/img/portfolio/project/pokedex-preview-1.svg',
       cogwheelUrl: './assets/img/portfolio/project/cogwheel-180-yellow.svg',
       learning:"main-page.portfolio.project.learning-pokedex",
-      name: 'Pokédex',
       emojiUrl: './assets/img/icons/project/pokeball.svg',
       usedSkills: 'JavaScript | CSS | HTML | API',
       description: 'main-page.portfolio.project.description-pokedex',
@@ -103,11 +106,12 @@ interface Testimonial {
 }
 
 interface Project {
+  name: string;
   backgroundColor: string;
+  learningBgColor:string;
   picUrl: string;
   cogwheelUrl: string;
   learning:string;
-  name: string;
   emojiUrl: string;
   usedSkills: string;
   description: string;

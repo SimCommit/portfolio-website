@@ -35,6 +35,10 @@ h2 {
 h2 {
   font-size: 4.7rem;
   line-height: 1;
+
+  @media (max-aspect-ratio: 7/6) {
+    font-size: 8rem;
+  }
 }
 
 h3 {

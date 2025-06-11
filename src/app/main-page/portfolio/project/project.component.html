@@ -8,7 +8,7 @@
     <div id="p-content">
         <div id="p-details">
             <div id="p-header">
-                <div class="disappear" [ngClass]="{'appear': emojiIsHovered}" id="learning-card">
+                <div class="disappear" [style.background-color]="showcaseData.myProjects[showcaseData.currentProject].learningBgColor" [ngClass]="{'appear': emojiIsHovered}" id="learning-card">
                     <p id="learning-text">{{showcaseData.myProjects[showcaseData.currentProject].learning | translate}}
                     </p>
                 </div>
@@ -32,4 +32,6 @@
             <button (click)="nextProjcet()">{{"main-page.portfolio.project.button-next" | translate}}</button>
         </div>
     </div>
+
+    <div class="spacer"></div>
 </div>
