@@ -32,7 +32,7 @@ export class MainPageStateService {
 
   burgerMenuIsOpen: boolean = false;
 
-  mobileView: boolean = true;
+  mobileView: boolean = false;
 
   constructor() {}
 }
