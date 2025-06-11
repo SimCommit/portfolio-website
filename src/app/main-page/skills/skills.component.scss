@@ -3,23 +3,22 @@
 
 section {
   @include sectionBoxStyle($bc: $main-black);
-  @include dFlex($fd: column, $ai: flex-start, $jc:space-between, $g: 4rem);
+  @include dFlex($fd: column, $ai: flex-start, $jc: space-between, $g: 4rem);
   width: 100%;
 }
 
 #skills-description {
-  background-color: $main-blue;
   @include cardBoxStyle();
-  width: 42rem;
   @include fontSizeSwitch();
-  // font-size: 20px;
+  width: 42rem;
+  background-color: $main-blue;
 }
-
 
 // #region skills-showcase
 #skills-showcase {
   width: 100%;
   @include dFlex($ai: flex-end, $jc: space-between);
+  margin-bottom: 2rem;
 }
 
 #tech-card {
@@ -27,7 +26,7 @@ section {
   min-width: 516px;
   @include dFlex($g: 30px);
   flex-wrap: wrap;
-  padding: 40px;
+  padding: 40px 40px 0 40px;
 
   label {
     @include dFlex($fd: column, $g: 20px);
@@ -76,7 +75,7 @@ section {
 }
 
 #cogwheel-container {
-  align-self: center;
+  // align-self: center;
   clip-path: circle(50% at 50% 50%);
 
   &:hover #cogwheel-1 {
@@ -105,6 +104,25 @@ section {
 // #endregion
 
 // #region media queries
+
+// #region min-width queries
+@media (min-width: 1440px) {
+  #tech-card {
+    width: 720px;
+    gap: 36px;
+
+    label {
+      width: 96px;
+
+      font-size: 20px;
+      img {
+        width: 96px;
+      }
+    }
+  }
+}
+// #endregion
+
 @media (max-height: 700px) {
   section {
     gap: 2rem;
@@ -112,6 +130,7 @@ section {
 
   #tech-card {
     padding: 2rem;
+    padding: 2rem 2rem 0 2rem;
   }
 
   #app-growth-mindset {

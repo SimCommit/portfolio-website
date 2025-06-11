@@ -37,6 +37,7 @@ section {
 }
 
 #about-me-card {
+  @include fontSizeSwitch();
   z-index: 1;
   margin-left: -12rem;
   margin-right: -12rem;
@@ -92,6 +93,10 @@ a {
   right: 48px;
   transition: transform 225ms ease-in-out;
   pointer-events: none;
+
+  @media (max-width: 420px) {
+    top: -120px;
+  }
 }
 
 .disappear {
@@ -162,12 +167,6 @@ a {
 
   #app-about-me-overlay {
     top: -108px;
-  }
-}
-
-@media (max-width: 420px) {
-    #app-about-me-overlay {
-    top: -120px;
   }
 }
 // #endregion
