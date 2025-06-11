@@ -3,10 +3,12 @@
 
 #growth-mindset {
   @include cardBoxStyle($bc: $main-ivory);
+  @include dFlex($fd: column);
   width: 24rem;
   max-width: 360px;
   min-width: 300px;
   background-color: $main-yellow;
+  
 
   p {
     margin-top: 16px;
@@ -25,6 +27,23 @@
         width: 40px;
       }
     }
+  }
+}
+
+button {
+  align-self: flex-end;
+  width: 32px;
+  height: 32px;
+  background: url("./../../../../../public/assets/img/icons/close-ivory.svg")
+    no-repeat center / cover;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background: url("./../../../../../public/assets/img/icons/close-hover.svg")
+      no-repeat center / cover;
   }
 }
 
