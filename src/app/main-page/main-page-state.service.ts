@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class MainPageStateService {
   currentSection: number = 3;
 
+  // currentPage: "main-page" | "legal-notice" | "privacy-policy" = "main-page";
+
   anchors: string[] = [
     '#',
     '#hero',
