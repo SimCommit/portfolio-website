@@ -18,22 +18,22 @@
         @switch (true) {
         @case (mainPageState.currentSection === anchorNumber) {
         @if (mainPageState.currentSection === 2 || mainPageState.currentSection === 4) {
-        <a href="{{mainPageState.anchors[anchorNumber]}}" class="icon-active">
+        <a (click)="mainPageState.disableScrolling(anchorNumber)" href="{{mainPageState.anchors[anchorNumber]}}" class="icon-active">
             <img src="./assets/img/icons/section-nav/icon-active-coral.svg" alt="Nope">
         </a>
         } @else {
-        <a href="{{mainPageState.anchors[anchorNumber]}}" class="icon-active">
+        <a (click)="mainPageState.disableScrolling(anchorNumber)" href="{{mainPageState.anchors[anchorNumber]}}" class="icon-active">
             <img src="./assets/img/icons/section-nav/icon-active-yellow.svg" alt="Nope">
         </a>
         }
         }
         @default {
         @if (mainPageState.currentSection === 2 || mainPageState.currentSection === 4) {
-        <a href="{{mainPageState.anchors[anchorNumber]}}" class="icon-inactive">
+        <a (click)="mainPageState.disableScrolling(anchorNumber)" href="{{mainPageState.anchors[anchorNumber]}}" class="icon-inactive">
             <img src="./assets/img/icons/section-nav/icon-inactive-black.svg" alt="Nope">
         </a>
         } @else {
-        <a href="{{mainPageState.anchors[anchorNumber]}}" class="icon-inactive">
+        <a (click)="mainPageState.disableScrolling(anchorNumber)" href="{{mainPageState.anchors[anchorNumber]}}" class="icon-inactive">
             <img src="./assets/img/icons/section-nav/icon-inactive-ivory.svg" alt="Nope">
         </a>
         }
@@ -46,3 +46,5 @@
     <div class="spacer"></div>
 
 </nav>
+
+<!-- Ref um Element muss aus mainpagecomponent kommen? -->

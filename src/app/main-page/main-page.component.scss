@@ -12,6 +12,10 @@ section {
   top: 0;
   width: 100%;
   z-index: 9;
+
+  @media (max-aspect-ratio: 7/6) or (min-width: 1921px) {
+  position: absolute;
+  }
 }
 
 #app-section-nav {
@@ -23,11 +27,12 @@ section {
   // right: calc(((100vw - 1920px) / 2) + 32px);
 }
 
-#app-hero,
-#app-about-me,
-#app-skills,
-#app-portfolio,
-#app-references,
-#app-contact {
+#hero,
+#about-me,
+#skills,
+#portfolio,
+#references,
+#contact {
   width: 100%;
 }
+
