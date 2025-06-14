@@ -38,7 +38,7 @@
                         (click)="toggleCheckedState(checkboxInput)"></span>
                 </label>
                 <div>
-                    <p id="checkbox-info-text">{{'main-page.contact.form.checkbox-text-1' | translate}} <a routerLink="checkbox">{{'main-page.contact.form.checkbox-text-2' | translate}}</a>
+                    <p id="checkbox-info-text">{{'main-page.contact.form.checkbox-text-1' | translate}} <a [routerLink]="['privacy-policy', mainPageState.currentLanguage]">{{'main-page.contact.form.checkbox-text-2' | translate}}</a>
                         {{'main-page.contact.form.checkbox-text-3' | translate}}
                     </p>
                     @if (!name.valid && name.touched) {

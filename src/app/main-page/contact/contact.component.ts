@@ -5,6 +5,7 @@ import { FooterComponent } from '../../shared/footer/footer.component';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
+import { MainPageStateService } from '../main-page-state.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,6 +15,9 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class ContactComponent {
   http = inject(HttpClient);
+
+    mainPageState = inject(MainPageStateService);
+  
 
   nameInput: InputFieldStates = {
     isChecked: false,
