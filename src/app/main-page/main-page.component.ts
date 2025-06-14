@@ -1,4 +1,11 @@
-import { Component, ElementRef, inject, QueryList, ViewChildren } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  inject,
+  QueryList,
+  ViewChildren,
+  HostListener,
+} from '@angular/core';
 import { HeroComponent } from './hero/hero.component';
 import { SectionNavComponent } from './section-nav/section-nav.component';
 import { AboutMeComponent } from './about-me/about-me.component';
@@ -36,4 +43,45 @@ export class MainPageComponent {
     const elements = this.sectionRefs.map((ref) => ref.nativeElement);
     this.scrollService.setSectionRefs(elements);
   }
+
+  private onWheel = (event: WheelEvent) => {
+    console.log(event.deltaY);
+    event.stopImmediatePropagation();
+
+    if (event.deltaY > 0) {
+      console.log('Wheele');
+      this.mainPageState.nextSection();
+    } else {
+      console.log('else');
+      this.mainPageState.previousSection();
+    }
+
+    event.preventDefault();
+    return false;
+  };
+
+  ngOnInit(): void {
+    window.addEventListener('wheel', this.onWheel, { passive: false });
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('wheel', this.onWheel);
+  }
+
+  //   @HostListener('window:wheel', ['$event']) onScroll(event: WheelEvent) {
+  //   console.log(event.deltaY, this.mainPageState.isScrolling);
+  //   event.stopImmediatePropagation();
+
+  //   if (this.mainPageState.isScrolling) return;
+  //   if (event.deltaY > 0) {
+  //     console.log('Wheele');
+
+  //     // this.nextSection();
+  //   } else {
+  //     // this.previousSection();
+  //     console.log('else');
+  //   }
+  //   event.preventDefault();
+  //   return false;
+  // }
 }
