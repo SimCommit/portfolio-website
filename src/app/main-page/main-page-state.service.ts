@@ -10,7 +10,6 @@ export class MainPageStateService {
   // currentPage: "main-page" | "legal-notice" | "privacy-policy" = "main-page";
 
   anchors: string[] = [
-
     'hero',
     'about-me',
     'skills',
@@ -57,6 +56,8 @@ export class MainPageStateService {
       ['ArrowUp', 'ArrowDown', 'Space', 'PageUp', 'PageDown'].includes(e.key)
     ) {
       e.preventDefault();
+      e.stopPropagation(); // ← WICHTIG?
+      e.cancelBubble = true;
     }
   };
 
@@ -66,7 +67,11 @@ export class MainPageStateService {
     if (this.currentSectionIndex < this.sections.length - 2) {
       this.currentSectionIndex++;
       this.scrollToSection(this.anchors[this.currentSectionIndex]);
-      console.log('nextSection', this.currentSectionIndex, this.anchors[this.currentSectionIndex]);
+      console.log(
+        'nextSection',
+        this.currentSectionIndex,
+        this.anchors[this.currentSectionIndex]
+      );
     }
   }
 
@@ -76,13 +81,19 @@ export class MainPageStateService {
     if (this.currentSectionIndex > 0) {
       this.currentSectionIndex--;
       this.scrollToSection(this.anchors[this.currentSectionIndex]);
-      console.log('perviousSection', this.currentSectionIndex, this.anchors[this.currentSectionIndex]);
+      console.log(
+        'perviousSection',
+        this.currentSectionIndex,
+        this.anchors[this.currentSectionIndex]
+      );
     }
   }
 
   scrollToSection(sectionId: string) {
     if (this.isScrolling) return;
     const element = document.getElementById(sectionId);
+    const index = this.anchors.indexOf(sectionId);
+
     if (element) {
       this.isScrolling = true;
       element.scrollIntoView({ behavior: 'smooth' });
@@ -92,28 +103,4 @@ export class MainPageStateService {
     }
   }
 
-  disableScrolling(index: number) {
-    const target = this.sections[index];
-    if (!target) return;
-
-    // block scroll input
-    window.addEventListener('wheel', this.prevent, { passive: false });
-    window.addEventListener('touchmove', this.prevent, { passive: false });
-    window.addEventListener('keydown', this.keyBlock, false);
-
-    // Überwache, wann Ziel sichtbar wird
-    const scrollObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.target === target && entry.isIntersecting) {
-          // Scroll wieder erlauben
-          window.removeEventListener('wheel', this.prevent);
-          window.removeEventListener('touchmove', this.prevent);
-          window.removeEventListener('keydown', this.keyBlock);
-          scrollObserver.disconnect();
-        }
-      });
-    });
-
-    scrollObserver.observe(target);
-  }
 }

@@ -1,6 +1,6 @@
 <nav>
     <div id="top-spacer" class="spacer">
-        @if (mainPageState.currentSectionIndex === 6) {
+        @if (mainPageState.currentSectionIndex === 5) {
         <a href="#hero" id="back-to-start">
             <svg width="8" height="18" viewBox="0 0 8 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -18,22 +18,22 @@
         @switch (true) {
         @case (mainPageState.currentSectionIndex === anchorNumber) {
         @if (mainPageState.currentSectionIndex === 1 || mainPageState.currentSectionIndex === 3) {
-        <a (click)="mainPageState.disableScrolling(anchorNumber)" href="#{{mainPageState.anchors[anchorNumber]}}" class="icon-active">
+        <a href="#{{mainPageState.anchors[anchorNumber]}}" class="icon-active">
             <img src="./assets/img/icons/section-nav/icon-active-coral.svg" alt="Nope">
         </a>
         } @else {
-        <a (click)="mainPageState.disableScrolling(anchorNumber)" href="#{{mainPageState.anchors[anchorNumber]}}" class="icon-active">
+        <a href="#{{mainPageState.anchors[anchorNumber]}}" class="icon-active">
             <img src="./assets/img/icons/section-nav/icon-active-yellow.svg" alt="Nope">
         </a>
         }
         }
         @default {
         @if (mainPageState.currentSectionIndex === 1 || mainPageState.currentSectionIndex === 3) {
-        <a (click)="mainPageState.disableScrolling(anchorNumber)" href="#{{mainPageState.anchors[anchorNumber]}}" class="icon-inactive">
+        <a href="#{{mainPageState.anchors[anchorNumber]}}" class="icon-inactive">
             <img src="./assets/img/icons/section-nav/icon-inactive-black.svg" alt="Nope">
         </a>
         } @else {
-        <a (click)="mainPageState.disableScrolling(anchorNumber)" href="#{{mainPageState.anchors[anchorNumber]}}" class="icon-inactive">
+        <a href="#{{mainPageState.anchors[anchorNumber]}}" class="icon-inactive">
             <img src="./assets/img/icons/section-nav/icon-inactive-ivory.svg" alt="Nope">
         </a>
         }
@@ -46,5 +46,3 @@
     <div class="spacer"></div>
 
 </nav>
-
-<!-- Ref um Element muss aus mainpagecomponent kommen? -->

@@ -22,6 +22,14 @@ html {
 
 body {
   font-size: 16px;
+  overscroll-behavior: none;
+  scroll-behavior: none;
+  overflow: hidden;
+
+  @media (max-aspect-ratio: 7/6) or (min-width: 1921px) {
+    overscroll-behavior: auto;
+    overflow: visible;
+  }
 }
 
 h1,
