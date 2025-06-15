@@ -16,10 +16,11 @@ header {
 
       @include dFlex($g: 0.5rem);
     }
-    div:nth-child(3) {
-      justify-content: flex-end;
-    }
   }
+}
+
+#header-controls{
+  justify-content: flex-end;
 }
 
 a {
@@ -33,16 +34,32 @@ a {
     cursor: pointer;
   }
 
-  &:hover .fuchs-font {
+  &:hover .header-element-color {
     color: $main-coral;
   }
 }
 
-.fuchs-font-black {
-  color: $main-black;
+.header-element-color {
+  color: $main-ivory;
+  transition: color 550ms ease-in;
 }
 
-.fuchs-font:hover {
+.header-element-color-black {
+  color: $main-black;
+  transition: color 550ms ease-in;
+}
+
+.svg-fill {
+  color: $main-ivory;
+  transition: color 550ms ease-in;
+}
+
+.svg-fill-black {
+  color: $main-black;
+  transition: color 550ms ease-in;
+}
+
+.header-element-color:hover {
   color: $main-coral;
 }
 
@@ -58,8 +75,6 @@ a {
 
 .english {
   border-radius: 50%;
-  background: url("./../../../../public/assets/img/icons/lang-btns/lang-btn-en-default.svg")
-    no-repeat center / cover;
 
   &:hover {
     background-color: $main-coral;
@@ -68,8 +83,6 @@ a {
 
 .german {
   border-radius: 50%;
-  background: url("./../../../../public/assets/img/icons/lang-btns/lang-btn-de-default.svg")
-    no-repeat center / cover;
   &:hover {
     background-color: $main-coral;
   }
@@ -79,12 +92,11 @@ a {
   &:hover svg path {
     fill: $main-coral;
   }
-
-  svg path {
-    fill: $main-ivory;
-    transition: fill 125ms ease;
-  }
 }
+// svg path {
+//   fill: $main-ivory;
+//   transition: fill 125ms ease, color 550ms ease-in;
+// }
 
 #app-social-links {
   width: 140px;

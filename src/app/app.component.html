@@ -1,4 +1,4 @@
-<main [ngStyle]="{'background-color': mainPageState.currentBackground[mainPageState.currentSection]}">
+<main [ngStyle]="{'background-color': mainPageState.currentBackground[mainPageState.currentSectionIndex]}">
     <section>
         <app-menu-overlay (closeOrder)="closeBurgerOverlay()" [hidden]="mainPageState.hideMenu"
             id="app-menu-overlay"></app-menu-overlay>
