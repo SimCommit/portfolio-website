@@ -56,8 +56,8 @@ export class MainPageStateService {
       ['ArrowUp', 'ArrowDown', 'Space', 'PageUp', 'PageDown'].includes(e.key)
     ) {
       e.preventDefault();
-      e.stopPropagation(); // ← WICHTIG?
-      e.cancelBubble = true;
+      e.stopPropagation();
+      e.cancelBubble = true; // for really old browsers
     }
   };
 

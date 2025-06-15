@@ -34,43 +34,50 @@ export class MainPageComponent {
   mainPageState = inject(MainPageStateService);
 
   @ViewChildren('section', { read: ElementRef })
-  
   private sectionRefs!: QueryList<ElementRef>;
 
-  sectionScrollEnabled:boolean = false;
-
-  constructor(private scrollService: MainPageStateService) {}
-
-  enableSectionScroll() {
-    
-  }
+  constructor() {}
 
   ngAfterViewInit(): void {
     const elements = this.sectionRefs.map((ref) => ref.nativeElement);
-    this.scrollService.setSectionRefs(elements);
+    this.mainPageState.setSectionRefs(elements);
   }
 
   private onWheel = (event: WheelEvent) => {
-    // console.log(event.deltaY);
     event.stopImmediatePropagation();
 
     if (event.deltaY > 0) {
-      // console.log('Wheele');
       this.mainPageState.nextSection();
     } else {
-      // console.log('else');
       this.mainPageState.previousSection();
     }
 
     event.preventDefault();
-    return false;
+  };
+
+  private onKeyDown = (event: KeyboardEvent) => {
+    event.stopImmediatePropagation();
+
+    if (['ArrowDown', 'PageDown'].includes(event.key) || event.key === ' ' || event.code === 'Space') {
+      this.mainPageState.nextSection();
+      
+      event.preventDefault();
+    }
+
+    if (['ArrowUp', 'PageUp'].includes(event.key)) {
+      this.mainPageState.previousSection();
+
+      event.preventDefault();
+    }
   };
 
   ngOnInit(): void {
     window.addEventListener('wheel', this.onWheel, { passive: false });
+    window.addEventListener('keydown', this.onKeyDown, { passive: false });
   }
 
   ngOnDestroy(): void {
     window.removeEventListener('wheel', this.onWheel);
+    window.removeEventListener('keydown', this.onKeyDown);
   }
 }
