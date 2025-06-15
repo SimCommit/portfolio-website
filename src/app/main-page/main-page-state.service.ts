@@ -5,12 +5,12 @@ import { ElementRef, HostListener, Inject, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MainPageStateService {
-  currentSection: number = 6;
+  // currentSection: number = 6;
 
   // currentPage: "main-page" | "legal-notice" | "privacy-policy" = "main-page";
 
   anchors: string[] = [
-    '',
+
     'hero',
     'about-me',
     'skills',
@@ -20,7 +20,6 @@ export class MainPageStateService {
   ];
 
   currentBackground: string[] = [
-    '',
     '#679AAC',
     '#F8F7E5',
     '#1D1D1D',
@@ -64,10 +63,10 @@ export class MainPageStateService {
   nextSection() {
     if (this.isScrolling) return;
 
-    if (this.currentSectionIndex < this.sections.length - 1) {
+    if (this.currentSectionIndex < this.sections.length - 2) {
       this.currentSectionIndex++;
       this.scrollToSection(this.anchors[this.currentSectionIndex]);
-      console.log('nextSection', this.anchors[this.currentSectionIndex]);
+      console.log('nextSection', this.currentSectionIndex, this.anchors[this.currentSectionIndex]);
     }
   }
 
@@ -77,7 +76,7 @@ export class MainPageStateService {
     if (this.currentSectionIndex > 0) {
       this.currentSectionIndex--;
       this.scrollToSection(this.anchors[this.currentSectionIndex]);
-      console.log('perviousSection', this.anchors[this.currentSectionIndex]);
+      console.log('perviousSection', this.currentSectionIndex, this.anchors[this.currentSectionIndex]);
     }
   }
 
@@ -97,7 +96,7 @@ export class MainPageStateService {
     const target = this.sections[index];
     if (!target) return;
 
-    // Blockiere Scroll-Eingaben
+    // block scroll input
     window.addEventListener('wheel', this.prevent, { passive: false });
     window.addEventListener('touchmove', this.prevent, { passive: false });
     window.addEventListener('keydown', this.keyBlock, false);

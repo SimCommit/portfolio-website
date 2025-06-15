@@ -4,7 +4,6 @@ import {
   inject,
   QueryList,
   ViewChildren,
-  HostListener,
 } from '@angular/core';
 import { HeroComponent } from './hero/hero.component';
 import { SectionNavComponent } from './section-nav/section-nav.component';
@@ -35,9 +34,16 @@ export class MainPageComponent {
   mainPageState = inject(MainPageStateService);
 
   @ViewChildren('section', { read: ElementRef })
+  
   private sectionRefs!: QueryList<ElementRef>;
 
+  sectionScrollEnabled:boolean = false;
+
   constructor(private scrollService: MainPageStateService) {}
+
+  enableSectionScroll() {
+    
+  }
 
   ngAfterViewInit(): void {
     const elements = this.sectionRefs.map((ref) => ref.nativeElement);
@@ -45,14 +51,14 @@ export class MainPageComponent {
   }
 
   private onWheel = (event: WheelEvent) => {
-    console.log(event.deltaY);
+    // console.log(event.deltaY);
     event.stopImmediatePropagation();
 
     if (event.deltaY > 0) {
-      console.log('Wheele');
+      // console.log('Wheele');
       this.mainPageState.nextSection();
     } else {
-      console.log('else');
+      // console.log('else');
       this.mainPageState.previousSection();
     }
 
@@ -67,21 +73,4 @@ export class MainPageComponent {
   ngOnDestroy(): void {
     window.removeEventListener('wheel', this.onWheel);
   }
-
-  //   @HostListener('window:wheel', ['$event']) onScroll(event: WheelEvent) {
-  //   console.log(event.deltaY, this.mainPageState.isScrolling);
-  //   event.stopImmediatePropagation();
-
-  //   if (this.mainPageState.isScrolling) return;
-  //   if (event.deltaY > 0) {
-  //     console.log('Wheele');
-
-  //     // this.nextSection();
-  //   } else {
-  //     // this.previousSection();
-  //     console.log('else');
-  //   }
-  //   event.preventDefault();
-  //   return false;
-  // }
 }

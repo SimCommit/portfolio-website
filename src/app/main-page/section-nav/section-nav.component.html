@@ -1,6 +1,6 @@
 <nav>
     <div id="top-spacer" class="spacer">
-        @if (mainPageState.currentSection === 6) {
+        @if (mainPageState.currentSectionIndex === 6) {
         <a href="#hero" id="back-to-start">
             <svg width="8" height="18" viewBox="0 0 8 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -13,11 +13,11 @@
     </div>
 
     <div class="anchor-container">
-        @for (anchorNumber of [1,2,3,4,5,6]; track anchorNumber) {
+        @for (anchorNumber of [0,1,2,3,4,5]; track anchorNumber) {
 
         @switch (true) {
-        @case (mainPageState.currentSection === anchorNumber) {
-        @if (mainPageState.currentSection === 2 || mainPageState.currentSection === 4) {
+        @case (mainPageState.currentSectionIndex === anchorNumber) {
+        @if (mainPageState.currentSectionIndex === 1 || mainPageState.currentSectionIndex === 3) {
         <a (click)="mainPageState.disableScrolling(anchorNumber)" href="{{mainPageState.anchors[anchorNumber]}}" class="icon-active">
             <img src="./assets/img/icons/section-nav/icon-active-coral.svg" alt="Nope">
         </a>
@@ -28,7 +28,7 @@
         }
         }
         @default {
-        @if (mainPageState.currentSection === 2 || mainPageState.currentSection === 4) {
+        @if (mainPageState.currentSectionIndex === 1 || mainPageState.currentSectionIndex === 3) {
         <a (click)="mainPageState.disableScrolling(anchorNumber)" href="{{mainPageState.anchors[anchorNumber]}}" class="icon-inactive">
             <img src="./assets/img/icons/section-nav/icon-inactive-black.svg" alt="Nope">
         </a>
