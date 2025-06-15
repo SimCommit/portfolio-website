@@ -5,6 +5,8 @@ section {
   @include dFlex($fd: column);
   @include maxWidth1920();
   width: 100%;
+
+  
 }
 
 #app-header {
