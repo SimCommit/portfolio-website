@@ -64,7 +64,7 @@ export class MainPageStateService {
   nextSection() {
     if (this.isScrolling) return;
 
-    if (this.currentSectionIndex < this.sections.length - 2) {
+    if (this.currentSectionIndex < this.sections.length - 1) {
       this.currentSectionIndex++;
       this.scrollToSection(this.anchors[this.currentSectionIndex]);
       console.log(
