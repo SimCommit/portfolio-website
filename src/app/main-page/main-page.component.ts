@@ -93,4 +93,5 @@ export class MainPageComponent {
     window.removeEventListener('wheel', this.onWheel);
     window.removeEventListener('keydown', this.onKeyDown);
   }
+  
 }

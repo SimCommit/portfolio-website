@@ -1,5 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -41,7 +43,10 @@ export class MainPageStateService {
 
   currentSectionIndex: number = 0;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private router: Router
+  ) {}
 
   setSectionRefs(refs: Element[]) {
     this.sections = refs;
@@ -79,8 +84,10 @@ export class MainPageStateService {
 
   scrollToSection(sectionId: string): void {
     if (this.isScrolling) return;
+    console.log(sectionId);
+
     const element = document.getElementById(sectionId);
-    const index = this.anchors.indexOf(sectionId);
+    // const index = this.anchors.indexOf(sectionId);
 
     if (element) {
       this.isScrolling = true;
@@ -92,11 +99,32 @@ export class MainPageStateService {
   }
 
   updateCurrentSection(newSectionIndex: number): void {
-    console.log("old index: " + this.currentSectionIndex, "new index: " + newSectionIndex);
+    console.log(
+      'old index: ' + this.currentSectionIndex,
+      'new index: ' + newSectionIndex
+    );
     if (this.currentSectionIndex === newSectionIndex) return;
-    
+
     this.currentSectionIndex = newSectionIndex;
-    console.log("final index: " + this.currentSectionIndex);
-    
+    console.log('final index: ' + this.currentSectionIndex);
+  }
+
+  redirectIfOnLegalPage() {
+    if (
+      this.router.url === '/legal-notice/en' ||
+      this.router.url === '/legal-notice/de' ||
+      this.router.url === '/privacy-policy/en' ||
+      this.router.url === '/privacy-policy/de'
+    ) {
+      this.router.navigate(['/']).then(() => {
+        console.log('111');
+
+        setTimeout(() => {
+          console.log('222');
+
+          this.scrollToSection('about-me');
+        }, 500);
+      });
+    }
   }
 }
