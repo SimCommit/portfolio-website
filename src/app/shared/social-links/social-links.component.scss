@@ -1,4 +1,5 @@
 @use "./../../../styles/_mixins" as *;
+@use "./../../../styles/_variables" as *;
 
 div {
   @include dFlex($jc: flex-start);
@@ -8,30 +9,19 @@ div {
   }
 }
 
-#link-github {
-  background: url("./../../../../public/assets/img/icons/social-btns/github-line.svg")
-    no-repeat center / cover;
+.social-icon-bg {
+  fill: transparent;
 
-  height: 32px;
-  width: 32px;
-  &:hover {
-    background-image: url("./../../../../public/assets/img/icons/social-btns/github-line hover.svg");
-  }
 }
 
-#link-linkedin {
-  background: url("./../../../../public/assets/img/icons/social-btns/linkedin-box-line.svg")
-    no-repeat center / cover;
-
-  &:hover {
-    background-image: url("./../../../../public/assets/img/icons/social-btns/linkedin-box-line hover.svg");
-  }
+.social-icon-strokes-black {
+  fill: $main-black;
 }
 
-#link-mail {
-  background: url("./../../../../public/assets/img/icons/social-btns/mail-line.svg") no-repeat center / cover;
 
-  &:hover {
-    background-image: url("./../../../../public/assets/img/icons/social-btns/mail-line hover.svg");
-  }
+#link-github:hover .social-icon-bg,
+#link-linkedin:hover .social-icon-bg,
+#link-mail:hover .social-icon-bg {
+    fill: $main-coral;
+
 }

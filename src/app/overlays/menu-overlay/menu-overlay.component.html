@@ -12,7 +12,7 @@
                 <a (click)="this.mainPageState.updateCurrentSection(4); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[4])">References</a>
                 <a (click)="this.mainPageState.updateCurrentSection(5); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[5])">Contact Me</a>
             </div>
-            <app-social-links></app-social-links>
+            <app-social-links [isInBurgerMenu]="true" (click)="this.mainPageState.updateCurrentSection(5); closeFromOverlay()"></app-social-links>
         </nav>
     </div>
 </div>

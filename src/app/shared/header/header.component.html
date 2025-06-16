@@ -4,7 +4,7 @@
         <app-social-links id="app-social-links"></app-social-links>
         }
 
-        <div (click)="this.mainPageState.updateCurrentSection(0)" id="fs-logo" [routerLink]="['/']">
+        <div (click)="this.mainPageState.updateCurrentSection(0); this.mainPageState.scrollToSection('hero')" id="fs-logo" [routerLink]="['/']">
             <img src="./assets/img/logo-sf.svg" alt="Logo Simon Fuchs">
             <a
                 [ngClass]="{'header-element-color': mainPageState.currentSectionIndex !== 0, 'header-element-color-black': mainPageState.currentSectionIndex === 1 || mainPageState.currentSectionIndex === 3 }">
