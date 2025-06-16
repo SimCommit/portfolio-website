@@ -19,7 +19,7 @@ header {
   }
 }
 
-#header-controls{
+#header-controls {
   justify-content: flex-end;
 }
 
@@ -37,26 +37,37 @@ a {
   &:hover .header-element-color {
     color: $main-coral;
   }
+
+  a {
+    transition: color 125ms ease;
+  }
+}
+
+.section-change {
+
+  #logo-sf-text {
+    transition: color 450ms ease-in;
+  }
 }
 
 .header-element-color {
   color: $main-ivory;
-  transition: color 550ms ease-in;
+  transition: color 450ms ease-in;
 }
 
 .header-element-color-black {
   color: $main-black;
-  transition: color 550ms ease-in;
+  transition: color 450ms ease-in;
 }
 
 .svg-fill {
   color: $main-ivory;
-  transition: color 550ms ease-in;
+  transition: color 450ms ease-in;
 }
 
 .svg-fill-black {
   color: $main-black;
-  transition: color 550ms ease-in;
+  transition: color 450ms ease-in;
 }
 
 .header-element-color:hover {
@@ -95,7 +106,7 @@ a {
 }
 // svg path {
 //   fill: $main-ivory;
-//   transition: fill 125ms ease, color 550ms ease-in;
+//   transition: fill 125ms ease, color 450ms ease-in;
 // }
 
 #app-social-links {
