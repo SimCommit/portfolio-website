@@ -40,28 +40,16 @@ export class MainPageStateService {
   private sections: Element[] = [];
 
   currentSectionIndex: number = 0;
-  lastScrolled = '';
-  sections1 = [];
-  activeSection: any; // :((((((((((((((((((((((((((((((
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
   setSectionRefs(refs: Element[]) {
     this.sections = refs;
+
+    // console.log(this.sections);
   }
 
-  prevent = (e: Event) => e.preventDefault();
-  keyBlock = (e: KeyboardEvent) => {
-    if (
-      ['ArrowUp', 'ArrowDown', 'Space', 'PageUp', 'PageDown'].includes(e.key)
-    ) {
-      e.preventDefault();
-      e.stopPropagation();
-      e.cancelBubble = true; // for really old browsers
-    }
-  };
-
-  nextSection() {
+  nextSection(): void {
     if (this.isScrolling) return;
 
     if (this.currentSectionIndex < this.sections.length - 1) {
@@ -75,7 +63,7 @@ export class MainPageStateService {
     }
   }
 
-  previousSection() {
+  previousSection(): void {
     if (this.isScrolling) return;
 
     if (this.currentSectionIndex > 0) {
@@ -89,7 +77,7 @@ export class MainPageStateService {
     }
   }
 
-  scrollToSection(sectionId: string) {
+  scrollToSection(sectionId: string): void {
     if (this.isScrolling) return;
     const element = document.getElementById(sectionId);
     const index = this.anchors.indexOf(sectionId);
@@ -103,4 +91,12 @@ export class MainPageStateService {
     }
   }
 
+  updateCurrentSection(newSectionIndex: number): void {
+    console.log("old index: " + this.currentSectionIndex, "new index: " + newSectionIndex);
+    if (this.currentSectionIndex === newSectionIndex) return;
+    
+    this.currentSectionIndex = newSectionIndex;
+    console.log("final index: " + this.currentSectionIndex);
+    
+  }
 }

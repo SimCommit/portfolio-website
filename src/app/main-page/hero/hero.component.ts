@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { MainPageStateService } from '../main-page-state.service';
 
 @Component({
   selector: 'app-hero',
@@ -8,5 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
+  mainPageState = inject(MainPageStateService);
 
+  
 }

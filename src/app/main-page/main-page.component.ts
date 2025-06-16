@@ -43,7 +43,7 @@ export class MainPageComponent {
     this.mainPageState.setSectionRefs(elements);
   }
 
-  private onWheel = (event: WheelEvent) => {
+  private onWheel = (event: WheelEvent): void => {
     event.stopImmediatePropagation();
 
     if (event.deltaY > 0) {
@@ -55,7 +55,7 @@ export class MainPageComponent {
     event.preventDefault();
   };
 
-  private onKeyDown = (event: KeyboardEvent) => {
+  private onKeyDown = (event: KeyboardEvent): void => {
     event.stopImmediatePropagation();
 
     if (['ArrowDown', 'PageDown'].includes(event.key) || event.key === ' ' || event.code === 'Space') {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MainPageStateService } from '../main-page-state.service';
 
 @Component({
@@ -10,9 +10,5 @@ import { MainPageStateService } from '../main-page-state.service';
 export class SectionNavComponent {
   mainPageState = inject(MainPageStateService);
 
-  constructor() {}
-
-  @ViewChild('contact', { static: false, read: ElementRef })
-  contactRef!: ElementRef;
-  
+  constructor() {}  
 }
