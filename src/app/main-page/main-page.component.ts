@@ -44,6 +44,8 @@ export class MainPageComponent {
   }
 
   private onWheel = (event: WheelEvent): void => {
+    if (this.mainPageState.isScrolling) return;
+
     event.stopImmediatePropagation();
 
     if (event.deltaY > 0) {
@@ -56,11 +58,17 @@ export class MainPageComponent {
   };
 
   private onKeyDown = (event: KeyboardEvent): void => {
+    if (this.mainPageState.isScrolling) return;
+
     event.stopImmediatePropagation();
 
-    if (['ArrowDown', 'PageDown'].includes(event.key) || event.key === ' ' || event.code === 'Space') {
+    if (
+      ['ArrowDown', 'PageDown'].includes(event.key) ||
+      event.key === ' ' ||
+      event.code === 'Space'
+    ) {
       this.mainPageState.nextSection();
-      
+
       event.preventDefault();
     }
 
@@ -72,8 +80,13 @@ export class MainPageComponent {
   };
 
   ngOnInit(): void {
+    this.mainPageState.isScrolling = true;
     window.addEventListener('wheel', this.onWheel, { passive: false });
     window.addEventListener('keydown', this.onKeyDown, { passive: false });
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    setTimeout(() => {
+      this.mainPageState.isScrolling = false;
+    }, 500);
   }
 
   ngOnDestroy(): void {
