@@ -6,13 +6,36 @@
                 <button (click)="closeFromOverlay()"></button>
             </div>
             <div class="nav-body">
-                <a (click)="this.mainPageState.updateCurrentSection(1); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[1]); this.mainPageState.redirectIfOnLegalPage()">About Me</a>
-                <a (click)="this.mainPageState.updateCurrentSection(2); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[2])">Skillset</a>
-                <a (click)="this.mainPageState.updateCurrentSection(3); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[3])">Portfolio</a>
-                <a (click)="this.mainPageState.updateCurrentSection(4); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[4])">References</a>
-                <a (click)="this.mainPageState.updateCurrentSection(5); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[5])">Contact Me</a>
+                <div>
+                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="">
+                    <a
+                        (click)="this.mainPageState.updateCurrentSection(1); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[1]); this.mainPageState.redirectIfOnLegalPage()">About
+                        Me</a>
+                </div>
+                <div>
+                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="">
+                    <a
+                        (click)="this.mainPageState.updateCurrentSection(2); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[2])">Skillset</a>
+                </div>
+                <div>
+                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="">
+                    <a
+                        (click)="this.mainPageState.updateCurrentSection(3); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[3])">Portfolio</a>
+                </div>
+                <div>
+                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="">
+                    <a
+                        (click)="this.mainPageState.updateCurrentSection(4); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[4])">References</a>
+                </div>
+                <div>
+                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="">
+                    <a
+                        (click)="this.mainPageState.updateCurrentSection(5); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[5])">Contact
+                        Me</a>
+                </div>
             </div>
-            <app-social-links [isInBurgerMenu]="true" (click)="this.mainPageState.updateCurrentSection(5); closeFromOverlay()"></app-social-links>
+            <app-social-links [isInBurgerMenu]="true"
+                (click)="this.mainPageState.updateCurrentSection(5); closeFromOverlay()"></app-social-links>
         </nav>
     </div>
 </div>

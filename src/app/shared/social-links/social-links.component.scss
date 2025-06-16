@@ -11,7 +11,7 @@ div {
 
 .social-icon-bg {
   fill: transparent;
-
+  transition: fill 125ms ease;
 }
 
 .social-icon-strokes-black {
