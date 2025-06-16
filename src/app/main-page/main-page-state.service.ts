@@ -54,6 +54,14 @@ export class MainPageStateService {
     // console.log(this.sections);
   }
 
+  lockScroll() {
+    this.isScrolling = true;
+  }
+
+  unlockScroll() {
+    this.isScrolling = false;
+  }
+
   nextSection(): void {
     if (this.isScrolling) return;
 
