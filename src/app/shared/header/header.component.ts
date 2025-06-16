@@ -14,6 +14,7 @@ import { Router, RouterLink } from '@angular/router';
 export class HeaderComponent {
   mainPageState = inject(MainPageStateService);
 
+
   constructor(private translate: TranslateService, private router: Router) {}
 
   openBurgerOverlay(): void {

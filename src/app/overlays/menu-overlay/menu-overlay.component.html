@@ -6,11 +6,11 @@
                 <button (click)="closeFromOverlay()"></button>
             </div>
             <div class="nav-body">
-                <a>About Me</a>
-                <a>Skillset</a>
-                <a>Portfolio</a>
-                <a>References</a>
-                <a>Contact Me</a>
+                <a (click)="this.mainPageState.updateCurrentSection(1); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[1])">About Me</a>
+                <a (click)="this.mainPageState.updateCurrentSection(2); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[2])">Skillset</a>
+                <a (click)="this.mainPageState.updateCurrentSection(3); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[3])">Portfolio</a>
+                <a (click)="this.mainPageState.updateCurrentSection(4); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[4])">References</a>
+                <a (click)="this.mainPageState.updateCurrentSection(5); closeFromOverlay(); this.mainPageState.scrollToSection(this.mainPageState.anchors[5])">Contact Me</a>
             </div>
             <!-- <app-social-links></app-social-links> -->
         </nav>
