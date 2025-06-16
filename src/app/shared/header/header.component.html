@@ -1,6 +1,6 @@
 <header>
     <div>
-        @if (mainPageState.currentSectionIndex === 0) {
+        @if (mainPageState.currentSectionIndex === 0 || this.mainPageState.isOnLegalPage()) {
         <app-social-links id="app-social-links"></app-social-links>
         }
 
@@ -31,7 +31,9 @@
                 </svg>
                 }
             </button>
-            <button (click)="openBurgerOverlay(); openBurgerMenu()" id="btn-burger">
+
+            @if (!this.mainPageState.isOnLegalPage()) {
+                            <button (click)="openBurgerOverlay(); openBurgerMenu()" id="btn-burger">
                 <svg class="svg-fill"
                     [ngClass]="{'svg-fill-black': mainPageState.currentSectionIndex === 1 || mainPageState.currentSectionIndex === 3 }"
                     width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,6 +48,8 @@
                     </g>
                 </svg>
             </button>
+            }
+
         </div>
     </div>
 </header>

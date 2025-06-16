@@ -135,4 +135,13 @@ export class MainPageStateService {
       });
     }
   }
+
+  isOnLegalPage() {
+    return (
+      this.router.url === '/legal-notice/en' ||
+      this.router.url === '/legal-notice/de' ||
+      this.router.url === '/privacy-policy/en' ||
+      this.router.url === '/privacy-policy/de'
+    );
+  }
 }

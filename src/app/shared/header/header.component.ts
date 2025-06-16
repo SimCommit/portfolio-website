@@ -32,7 +32,7 @@ export class HeaderComponent {
    * before the overlay becomes visible.
    */
   openBurgerMenu(): void {
-    this.mainPageState.lockScroll();
+    this.mainPageState.lockScroll();  
     setTimeout(() => {
       this.mainPageState.burgerMenuIsOpen = true;
     }, 0);
