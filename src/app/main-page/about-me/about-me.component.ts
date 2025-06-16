@@ -2,12 +2,11 @@ import { Component, inject } from '@angular/core';
 import { AboutMeOverlayComponent } from './about-me-overlay/about-me-overlay.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { MainPageStateService } from '../main-page-state.service';
 
 @Component({
   selector: 'app-about-me',
-  imports: [AboutMeOverlayComponent, TranslateModule, CommonModule, RouterLink],
+  imports: [AboutMeOverlayComponent, TranslateModule, CommonModule],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss',
 })
