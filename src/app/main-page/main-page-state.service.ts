@@ -124,15 +124,19 @@ export class MainPageStateService {
       this.router.url === '/privacy-policy/en' ||
       this.router.url === '/privacy-policy/de'
     ) {
-      this.router.navigate(['/']).then(() => {
-        console.log('111');
+      this.router.navigate(['/'], { fragment: 'about-me' });
 
-        setTimeout(() => {
-          console.log('222');
+      // this.router.navigate(['/'], { state: { scrollTo: 'about-me' } });
 
-          this.scrollToSection('about-me');
-        }, 500);
-      });
+      // this.router.navigate(['/']).then(() => {
+      //   console.log('111');
+
+      //   setTimeout(() => {
+      //     console.log('222');
+
+      //     this.scrollToSection('about-me');
+      //   }, 500);
+      // });
     }
   }
 

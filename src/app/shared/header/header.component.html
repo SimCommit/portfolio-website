@@ -32,7 +32,7 @@
                 }
             </button>
 
-            @if (!this.mainPageState.isOnLegalPage()) {
+            <!-- @if (!this.mainPageState.isOnLegalPage()) { -->
                             <button (click)="openBurgerOverlay(); openBurgerMenu()" id="btn-burger">
                 <svg class="svg-fill"
                     [ngClass]="{'svg-fill-black': mainPageState.currentSectionIndex === 1 || mainPageState.currentSectionIndex === 3 }"
@@ -48,7 +48,7 @@
                     </g>
                 </svg>
             </button>
-            }
+            <!-- } -->
 
         </div>
     </div>
