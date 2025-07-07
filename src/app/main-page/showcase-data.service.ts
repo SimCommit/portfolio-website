@@ -5,15 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class ShowcaseDataService {
   myTechs: Tech[] = [
+    { imgUrl: './assets/img/skills/angular.svg', name: 'Angular' },
+    { imgUrl: './assets/img/skills/typescript.svg', name: 'TypeScript' },
+    { imgUrl: './assets/img/skills/javascript.svg', name: 'JavaScript' },
     { imgUrl: './assets/img/skills/html.svg', name: 'HTML' },
     { imgUrl: './assets/img/skills/css.svg', name: 'CSS' },
-    { imgUrl: './assets/img/skills/javascript.svg', name: 'JavaScript' },
-    { imgUrl: './assets/img/skills/typescript.svg', name: 'TypeScript' },
-    { imgUrl: './assets/img/skills/angular.svg', name: 'Angular' },
     { imgUrl: './assets/img/skills/firebase.svg', name: 'Firebase' },
-    { imgUrl: './assets/img/skills/git.svg', name: 'Git' },
     { imgUrl: './assets/img/skills/rest-api.svg', name: 'REST API' },
+    { imgUrl: './assets/img/skills/git.svg', name: 'Git' },
     { imgUrl: './assets/img/skills/scrum.svg', name: 'Scrum' },
+    { imgUrl: './assets/img/skills/figma.svg', name: 'Figma' },
   ];
 
   techsOnMyRadar: Tech[] = [
@@ -25,22 +26,19 @@ export class ShowcaseDataService {
   colleagueQuotes: Testimonial[] = [
     {
       name: 'Vadim Michel',
-      quote:
-        'main-page.references.colleague-quote.quote-1',
+      quote: 'main-page.references.colleague-quote.quote-1',
       role: 'main-page.references.colleague-quote.role-1',
       profileUrl: 'https://github.com/VadimMichel',
     },
     {
       name: 'Mirkan Polat',
-      quote:
-        'main-page.references.colleague-quote.quote-2',
+      quote: 'main-page.references.colleague-quote.quote-2',
       role: 'main-page.references.colleague-quote.role-2',
       profileUrl: 'https://github.com/MirkanPolat',
     },
     {
       name: 'Markus Fischer',
-      quote:
-        'main-page.references.colleague-quote.quote-3',
+      quote: 'main-page.references.colleague-quote.quote-3',
       role: 'main-page.references.colleague-quote.role-3',
       profileUrl: 'https://github.com/mideasdesign ',
     },
@@ -50,10 +48,10 @@ export class ShowcaseDataService {
     {
       name: 'Join',
       backgroundColor: '#F9AF42',
-      learningBgColor:"#679AAC",
+      learningBgColor: '#679AAC',
       picUrl: './assets/img/portfolio/project-preview-placeholder.svg',
       cogwheelUrl: './assets/img/portfolio/project/cogwheel-180.svg',
-      learning:"main-page.portfolio.project.learning-join",
+      learning: 'main-page.portfolio.project.learning-join',
       emojiUrl: './assets/img/icons/project/emoji-checkmark.svg',
       usedSkills: 'Angular | TypeScript | Firebase | HTML | CSS',
       description: 'main-page.portfolio.project.description-join',
@@ -63,28 +61,30 @@ export class ShowcaseDataService {
     {
       name: 'El Pollo Loco',
       backgroundColor: '#679AAC',
-      learningBgColor:"#FF834F",
+      learningBgColor: '#FF834F',
       picUrl: './assets/img/portfolio/project/el-pollo-loco.png',
       cogwheelUrl: './assets/img/portfolio/project/cogwheel-180.svg',
-      learning:"main-page.portfolio.project.learning-el-pollo-loco",
+      learning: 'main-page.portfolio.project.learning-el-pollo-loco',
       emojiUrl: './assets/img/icons/project/emoji-chick.svg',
       usedSkills: 'JavaScript | HTML | CSS',
       description: 'main-page.portfolio.project.description-el-pollo-loco',
       gitHubUrl: 'https://github.com/SimonMFuchs/el-pollo-loco',
-      projectUrl: 'https://simon-fuchs.developerakademie.net/el-pollo-loco/index.html',
+      projectUrl:
+        'https://simon-fuchs.developerakademie.net/el-pollo-loco/index.html',
     },
     {
       name: 'Pokédex',
       backgroundColor: '#FF834F',
-      learningBgColor:"#679AAC",
+      learningBgColor: '#679AAC',
       picUrl: './assets/img/portfolio/project/pokedex-preview-1.svg',
       cogwheelUrl: './assets/img/portfolio/project/cogwheel-180-yellow.svg',
-      learning:"main-page.portfolio.project.learning-pokedex",
+      learning: 'main-page.portfolio.project.learning-pokedex',
       emojiUrl: './assets/img/icons/project/pokeball.svg',
       usedSkills: 'JavaScript | CSS | HTML | API',
       description: 'main-page.portfolio.project.description-pokedex',
       gitHubUrl: 'https://github.com/SimonMFuchs/pokedex',
-      projectUrl: 'https://simon-fuchs.developerakademie.net/pokedex/index.html',
+      projectUrl:
+        'https://simon-fuchs.developerakademie.net/pokedex/index.html',
     },
   ];
 
@@ -108,10 +108,10 @@ interface Testimonial {
 interface Project {
   name: string;
   backgroundColor: string;
-  learningBgColor:string;
+  learningBgColor: string;
   picUrl: string;
   cogwheelUrl: string;
-  learning:string;
+  learning: string;
   emojiUrl: string;
   usedSkills: string;
   description: string;
