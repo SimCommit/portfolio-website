@@ -34,8 +34,9 @@ section {
   width: 100%;
 
   img {
-    width: 42rem;
+    width: 38rem;
     align-self: flex-end;
+    // object-fit: contain;
   }
 }
 
@@ -104,7 +105,7 @@ a {
 
 #hero-pic {
   img {
-    min-width: 480px;
+    // min-width: 480px;
     margin-left: -10rem;
   }
 }

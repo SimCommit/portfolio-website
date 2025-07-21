@@ -33,13 +33,14 @@ section {
     height: 80vh;
     height: 80dvh;
     object-position: bottom;
+    // transform: scaleX(-1);
   }
 }
 
 #about-me-card {
   @include fontSizeSwitch();
   z-index: 1;
-  margin-left: -12rem;
+  margin-left: -6rem;
   margin-right: -12rem;
   @include cardBoxStyle();
   // width: 36rem;

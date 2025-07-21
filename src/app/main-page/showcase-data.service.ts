@@ -15,12 +15,12 @@ export class ShowcaseDataService {
     { imgUrl: './assets/img/skills/git.svg', name: 'Git' },
     { imgUrl: './assets/img/skills/scrum.svg', name: 'Scrum' },
     { imgUrl: './assets/img/skills/figma.svg', name: 'Figma' },
+    // { imgUrl: "./assets/img/skills/material-design.svg", name: "Material Design" },
   ];
 
   techsOnMyRadar: Tech[] = [
     { imgUrl: './assets/img/skills/react.svg', name: 'React' },
     { imgUrl: './assets/img/skills/vue.js.svg', name: 'Vue.js' },
-    // { imgUrl: "./assets/img/skills/material-design.svg", name: "Material Design" },
   ];
 
   colleagueQuotes: Testimonial[] = [
@@ -28,7 +28,7 @@ export class ShowcaseDataService {
       name: 'Vadim Michel',
       quote: 'main-page.references.colleague-quote.quote-1',
       role: 'main-page.references.colleague-quote.role-1',
-      profileUrl: 'https://github.com/VadimMichel',
+      profileUrl: 'https://www.linkedin.com/in/vadim-michel-088792239/',
     },
     {
       name: 'Mirkan Polat',
@@ -40,7 +40,7 @@ export class ShowcaseDataService {
       name: 'Markus Fischer',
       quote: 'main-page.references.colleague-quote.quote-3',
       role: 'main-page.references.colleague-quote.role-3',
-      profileUrl: 'https://github.com/mideasdesign ',
+      profileUrl: 'https://www.linkedin.com/in/markus-fischer-mideasdesign/',
     },
   ];
 
