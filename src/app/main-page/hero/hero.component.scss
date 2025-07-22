@@ -4,16 +4,25 @@
 section {
   @include sectionBoxStyle();
   @include dFlex();
+  height: clamp(757px, 100vh, 1000px);
+  height: clamp(757px, 100dvh, 1000px);
   width: 100%;
+  padding: 0;
 
   img {
     object-position: bottom;
   }
+
+  @media (max-width: 1080px) {
+    height: clamp(px, 80vh, 1000px);
+    height: clamp(px, 80dvh, 1000px);
+  }
 }
 
 .hero-wrapper {
-  @include dFlex($ai: flex-start);
+  @include dFlex($ai: flex-start, $jc: space-between);
   @include maxWidth1920();
+  padding: calc(48px + 3rem) 6rem 0 6rem;
   height: 100%;
   width: 100%;
 }
@@ -21,13 +30,14 @@ section {
 #hero-content {
   @include dFlex($fd: column, $ai: flex-start, $jc: flex-start, $g: 2rem);
   width: 100%;
+  max-width: 825px;
   height: 100%;
   flex: 1;
-  background-color: $main-yellow;
 }
 
 #headline {
-  margin-top: 5rem;
+  margin-top: max(10dvh, 76px);
+  margin-top: clamp(76px, 10dvh, 100px);
   align-self: flex-start;
 
   p {
@@ -37,16 +47,19 @@ section {
 
 #hero-pic {
   @include dFlex($ai: flex-end);
-  // margin: 0 2rem;
   height: 100%;
-  // width: 100%;
 
   img {
-    height: 80dvh;
-    max-height: 1900px;
-    // width: 38rem;
+    height: min(83vh, 830px);
+    height: calc(83% + calc(48px + 3rem));
+    min-height: 628px;
+    // max-height: 1900px;
     align-self: flex-end;
-    // object-fit: contain;
+
+    @media (max-width: 1080px) {
+      height: 70dvh;
+      min-height: unset;
+    }
   }
 }
 
@@ -94,6 +107,8 @@ section {
 
 a {
   @include primaryButton();
+  margin-top: 32px;
+  font-size: clamp(1.6rem, 0.75vw + 1.36rem, 2.8rem);
 }
 
 // #region media queries
@@ -105,13 +120,13 @@ a {
 //   }
 // }
 
-@media (max-aspect-ratio: 4/3) {
-  section {
-    // flex-direction: column;
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-}
+// @media (max-aspect-ratio: 4/3) {
+//   section {
+//     // flex-direction: column;
+//     padding-left: 4rem;
+//     padding-right: 4rem;
+//   }
+// }
 
 // #hero-pic {
 //   img {
@@ -165,58 +180,58 @@ a {
 //   }
 // }
 
-@media (max-width: 720px) {
-  section {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
+// @media (max-width: 720px) {
+//   section {
+//     padding-left: 2.5rem;
+//     padding-right: 2.5rem;
+//   }
 
-  #headline {
-    margin-top: 20rem;
-    p {
-      font-size: 5rem;
-    }
-    h1 {
-      font-size: 10rem;
-    }
-  }
-}
+//   #headline {
+//     margin-top: 20rem;
+//     p {
+//       font-size: 5rem;
+//     }
+//     h1 {
+//       font-size: 10rem;
+//     }
+//   }
+// }
 
-@media (max-width: 580px) {
-  #hero-pic {
-    width: 62rem;
+// @media (max-width: 580px) {
+//   #hero-pic {
+//     width: 62rem;
 
-    img {
-      min-width: unset;
-      height: unset;
-      width: 62rem;
-      margin-left: 0;
-    }
-  }
+//     img {
+//       min-width: unset;
+//       height: unset;
+//       width: 62rem;
+//       margin-left: 0;
+//     }
+//   }
 
-  #cogwheel-container {
-    left: 0;
-    bottom: 3rem;
-    width: 22rem;
-    height: 22rem;
+//   #cogwheel-container {
+//     left: 0;
+//     bottom: 3rem;
+//     width: 22rem;
+//     height: 22rem;
 
-    img {
-      width: 22rem;
-      height: 22rem;
-    }
+//     img {
+//       width: 22rem;
+//       height: 22rem;
+//     }
 
-    #arrow-down {
-      width: 32px;
-      height: 32px;
-    }
-  }
-}
+//     #arrow-down {
+//       width: 32px;
+//       height: 32px;
+//     }
+//   }
+// }
 
-@media (max-width: 420px) {
-  #cogwheel-container {
-    left: 0;
-    bottom: 1rem;
-  }
-}
+// @media (max-width: 420px) {
+//   #cogwheel-container {
+//     left: 0;
+//     bottom: 1rem;
+//   }
+// }
 
 // #endregion

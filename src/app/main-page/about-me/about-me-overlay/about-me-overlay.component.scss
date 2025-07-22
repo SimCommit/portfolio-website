@@ -6,7 +6,7 @@
   width: 272px;
   background-color: $main-blue;
   color: $main-ivory;
-  @include cardBoxStyle();
+  @include cardBoxStyle($bc: $main-ivory);
 
   div {
     p {

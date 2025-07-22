@@ -28,16 +28,34 @@ export class HeroComponent {
       for (const entry of entries) {
         const width = entry.contentRect.width;
 
-        nameElement.style.fontSize = `${width * 0.16}px`;
-        greetingElement.style.fontSize = `${width * 0.07}px`;
-        positionElement.style.fontSize = `${width * 0.07}px`;
-
-        console.log('[HeroContent] Width: ', width);
+        nameElement.style.fontSize = `${Math.min(width * 0.16, 140)}px`;
+        greetingElement.style.fontSize = `${Math.min(width * 0.07, 61)}px`;
+        positionElement.style.fontSize = `${Math.min(width * 0.07, 61)}px`;
       }
     });
 
     this.resizeObserver.observe(containerElement);
   }
+
+  // updateDynamicSectionHeight(): void {
+  //   const vw = window.innerWidth;
+  //   const vh = window.innerHeight;
+
+  //   let factor = 1;
+
+  //   if (vw <= 768) {
+  //     factor = 0.75;
+  //   } else if (vw >= 1200) {
+  //     factor = 1;
+  //   } else {
+  //     const t = (vw - 768) / (1200 - 786);
+  //     factor = 0.75 + t * (1 - 0.75);
+  //   }
+
+  //   const dynamicHeight = vh * factor;
+    
+
+  // }
 
   ngOnDestroy(): void {
     this.resizeObserver?.disconnect();

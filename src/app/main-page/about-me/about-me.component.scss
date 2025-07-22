@@ -87,6 +87,7 @@ section {
 
 a {
   @include primaryButton();
+  // font-size: clamp(1.6rem, 1vw + 1.28rem, 3.2rem);
 }
 
 // #region app-about-me-overlay
