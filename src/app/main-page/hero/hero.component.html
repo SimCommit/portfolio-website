@@ -1,19 +1,23 @@
 <section id="hero">
-    <div id="hero-content">
-        <div id="headline">
-            <p>{{"main-page.hero.subheadline-part-1" | translate}}</p>
-            <h1>Simon&nbsp;Fuchs</h1>
-            <p>Frontend Developer</p>
-            <a (click)="this.mainPageState.updateCurrentSection(5)" href="#contact">{{"main-page.hero.contact-button" | translate}}</a>
+    <div class="hero-wrapper">
+        <div id="hero-content">
+            <div id="headline">
+                <p>{{"main-page.hero.subheadline-part-1" | translate}}</p>
+                <h1>Simon&nbsp;Fuchs</h1>
+                <p>Frontend Developer</p>
+                <a (click)="this.mainPageState.updateCurrentSection(5)"
+                    href="#contact">{{"main-page.hero.contact-button" |
+                    translate}}</a>
+            </div>
         </div>
-    </div>
-    
-    <div id="cogwheel-container">
-        <img id="cogwheel-scroll-down" src="./assets/img/hero/cogwheel-scroll-down-148-bg-blue.svg" alt="">
-        <img id="arrow-down" src="./assets/img/hero/arrow-down.svg" alt="">
-    </div>
 
-    <div id="hero-pic">
-        <img src="./assets/img/hero/simon-ivory-shirt-cogwheel-smaller.png" alt="Profil Picture">
+        <div id="cogwheel-container">
+            <img id="cogwheel-scroll-down" src="./assets/img/hero/cogwheel-scroll-down-148-bg-blue.svg" alt="">
+            <img id="arrow-down" src="./assets/img/hero/arrow-down.svg" alt="">
+        </div>
+
+        <div id="hero-pic">
+            <img src="./assets/img/hero/simon-ivory-shirt-cogwheel-smaller.png" alt="Profil Picture">
+        </div>
     </div>
 </section>

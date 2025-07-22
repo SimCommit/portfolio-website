@@ -3,7 +3,7 @@
 
 section {
   @include dFlex();
-  @include maxWidth1920();
+  // @include maxWidth1920();
   width: 100%;
 }
 

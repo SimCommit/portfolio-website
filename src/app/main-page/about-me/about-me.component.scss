@@ -39,10 +39,12 @@ section {
 
 #about-me-card {
   @include fontSizeSwitch();
+  @include cardBoxStyle();
   z-index: 1;
   margin-left: -6rem;
   margin-right: -12rem;
-  @include cardBoxStyle();
+  margin-bottom: 10%;
+  border-color: $main-ivory;
   // width: 36rem;
   background-color: $main-black;
   p {

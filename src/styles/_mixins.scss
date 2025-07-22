@@ -12,9 +12,9 @@
   max-width: 1920px;
 }
 
-@mixin variableContentWidth() {
-  max-width: min(clamp(128rem, 177.778vh + 0rem, 192rem));
-}
+// @mixin variableContentWidth() {
+//   max-width: min(clamp(128rem, 177.778vh + 0rem, 192rem));
+// }
 
 @mixin sectionBoxStyle($bc: $main-blue, $c: $main-ivory) {
   background-color: $bc;

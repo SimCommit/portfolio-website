@@ -11,9 +11,14 @@ section {
   }
 }
 
+.hero-wrapper {
+  @include dFlex($ai: flex-start);
+  @include maxWidth1920();
+  height: 100%;
+}
+
 #hero-content {
   @include dFlex($fd: column, $ai: flex-start, $jc: flex-start, $g: 2rem);
-  @include maxWidth1920();
   width: 100%;
   height: 100%;
 }
@@ -31,10 +36,12 @@ section {
   @include dFlex($ai: flex-end);
   // margin: 0 2rem;
   height: 100%;
-  width: 100%;
+  // width: 100%;
 
   img {
-    width: 38rem;
+    height: 80dvh;
+    max-height: 1900px;
+    // width: 38rem;
     align-self: flex-end;
     // object-fit: contain;
   }
@@ -103,57 +110,57 @@ a {
   }
 }
 
-#hero-pic {
-  img {
-    // min-width: 480px;
-    margin-left: -10rem;
-  }
-}
-@media (max-aspect-ratio: 7/6) {
-  a {
-    margin-top: 3rem;
-    font-size: 2.8rem;
-    padding: 1rem 3.2rem;
-  }
+// #hero-pic {
+//   img {
+//     // min-width: 480px;
+//     margin-left: -10rem;
+//   }
+// }
+// @media (max-aspect-ratio: 7/6) {
+//   a {
+//     margin-top: 3rem;
+//     font-size: 2.8rem;
+//     padding: 1rem 3.2rem;
+//   }
 
-  section {
-    flex-direction: column;
-    height: unset;
-    justify-content: space-between;
-    gap: 6rem;
+//   section {
+//     flex-direction: column;
+//     height: unset;
+//     justify-content: space-between;
+//     gap: 6rem;
 
-    #hero-content {
-      margin-top: 10rem;
-      height: 100%;
-      justify-content: center;
+//     #hero-content {
+//       margin-top: 10rem;
+//       height: 100%;
+//       justify-content: center;
 
-      #headline {
-        margin-top: unset;
-        p {
-          font-size: 5rem;
-        }
-        h1 {
-          font-size: 10rem;
-        }
-      }
-    }
+//       #headline {
+//         margin-top: unset;
+//         p {
+//           font-size: 5rem;
+//         }
+//         h1 {
+//           font-size: 10rem;
+//         }
+//       }
+//     }
 
-    #cogwheel-container {
-      left: 2.5rem;
-    }
+//     #cogwheel-container {
+//       left: 2.5rem;
+//     }
 
-    #hero-pic {
-      // align-self: flex-start;
-      justify-content: flex-end;
-      // margin-right: 10rem;
+//     #hero-pic {
+//       // align-self: flex-start;
+//       justify-content: flex-end;
+//       // margin-right: 10rem;
 
-      img {
-        // width: 55rem;
-        margin-left: 0;
-      }
-    }
-  }
-}
+//       img {
+//         // width: 55rem;
+//         margin-left: 0;
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: 720px) {
   section {
