@@ -9,11 +9,10 @@ header {
   @include maxWidth1920();
   > div {
     @include dFlex($jc: space-between);
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 60px;
 
     > div {
       width: 140px;
-
       @include dFlex($g: 0.5rem);
     }
   }
