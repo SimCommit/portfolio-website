@@ -1,24 +1,26 @@
-import { Component, ElementRef, inject, ViewChild } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
-import { MainPageStateService } from '../main-page-state.service';
+import { Component, ElementRef, inject, ViewChild } from "@angular/core";
+import { TranslateModule } from "@ngx-translate/core";
+import { MainPageStateService } from "../main-page-state.service";
 
 @Component({
-  selector: 'app-hero',
+  selector: "app-hero",
   imports: [TranslateModule],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss',
+  templateUrl: "./hero.component.html",
+  styleUrl: "./hero.component.scss",
 })
 export class HeroComponent {
   mainPageState = inject(MainPageStateService);
 
-  @ViewChild('heroContent') heroContentRef!: ElementRef<HTMLElement>;
-  @ViewChild('heroName') heroNameRef!: ElementRef<HTMLElement>;
-  @ViewChild('heroGreeting') heroGreetingRef!: ElementRef<HTMLElement>;
-  @ViewChild('heroPosition') heroPositionRef!: ElementRef<HTMLElement>;
+  @ViewChild("heroSection") heroSectionRef!: ElementRef<HTMLElement>;
+  @ViewChild("heroContent") heroContentRef!: ElementRef<HTMLElement>;
+  @ViewChild("heroName") heroNameRef!: ElementRef<HTMLElement>;
+  @ViewChild("heroGreeting") heroGreetingRef!: ElementRef<HTMLElement>;
+  @ViewChild("heroPosition") heroPositionRef!: ElementRef<HTMLElement>;
 
   private resizeObserver!: ResizeObserver;
 
   ngAfterViewInit(): void {
+    const sectionElement = this.heroSectionRef.nativeElement;
     const containerElement = this.heroContentRef.nativeElement;
     const nameElement = this.heroNameRef.nativeElement;
     const greetingElement = this.heroGreetingRef.nativeElement;
@@ -26,16 +28,18 @@ export class HeroComponent {
 
     this.resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
-        const width = entry.contentRect.width;
-        console.log(width);
-        console.log('Resize on:', containerElement.tagName);
+        const widthContainer = entry.contentRect.width;
+        const widthWindow = window.innerWidth;
+        console.log(widthContainer);
+        console.log(widthWindow);
+        // console.log('Resize on:', containerElement.tagName);
 
+        nameElement.style.fontSize = `${Math.min(widthContainer * 0.16, 140)}px`;
+        console.log(Math.min(widthContainer * 0.16, 140));
 
-        nameElement.style.fontSize = `${Math.min(width * 0.16, 140)}px`;
-        console.log(Math.min(width * 0.16, 140));
-
-        greetingElement.style.fontSize = `${Math.min(width * 0.07, 61)}px`;
-        positionElement.style.fontSize = `${Math.min(width * 0.07, 61)}px`;
+        greetingElement.style.fontSize = `${Math.min(widthContainer * 0.07, 61)}px`;
+        positionElement.style.fontSize = `${Math.min(widthContainer * 0.07, 61)}px`;
+        sectionElement.style.height = `${widthWindow * 0.05}dvh`;
       }
     });
 

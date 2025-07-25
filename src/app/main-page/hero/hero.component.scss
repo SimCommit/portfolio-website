@@ -66,6 +66,7 @@ section {
 
 // #region cogwheel-scroll-down down animation
 #cogwheel-container {
+  z-index: 3;
   position: absolute;
   bottom: 50px;
   left: 80px;
@@ -114,6 +115,7 @@ a {
 
 // #region media queries
 
+// Breit aber niedrig
 @media (min-width: 1200px) and (max-height: 768px) {
   #cogwheel-container {
   bottom: 50px;
@@ -122,6 +124,7 @@ a {
 }
 }
 
+// Switch zu Mobile "flex-direction"
 @media (max-width: 768px) {
   section {
     height: clamp(600px, 100vh, 1200px);
@@ -131,5 +134,4 @@ a {
     }
   }
 }
-
 // #endregion
