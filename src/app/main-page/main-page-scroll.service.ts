@@ -5,9 +5,9 @@ import { Inject, Injectable } from "@angular/core";
   providedIn: "root",
 })
 export class MainPageScrollService {
-  anchors: string[] = ["hero", "about-me", "skills", "portfolio", "references", "contact"];
+  // anchors: string[] = ["hero", "about-me", "skills", "portfolio", "references", "contact"];
 
-  private sections: Element[] = [];
+  public sections: Element[] = [];
 
   currentSectionIndex: number = 0;
 
@@ -32,8 +32,8 @@ export class MainPageScrollService {
 
     if (this.currentSectionIndex < this.sections.length - 1) {
       this.currentSectionIndex++;
-      this.scrollToSection(this.anchors[this.currentSectionIndex]);
-      console.log("nextSection", this.currentSectionIndex, this.anchors[this.currentSectionIndex]);
+      this.scrollToSection(this.currentSectionIndex);
+      // console.log("nextSection", this.currentSectionIndex, this.sections[this.currentSectionIndex]);
     }
   }
 
@@ -42,17 +42,16 @@ export class MainPageScrollService {
 
     if (this.currentSectionIndex > 0) {
       this.currentSectionIndex--;
-      this.scrollToSection(this.anchors[this.currentSectionIndex]);
-      console.log("perviousSection", this.currentSectionIndex, this.anchors[this.currentSectionIndex]);
+      this.scrollToSection(this.currentSectionIndex);
+      // console.log("perviousSection", this.currentSectionIndex, this.sections[this.currentSectionIndex]);
     }
   }
 
-  scrollToSection(sectionId: string): void {
+  scrollToSection(sectionIndex: number): void {
     if (this.isScrolling) return;
-    console.log(sectionId);
 
-    const element = document.getElementById(sectionId);
-    // const index = this.anchors.indexOf(sectionId);
+    const element = this.sections[sectionIndex];    
+    console.log(sectionIndex);
 
     if (element) {
       this.isScrolling = true;

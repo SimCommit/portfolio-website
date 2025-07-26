@@ -1,23 +1,17 @@
-import {
-  Component,
-  ElementRef,
-  inject,
-  QueryList,
-  ViewChildren,
-} from '@angular/core';
-import { HeroComponent } from './hero/hero.component';
-import { SectionNavComponent } from './section-nav/section-nav.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { SkillsComponent } from './skills/skills.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { ReferencesComponent } from './references/references.component';
-import { ContactComponent } from './contact/contact.component';
-import { HeaderComponent } from '../shared/header/header.component';
+import { Component, ElementRef, inject, QueryList, ViewChildren } from "@angular/core";
+import { HeroComponent } from "./hero/hero.component";
+import { SectionNavComponent } from "./section-nav/section-nav.component";
+import { AboutMeComponent } from "./about-me/about-me.component";
+import { SkillsComponent } from "./skills/skills.component";
+import { PortfolioComponent } from "./portfolio/portfolio.component";
+import { ReferencesComponent } from "./references/references.component";
+import { ContactComponent } from "./contact/contact.component";
+import { HeaderComponent } from "../shared/header/header.component";
 // import { MainPageStateService } from './main-page-state.service';
-import { MainPageScrollService } from './main-page-scroll.service';
+import { MainPageScrollService } from "./main-page-scroll.service";
 
 @Component({
-  selector: 'app-main-page',
+  selector: "app-main-page",
   imports: [
     HeaderComponent,
     HeroComponent,
@@ -28,14 +22,11 @@ import { MainPageScrollService } from './main-page-scroll.service';
     ReferencesComponent,
     ContactComponent,
   ],
-  templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.scss',
+  templateUrl: "./main-page.component.html",
+  styleUrl: "./main-page.component.scss",
 })
 export class MainPageComponent {
-  // mainPageStateService = inject(MainPageStateService);
-
-  @ViewChildren('section', { read: ElementRef })
-  private sectionRefs!: QueryList<ElementRef>;
+  @ViewChildren("section", { read: ElementRef }) private sectionRefs!: QueryList<ElementRef>;
 
   constructor(private mainPageScrollService: MainPageScrollService) {}
 
@@ -63,17 +54,13 @@ export class MainPageComponent {
 
     event.stopImmediatePropagation();
 
-    if (
-      ['ArrowDown', 'PageDown'].includes(event.key) ||
-      event.key === ' ' ||
-      event.code === 'Space'
-    ) {
+    if (["ArrowDown", "PageDown"].includes(event.key) || event.key === " " || event.code === "Space") {
       this.mainPageScrollService.nextSection();
 
       event.preventDefault();
     }
 
-    if (['ArrowUp', 'PageUp'].includes(event.key)) {
+    if (["ArrowUp", "PageUp"].includes(event.key)) {
       this.mainPageScrollService.previousSection();
 
       event.preventDefault();
@@ -82,16 +69,16 @@ export class MainPageComponent {
 
   ngOnInit(): void {
     this.mainPageScrollService.isScrolling = true;
-    window.addEventListener('wheel', this.onWheel, { passive: false });
-    window.addEventListener('keydown', this.onKeyDown, { passive: false });
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    window.addEventListener("wheel", this.onWheel, { passive: false });
+    window.addEventListener("keydown", this.onKeyDown, { passive: false });
+    window.scrollTo({ top: 0, behavior: "auto" });
     setTimeout(() => {
       this.mainPageScrollService.isScrolling = false;
     }, 500);
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener('wheel', this.onWheel);
-    window.removeEventListener('keydown', this.onKeyDown);
+    window.removeEventListener("wheel", this.onWheel);
+    window.removeEventListener("keydown", this.onKeyDown);
   }
 }

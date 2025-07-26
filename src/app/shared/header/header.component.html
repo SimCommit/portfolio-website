@@ -5,7 +5,7 @@
         }
 
         <div [ngClass]="{ 'section-change': mainPageScrollService.isScrolling}"
-            (click)="mainPageScrollService.updateCurrentSection(0); mainPageScrollService.scrollToSection('hero')"
+            (click)="mainPageScrollService.updateCurrentSection(0); mainPageScrollService.scrollToSection(0)"
             id="fs-logo" [routerLink]="['/']">
             <img src="./assets/img/logo-sf.svg" alt="Logo Simon Fuchs">
             <a id="logo-sf-text"

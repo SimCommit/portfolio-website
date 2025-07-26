@@ -18,28 +18,29 @@
         @switch (true) {
         @case (mainPageScrollService.currentSectionIndex === anchorNumber) {
         @if (mainPageScrollService.currentSectionIndex === 1 || mainPageScrollService.currentSectionIndex === 3) {
-        <a (click)="this.mainPageScrollService.updateCurrentSection(anchorNumber)"
-            href="#{{mainPageScrollService.anchors[anchorNumber]}}" class="icon-active">
+        <a (click)="this.mainPageScrollService.scrollToSection(anchorNumber)"
+            href="#" class="icon-active">
             <img src="./assets/img/icons/section-nav/icon-active-coral.svg" alt="Nope">
         </a>
         } @else {
-        <a (click)="this.mainPageScrollService.updateCurrentSection(anchorNumber)"
-            href="#{{mainPageScrollService.anchors[anchorNumber]}}" class="icon-active">
+        <a (click)="this.mainPageScrollService.scrollToSection(anchorNumber)"
+            href="#" class="icon-active">
             <img src="./assets/img/icons/section-nav/icon-active-yellow.svg" alt="Nope">
         </a>
         }
         }
         @default {
         @if (mainPageScrollService.currentSectionIndex === 1 || mainPageScrollService.currentSectionIndex === 3) {
-        <a (click)="this.mainPageScrollService.updateCurrentSection(anchorNumber)"
-            href="#{{mainPageScrollService.anchors[anchorNumber]}}" class="icon-inactive">
+        <a (click)="this.mainPageScrollService.scrollToSection(anchorNumber)"
+            href="#" class="icon-inactive">
             <img src="./assets/img/icons/section-nav/icon-inactive-black.svg" alt="Nope">
         </a>
         } @else {
-        <a (click)="this.mainPageScrollService.updateCurrentSection(anchorNumber)"
-            href="#{{mainPageScrollService.anchors[anchorNumber]}}" class="icon-inactive">
+        <a (click)="this.mainPageScrollService.scrollToSection(anchorNumber)"
+            href="#" class="icon-inactive">
             <img src="./assets/img/icons/section-nav/icon-inactive-ivory.svg" alt="Nope">
         </a>
+        <!-- href="#{{mainPageScrollService.anchors[anchorNumber]}}" -->
         }
         }
 
