@@ -25,27 +25,11 @@ export class HeroComponent {
     this.updateSectionHeight();
   }
 
-  updateSectionHeight = (): void => {
-    const sectionElement = this.heroSectionRef.nativeElement;
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    const sectionWidth = Math.min(windowWidth, 1600);
-
-    const MAX_SECTION_ASPECT_RATIO: number = 1.4;
-
-    if (sectionWidth / windowHeight <= MAX_SECTION_ASPECT_RATIO && windowWidth >= 768) {
-      sectionElement.style.height = `${sectionWidth * 0.6}px`;
-    } else {
-      sectionElement.style.height = `100dvh`;
-    }
-  };
-
   initResizeObserver(): void {
     const contentEl = this.heroContentRef.nativeElement;
     const headlineEl = this.heroHeadlineRef.nativeElement;
     const greetingTaglineEl = this.heroGreetingRef.nativeElement;
     const positionTaglineEl = this.heroPositionRef.nativeElement;
-
     const MAX_HEADLINE_SIZE: number = 140;
     const MAX_TAGLINE_SIZE: number = 61;
 
@@ -60,6 +44,22 @@ export class HeroComponent {
 
     this.resizeObserver.observe(contentEl);
   }
+
+  updateSectionHeight = (): void => {
+    const sectionElement = this.heroSectionRef.nativeElement;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const sectionWidth = Math.min(windowWidth, 1600);
+    const MAX_SECTION_ASPECT_RATIO: number = 1.5;
+    const BREAKPOINT_MOBILE: number = 768;
+    const MIN_SECTION_HEIGHT: number = 640;
+
+    if (sectionWidth / windowHeight <= MAX_SECTION_ASPECT_RATIO && windowWidth >= BREAKPOINT_MOBILE) {
+      sectionElement.style.height = `${Math.max(sectionWidth * 0.6, MIN_SECTION_HEIGHT)}px`;
+    } else {
+      sectionElement.style.height = `clamp(640px, 100dvh, 1200px)`;
+    }
+  };
 
   ngOnDestroy(): void {
     this.resizeObserver?.disconnect();

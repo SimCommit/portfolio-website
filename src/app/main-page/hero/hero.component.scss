@@ -31,13 +31,13 @@ section {
   flex: 1;
 }
 
-#headline {
-  margin-top: clamp(76px, 10dvh, 100px);
+.headline {
+  margin-top: 13%;
   align-self: flex-start;
+}
 
-  p {
-    font-size: 30px;
-  }
+.heroPosition {
+  line-height: 0.7;
 }
 
 #hero-pic {
@@ -104,7 +104,6 @@ section {
 a {
   @include primaryButton();
   margin-top: 32px;
-  font-size: clamp(1.6rem, 0.75vw + 1.36rem, 2.8rem);
 }
 
 // #region media queries
@@ -114,7 +113,7 @@ a {
   #cogwheel-container {
     bottom: 50px;
     left: 50%;
-    transform: translateX(-60%);
+    transform: translateX(-45%);
   }
 }
 

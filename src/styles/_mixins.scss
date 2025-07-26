@@ -12,10 +12,6 @@
   max-width: 1600px;
 }
 
-// @mixin variableContentWidth() {
-//   max-width: min(clamp(128rem, 177.778vh + 0rem, 192rem));
-// }
-
 @mixin sectionBoxStyle($bc: $main-blue, $c: $main-ivory) {
   background-color: $bc;
   color: $c;
@@ -25,14 +21,7 @@
   overflow: hidden;
 }
 
-@mixin cardBoxStyle(
-  $p: 32px 24px 24px 24px,
-  $bw: 1px,
-  $bs: solid,
-  $bc: $main-black,
-  $br: 4px,
-  $ta: justify
-) {
+@mixin cardBoxStyle($p: 32px 24px 24px 24px, $bw: 1px, $bs: solid, $bc: $main-black, $br: 4px, $ta: justify) {
   padding: $p;
   border-width: $bw;
   border-style: $bs;
@@ -66,20 +55,21 @@
     font-size: 20px;
   }
 
-    @media (min-height: 1440px) {
+  @media (min-height: 1440px) {
     font-size: 20px;
   }
 }
 
 @mixin primaryButton() {
   display: inline-block;
-  padding: 0.5rem 1.6rem;
+  padding: 12px 24px;
   margin-top: 2rem;
   border: 1px solid $main-ivory;
   border-radius: 50px;
   color: $main-ivory;
   font-weight: bold;
-  font-size: clamp(1.6rem, 0.625vw + 1.4rem, 2.4rem);
+  // font-size: clamp(1.6rem, 0.625vw + 1.4rem, 2.4rem);
+  font-size: 18px;
   transition: background-color 125ms ease;
 
   &:hover {

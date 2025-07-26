@@ -1,10 +1,10 @@
 <section id="hero" #heroSection>
     <div id="hero-wrapper">
         <div id="hero-content" #heroContent>
-            <div id="headline">
+            <div class="headline">
                 <p #heroGreeting>{{"main-page.hero.subheadline-part-1" | translate}}</p>
                 <h1 #heroHeadline>Simon&nbsp;Fuchs</h1>
-                <p #heroPosition>Frontend Developer</p>
+                <p class="heroPosition" #heroPosition>Frontend Developer</p>
                 <a (click)="this.mainPageState.updateCurrentSection(5)"
                     href="#contact">{{"main-page.hero.contact-button" | translate}}</a>
             </div>
