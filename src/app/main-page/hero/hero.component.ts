@@ -39,7 +39,12 @@ export class HeroComponent {
 
         greetingElement.style.fontSize = `${Math.min(widthContainer * 0.07, 61)}px`;
         positionElement.style.fontSize = `${Math.min(widthContainer * 0.07, 61)}px`;
-        sectionElement.style.height = `${widthWindow * 0.05}dvh`;
+
+        if (widthWindow >= 768 && widthWindow <= 1024) {
+          sectionElement.style.height = `${widthWindow * 0.09}dvh`;
+        } else {
+          sectionElement.style.height = `100dvh`;
+        }
       }
     });
 
