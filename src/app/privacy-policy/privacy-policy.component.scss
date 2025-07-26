@@ -17,7 +17,7 @@ section {
 }
 
 #app-footer {
-  @include maxWidth1920();
+  @include maxWidth1600();
   width: 100%;
   color: $main-ivory;
   padding: 0 40px;

@@ -3,7 +3,7 @@
 
 section {
   @include dFlex($fd: column);
-  @include maxWidth1920();
+  @include maxWidth1600();
   color: $main-ivory;
   width: 100%;
   padding: 160px 80px;

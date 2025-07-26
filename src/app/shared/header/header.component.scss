@@ -6,7 +6,7 @@ header {
   width: 100%;
   left: 50%;
   transform: translateX(-50%);
-  @include maxWidth1920();
+  @include maxWidth1600();
   > div {
     @include dFlex($jc: space-between);
     padding: 1.5rem 60px;

@@ -9,7 +9,7 @@
 }
 
 #overlay-container {
-  @include maxWidth1920();
+  @include maxWidth1600();
   height: 100%;
   padding: 1.5rem 0;
   margin: 0 2.5rem;

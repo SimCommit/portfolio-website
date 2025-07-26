@@ -28,20 +28,19 @@ export class HeroComponent {
 
     this.resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
-        const widthContainer = entry.contentRect.width;
-        const widthWindow = window.innerWidth;
-        console.log(widthContainer);
-        console.log(widthWindow);
-        // console.log('Resize on:', containerElement.tagName);
+        const containerWidth = entry.contentRect.width;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const sectionWidth = Math.min(windowWidth, 1600);
 
-        nameElement.style.fontSize = `${Math.min(widthContainer * 0.16, 140)}px`;
-        console.log(Math.min(widthContainer * 0.16, 140));
+        nameElement.style.fontSize = `${Math.min(containerWidth * 0.16, 140)}px`;
+        console.log(Math.min(containerWidth * 0.16, 140));
 
-        greetingElement.style.fontSize = `${Math.min(widthContainer * 0.07, 61)}px`;
-        positionElement.style.fontSize = `${Math.min(widthContainer * 0.07, 61)}px`;
+        greetingElement.style.fontSize = `${Math.min(containerWidth * 0.07, 61)}px`;
+        positionElement.style.fontSize = `${Math.min(containerWidth * 0.07, 61)}px`;
 
-        if (widthWindow >= 768 && widthWindow <= 1024) {
-          sectionElement.style.height = `${widthWindow * 0.09}dvh`;
+        if (sectionWidth / windowHeight <= 1.4 && windowWidth >= 768) {
+          sectionElement.style.height = `${sectionWidth * 0.6}px`;
         } else {
           sectionElement.style.height = `100dvh`;
         }
