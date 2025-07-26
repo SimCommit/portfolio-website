@@ -17,8 +17,15 @@
   color: $c;
   height: 100vh;
   height: 100dvh;
-  padding: calc(48px + 3rem) 6rem 0 6rem;
   overflow: hidden;
+}
+
+@mixin sectionWrapperStyle() {
+  padding: calc(48px + 30px) 60px 0 60px;
+
+  @media (max-width: 640px) {
+    padding: calc(48px + 20px) 24px 0 24px;
+  }
 }
 
 @mixin cardBoxStyle($p: 32px 24px 24px 24px, $bw: 1px, $bs: solid, $bc: $main-black, $br: 4px, $ta: justify) {

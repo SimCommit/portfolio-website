@@ -51,11 +51,13 @@ export class HeroComponent {
     const windowHeight = window.innerHeight;
     const sectionWidth = Math.min(windowWidth, 1600);
     const MAX_SECTION_ASPECT_RATIO: number = 1.5;
-    const BREAKPOINT_MOBILE: number = 768;
-    const MIN_SECTION_HEIGHT: number = 640;
+    const BREAKPOINT_MOBILE: number = 800;
+    const MIN_SECTION_HEIGHT: number = 440;
 
     if (sectionWidth / windowHeight <= MAX_SECTION_ASPECT_RATIO && windowWidth >= BREAKPOINT_MOBILE) {
       sectionElement.style.height = `${Math.max(sectionWidth * 0.6, MIN_SECTION_HEIGHT)}px`;
+    } else if (windowWidth < BREAKPOINT_MOBILE) {
+      sectionElement.style.height = "unset";
     } else {
       sectionElement.style.height = `clamp(640px, 100dvh, 1200px)`;
     }
