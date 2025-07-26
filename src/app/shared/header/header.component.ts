@@ -1,24 +1,28 @@
-import { Component, inject } from '@angular/core';
-import { SocialLinksComponent } from '../social-links/social-links.component';
-import { CommonModule } from '@angular/common';
-import { MainPageStateService } from '../../main-page/main-page-state.service';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component, inject } from "@angular/core";
+import { SocialLinksComponent } from "../social-links/social-links.component";
+import { CommonModule } from "@angular/common";
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { Router, RouterLink } from "@angular/router";
+import { MainPageScrollService } from "../../main-page/main-page-scroll.service";
+import { PageStateService } from "../../page-state.service";
 
 @Component({
-  selector: 'app-header',
+  selector: "app-header",
   imports: [SocialLinksComponent, CommonModule, TranslateModule, RouterLink],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  templateUrl: "./header.component.html",
+  styleUrl: "./header.component.scss",
 })
 export class HeaderComponent {
-  mainPageState = inject(MainPageStateService);
 
-
-  constructor(private translate: TranslateService, private router: Router) {}
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+    public mainPageScrollService: MainPageScrollService,
+    public pageStateService: PageStateService
+  ) {}
 
   openBurgerOverlay(): void {
-    this.mainPageState.hideMenu = false;
+    this.pageStateService.hideMenu = false;
   }
 
   /**
@@ -32,19 +36,19 @@ export class HeaderComponent {
    * before the overlay becomes visible.
    */
   openBurgerMenu(): void {
-    this.mainPageState.lockScroll();  
+    this.mainPageScrollService.lockScroll();
     setTimeout(() => {
-      this.mainPageState.burgerMenuIsOpen = true;
+      this.pageStateService.burgerMenuIsOpen = true;
     }, 0);
   }
 
   toggleLanguage(): void {
-    if (this.mainPageState.currentLanguage === 'en') {
-      this.translate.use('de');
-      this.mainPageState.currentLanguage = 'de';
+    if (this.pageStateService.currentLanguage === "en") {
+      this.translate.use("de");
+      this.pageStateService.currentLanguage = "de";
     } else {
-      this.translate.use('en');
-      this.mainPageState.currentLanguage = 'en';
+      this.translate.use("en");
+      this.pageStateService.currentLanguage = "en";
     }
     this.toggleLanguageLegalPages();
   }
@@ -52,24 +56,12 @@ export class HeaderComponent {
   toggleLanguageLegalPages(): void {
     console.log(this.router.url);
 
-    if (
-      this.router.url === '/legal-notice/en' ||
-      this.router.url === '/legal-notice/de'
-    ) {
-      this.router.navigate([
-        '/legal-notice',
-        this.mainPageState.currentLanguage,
-      ]);
+    if (this.router.url === "/legal-notice/en" || this.router.url === "/legal-notice/de") {
+      this.router.navigate(["/legal-notice", this.pageStateService.currentLanguage]);
     }
 
-    if (
-      this.router.url === '/privacy-policy/en' ||
-      this.router.url === '/privacy-policy/de'
-    ) {
-      this.router.navigate([
-        '/privacy-policy',
-        this.mainPageState.currentLanguage,
-      ]);
+    if (this.router.url === "/privacy-policy/en" || this.router.url === "/privacy-policy/de") {
+      this.router.navigate(["/privacy-policy", this.pageStateService.currentLanguage]);
     }
   }
 }

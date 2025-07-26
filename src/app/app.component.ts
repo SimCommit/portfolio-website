@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { MainPageStateService } from './main-page/main-page-state.service';
+// import { MainPageStateService } from './main-page/main-page-state.service';
 import { CommonModule } from '@angular/common';
 import { MenuOverlayComponent } from './overlays/menu-overlay/menu-overlay.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { marker as _ } from '@colsen1991/ngx-translate-extract-marker';
 import { filter } from 'rxjs';
+import { PageStateService } from './page-state.service';
 // import { Subscription } from 'rxjs';
 
 @Component({
@@ -17,9 +18,9 @@ import { filter } from 'rxjs';
 export class AppComponent {
   title = 'portfolio-website';
 
-  mainPageState = inject(MainPageStateService);
+  // mainPageState = inject(MainPageStateService);
 
-  constructor(private translate: TranslateService, private router: Router) {
+  constructor(private translate: TranslateService, private router: Router, public pageStateService: PageStateService) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
@@ -50,7 +51,7 @@ export class AppComponent {
 
   closeBurgerOverlay(): void {
     setTimeout(() => {
-      this.mainPageState.hideMenu = true;
+      this.pageStateService.hideMenu = true;
     }, 300);
   }
 }

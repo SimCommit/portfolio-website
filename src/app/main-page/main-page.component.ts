@@ -13,7 +13,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ReferencesComponent } from './references/references.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from '../shared/header/header.component';
-import { MainPageStateService } from './main-page-state.service';
+// import { MainPageStateService } from './main-page-state.service';
+import { MainPageScrollService } from './main-page-scroll.service';
 
 @Component({
   selector: 'app-main-page',
@@ -31,34 +32,34 @@ import { MainPageStateService } from './main-page-state.service';
   styleUrl: './main-page.component.scss',
 })
 export class MainPageComponent {
-  mainPageState = inject(MainPageStateService);
+  // mainPageStateService = inject(MainPageStateService);
 
   @ViewChildren('section', { read: ElementRef })
   private sectionRefs!: QueryList<ElementRef>;
 
-  constructor() {}
+  constructor(private mainPageScrollService: MainPageScrollService) {}
 
   ngAfterViewInit(): void {
     const elements = this.sectionRefs.map((ref) => ref.nativeElement);
-    this.mainPageState.setSectionRefs(elements);
+    this.mainPageScrollService.setSectionRefs(elements);
   }
 
   private onWheel = (event: WheelEvent): void => {
-    if (this.mainPageState.isScrolling) return;
+    if (this.mainPageScrollService.isScrolling) return;
 
     event.stopImmediatePropagation();
 
     if (event.deltaY > 0) {
-      this.mainPageState.nextSection();
+      this.mainPageScrollService.nextSection();
     } else {
-      this.mainPageState.previousSection();
+      this.mainPageScrollService.previousSection();
     }
 
     event.preventDefault();
   };
 
   private onKeyDown = (event: KeyboardEvent): void => {
-    if (this.mainPageState.isScrolling) return;
+    if (this.mainPageScrollService.isScrolling) return;
 
     event.stopImmediatePropagation();
 
@@ -67,25 +68,25 @@ export class MainPageComponent {
       event.key === ' ' ||
       event.code === 'Space'
     ) {
-      this.mainPageState.nextSection();
+      this.mainPageScrollService.nextSection();
 
       event.preventDefault();
     }
 
     if (['ArrowUp', 'PageUp'].includes(event.key)) {
-      this.mainPageState.previousSection();
+      this.mainPageScrollService.previousSection();
 
       event.preventDefault();
     }
   };
 
   ngOnInit(): void {
-    this.mainPageState.isScrolling = true;
+    this.mainPageScrollService.isScrolling = true;
     window.addEventListener('wheel', this.onWheel, { passive: false });
     window.addEventListener('keydown', this.onKeyDown, { passive: false });
     window.scrollTo({ top: 0, behavior: 'auto' });
     setTimeout(() => {
-      this.mainPageState.isScrolling = false;
+      this.mainPageScrollService.isScrolling = false;
     }, 500);
   }
 
@@ -93,5 +94,4 @@ export class MainPageComponent {
     window.removeEventListener('wheel', this.onWheel);
     window.removeEventListener('keydown', this.onKeyDown);
   }
-  
 }

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MainPageStateService } from '../../main-page/main-page-state.service';
+import { PageStateService } from '../../page-state.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +10,6 @@ import { MainPageStateService } from '../../main-page/main-page-state.service';
 })
 export class FooterComponent {
 
-    mainPageState = inject(MainPageStateService);
-
+ constructor(public pageStateService: PageStateService) { }
 
 }

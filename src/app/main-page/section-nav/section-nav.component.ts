@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { MainPageStateService } from '../main-page-state.service';
+import { MainPageScrollService } from '../main-page-scroll.service';
 
 @Component({
   selector: 'app-section-nav',
@@ -8,7 +8,6 @@ import { MainPageStateService } from '../main-page-state.service';
   styleUrl: './section-nav.component.scss'
 })
 export class SectionNavComponent {
-  mainPageState = inject(MainPageStateService);
 
-  constructor() {}  
+  constructor(public mainPageScrollService: MainPageScrollService) {}  
 }

@@ -11,7 +11,7 @@
                 {{"main-page.about-me.card-part-2" | translate}}
             </p>
             <div>
-                <a (click)="this.mainPageState.updateCurrentSection(5)" href="#contact">{{"main-page.about-me.contact-button" | translate}}</a>
+                <a (click)="this.mainPageScrollService.updateCurrentSection(5)" href="#contact">{{"main-page.about-me.contact-button" | translate}}</a>
                 <app-about-me-overlay class="disappear" [ngClass]="{'appear': emojiIsHovered}"
                     id="app-about-me-overlay">
                 </app-about-me-overlay>

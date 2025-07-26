@@ -1,151 +1,151 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+// import { DOCUMENT } from '@angular/common';
+// import { Inject, Injectable } from '@angular/core';
+// import { NavigationEnd, Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class MainPageStateService {
-  // currentSection: number = 6;
 
-  // currentPage: "main-page" | "legal-notice" | "privacy-policy" = "main-page";
+// @Injectable({
+//   providedIn: 'root',
+// })
+// export class MainPageStateService {
+//   // currentSection: number = 6;
 
-  anchors: string[] = [
-    'hero',
-    'about-me',
-    'skills',
-    'portfolio',
-    'references',
-    'contact',
-  ];
+//   // currentPage: "main-page" | "legal-notice" | "privacy-policy" = "main-page";
 
-  currentBackground: string[] = [
-    '#679AAC',
-    '#F8F7E5',
-    '#1D1D1D',
-    '#F8F7E5',
-    '#679AAC',
-    '#1D1D1D',
-  ];
+//   anchors: string[] = [
+//     'hero',
+//     'about-me',
+//     'skills',
+//     'portfolio',
+//     'references',
+//     'contact',
+//   ];
 
-  currentLanguage: 'de' | 'en' = 'en';
+//   currentBackground: string[] = [
+//     '#679AAC',
+//     '#F8F7E5',
+//     '#1D1D1D',
+//     '#F8F7E5',
+//     '#679AAC',
+//     '#1D1D1D',
+//   ];
 
-  hideMenu: boolean = true;
+//   currentLanguage: 'de' | 'en' = 'en';
 
-  burgerMenuIsOpen: boolean = false;
+//   hideMenu: boolean = true;
 
-  mobileView: boolean = false;
+//   burgerMenuIsOpen: boolean = false;
 
-  isScrolling: boolean = false;
+//   mobileView: boolean = false;
 
-  private sections: Element[] = [];
+//   isScrolling: boolean = false;
 
-  currentSectionIndex: number = 0;
+//   private sections: Element[] = [];
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private router: Router
-  ) {}
+//   currentSectionIndex: number = 0;
 
-  setSectionRefs(refs: Element[]) {
-    this.sections = refs;
+//   constructor(
+//     @Inject(DOCUMENT) private document: Document,
+//     private router: Router
+//   ) {}
 
-    // console.log(this.sections);
-  }
+//   setSectionRefs(refs: Element[]) {
+//     this.sections = refs;
 
-  lockScroll() {
-    this.isScrolling = true;
-  }
+//     // console.log(this.sections);
+//   }
 
-  unlockScroll() {
-    this.isScrolling = false;
-  }
+//   lockScroll() {
+//     this.isScrolling = true;
+//   }
 
-  nextSection(): void {
-    if (this.isScrolling) return;
+//   unlockScroll() {
+//     this.isScrolling = false;
+//   }
 
-    if (this.currentSectionIndex < this.sections.length - 1) {
-      this.currentSectionIndex++;
-      this.scrollToSection(this.anchors[this.currentSectionIndex]);
-      console.log(
-        'nextSection',
-        this.currentSectionIndex,
-        this.anchors[this.currentSectionIndex]
-      );
-    }
-  }
+//   nextSection(): void {
+//     if (this.isScrolling) return;
 
-  previousSection(): void {
-    if (this.isScrolling) return;
+//     if (this.currentSectionIndex < this.sections.length - 1) {
+//       this.currentSectionIndex++;
+//       this.scrollToSection(this.anchors[this.currentSectionIndex]);
+//       console.log(
+//         'nextSection',
+//         this.currentSectionIndex,
+//         this.anchors[this.currentSectionIndex]
+//       );
+//     }
+//   }
 
-    if (this.currentSectionIndex > 0) {
-      this.currentSectionIndex--;
-      this.scrollToSection(this.anchors[this.currentSectionIndex]);
-      console.log(
-        'perviousSection',
-        this.currentSectionIndex,
-        this.anchors[this.currentSectionIndex]
-      );
-    }
-  }
+//   previousSection(): void {
+//     if (this.isScrolling) return;
 
-  scrollToSection(sectionId: string): void {
-    if (this.isScrolling) return;
-    console.log(sectionId);
+//     if (this.currentSectionIndex > 0) {
+//       this.currentSectionIndex--;
+//       this.scrollToSection(this.anchors[this.currentSectionIndex]);
+//       console.log(
+//         'perviousSection',
+//         this.currentSectionIndex,
+//         this.anchors[this.currentSectionIndex]
+//       );
+//     }
+//   }
 
-    const element = document.getElementById(sectionId);
-    // const index = this.anchors.indexOf(sectionId);
+//   scrollToSection(sectionId: string): void {
+//     if (this.isScrolling) return;
+//     console.log(sectionId);
 
-    if (element) {
-      this.isScrolling = true;
-      element.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => {
-        this.isScrolling = false;
-      }, 500);
-    }
-  }
+//     const element = document.getElementById(sectionId);
+//     // const index = this.anchors.indexOf(sectionId);
 
-  updateCurrentSection(newSectionIndex: number): void {
-    console.log(
-      'old index: ' + this.currentSectionIndex,
-      'new index: ' + newSectionIndex
-    );
-    if (this.currentSectionIndex === newSectionIndex) return;
+//     if (element) {
+//       this.isScrolling = true;
+//       element.scrollIntoView({ behavior: 'smooth' });
+//       setTimeout(() => {
+//         this.isScrolling = false;
+//       }, 500);
+//     }
+//   }
 
-    this.currentSectionIndex = newSectionIndex;
-    console.log('final index: ' + this.currentSectionIndex);
-  }
+//   updateCurrentSection(newSectionIndex: number): void {
+//     console.log(
+//       'old index: ' + this.currentSectionIndex,
+//       'new index: ' + newSectionIndex
+//     );
+//     if (this.currentSectionIndex === newSectionIndex) return;
 
-  redirectIfOnLegalPage() {
-    if (
-      this.router.url === '/legal-notice/en' ||
-      this.router.url === '/legal-notice/de' ||
-      this.router.url === '/privacy-policy/en' ||
-      this.router.url === '/privacy-policy/de'
-    ) {
-      this.router.navigate(['/'], { fragment: 'about-me' });
+//     this.currentSectionIndex = newSectionIndex;
+//     console.log('final index: ' + this.currentSectionIndex);
+//   }
 
-      // this.router.navigate(['/'], { state: { scrollTo: 'about-me' } });
+//   redirectIfOnLegalPage() {
+//     if (
+//       this.router.url === '/legal-notice/en' ||
+//       this.router.url === '/legal-notice/de' ||
+//       this.router.url === '/privacy-policy/en' ||
+//       this.router.url === '/privacy-policy/de'
+//     ) {
+//       this.router.navigate(['/'], { fragment: 'about-me' });
 
-      // this.router.navigate(['/']).then(() => {
-      //   console.log('111');
+//       // this.router.navigate(['/'], { state: { scrollTo: 'about-me' } });
 
-      //   setTimeout(() => {
-      //     console.log('222');
+//       // this.router.navigate(['/']).then(() => {
+//       //   console.log('111');
 
-      //     this.scrollToSection('about-me');
-      //   }, 500);
-      // });
-    }
-  }
+//       //   setTimeout(() => {
+//       //     console.log('222');
 
-  isOnLegalPage() {
-    return (
-      this.router.url === '/legal-notice/en' ||
-      this.router.url === '/legal-notice/de' ||
-      this.router.url === '/privacy-policy/en' ||
-      this.router.url === '/privacy-policy/de'
-    );
-  }
-}
+//       //     this.scrollToSection('about-me');
+//       //   }, 500);
+//       // });
+//     }
+//   }
+
+//   isOnLegalPage() {
+//     return (
+//       this.router.url === '/legal-notice/en' ||
+//       this.router.url === '/legal-notice/de' ||
+//       this.router.url === '/privacy-policy/en' ||
+//       this.router.url === '/privacy-policy/de'
+//     );
+//   }
+// }

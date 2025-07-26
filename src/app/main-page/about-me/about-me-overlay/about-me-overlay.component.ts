@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { MainPageStateService } from '../../main-page-state.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { PageStateService } from '../../../page-state.service';
 
 @Component({
   selector: 'app-about-me-overlay',
@@ -9,6 +9,8 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './about-me-overlay.component.scss'
 })
 export class AboutMeOverlayComponent {
-    mainPageState = inject(MainPageStateService);
+
+      constructor(public pageStateService: PageStateService) {}
+    
 
 }

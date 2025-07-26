@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { AboutMeOverlayComponent } from './about-me-overlay/about-me-overlay.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { MainPageStateService } from '../main-page-state.service';
+import { MainPageScrollService } from '../main-page-scroll.service';
 
 @Component({
   selector: 'app-about-me',
@@ -11,9 +11,10 @@ import { MainPageStateService } from '../main-page-state.service';
   styleUrl: './about-me.component.scss',
 })
 export class AboutMeComponent {
-  mainPageState = inject(MainPageStateService);
 
   emojiIsHovered: boolean = false;
+
+  constructor(public mainPageScrollService: MainPageScrollService) {}
 
   changeHoverState(state: boolean): void {
     this.emojiIsHovered = state;

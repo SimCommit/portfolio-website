@@ -5,7 +5,7 @@ import { FooterComponent } from '../../shared/footer/footer.component';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
-import { MainPageStateService } from '../main-page-state.service';
+import { PageStateService } from '../../page-state.service';
 
 @Component({
   selector: 'app-contact',
@@ -16,9 +16,6 @@ import { MainPageStateService } from '../main-page-state.service';
 export class ContactComponent {
   http = inject(HttpClient);
 
-    mainPageState = inject(MainPageStateService);
-  
-
   nameInput: InputFieldStates = {
     isChecked: false,
   };
@@ -26,6 +23,8 @@ export class ContactComponent {
   checkboxInput: InputFieldStates = {
     isChecked: false,
   };
+
+  constructor(public pageStateService: PageStateService) {}
 
   toggleCheckedState(inputToToggle: InputFieldStates): void {
     inputToToggle.isChecked = !inputToToggle.isChecked;

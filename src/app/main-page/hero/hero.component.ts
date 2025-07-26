@@ -1,6 +1,6 @@
 import { Component, ElementRef, inject, ViewChild } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
-import { MainPageStateService } from "../main-page-state.service";
+import { MainPageScrollService } from "../main-page-scroll.service";
 
 @Component({
   selector: "app-hero",
@@ -9,7 +9,6 @@ import { MainPageStateService } from "../main-page-state.service";
   styleUrl: "./hero.component.scss",
 })
 export class HeroComponent {
-  mainPageState = inject(MainPageStateService);
 
   @ViewChild("heroSection") heroSectionRef!: ElementRef<HTMLElement>;
   @ViewChild("heroContent") heroContentRef!: ElementRef<HTMLElement>;
@@ -18,6 +17,8 @@ export class HeroComponent {
   @ViewChild("heroPosition") heroPositionRef!: ElementRef<HTMLElement>;
 
   private resizeObserver!: ResizeObserver;
+
+  constructor(public mainPageScrollService: MainPageScrollService) {}
 
   ngAfterViewInit(): void {
     this.initResizeObserver();
