@@ -1,8 +1,11 @@
 <header>
     <div>
         @if (mainPageScrollService.currentSectionIndex === 0 || pageStateService.isOnLegalPage()) {
+        @if (!(breakpointObserverService.isMobile$ | async)) {
         <app-social-links id="app-social-links"></app-social-links>
         }
+        }
+
 
         <div [ngClass]="{ 'section-change': mainPageScrollService.isScrolling}"
             (click)="mainPageScrollService.updateCurrentSection(0); mainPageScrollService.scrollToSection(0)"

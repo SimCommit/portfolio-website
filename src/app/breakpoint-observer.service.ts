@@ -6,8 +6,6 @@ import { map, Observable, shareReplay } from "rxjs";
   providedIn: "root",
 })
 export class BreakpointObserverService {
-  // public mobileView: boolean = false;
-
   readonly isMobile$: Observable<boolean>;
 
   readonly isDesktop$: Observable<boolean>;

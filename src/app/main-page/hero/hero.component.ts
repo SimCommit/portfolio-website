@@ -64,8 +64,6 @@ export class HeroComponent {
         const windowWidth = window.innerWidth;
         const sectionHeight = entry.contentRect.height;
         const multiplier = sectionHeight / 600;
-        console.log(sectionHeight);
-        console.log(multiplier);
 
         if (windowWidth > 800) {
           textEl.style.marginTop = `${sectionHeight * 0.07 * multiplier}px`;

@@ -1,10 +1,11 @@
-import { Component, inject } from "@angular/core";
+import { Component } from "@angular/core";
 import { SocialLinksComponent } from "../social-links/social-links.component";
 import { CommonModule } from "@angular/common";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { Router, RouterLink } from "@angular/router";
 import { MainPageScrollService } from "../../main-page/main-page-scroll.service";
 import { PageStateService } from "../../page-state.service";
+import { BreakpointObserverService } from "../../breakpoint-observer.service";
 
 @Component({
   selector: "app-header",
@@ -18,7 +19,8 @@ export class HeaderComponent {
     private translate: TranslateService,
     private router: Router,
     public mainPageScrollService: MainPageScrollService,
-    public pageStateService: PageStateService
+    public pageStateService: PageStateService,
+    public breakpointObserverService: BreakpointObserverService
   ) {}
 
   openBurgerOverlay(): void {
