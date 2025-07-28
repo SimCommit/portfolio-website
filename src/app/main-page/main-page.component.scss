@@ -26,11 +26,19 @@ section {
   position: sticky;
   z-index: 8;
   top: 0;
-  transform: translateX(-150%);
-  // margin-left: -60px;
-  // left: 32px;
-  // right: calc(((100vw - 1920px) / 2) + 32px);
 }
+
+// #app-section-nav {
+//   width: 32px;
+//   align-self: flex-start;
+//   position: sticky;
+//   z-index: 8;
+//   top: 0;
+//   transform: translateX(-150%);
+//   // margin-left: -60px;
+//   // left: 32px;
+//   // right: calc(((100vw - 1920px) / 2) + 32px);
+// }
 
 #hero,
 #about-me,

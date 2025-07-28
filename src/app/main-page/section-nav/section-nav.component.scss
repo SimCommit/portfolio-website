@@ -2,12 +2,18 @@
 @use "./../../../styles/_variables" as *;
 
 nav {
-  height: 100vh;
-  height: 100dvh;
+  height: min(100vh, 950px);
+  height: min(100dvh, 950px);
   @include dFlex($fd: column, $jc: space-around);
+  background-color: #50e05e; // für tests
 
   a {
     @include dFlex();
+  }
+
+  @media (max-width: 1100px) {
+    height: min(100vh, 750px);
+    height: min(100dvh, 750px);
   }
 }
 

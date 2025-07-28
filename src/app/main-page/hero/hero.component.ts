@@ -1,6 +1,8 @@
-import { Component, ElementRef, inject, ViewChild } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
 import { MainPageScrollService } from "../main-page-scroll.service";
+import { SectionLayoutService } from "../services/section-layout.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-hero",
@@ -20,14 +22,21 @@ export class HeroComponent {
   private headlineObserver!: ResizeObserver;
   private offsetObserver!: ResizeObserver;
   private sectionResizeObserver!: ResizeObserver;
+
+  private subscription!: Subscription;
+
   private BREAKPOINT_MOBILE: number = 800;
   private MAX_HEADLINE_SIZE: number = 140;
   private MAX_TAGLINE_SIZE: number = 61;
   private MAX_COGWHEEL_SIZE: number = 148;
 
-  constructor(public mainPageScrollService: MainPageScrollService) {}
+  constructor(
+    public mainPageScrollService: MainPageScrollService,
+    private sectionLayoutService: SectionLayoutService
+  ) {}
 
   ngAfterViewInit(): void {
+    this.sectionLayoutService.startViewportObserver();
     this.initSectionHeightObserver();
     this.initHeadlineScaleObserver();
     this.initSectionOffsetObserver();
@@ -90,40 +99,16 @@ export class HeroComponent {
   };
 
   initSectionHeightObserver() {
-    this.sectionResizeObserver = new ResizeObserver(() => {
-      this.updateSectionHeight();
+    this.subscription = this.sectionLayoutService.sectionHeight$.subscribe((height) => {
+      this.heroSectionRef.nativeElement.style.height = height;
     });
-    this.sectionResizeObserver.observe(this.heroSectionRef.nativeElement);
-
-    window.addEventListener("resize", this.updateSectionHeight);
   }
 
-  private updateSectionHeight = (): void => {
-    const sectionEl = this.heroSectionRef.nativeElement;
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    const sectionWidth = Math.min(windowWidth, 1600);
-    const sectionHeight = sectionWidth * 0.6;
-    const MAX_SECTION_ASPECT_RATIO: number = 1.5;
-    const MIN_SECTION_HEIGHT: number = 440;
-
-    if (windowWidth > this.BREAKPOINT_MOBILE) {
-      const fitsAspectRatio = sectionWidth / windowHeight <= MAX_SECTION_ASPECT_RATIO;
-
-      if (fitsAspectRatio) {
-        sectionEl.style.height = `${Math.max(sectionHeight, MIN_SECTION_HEIGHT)}px`;
-      } else {
-        sectionEl.style.height = "clamp(640px, 100dvh, 1200px)";
-      }
-    } else {
-      sectionEl.style.height = "unset";
-    }
-  };
 
   ngOnDestroy(): void {
     this.headlineObserver?.disconnect();
     this.offsetObserver?.disconnect();
-    this.sectionResizeObserver?.disconnect();
-    window.removeEventListener("resize", this.updateSectionHeight);
+    // this.sectionResizeObserver?.disconnect();
+    // window.removeEventListener("resize", this.updateSectionHeight);
   }
 }
