@@ -21,11 +21,11 @@
 }
 
 @mixin sectionWrapperStyle() {
-  padding: calc(48px + 30px) 60px 0 60px;
+  padding: calc(66px + 30px) clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem) 0 clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem);
 
-  @media (max-width: 640px) {
-    padding: calc(48px + 20px) 24px 0 24px;
-  }
+  // @media (max-width: 640px) {
+  //   padding: calc(66px + 20px) 24px 0 24px;
+  // }
 }
 
 @mixin cardBoxStyle($p: 32px 24px 24px 24px, $bw: 1px, $bs: solid, $bc: $main-black, $br: 4px, $ta: justify) {
