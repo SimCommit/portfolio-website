@@ -19,6 +19,7 @@ export class HeroComponent {
 
   private headlineObserver!: ResizeObserver;
   private offsetObserver!: ResizeObserver;
+  private BREAKPOINT_MOBILE: number = 800;
 
   constructor(public mainPageScrollService: MainPageScrollService) {}
 
@@ -35,18 +36,13 @@ export class HeroComponent {
     const greetingTaglineEl = this.heroGreetingRef.nativeElement;
     const positionTaglineEl = this.heroPositionRef.nativeElement;
     const cogwheelEl = this.heroCogwheelRef.nativeElement;
-
     const MAX_HEADLINE_SIZE: number = 140;
     const MAX_TAGLINE_SIZE: number = 61;
     const MAX_COGWHEEL_SIZE: number = 148;
-    // const MIN_COGWHEEL_SIZE: number = 80;
-    // const MAX_COGWHEEL_BOTTOM: number = 112;
 
     this.headlineObserver = new ResizeObserver((entries: ResizeObserverEntry[]) => {
       for (const entry of entries as ResizeObserverEntry[]) {
         const containerWidth = entry.contentRect.width;
-        // const containerHeight = entry.contentRect.height;
-
         headlineEl.style.fontSize = `${Math.min(containerWidth * 0.16, MAX_HEADLINE_SIZE)}px`;
         greetingTaglineEl.style.fontSize = `${Math.min(containerWidth * 0.07, MAX_TAGLINE_SIZE)}px`;
         positionTaglineEl.style.fontSize = `${Math.min(containerWidth * 0.07, MAX_TAGLINE_SIZE)}px`;
@@ -75,8 +71,8 @@ export class HeroComponent {
           textEl.style.marginTop = `${sectionHeight * 0.07 * multiplier}px`;
           cogwheelEl.style.bottom = `${sectionHeight * 0.05 * multiplier}px`;
         } else {
-          textEl.style.marginTop = `${40}px`;
-          cogwheelEl.style.bottom = `${40}px`;
+          textEl.style.marginTop = `${32}px`;
+          cogwheelEl.style.bottom = `clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem)`;
         }
       }
     });
@@ -91,12 +87,11 @@ export class HeroComponent {
     const sectionWidth = Math.min(windowWidth, 1600);
     const sectionHeight = sectionWidth * 0.6;
     const MAX_SECTION_ASPECT_RATIO: number = 1.5;
-    const BREAKPOINT_MOBILE: number = 800;
     const MIN_SECTION_HEIGHT: number = 440;
 
-    if (sectionWidth / windowHeight <= MAX_SECTION_ASPECT_RATIO && windowWidth >= BREAKPOINT_MOBILE) {
+    if (sectionWidth / windowHeight <= MAX_SECTION_ASPECT_RATIO && windowWidth >= this.BREAKPOINT_MOBILE) {
       sectionEl.style.height = `${Math.max(sectionHeight, MIN_SECTION_HEIGHT)}px`;
-    } else if (windowWidth < BREAKPOINT_MOBILE) {
+    } else if (windowWidth < this.BREAKPOINT_MOBILE) {
       sectionEl.style.height = "unset";
     } else {
       sectionEl.style.height = `clamp(640px, 100dvh, 1200px)`;
