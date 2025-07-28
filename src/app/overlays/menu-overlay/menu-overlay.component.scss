@@ -6,11 +6,13 @@
   height: 100dvh;
   background-color: rgba(0, 0, 0, 0.2); //nur zum testen
   overflow: hidden;
+  @include dFlex();
 }
 
 #overlay-container {
   @include maxWidth1600();
   height: 100%;
+  width: 100%;
   padding: 1.5rem 0;
   margin: 0 2.5rem;
 }
@@ -18,7 +20,7 @@
 nav {
   position: absolute;
   top: calc(1.5rem - 2px);
-  right: calc(2.5rem - 10px);
+  right: calc(clamp(0.8rem, 5vw - 0.8rem, 7.2rem) - 20px);
   border: 1px solid $main-black;
   border-radius: 4px;
   width: 208px;
