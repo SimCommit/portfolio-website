@@ -110,19 +110,8 @@ a {
   }
 }
 
-// Switch ???
-@media (max-width: 1024px) {
-  // .cogwheel-container {
-  //   width: clamp(4.8rem, 14.205vw + 0.255rem, 14.8rem);
-  //   height: clamp(4.8rem, 14.205vw + 0.255rem, 14.8rem);
-  // }
-}
-
 // Switch zu Tablet
 @media (max-width: 800px) {
-  // section {
-  //   height: 200dvh;
-  // }
   #hero-wrapper {
     flex-direction: column;
   }
@@ -134,9 +123,5 @@ a {
       width: 80%;
     }
   }
-}
-
-// Switch zu Mobile "flex-direction"
-@media (max-width: 768px) {
 }
 // #endregion
