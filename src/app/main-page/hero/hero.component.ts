@@ -76,10 +76,11 @@ export class HeroComponent {
     for (const entry of entries as ResizeObserverEntry[]) {
       const windowWidth = window.innerWidth;
       const sectionHeight = entry.contentRect.height;
+      const multiplierText = sectionHeight / 400;
       const multiplier = sectionHeight / 600;
 
       if (windowWidth > this.BREAKPOINT_MOBILE) {
-        textEl.style.marginTop = `${sectionHeight * 0.07 * multiplier}px`;
+        textEl.style.marginTop = `${sectionHeight * 0.05 * multiplierText}px`;
         cogwheelEl.style.bottom = `${sectionHeight * 0.05 * multiplier}px`;
       } else {
         textEl.style.marginTop = "32px";
