@@ -9,5 +9,7 @@
                 <app-contact #section id="contact"></app-contact>
         </div>
 
+        @if (breakpointObserverService.isDesktop$ | async) {
         <app-section-nav id="app-section-nav"></app-section-nav>
+        }
 </section>
