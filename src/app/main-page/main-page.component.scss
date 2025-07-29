@@ -21,11 +21,16 @@ section {
 }
 
 #app-section-nav {
-  width: 32px;
+  width: 100%;
+  @include maxWidth1600();
+  @include dFlex();
   align-self: flex-start;
-  position: sticky;
+  position: fixed;
   z-index: 8;
   top: 0;
+  // transform: translateX(-32px);
+    pointer-events: none;
+
 }
 
 // #app-section-nav {
@@ -34,7 +39,7 @@ section {
 //   position: sticky;
 //   z-index: 8;
 //   top: 0;
-//   transform: translateX(-150%);
+// transform: translateX(-150%);
 //   // margin-left: -60px;
 //   // left: 32px;
 //   // right: calc(((100vw - 1920px) / 2) + 32px);

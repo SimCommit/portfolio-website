@@ -2,10 +2,12 @@
 @use "./../../../styles/_variables" as *;
 
 nav {
-  height: min(100vh, 950px);
-  height: min(100dvh, 950px);
-  @include dFlex($fd: column, $jc: space-around);
-  background-color: #50e05e; // für tests
+  // height: min(100vh, 950px);
+  // height: min(100dvh, 950px);
+  @include dFlex($ai: flex-start, $jc: flex-end);
+  // background-color: #50e05e; // für tests
+  width: 100%;
+  pointer-events: none;
 
   a {
     @include dFlex();
@@ -18,7 +20,13 @@ nav {
 }
 
 .anchor-container {
+  top: clamp(320px, 50dvh, 80%);
+  right: clamp(0.8rem, 5vw - 0.8rem, 7.2rem);
+  padding: 16px 8px;
+  transform: translateY(-50%);
   @include dFlex($fd: column, $g: 16px);
+  // background-color: #000000; // für tests
+  pointer-events: auto;
 }
 
 .icon-active img {
@@ -33,22 +41,6 @@ nav {
   height: 9px;
   object-position: center;
   object-fit: contain;
-}
-
-.spacer {
-  height: 48px;
-  width: 30px;
-}
-
-#top-spacer {
-  a {
-    height: 48px;
-    width: 30px;
-
-    svg {
-      height: 48px;
-    }
-  }
 }
 
 // #region back-to-start jump animation

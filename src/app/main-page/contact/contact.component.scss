@@ -233,6 +233,21 @@ button {
   }
 }
 
+// Container für den aus SectionNav verschobenen back to top button
+.back-to-top {
+  // background-color: aqua;
+  // width: 20px;
+  // height: 20px;
+  a {
+    height: 48px;
+    width: 30px;
+
+    svg {
+      height: 48px;
+    }
+  }
+}
+
 #app-footer {
   width: 100%;
 }

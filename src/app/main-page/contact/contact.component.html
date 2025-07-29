@@ -10,13 +10,16 @@
             <div id="contact-info-group">
                 <label class="text-input">
                     <span>{{"main-page.contact.form.name-title" | translate}}</span>
-                    <input [(ngModel)]="contactData.name" [ngClass]="{'warning-border': !name.valid && name.touched}" id="name" name="name" type="text" placeholder="{{'main-page.contact.form.name-placeholder' | translate}}" required
-                        #name="ngModel" minlength="3">
+                    <input [(ngModel)]="contactData.name" [ngClass]="{'warning-border': !name.valid && name.touched}"
+                        id="name" name="name" type="text"
+                        placeholder="{{'main-page.contact.form.name-placeholder' | translate}}" required #name="ngModel"
+                        minlength="3">
                 </label>
 
                 <label class="text-input">
                     <span>{{'main-page.contact.form.email-title' | translate}}</span>
-                    <input [(ngModel)]="contactData.email" [ngClass]="{'warning-border': !email.valid && email.touched}"  id="email" name="email" type="email"
+                    <input [(ngModel)]="contactData.email" [ngClass]="{'warning-border': !email.valid && email.touched}"
+                        id="email" name="email" type="email"
                         placeholder="{{'main-page.contact.form.email-placeholder' | translate}}" required
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
                 </label>
@@ -24,8 +27,10 @@
 
             <label class="text-input">
                 <span>{{'main-page.contact.form.message-title' | translate}}</span>
-                <textarea [(ngModel)]="contactData.message" [ngClass]="{'warning-border': !message.valid && message.touched}" id="message" name="message" type="text" rows="1" 
-                    placeholder="{{'main-page.contact.form.message-placeholder' | translate}}" required #message="ngModel" minlength="16">
+                <textarea [(ngModel)]="contactData.message"
+                    [ngClass]="{'warning-border': !message.valid && message.touched}" id="message" name="message"
+                    type="text" rows="1" placeholder="{{'main-page.contact.form.message-placeholder' | translate}}"
+                    required #message="ngModel" minlength="16">
                 </textarea>
 
             </label>
@@ -34,11 +39,12 @@
                 <label id="checkbox-label">
                     <input id="checkbox" type="checkbox" [(ngModel)]="checkboxInput.isChecked" name="checkbox" required
                         #checkbox="ngModel">
-                    <span id="checkmark"
-                        (click)="toggleCheckedState(checkboxInput)"></span>
+                    <span id="checkmark" (click)="toggleCheckedState(checkboxInput)"></span>
                 </label>
                 <div>
-                    <p id="checkbox-info-text">{{'main-page.contact.form.checkbox-text-1' | translate}} <a [routerLink]="['privacy-policy', pageStateService.currentLanguage]">{{'main-page.contact.form.checkbox-text-2' | translate}}</a>
+                    <p id="checkbox-info-text">{{'main-page.contact.form.checkbox-text-1' | translate}} <a
+                            [routerLink]="['privacy-policy', pageStateService.currentLanguage]">{{'main-page.contact.form.checkbox-text-2'
+                            | translate}}</a>
                         {{'main-page.contact.form.checkbox-text-3' | translate}}
                     </p>
                     @if (!name.valid && name.touched) {
@@ -60,10 +66,19 @@
                     }
                 </div>
             </div>
-
-
-            <button type="submit" [disabled]="!contactForm.valid">{{'main-page.contact.form.button' | translate}}</button>
+            <button type="submit" [disabled]="!contactForm.valid">{{'main-page.contact.form.button' |
+                translate}}</button>
         </form>
+
+        <div class="back-to-top">
+            <!-- <a (click)="this.mainPageScrollService.updateCurrentSection(0)" href="#hero" id="back-to-start">
+            <svg width="8" height="18" viewBox="0 0 8 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M4.35355 0.646447C4.15829 0.451184 3.84171 0.451184 3.64645 0.646447L0.464466 3.82843C0.269204 4.02369 0.269204 4.34027 0.464466 4.53553C0.659728 4.7308 0.976311 4.7308 1.17157 4.53553L4 1.70711L6.82843 4.53553C7.02369 4.7308 7.34027 4.7308 7.53553 4.53553C7.7308 4.34027 7.7308 4.02369 7.53553 3.82843L4.35355 0.646447ZM3.5 17C3.5 17.2761 3.72386 17.5 4 17.5C4.27614 17.5 4.5 17.2761 4.5 17H3.5ZM4 1H3.5V17H4H4.5V1H4Z"
+                    fill="#F8F7E5" />
+            </svg>
+        </a> -->
+        </div>
     </main>
 
     <app-footer id="app-footer"></app-footer>
