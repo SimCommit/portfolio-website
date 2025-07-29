@@ -6,7 +6,9 @@ import { BehaviorSubject, Observable } from "rxjs";
 })
 export class SectionLayoutService {
   private sectionHeightSubject: BehaviorSubject<string> = new BehaviorSubject<string>("0px");
-  public sectionHeight$: Observable<string> = this.sectionHeightSubject.asObservable();
+  // public sectionHeight$: Observable<string> = this.sectionHeightSubject.asObservable();
+  public readonly sectionHeight$: Observable<string> = this.sectionHeightSubject.asObservable();
+
 
   private hasStarted = false;
   private BREAKPOINT_MOBILE: number = 800;

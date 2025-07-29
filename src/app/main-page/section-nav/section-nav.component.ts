@@ -15,20 +15,13 @@ export class SectionNavComponent {
 
   constructor(
     public mainPageScrollService: MainPageScrollService,
-    private sectionLayoutService: SectionLayoutService,
-    private renderer: Renderer2
-  ) // private element: ElementRef
-  {}
+    private sectionLayoutService: SectionLayoutService
+  ) {}
 
-  // ngAfterViewInit(): void {
-  //   this.subscription = this.sectionLayoutService.sectionHeight$.subscribe((height) => {
-  //     this.updateNavHeight(height);
-  //   });
-  // }
-
-  updateNavHeight(height: number): void {
-    this.renderer.setStyle(this.navRef.nativeElement, "height", `min(${height}px, 900px)`);
-    console.log(height);
+  ngAfterViewInit(): void {
+    this.subscription = this.sectionLayoutService.sectionHeight$.subscribe((height) => {
+      this.navRef.nativeElement.style.height = height;
+    });
   }
 
   ngOnDestroy(): void {

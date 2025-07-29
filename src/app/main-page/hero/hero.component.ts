@@ -21,8 +21,6 @@ export class HeroComponent {
 
   private headlineObserver!: ResizeObserver;
   private offsetObserver!: ResizeObserver;
-  private sectionResizeObserver!: ResizeObserver;
-
   private subscription!: Subscription;
 
   private BREAKPOINT_MOBILE: number = 800;
@@ -104,11 +102,9 @@ export class HeroComponent {
     });
   }
 
-
   ngOnDestroy(): void {
     this.headlineObserver?.disconnect();
     this.offsetObserver?.disconnect();
-    // this.sectionResizeObserver?.disconnect();
-    // window.removeEventListener("resize", this.updateSectionHeight);
+    this.subscription?.unsubscribe();
   }
 }
