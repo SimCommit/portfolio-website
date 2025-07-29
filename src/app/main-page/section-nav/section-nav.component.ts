@@ -1,11 +1,12 @@
-import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import { MainPageScrollService } from "../main-page-scroll.service";
 import { SectionLayoutService } from "../services/section-layout.service";
 import { Subscription } from "rxjs";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-section-nav",
-  imports: [],
+  imports: [CommonModule],
   templateUrl: "./section-nav.component.html",
   styleUrl: "./section-nav.component.scss",
 })

@@ -5,8 +5,6 @@ import { Inject, Injectable } from "@angular/core";
   providedIn: "root",
 })
 export class MainPageScrollService {
-  // anchors: string[] = ["hero", "about-me", "skills", "portfolio", "references", "contact"];
-
   public sections: Element[] = [];
 
   currentSectionIndex: number = 0;
@@ -17,6 +15,14 @@ export class MainPageScrollService {
 
   setSectionRefs(refs: Element[]) {
     this.sections = refs;
+  }
+
+  hasLightBackground(): boolean {
+    return this.currentSectionIndex === 1 || this.currentSectionIndex === 3;
+  }
+
+  isCurrentSection(index: number): boolean {
+    return this.currentSectionIndex === index;
   }
 
   lockScroll(): void {
@@ -50,7 +56,7 @@ export class MainPageScrollService {
   scrollToSection(sectionIndex: number): void {
     if (this.isScrolling) return;
 
-    const element = this.sections[sectionIndex];    
+    const element = this.sections[sectionIndex];
     console.log(sectionIndex);
 
     if (element) {
@@ -59,6 +65,7 @@ export class MainPageScrollService {
       setTimeout(() => {
         this.isScrolling = false;
       }, 500);
+      this.currentSectionIndex = sectionIndex;
     }
   }
 

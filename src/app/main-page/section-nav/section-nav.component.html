@@ -1,33 +1,9 @@
 <nav #nav>
     <div class="anchor-container">
         @for (anchorNumber of [0,1,2,3,4,5]; track anchorNumber) {
-
-        @switch (true) {
-        @case (mainPageScrollService.currentSectionIndex === anchorNumber) {
-        @if (mainPageScrollService.currentSectionIndex === 1 || mainPageScrollService.currentSectionIndex === 3) {
-        <a (click)="this.mainPageScrollService.scrollToSection(anchorNumber)" class="icon-active">
-            <img src="./assets/img/icons/section-nav/icon-active-coral.svg" alt="Nope">
-        </a>
-        } @else {
-        <a (click)="this.mainPageScrollService.scrollToSection(anchorNumber)" class="icon-active">
-            <img src="./assets/img/icons/section-nav/icon-active-yellow.svg" alt="Nope">
-        </a>
-        }
-        }
-        @default {
-        @if (mainPageScrollService.currentSectionIndex === 1 || mainPageScrollService.currentSectionIndex === 3) {
-        <a (click)="this.mainPageScrollService.scrollToSection(anchorNumber)" class="icon-inactive">
-            <img src="./assets/img/icons/section-nav/icon-inactive-black.svg" alt="Nope">
-        </a>
-        } @else {
-        <a (click)="this.mainPageScrollService.scrollToSection(anchorNumber)" class="icon-inactive">
-            <img src="./assets/img/icons/section-nav/icon-inactive-ivory.svg" alt="Nope">
-        </a>
-        <!-- href="#{{mainPageScrollService.anchors[anchorNumber]}}" -->
-        }
-        }
-
-        }
+        <a class="anchor"
+            [ngClass]="{'anchor-active': mainPageScrollService.isCurrentSection(anchorNumber), 'anchor-light-bg': mainPageScrollService.hasLightBackground(), 'anchor-active-light-bg': mainPageScrollService.hasLightBackground() && mainPageScrollService.isCurrentSection(anchorNumber)}"
+            (click)="this.mainPageScrollService.scrollToSection(anchorNumber)"></a>
         }
     </div>
 </nav>
