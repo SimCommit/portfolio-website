@@ -1,10 +1,18 @@
 @use "./../../styles/_mixins" as *;
 @use "./../../styles/_variables" as *;
 
+@include hostBlock();
+
 section {
   @include dFlex();
-  // @include maxWidth1600();
-  // width: 100%;
+  width: 100%;
+
+  > div {
+    width: 100%;
+    width: 100%;
+    max-width: none;
+    flex-grow: 1;
+  }
 }
 
 #app-header {
@@ -14,10 +22,6 @@ section {
   width: 100%;
   height: 96px;
   z-index: 9;
-
-  // @media (max-aspect-ratio: 7/6) or (min-width: 1921px) {
-  //   position: absolute;
-  // }
 }
 
 #app-section-nav {
@@ -28,22 +32,8 @@ section {
   position: fixed;
   z-index: 8;
   top: 0;
-  // transform: translateX(-32px);
-    pointer-events: none;
-
+  pointer-events: none;
 }
-
-// #app-section-nav {
-//   width: 32px;
-//   align-self: flex-start;
-//   position: sticky;
-//   z-index: 8;
-//   top: 0;
-// transform: translateX(-150%);
-//   // margin-left: -60px;
-//   // left: 32px;
-//   // right: calc(((100vw - 1920px) / 2) + 32px);
-// }
 
 #hero,
 #about-me,

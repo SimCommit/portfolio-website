@@ -1,11 +1,11 @@
 @use "./../../../styles/_mixins" as *;
 @use "./../../../styles/_variables" as *;
 
+// @include hostBlock();
+
 section {
   @include sectionBoxStyle();
   @include dFlex();
-  // height: clamp(640px, 100vh, 1200px);
-  // height: clamp(640px, 100dvh, 1200px);
   width: 100%;
 
   img {
@@ -45,7 +45,6 @@ section {
   height: 100%;
 
   img {
-    // height: min(83vh, 830px);
     height: calc(82% + calc(48px + 30px));
     align-self: flex-end;
   }
@@ -55,7 +54,6 @@ section {
 .cogwheel-container {
   z-index: 3;
   position: absolute;
-  // bottom: clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem);
   left: clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem);
   margin-top: 10px;
   overflow: hidden;
@@ -104,7 +102,6 @@ a {
 // Breit aber niedrig
 @media (min-width: 1100px) and (max-height: 750px) {
   .cogwheel-container {
-    // bottom: 50px;
     left: 50%;
     transform: translateX(-45%);
   }

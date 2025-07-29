@@ -1,30 +1,33 @@
-<section id="about-me">
-
-    <div id="about-me-content">
+<section>
+    <div class="about-me-wrapper">
         <div id="about-me-pic">
             <img src="./assets/img/about-me/simon-tablet-ivory-bg-server-1.png" alt="Profil Picture 2">
         </div>
-        <div id="about-me-card">
-            <p>{{"main-page.about-me.card-part-1" | translate}}
-                <br>
-                <br>
-                {{"main-page.about-me.card-part-2" | translate}}
-            </p>
-            <div>
-                <a (click)="this.mainPageScrollService.updateCurrentSection(5)" href="#contact">{{"main-page.about-me.contact-button" | translate}}</a>
-                <app-about-me-overlay class="disappear" [ngClass]="{'appear': emojiIsHovered}"
-                    id="app-about-me-overlay">
-                </app-about-me-overlay>
-                <div id="emoji-container">
-                    <img (mouseenter)="changeHoverState(true)" (mouseleave)="changeHoverState(false)"
-                        src="./assets/img/icons/about-me/emoji-shh.svg" alt="Shush Emoji">
+
+        <div id="about-me-card-wrapper">
+            <div id="about-me-card">
+                <p>{{"main-page.about-me.card-part-1" | translate}}
+                    <br>
+                    <br>
+                    {{"main-page.about-me.card-part-2" | translate}}
+                </p>
+                <div>
+                    <a (click)="this.mainPageScrollService.updateCurrentSection(5)"
+                        href="#contact">{{"main-page.about-me.contact-button" | translate}}</a>
+                    <app-about-me-overlay class="disappear" [ngClass]="{'appear': emojiIsHovered}"
+                        id="app-about-me-overlay">
+                    </app-about-me-overlay>
+                    <div id="emoji-container">
+                        <img (mouseenter)="changeHoverState(true)" (mouseleave)="changeHoverState(false)"
+                            src="./assets/img/icons/about-me/emoji-shh.svg" alt="Shush Emoji">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="about-me-headline">
-        <h2>{{"main-page.about-me.headline" | translate}}</h2>
-    </div>
 
+        <div id="about-me-headline">
+            <h2>{{"main-page.about-me.headline" | translate}}</h2>
+        </div>
+    </div>
 </section>
