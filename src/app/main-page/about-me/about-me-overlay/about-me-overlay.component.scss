@@ -12,28 +12,31 @@
     p {
       @include dFlex($jc: flex-start, $g: 10px);
       margin: 6px;
-      font-size: 16px;
+      @include pFontSizeSwitch();
     }
   }
 }
 
-.more-about-me-header {
+#more-about-me-header {
   @include dFlex($jc: center);
   margin-bottom: 14px;
+
+  h3 {
+
+    @include h3FontSizeSwitch();
+  }
 
   button {
     width: 32px;
     height: 32px;
-    background: url("./../../../../../public/assets/img/icons/close-ivory.svg")
-      no-repeat center / cover;
+    background: url("./../../../../../public/assets/img/icons/close-ivory.svg") no-repeat center / cover;
 
     &:hover {
       cursor: pointer;
     }
 
     &:active {
-      background: url("./../../../../../public/assets/img/icons/close-hover.svg")
-        no-repeat center / cover;
+      background: url("./../../../../../public/assets/img/icons/close-hover.svg") no-repeat center / cover;
     }
   }
 }

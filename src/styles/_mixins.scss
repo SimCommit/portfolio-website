@@ -48,7 +48,7 @@
   padding: 32px 24px 24px 24px;
 }
 
-@mixin fontSizeSwitch() {
+@mixin pFontSizeSwitch() {
   font-size: 18px;
 
   @media (max-width: 1200px) {
@@ -58,6 +58,14 @@
   // @media (min-width: 1440px) {
   //   font-size: 20px;
   // }
+}
+
+@mixin h3FontSizeSwitch() {
+  font-size: 26px;
+
+  @media (max-width: 1200px) {
+    font-size: 24px;
+  }
 }
 
 @mixin primaryButton() {

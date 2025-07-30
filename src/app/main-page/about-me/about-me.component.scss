@@ -55,7 +55,7 @@ section {
 }
 
 #about-me-card {
-  @include fontSizeSwitch();
+  @include pFontSizeSwitch();
   @include cardBoxStyle();
   max-width: 590px;
   z-index: 1;
@@ -127,7 +127,6 @@ a {
   }
 
   @media (max-width: 1600px) {
-    // top: -64px;
     right: 48px;
   }
 

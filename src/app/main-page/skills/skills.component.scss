@@ -9,7 +9,7 @@ section {
 
 #skills-description {
   @include cardBoxStyle();
-  @include fontSizeSwitch();
+  @include pFontSizeSwitch();
   width: 42rem;
   background-color: $main-blue;
 }
