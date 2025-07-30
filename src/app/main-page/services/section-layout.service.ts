@@ -6,9 +6,12 @@ import { BehaviorSubject, Observable } from "rxjs";
 })
 export class SectionLayoutService {
   private sectionHeightSubject: BehaviorSubject<string> = new BehaviorSubject<string>("0px");
-  // public sectionHeight$: Observable<string> = this.sectionHeightSubject.asObservable();
-  public readonly sectionHeight$: Observable<string> = this.sectionHeightSubject.asObservable();
+  private sectionStateSubject: BehaviorSubject<"regular" | "tall" | "mobile"> = new BehaviorSubject<
+    "regular" | "tall" | "mobile"
+  >("regular");
 
+  public readonly sectionHeight$: Observable<string> = this.sectionHeightSubject.asObservable();
+  public sectionState$: Observable<"regular" | "tall" | "mobile"> = this.sectionStateSubject.asObservable();
 
   private hasStarted = false;
   private BREAKPOINT_MOBILE: number = 800;
@@ -39,11 +42,14 @@ export class SectionLayoutService {
       const fitsAspectRatio = sectionWidth / windowHeight <= MAX_SECTION_ASPECT_RATIO;
 
       if (fitsAspectRatio) {
+        this.sectionStateSubject.next("tall");
         return `${Math.max(sectionHeight, MIN_SECTION_HEIGHT)}px`;
       } else {
+        this.sectionStateSubject.next("regular");
         return "clamp(640px, 100dvh, 1200px)";
       }
     } else {
+      this.sectionStateSubject.next("mobile");
       return "unset";
     }
   }

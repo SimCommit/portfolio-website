@@ -16,7 +16,7 @@ section {
 #hero-wrapper {
   position: relative;
   @include sectionWrapperStyle();
-  padding-top: calc(66px + 30px);
+  padding-top: 96px; //header height
   @include dFlex($ai: flex-start, $jc: space-between);
   @include maxWidth1600();
   height: 100%;

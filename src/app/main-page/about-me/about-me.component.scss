@@ -3,11 +3,9 @@
 
 section {
   @include sectionBoxStyle($bc: $main-ivory);
-  overflow: hidden;
-  // overflow: unset;
   @include dFlex();
   max-height: 1065px;
-  min-height: 640px;
+  overflow: hidden;
 }
 
 .about-me-wrapper {
@@ -23,11 +21,10 @@ section {
   margin-left: -30%;
 
   h2 {
-    font-size: 60px;
+    // font-size: clamp(4rem, 3vw + 1.6rem, 6.4rem);
     color: $main-black;
     line-height: 1.2;
     align-self: flex-start;
-    min-width: 24rem;
     text-align: end;
   }
 }
@@ -51,21 +48,20 @@ section {
 
 #about-me-card-wrapper {
   z-index: 1;
-  // margin-left: -60px;
   margin-top: 10%;
   align-self: flex-start;
   flex: 1;
+  @include dFlex($jc: space-between);
 }
 
 #about-me-card {
   @include fontSizeSwitch();
   @include cardBoxStyle();
+  max-width: 590px;
   z-index: 1;
-  flex: 1;
-  // margin-right: -200px;
+  flex: 3;
   transform: translateX(-15%);
   border-color: $main-ivory;
-  max-width: 560px;
   background-color: $main-black;
   p {
     color: $main-ivory;
@@ -75,6 +71,13 @@ section {
   div {
     @include dFlex($jc: space-between);
   }
+}
+
+.spacer {
+  height: 20px;
+  width: 20px;
+  // background-color: green;
+  flex: 1;
 }
 
 // #region emoji jump animation
@@ -114,22 +117,23 @@ a {
 #app-about-me-overlay {
   position: absolute;
   top: 72px;
-  right: -218px;
+  right: -210px;
   transition: transform 225ms ease-in-out;
   pointer-events: none;
 
-  @media (max-height: 800px) {
-    top: -38px;
-    right: 48px;
+  @media (max-height: 950px) {
+    top: -64px;
+    right: -286px;
   }
 
   @media (max-width: 1600px) {
+    // top: -64px;
     right: 48px;
   }
 
-  // @media (max-height) {
-
-  // }
+  @media (max-width: 900px) {
+    top: -124px;
+  }
 }
 
 .disappear {
@@ -142,6 +146,12 @@ a {
 // #endregion
 
 // #region media-queries
+@media (max-width: 1200px) {
+  .spacer {
+    display: none;
+  }
+}
+
 @media (max-width: 800px) {
   .about-me-wrapper {
     flex-direction: column;

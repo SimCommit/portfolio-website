@@ -28,11 +28,7 @@
 }
 
 @mixin sectionWrapperStyle() {
-  padding: 160px clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem) 0 clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem);
-
-  // @media (max-width: 640px) {
-  //   padding: calc(66px + 20px) 24px 0 24px;
-  // }
+  padding: clamp(96px, 8vw + 32px, 160px) clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem) 0 clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem);
 }
 
 @mixin cardBoxStyle($p: 32px 24px 24px 24px, $bw: 1px, $bs: solid, $bc: $main-black, $br: 4px, $ta: justify) {
@@ -45,8 +41,6 @@
 
   @media (max-width: 720px) {
     padding: 16px 12px 12px 12px;
-    // border-color: red;
-    // border-width: 8px;
   }
 }
 
@@ -57,7 +51,7 @@
 @mixin fontSizeSwitch() {
   font-size: 18px;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
     font-size: 16px;
   }
 

@@ -1,4 +1,4 @@
-<section>
+<section #aboutMeSection>
     <div class="about-me-wrapper">
         <div id="about-me-pic">
             <img src="./assets/img/about-me/simon-tablet-server-3.png" alt="Profil Picture 2">
@@ -15,7 +15,7 @@
                     <a (click)="this.mainPageScrollService.updateCurrentSection(5)"
                         href="#contact">{{"main-page.about-me.contact-button" | translate}}</a>
                     <app-about-me-overlay class="disappear" [ngClass]="{'appear': emojiIsHovered}"
-                        id="app-about-me-overlay">
+                        id="app-about-me-overlay" #appAboutMeOverlay>
                     </app-about-me-overlay>
                     <div id="emoji-container">
                         <img (mouseenter)="changeHoverState(true)" (mouseleave)="changeHoverState(false)"
@@ -23,6 +23,7 @@
                     </div>
                 </div>
             </div>
+            <div class="spacer"></div>
         </div>
 
 
