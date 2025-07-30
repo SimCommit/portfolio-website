@@ -28,7 +28,7 @@
 }
 
 @mixin sectionWrapperStyle() {
-  padding: calc(66px + 30px) clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem) 0 clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem);
+  padding: 160px clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem) 0 clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem);
 
   // @media (max-width: 640px) {
   //   padding: calc(66px + 20px) 24px 0 24px;
@@ -57,21 +57,13 @@
 @mixin fontSizeSwitch() {
   font-size: 18px;
 
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     font-size: 16px;
   }
 
-  @media (max-height: 720px) {
-    font-size: 16px;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 20px;
-  }
-
-  @media (min-height: 1440px) {
-    font-size: 20px;
-  }
+  // @media (min-width: 1440px) {
+  //   font-size: 20px;
+  // }
 }
 
 @mixin primaryButton() {

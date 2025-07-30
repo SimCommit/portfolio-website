@@ -90,7 +90,7 @@ export class HeroComponent {
         textEl.style.marginTop = `${sectionHeight * 0.05 * multiplierText}px`;
         cogwheelEl.style.bottom = `${sectionHeight * 0.05 * multiplier}px`;
       } else {
-        textEl.style.marginTop = "32px";
+        textEl.style.marginTop = "clamp(1.6rem, 3.333vw + 0.533rem, 3.2rem)";
         cogwheelEl.style.bottom = "clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem)";
       }
     }

@@ -5,19 +5,25 @@ section {
   @include sectionBoxStyle($bc: $main-ivory);
   overflow: hidden;
   // overflow: unset;
+  @include dFlex();
+  max-height: 1065px;
+  min-height: 640px;
 }
 
 .about-me-wrapper {
   height: 100%;
   @include dFlex($ai: flex-end, $jc: space-between);
   @include sectionWrapperStyle();
+  @include maxWidth1600();
 }
 
 #about-me-headline {
   @include dFlex();
-  height: 80vh;
-  height: 80dvh;
+  height: 100%;
+  margin-left: -30%;
+
   h2 {
+    font-size: 60px;
     color: $main-black;
     line-height: 1.2;
     align-self: flex-start;
@@ -33,27 +39,31 @@ section {
 // }
 
 #about-me-pic {
-  @include dFlex($fd: row-reverse);
+  height: 100%;
+  @include dFlex($fd: row-reverse, $ai: flex-end);
 
   img {
-    height: 80vh;
-    height: 80dvh;
+    height: 100%;
+    max-height: 1000px;
     object-position: bottom;
-    // transform: scaleX(-1);
   }
 }
 
 #about-me-card-wrapper {
   z-index: 1;
-  margin-left: -60px;
-  margin-right: -12rem;
+  // margin-left: -60px;
+  margin-top: 10%;
+  align-self: flex-start;
+  flex: 1;
 }
 
 #about-me-card {
   @include fontSizeSwitch();
   @include cardBoxStyle();
   z-index: 1;
-  // margin-bottom: 10%;
+  flex: 1;
+  // margin-right: -200px;
+  transform: translateX(-15%);
   border-color: $main-ivory;
   max-width: 560px;
   background-color: $main-black;
@@ -103,18 +113,27 @@ a {
 // #region app-about-me-overlay
 #app-about-me-overlay {
   position: absolute;
-  top: -48px;
-  right: 48px;
+  top: 72px;
+  right: -218px;
   transition: transform 225ms ease-in-out;
   pointer-events: none;
 
-  @media (max-width: 420px) {
-    top: -120px;
+  @media (max-height: 800px) {
+    top: -38px;
+    right: 48px;
   }
+
+  @media (max-width: 1600px) {
+    right: 48px;
+  }
+
+  // @media (max-height) {
+
+  // }
 }
 
 .disappear {
-  transform: translateY(250%);
+  transform: translateY(300%);
 }
 
 .appear {

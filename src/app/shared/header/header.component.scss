@@ -29,6 +29,7 @@ a {
 }
 
 #fs-logo {
+
   &:hover {
     cursor: pointer;
   }
@@ -38,6 +39,7 @@ a {
   }
 
   a {
+    margin-left: -6px;
     transition: color 125ms ease;
   }
 }

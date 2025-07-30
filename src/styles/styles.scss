@@ -33,7 +33,7 @@ body {
     overflow: visible;
   }
 
-  @media (max-aspect-ratio: 7/6) or (min-width: 1921px) {
+  @media (max-width: 800px) {
     overscroll-behavior: auto;
     scroll-behavior: smooth;
     overflow: visible;

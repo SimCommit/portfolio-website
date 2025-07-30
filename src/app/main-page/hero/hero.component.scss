@@ -16,6 +16,7 @@ section {
 #hero-wrapper {
   position: relative;
   @include sectionWrapperStyle();
+  padding-top: calc(66px + 30px);
   @include dFlex($ai: flex-start, $jc: space-between);
   @include maxWidth1600();
   height: 100%;
@@ -117,7 +118,7 @@ a {
     justify-content: flex-end;
     img {
       height: auto;
-      width: 80%;
+      width: 90%;
     }
   }
 }
