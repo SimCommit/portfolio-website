@@ -110,17 +110,27 @@ a {
 #app-about-me-overlay {
   position: absolute;
   top: 72px;
-  right: -210px;
+  right: -450px;
   transition: transform 225ms ease-in-out;
   // pointer-events: none;
 
-  @media (max-height: 950px) {
-    top: -64px;
-    right: -286px;
+  @media (max-height: 950px) or (max-aspect-ratio: 1.184 / 1) {
+    top: -72px;
+    right: -556px;
   }
 
   @media (max-width: 1600px) {
-    right: 48px;
+    right: -228px;
+  }
+
+  @media (max-width: 1200px) {
+    right: -158px;
+    // right: -68px;
+    // right: clamp(-6.8rem, calc((-1 * 22.556vw) - 11.268rem), -15.8rem);
+  }
+
+  @media (max-width: 960px) {
+    right: -68px;
   }
 
   @media (max-width: 900px) {
@@ -138,7 +148,7 @@ a {
 // #endregion
 
 // #region media-queries
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
   .spacer {
     display: none;
   }
@@ -192,65 +202,4 @@ a {
     top: -40px;
   }
 }
-
-// @media (max-aspect-ratio: 7/6) {
-//   section {
-//     height: unset;
-//     padding-bottom: calc(48px + 3rem);
-
-//     flex-direction: column-reverse;
-//   }
-
-//   #about-me-content {
-//     flex-direction: column;
-//     align-items: flex-start;
-//     height: unset;
-//   }
-
-//   #about-me-pic {
-//     width: 100%;
-//     justify-content: flex-end;
-
-//     img {
-//       height: unset;
-//       width: 60%;
-//       object-position: bottom;
-//     }
-//   }
-
-//   #about-me-card {
-//     width: 80%;
-//     margin-top: -6rem;
-//     margin-left: 0rem;
-//     margin-right: 0rem;
-//     // margin-bottom: 0;
-//     align-self: flex-end;
-//     background-color: $main-black;
-//     p {
-//       color: $main-ivory;
-//       text-align: justify;
-//     }
-
-//     div {
-//       @include dFlex($jc: space-between);
-//     }
-//   }
-
-//   #about-me-headline {
-//     // align-self: flex-end;
-//     margin-bottom: 4rem;
-//     height: unset;
-//     h2 {
-//       font-size: 10rem;
-//       color: $main-black;
-//       line-height: 1.2;
-//       align-self: flex-start;
-//       // min-width: 22rem;
-//     }
-//   }
-
-//   #app-about-me-overlay {
-//     top: -108px;
-//   }
-// }
 // #endregion
