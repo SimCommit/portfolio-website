@@ -9,7 +9,9 @@ export class SectionLayoutService {
   private sectionStateSubject: BehaviorSubject<"regular" | "tall" | "mobile"> = new BehaviorSubject<
     "regular" | "tall" | "mobile"
   >("regular");
+  private hasSmallAspectRatioSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+  public hasSmallAspectRatio$: Observable<boolean> = this.hasSmallAspectRatioSubject.asObservable();
   public readonly sectionHeight$: Observable<string> = this.sectionHeightSubject.asObservable();
   public sectionState$: Observable<"regular" | "tall" | "mobile"> = this.sectionStateSubject.asObservable();
 
@@ -37,6 +39,17 @@ export class SectionLayoutService {
     const sectionHeight = sectionWidth * 0.6;
     const MAX_SECTION_ASPECT_RATIO = 1.5;
     const MIN_SECTION_HEIGHT = 440;
+
+    if (sectionWidth / windowHeight <= 1.4) {
+      this.hasSmallAspectRatioSubject.next(true);
+    } else {
+      this.hasSmallAspectRatioSubject.next(false);
+    }
+
+    // const isSmall = sectionWidth / windowHeight <= 1.6;
+    // if (this.hasSmallAspectRatioSubject.value !== isSmall) {
+    //   this.hasSmallAspectRatioSubject.next(isSmall);
+    // }
 
     if (windowWidth > this.BREAKPOINT_MOBILE) {
       const fitsAspectRatio = sectionWidth / windowHeight <= MAX_SECTION_ASPECT_RATIO;
