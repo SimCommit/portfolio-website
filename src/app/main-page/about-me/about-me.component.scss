@@ -21,19 +21,12 @@ section {
   margin-left: -30%;
 
   h2 {
-    // font-size: clamp(4rem, 3vw + 1.6rem, 6.4rem);
     color: $main-black;
     line-height: 1.2;
     align-self: flex-start;
     text-align: end;
   }
 }
-
-// #about-me-content {
-//   height: 80vh;
-//   height: 80dvh;
-//   @include dFlex($ai: center, $jc: flex-start);
-// }
 
 #about-me-pic {
   height: 100%;
@@ -119,7 +112,7 @@ a {
   top: 72px;
   right: -210px;
   transition: transform 225ms ease-in-out;
-  pointer-events: none;
+  // pointer-events: none;
 
   @media (max-height: 950px) {
     top: -64px;
@@ -152,28 +145,51 @@ a {
 }
 
 @media (max-width: 800px) {
+  section {
+    max-height: unset;
+  }
+
   .about-me-wrapper {
     flex-direction: column;
   }
 
   #about-me-headline {
     order: 0;
+
+    h2 {
+      font-size: clamp(3.2rem, 10vw + 0rem, 8rem);
+    }
   }
 
   #about-me-pic {
+    margin-top: clamp(3.2rem, 10vw + 0rem, 8rem);
     @include dFlex($jc: flex-start);
     order: 1;
 
     img {
       height: auto;
-      width: 70%;
+      width: 65%;
     }
   }
 
-  #about-me-card {
-    margin: -10px 0 0 0;
-    width: 70%;
+  #about-me-card-wrapper {
+    margin: 0 0 0 0;
+    width: 100%;
     order: 2;
+  }
+
+  #about-me-card {
+    margin-left: 35%;
+    margin-bottom: clamp(3.2rem, 16vw + 0rem, 12rem);
+    transform: translateX(0%);
+    transform: translateY(-20%);
+    // align-self: flex-end;
+  }
+
+  #app-about-me-overlay {
+    min-width: 308px;
+    right: clamp(3rem, 45vw - 11.4rem, 24.6rem);
+    top: -40px;
   }
 }
 

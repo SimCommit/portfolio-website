@@ -1,6 +1,8 @@
 @use "./../../../../styles/_variables" as *;
 @use "./../../../../styles/_mixins" as *;
 
+@include hostBlock();
+
 .more-about-me {
   z-index: 9;
   width: 272px;
@@ -18,11 +20,10 @@
 }
 
 #more-about-me-header {
-  @include dFlex($jc: center);
+  @include dFlex($jc: center, $g: 8px);
   margin-bottom: 14px;
 
   h3 {
-
     @include h3FontSizeSwitch();
   }
 
@@ -46,14 +47,16 @@
 }
 
 // #region media queries
-@media (max-width: 420px) {
+@media (max-width: 440px) {
   .more-about-me {
     justify-self: flex-end;
     max-width: 80%;
   }
 
-  h3 {
-    font-size: 20px;
+  #more-about-me-header {
+    h3 {
+      font-size: 23px;
+    }
   }
 
   .more-about-me-header {

@@ -43,3 +43,9 @@ section {
 #contact {
   width: 100%;
 }
+
+@media (max-width: 800px) {
+  #app-header {
+    position: absolute;
+  }
+}
