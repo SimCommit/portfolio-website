@@ -215,6 +215,15 @@ section {
   }
 }
 
+@media (max-width: 520px) {
+  #app-growth-mindset {
+    bottom: 140px;
+    left: 0px;
+    transition: transform 225ms ease-in-out;
+    // pointer-events: none;
+  }
+}
+
 // #region min-width queries
 // @media (min-width: 1440px) {
 //   #tech-card {

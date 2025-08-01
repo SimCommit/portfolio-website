@@ -4,7 +4,7 @@
 #growth-mindset {
   @include cardBoxStyle($bc: $main-ivory);
   @include dFlex($fd: column);
-  width: 24rem;
+  width: 240px;
   max-width: 360px;
   min-width: 300px;
   background-color: $main-yellow;

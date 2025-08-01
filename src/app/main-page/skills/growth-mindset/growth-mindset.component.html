@@ -1,5 +1,5 @@
 <div id="growth-mindset">
-    @if (pageStateService.mobileView) {
+    @if (breakpointObserverService.isMobile$ | async) {
     <button></button>
     }
     <h3>{{"main-page.skills.growth-mindset.title" | translate}}</h3>
