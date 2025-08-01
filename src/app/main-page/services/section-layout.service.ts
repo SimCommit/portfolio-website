@@ -40,16 +40,18 @@ export class SectionLayoutService {
     const MAX_SECTION_ASPECT_RATIO = 1.5;
     const MIN_SECTION_HEIGHT = 440;
 
-    if (sectionWidth / windowHeight <= 1.4) {
-      this.hasSmallAspectRatioSubject.next(true);
-    } else {
-      this.hasSmallAspectRatioSubject.next(false);
-    }
-
-    // const isSmall = sectionWidth / windowHeight <= 1.6;
-    // if (this.hasSmallAspectRatioSubject.value !== isSmall) {
-    //   this.hasSmallAspectRatioSubject.next(isSmall);
+    // if (sectionWidth / windowHeight <= 1.4) {
+    //   this.hasSmallAspectRatioSubject.next(true);
+    // } else {
+    //   this.hasSmallAspectRatioSubject.next(false);
     // }
+
+    const isSmall = sectionWidth / windowHeight <= 1.6;
+    if (this.hasSmallAspectRatioSubject.value !== isSmall) {
+      this.hasSmallAspectRatioSubject.next(isSmall);
+      console.log(isSmall);
+      
+    }
 
     if (windowWidth > this.BREAKPOINT_MOBILE) {
       const fitsAspectRatio = sectionWidth / windowHeight <= MAX_SECTION_ASPECT_RATIO;

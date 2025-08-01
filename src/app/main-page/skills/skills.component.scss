@@ -8,6 +8,7 @@ section {
   @include dFlex($ai: center);
   width: 100%;
   min-height: 640px;
+  max-height: 1500px;
   // padding-top: clamp(96px, 8vw + 32px, 160px);
 }
 
@@ -141,7 +142,7 @@ section {
 }
 
 .disappear {
-  transform: translateY(250%);
+  transform: translateY(350%);
 }
 
 .appear {
@@ -211,7 +212,7 @@ section {
   }
 
   #skills-showcase {
-    @include dFlex($fd: column-reverse, $ai: flex-start, $g: 24px);
+    @include dFlex($fd: column-reverse, $ai: flex-start, $g: 40px);
   }
 
   #tech-card {
@@ -240,133 +241,4 @@ section {
     // pointer-events: none;
   }
 }
-
-// #region min-width queries
-// @media (min-width: 1440px) {
-//   #tech-card {
-//     width: 720px;
-//     gap: 36px;
-
-//     label {
-//       width: 96px;
-
-//       font-size: 20px;
-//       img {
-//         width: 96px;
-//       }
-//     }
-//   }
-// }
-// #endregion
-
-// @media (max-height: 700px) {
-//   section {
-//     gap: 2rem;
-//   }
-
-//   #tech-card {
-//     padding: 2rem;
-//     padding: 2rem 2rem 0 2rem;
-//   }
-
-//   #app-growth-mindset {
-//     bottom: 16px;
-//     left: 150px;
-//   }
-// }
-
-// #region max-width media queries
-// @media (max-width: 1030px) {
-//   #skills-description {
-//     width: 456px;
-//   }
-// }
-
-// @media (max-width: 820px) {
-//   #tech-card {
-//     width: 60rem;
-//     min-width: unset;
-//     @include dFlex($g: 30px);
-
-//     label {
-//       @include dFlex($fd: column, $g: 1.6rem);
-//       width: 7rem;
-
-//       span {
-//         font-size: 1.6rem;
-//       }
-
-//       img {
-//         width: 7rem;
-//       }
-//     }
-//   }
-
-//   #app-growth-mindset {
-//     width: calc(90vw);
-//     min-width: none;
-//     bottom: 16px;
-//     left: 180px;
-//   }
-// }
-
-// @media (max-width: 540px) {
-//   #app-growth-mindset {
-//     bottom: 144px;
-//     left: 0px;
-//   }
-// }
-// #endregion
-
-// @media (max-aspect-ratio: 7/6) {
-//   #skills {
-//     height: unset;
-//     gap: 7rem;
-//     padding-top: 100px;
-//   }
-
-//   h2 {
-//     font-size: 8rem;
-//   }
-
-//   #skills-showcase {
-//     align-items: flex-start;
-//     flex-direction: column-reverse;
-//     gap: 40px;
-//   }
-
-//   #skills-description {
-//     width: unset;
-//   }
-
-//   #tech-card {
-//     width: unset;
-//     padding: 4rem;
-//     gap: 40px;
-
-//     label {
-//       @include dFlex($fd: column, $g: 20px);
-//       width: 78px;
-
-//       span {
-//         font-size: 16px;
-//       }
-
-//       img {
-//         width: 78px;
-
-//         transition: transform 225ms ease-in-out;
-
-//         &:hover {
-//           transform: scale(1.25);
-//         }
-//       }
-//     }
-//   }
-
-//   #cogwheel-container {
-//     align-self: unset;
-//   }
-// }
-
 // #endregion
