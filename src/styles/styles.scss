@@ -52,6 +52,10 @@ h2 {
   // font-size: clamp(4rem, 3vw + 1.6rem, 6.4rem);
   font-size: clamp(4rem, 5.006vw - 0.01rem, 8rem);
   line-height: 1;
+
+  @media (max-width: 800px) {
+    font-size: clamp(3.2rem, 10vw + 0rem, 8rem);
+  }
 }
 
 h3 {

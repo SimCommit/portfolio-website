@@ -12,7 +12,7 @@ section {
 }
 
 .skills-wrapper {
-  @include dFlex($fd: column, $ai: flex-start, $jc: space-between, $g: 4rem);
+  @include dFlex($fd: column, $ai: flex-start, $jc: space-between, $g: 40px);
   @include sectionWrapperStyle();
   @include maxWidth1600();
   // padding-top: 0;
@@ -21,35 +21,42 @@ section {
   // overflow: hidden;
 }
 
-.setAspectRatio {
-  aspect-ratio: 14 / 10;
-  height: unset;
-}
-
 #skills-description {
-  @include cardBoxStyle();
-  @include pFontSizeSwitch();
-  width: 45%;
-  background-color: $main-blue;
+  @include dFlex();
+
+  p {
+    @include cardBoxStyle();
+    @include pFontSizeSwitch();
+    box-sizing: border-box;
+    flex: 1;
+    width: 45%;
+    background-color: $main-blue;
+  }
+
+  .spacer {
+    width: 55vh;
+    min-width: 25%;
+    max-width: 50%;
+  }
 }
 
 // #region skills-showcase
 #skills-showcase {
   width: 100%;
   @include dFlex($ai: flex-end, $jc: space-between);
-  margin-bottom: 2rem;
 }
 
 #tech-card {
-  width: 590px;
-  min-width: 516px;
-  @include dFlex($g: 30px);
+  width: 640px;
+  // min-width: 50%;
+  @include dFlex($g: 48px, $jc: flex-end);
   flex-wrap: wrap;
-  padding: 40px 40px 0 40px;
+  // padding: 0 40px 0 40px;
 
   label {
     @include dFlex($fd: column, $g: 20px);
     width: 78px;
+    text-align: center;
 
     img {
       width: 78px;
@@ -122,8 +129,91 @@ section {
 }
 // #endregion
 
+// #region Breakpoint Classes
+.setAspectRatio {
+  aspect-ratio: 16 / 10;
+  height: unset;
+
+  @media (max-width: 800px) {
+    aspect-ratio: unset;
+  }
+}
+// #endregion
 
 // #region media queries
+@media (max-height: 740px) {
+  .skills-wrapper {
+    gap: 20px;
+  }
+
+  #tech-card {
+    width: 540px;
+    gap: 24px;
+    label {
+      gap: 10px;
+      img {
+        width: 60px;
+        &:hover {
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  #tech-card {
+    width: 540px;
+    gap: 24px;
+
+    label {
+      gap: 10px;
+      img {
+        width: 60px;
+        &:hover {
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  section {
+    height: unset;
+  }
+
+  .skills-wrapper {
+    height: 100%;
+  }
+
+  #skills-description {
+    .spacer {
+      display: none;
+    }
+  }
+
+  #skills-showcase {
+    @include dFlex($fd: column-reverse, $ai: flex-start, $g: 24px);
+  }
+
+  #tech-card {
+    margin-top: 16px;
+    width: 100%;
+    @include dFlex($g: clamp(3.2rem, 3.333vw + 2.133rem, 4.8rem), $jc: center);
+    flex-wrap: wrap;
+    // padding: 0 40px 0 40px;
+
+    label {
+      @include dFlex($fd: column, $g: clamp(1rem, 2.083vw + 0.333rem, 2rem));
+      width: clamp(6.8rem, 2.083vw + 6.133rem, 7.8rem);
+
+      img {
+        width: clamp(6rem, 3.75vw + 4.8rem, 7.8rem);
+      }
+    }
+  }
+}
 
 // #region min-width queries
 // @media (min-width: 1440px) {
