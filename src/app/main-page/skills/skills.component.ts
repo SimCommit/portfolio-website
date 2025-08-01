@@ -4,6 +4,7 @@ import { ShowcaseDataService } from "../showcase-data.service";
 import { TranslateModule } from "@ngx-translate/core";
 import { CommonModule } from "@angular/common";
 import { SectionLayoutService } from "../services/section-layout.service";
+import { BreakpointObserverService } from "../../breakpoint-observer.service";
 
 @Component({
   selector: "app-skills",
@@ -16,7 +17,7 @@ export class SkillsComponent {
 
   emojiIsHovered: boolean = false;
 
-  constructor(public sectionLayoutService: SectionLayoutService) {}
+  constructor(public sectionLayoutService: SectionLayoutService, public breakpointObserverService: BreakpointObserverService) {}
 
   ngOnInit(): void {
     this.sectionLayoutService.startViewportObserver();

@@ -71,6 +71,26 @@ section {
 }
 // #endregion
 
+// #region Tech Card Animation on mobile
+.animateTechCard {
+  animation: animateTechCard ease-in-out 4s infinite;
+}
+
+@keyframes animateTechCard {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+// #endregion
+
 // #region cogwheel learning animation
 #cogwheel-1 {
   z-index: 1;
@@ -141,7 +161,7 @@ section {
 // #endregion
 
 // #region media queries
-@media (max-height: 740px) {
+@media (max-height: 740px) and (min-width: 801px) {
   .skills-wrapper {
     gap: 20px;
   }
@@ -153,9 +173,6 @@ section {
       gap: 10px;
       img {
         width: 60px;
-        &:hover {
-          transform: scale(1.25);
-        }
       }
     }
   }

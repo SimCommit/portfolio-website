@@ -4,7 +4,8 @@
     }
     <h3>{{"main-page.skills.growth-mindset.title" | translate}}</h3>
     <p>{{"main-page.skills.growth-mindset.text" | translate}}</p>
-    <div> @for (tech of showcaseData.techsOnMyRadar; track $index) {
+    <div>
+        @for (tech of showcaseData.techsOnMyRadar; track $index) {
         <label for="">
             <img src="{{tech.imgUrl}}" alt="">
             {{tech.name}}

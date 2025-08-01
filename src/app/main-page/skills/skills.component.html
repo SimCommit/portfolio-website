@@ -1,6 +1,6 @@
 <section id="skills">
     @let isSmall = sectionLayoutService.hasSmallAspectRatio$ | async;
-<div class="skills-wrapper" [ngClass]="{'setAspectRatio': isSmall}">
+    <div class="skills-wrapper" [ngClass]="{'setAspectRatio': isSmall}">
         <h2>{{"main-page.skills.headline" | translate}}</h2>
 
         <div id="skills-description">
@@ -20,9 +20,10 @@
                 id="app-growth-mindset"></app-growth-mindset>
 
             <div id="tech-card">
+                @let isMobile = breakpointObserverService.isMobile$ | async;
                 @for (tech of showcaseData.myTechs; track $index) {
                 <label>
-                    <img src="{{tech.imgUrl}}" alt="Placeholder Tech">
+                    <img [ngClass]="{'animateTechCard': isMobile}" src="{{tech.imgUrl}}" alt="Placeholder Tech">
                     <span>{{tech.name}}</span>
                 </label>
                 }
