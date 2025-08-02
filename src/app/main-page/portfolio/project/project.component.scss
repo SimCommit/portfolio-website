@@ -4,10 +4,10 @@
 #project-showcase {
   @include dFlex($g: 3rem, $jc: space-between);
 
-  @media (max-aspect-ratio: 7/6) {
-    flex-direction: column;
-    gap: 32px;
-  }
+  // @media (max-aspect-ratio: 7/6) {
+  //   flex-direction: column;
+  //   gap: 32px;
+  // }
 }
 
 #p-preview {
@@ -19,13 +19,13 @@
   border: 1px solid $main-black;
   border-radius: 4px;
 
-  @media (max-aspect-ratio: 7/6) {
-    width: 80%;
-  }
+  // @media (max-aspect-ratio: 7/6) {
+  //   width: 80%;
+  // }
 
-  @media (max-width: 480px) {
-    width: 100%;
-  }
+  // @media (max-width: 480px) {
+  //   width: 100%;
+  // }
 
   #p-pic {
     width: 90%;
@@ -60,13 +60,13 @@
 #p-content {
   width: 40rem;
 
-  @media (max-aspect-ratio: 7/6) {
-    width: 80%;
-  }
+  // @media (max-aspect-ratio: 7/6) {
+  //   width: 80%;
+  // }
 
-  @media (max-width: 480px) {
-    width: 100%;
-  }
+  // @media (max-width: 480px) {
+  //   width: 100%;
+  // }
 }
 
 #p-details {
@@ -131,9 +131,9 @@
   transform: translateY(-110%);
   transition: opacity 125ms ease;
 
-  @media (max-aspect-ratio: 7/6) {
-    transform: translateY(-100%);
-  }
+  // @media (max-aspect-ratio: 7/6) {
+  //   transform: translateY(-100%);
+  // }
 
   #learning-text {
     margin-top: 0;
@@ -158,9 +158,9 @@
 #p-links {
   @include dFlex($g: 2rem);
 
-  @media (max-aspect-ratio: 7/6) {
-    margin: 16px 0 8px 0;
-  }
+  // @media (max-aspect-ratio: 7/6) {
+  //   margin: 16px 0 8px 0;
+  // }
 
   a {
     img {
@@ -182,9 +182,9 @@
     font-size: 18px;
     font-weight: bold;
 
-    @media (max-width: 400px) {
-      width: 120px;
-    }
+    // @media (max-width: 400px) {
+    //   width: 120px;
+    // }
 
     &:hover {
       color: $main-coral;
