@@ -8,13 +8,13 @@ section {
   @include dFlex($ai: center);
   width: 100%;
   min-height: 640px;
-  max-height: 1500px;
+  max-height: 1065px;
   // padding-top: clamp(96px, 8vw + 32px, 160px);
 }
 
 .skills-wrapper {
   @include dFlex($fd: column, $ai: flex-start, $jc: space-between, $g: 40px);
-  @include sectionWrapperStyle();
+  @include sectionWrapperStyle($pb: 0);
   @include maxWidth1600();
   // padding-top: 0;
   width: 100%;
@@ -135,7 +135,7 @@ section {
 #app-growth-mindset {
   z-index: 2;
   position: absolute;
-  bottom: 32px;
+  bottom: 40px;
   left: 160px;
   transition: transform 225ms ease-in-out;
   pointer-events: none;

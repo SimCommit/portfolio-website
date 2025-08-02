@@ -11,7 +11,7 @@ section {
 .about-me-wrapper {
   height: 100%;
   @include dFlex($ai: flex-end, $jc: space-between);
-  @include sectionWrapperStyle();
+  @include sectionWrapperStyle($pb: 0);
   @include maxWidth1600();
 }
 

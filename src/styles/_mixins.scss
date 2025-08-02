@@ -27,12 +27,13 @@
   overflow: hidden;
 }
 
-@mixin sectionWrapperStyle() {
+@mixin sectionWrapperStyle($pt: clamp(8rem, 8.333vw + 5.333rem, 12rem), $pb: clamp(3.2rem, 10vw + 0rem, 8rem)) {
   padding: clamp(96px, 8vw + 32px, 160px) clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem) 0
     clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem);
 
   @media (max-width: 800px) {
-    padding-top: clamp(3.2rem, 10vw + 0rem, 8rem);
+    padding-top: $pt;
+    padding-bottom: $pb;
   }
 }
 
