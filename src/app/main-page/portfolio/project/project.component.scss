@@ -3,35 +3,30 @@
 
 #project-showcase {
   @include dFlex($g: 3rem, $jc: space-between);
-
-  // @media (max-aspect-ratio: 7/6) {
-  //   flex-direction: column;
-  //   gap: 32px;
-  // }
+  height: 100%;
 }
 
 #p-preview {
-  width: 320px;
+  width: 40%;
   height: auto;
   aspect-ratio: 1/1;
   @include dFlex($fd: column, $ai: flex-start);
   background-color: $main-yellow;
   border: 1px solid $main-black;
   border-radius: 4px;
-
-  // @media (max-aspect-ratio: 7/6) {
-  //   width: 80%;
-  // }
-
-  // @media (max-width: 480px) {
-  //   width: 100%;
-  // }
+  margin-bottom: 2px;
 
   #p-pic {
     width: 90%;
     align-self: center;
     justify-self: center;
     z-index: 2;
+  }
+
+  @media (max-height: 750px) {
+    width: auto;
+    height: 60vh;
+    min-height: 384px;
   }
 }
 
@@ -58,8 +53,9 @@
 // #endregion
 
 #p-content {
-  width: 40rem;
-
+  @include dFlex($fd: column, $ai: space-between);
+  flex: 1;
+  height: 100%;
   // @media (max-aspect-ratio: 7/6) {
   //   width: 80%;
   // }
@@ -74,13 +70,19 @@
   @include cardBoxStyle();
   background-color: $main-black;
   color: $main-ivory;
+  min-height: 75%;
 
   #p-header {
     @include dFlex($jc: space-between, $ai: flex-end);
     width: 100%;
     h3 {
       text-align: start;
+      @include h3FontSizeSwitch();
     }
+  }
+
+  p {
+    @include pFontSizeSwitch();
   }
 
   // #region emoji jump animation
@@ -156,15 +158,13 @@
 }
 
 #p-links {
-  @include dFlex($g: 2rem);
-
-  // @media (max-aspect-ratio: 7/6) {
-  //   margin: 16px 0 8px 0;
-  // }
+  @include dFlex($g: 40px);
 
   a {
+    @include primaryButton();
+
     img {
-      width: 1.2rem;
+      // width: 1.2rem;
       transition: transform 125ms ease;
     }
 
@@ -179,7 +179,7 @@
   @include dFlex($jc: space-between);
 
   button {
-    font-size: 18px;
+    font-size: clamp(1.6rem, 3.333vw + 0.533rem, 1.8rem);
     font-weight: bold;
 
     // @media (max-width: 400px) {
@@ -192,6 +192,48 @@
   }
 }
 
-a {
-  @include primaryButton();
+// #region Media Queries
+
+@media (max-width: 940px) {
+  #p-details {
+    padding: 16px clamp(1.2rem, 8.633vw - 5.715rem, 2.4rem) clamp(1.2rem, 8.633vw - 5.715rem, 2.4rem)
+      clamp(1.2rem, 8.633vw - 5.715rem, 2.4rem);
+  }
 }
+
+@media (max-width: 800px) {
+  #project-showcase {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 clamp(0rem, 40vw - 24rem, 8rem);
+  }
+
+  #p-preview {
+    width: 100%;
+  }
+
+  #p-content {
+    width: 100%;
+  }
+
+  #p-details {
+    @include textPadding();    
+  }
+
+  #p-links {
+    // gap: clamp(1.2rem, 1.667vw + 0.667rem, 2rem);
+    gap: unset;
+    width: 100%;
+    justify-content: space-between;
+
+    a {
+      font-size: 17px;
+      padding: 10px 20px;
+    }
+  }
+
+  .spacer {
+    display: none;
+  }
+}
+// #endregion

@@ -1,4 +1,4 @@
-import { ElementRef, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
@@ -28,7 +28,7 @@ export class SectionLayoutService {
       this.sectionHeightSubject.next(height);
     };
 
-    updateSectionHeight(); // Initialer Wert
+    updateSectionHeight();
     window.addEventListener("resize", updateSectionHeight);
 
     this.hasStarted = true;
@@ -40,17 +40,10 @@ export class SectionLayoutService {
     const MAX_SECTION_ASPECT_RATIO = 1.5;
     const MIN_SECTION_HEIGHT = 440;
 
-    // if (sectionWidth / windowHeight <= 1.4) {
-    //   this.hasSmallAspectRatioSubject.next(true);
-    // } else {
-    //   this.hasSmallAspectRatioSubject.next(false);
-    // }
-
     const isSmall = sectionWidth / windowHeight <= 1.6;
     if (this.hasSmallAspectRatioSubject.value !== isSmall) {
       this.hasSmallAspectRatioSubject.next(isSmall);
       console.log(isSmall);
-      
     }
 
     if (windowWidth > this.BREAKPOINT_MOBILE) {
