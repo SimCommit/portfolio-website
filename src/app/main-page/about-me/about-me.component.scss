@@ -11,7 +11,7 @@ section {
 .about-me-wrapper {
   height: 100%;
   @include dFlex($ai: flex-end, $jc: space-between);
-  @include sectionWrapperStyle($pb: 0);
+  @include sectionWrapperStyle();
   @include maxWidth1600();
 }
 
@@ -174,7 +174,7 @@ a {
   }
 
   #about-me-pic {
-    margin-top: clamp(3.2rem, 10vw + 0rem, 8rem);
+    margin-top: clamp(2rem, 4.167vw + 0.667rem, 4rem);
     @include dFlex($jc: flex-start);
     order: 1;
 
@@ -192,7 +192,7 @@ a {
 
   #about-me-card {
     margin-left: 35%;
-    margin-bottom: clamp(3.2rem, 16vw + 0rem, 12rem);
+    // margin-bottom: clamp(3.2rem, 16vw + 0rem, 12rem);
     transform: translateX(0%);
     transform: translateY(-20%);
     // align-self: flex-end;
