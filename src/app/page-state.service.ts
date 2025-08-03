@@ -11,8 +11,6 @@ export class PageStateService {
 
   burgerMenuIsOpen: boolean = false;
 
-  mobileView: boolean = false;
-
   constructor(private router: Router) {}
 
   redirectIfOnLegalPage() {

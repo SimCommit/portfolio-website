@@ -124,6 +124,10 @@ textarea:-webkit-autofill {
 .text-input input.warning-border,
 .text-input textarea.warning-border {
   border-bottom: 1px solid $main-warning;
+  
+  &::placeholder {
+    color: $main-warning;
+  }
 }
 
 .warning-inside::placeholder {

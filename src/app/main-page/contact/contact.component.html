@@ -13,16 +13,35 @@
                         <span>{{"main-page.contact.form.name-title" | translate}}</span>
                         <input [(ngModel)]="contactData.name"
                             [ngClass]="{'warning-border': !name.valid && name.touched}" id="name" name="name"
-                            type="text" placeholder="{{'main-page.contact.form.name-placeholder' | translate}}" required
-                            #name="ngModel" minlength="3">
+                            type="text" placeholder="{{ 
+                            ( !name.valid && name.touched )
+                            ? ('main-page.contact.form.name-placeholder-warning' | translate)
+                            : ('main-page.contact.form.name-placeholder' | translate) 
+                            }}" 
+                            title="{{ 
+                            ( !name.valid && name.touched )
+                            ? ('main-page.contact.form.name-placeholder-warning' | translate)
+                            : ('main-page.contact.form.name-placeholder' | translate) 
+                            }}"required #name="ngModel"
+                            minlength="3">
                     </label>
 
                     <label class="text-input">
                         <span>{{'main-page.contact.form.email-title' | translate}}</span>
                         <input [(ngModel)]="contactData.email"
                             [ngClass]="{'warning-border': !email.valid && email.touched}" id="email" name="email"
-                            type="email" placeholder="{{'main-page.contact.form.email-placeholder' | translate}}"
-                            required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
+                            type="email" placeholder="{{ 
+                            (!email.valid && email.touched) 
+                            ? ('main-page.contact.form.email-placeholder-warning' | translate) 
+                            : ('main-page.contact.form.email-placeholder' | translate)
+                            }}" 
+                            title="{{ 
+                            (!email.valid && email.touched) 
+                            ? ('main-page.contact.form.email-placeholder-warning' | translate) 
+                            : ('main-page.contact.form.email-placeholder' | translate)
+                            }}"
+                            required
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
                     </label>
                 </div>
 
@@ -30,10 +49,18 @@
                     <span>{{'main-page.contact.form.message-title' | translate}}</span>
                     <textarea [(ngModel)]="contactData.message"
                         [ngClass]="{'warning-border': !message.valid && message.touched}" id="message" name="message"
-                        type="text" rows="1" placeholder="{{'main-page.contact.form.message-placeholder' | translate}}"
+                        type="text" rows="1" placeholder="{{
+                        (!message.valid && message.touched)
+                        ? ('main-page.contact.form.message-placeholder-warning' | translate)
+                        : ('main-page.contact.form.message-placeholder' | translate)
+                        }}" 
+                        title="{{
+                        (!message.valid && message.touched)
+                        ? ('main-page.contact.form.message-placeholder-warning' | translate)
+                        : ('main-page.contact.form.message-placeholder' | translate)
+                        }}"
                         required #message="ngModel" minlength="16">
                     </textarea>
-
                 </label>
 
                 <div id="checkbox-container">

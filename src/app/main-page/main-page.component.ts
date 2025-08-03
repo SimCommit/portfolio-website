@@ -22,7 +22,7 @@ import { AsyncPipe } from "@angular/common";
     PortfolioComponent,
     ReferencesComponent,
     ContactComponent,
-    AsyncPipe
+    AsyncPipe,
   ],
   templateUrl: "./main-page.component.html",
   styleUrl: "./main-page.component.scss",
@@ -30,7 +30,12 @@ import { AsyncPipe } from "@angular/common";
 export class MainPageComponent {
   @ViewChildren("section", { read: ElementRef }) private sectionRefs!: QueryList<ElementRef>;
 
-  constructor(private mainPageScrollService: MainPageScrollService, public breakpointObserverService: BreakpointObserverService) {}
+  isSpaceOnCooldown: boolean = false;
+
+  constructor(
+    private mainPageScrollService: MainPageScrollService,
+    public breakpointObserverService: BreakpointObserverService
+  ) {}
 
   ngAfterViewInit(): void {
     const elements = this.sectionRefs.map((ref) => ref.nativeElement);
@@ -57,6 +62,8 @@ export class MainPageComponent {
     event.stopImmediatePropagation();
 
     if (["ArrowDown", "PageDown"].includes(event.key) || event.key === " " || event.code === "Space") {
+      if (this.preventSpaceScrolling(event)) return;
+
       this.mainPageScrollService.nextSection();
 
       event.preventDefault();
@@ -68,6 +75,19 @@ export class MainPageComponent {
       event.preventDefault();
     }
   };
+
+  preventSpaceScrolling(event: KeyboardEvent): boolean {
+    const target = event.target as HTMLElement;
+
+    const isEditableElement = target.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName);
+
+    const isElementVisible = () => {
+      const boundingBox = target.getBoundingClientRect();
+      return boundingBox.bottom > 0 && boundingBox.top < window.innerHeight;
+    };
+
+    return isEditableElement && isElementVisible() && !this.mainPageScrollService.isScrolling;
+  }
 
   ngOnInit(): void {
     this.mainPageScrollService.isScrolling = true;
