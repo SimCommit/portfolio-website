@@ -1,6 +1,8 @@
 <section>
     <div class="contact-wrapper">
-        <div class="contact">
+        <div class="spacer"></div>
+        @let isSmall = sectionLayoutService.hasSmallAspectRatio$ | async;
+        <div class="contact" [ngClass]="{'setAspectRatio': false}">
             <div id="contact-text">
                 <h2>{{"main-page.contact.headline" | translate}}</h2>
                 <p id="c-question">{{"main-page.contact.tagline" | translate}}</p>
@@ -17,13 +19,11 @@
                             ( !name.valid && name.touched )
                             ? ('main-page.contact.form.name-placeholder-warning' | translate)
                             : ('main-page.contact.form.name-placeholder' | translate) 
-                            }}" 
-                            title="{{ 
+                            }}" title="{{ 
                             ( !name.valid && name.touched )
                             ? ('main-page.contact.form.name-placeholder-warning' | translate)
                             : ('main-page.contact.form.name-placeholder' | translate) 
-                            }}"required #name="ngModel"
-                            minlength="3">
+                            }}" required #name="ngModel" minlength="3">
                     </label>
 
                     <label class="text-input">
@@ -34,14 +34,11 @@
                             (!email.valid && email.touched) 
                             ? ('main-page.contact.form.email-placeholder-warning' | translate) 
                             : ('main-page.contact.form.email-placeholder' | translate)
-                            }}" 
-                            title="{{ 
+                            }}" title="{{ 
                             (!email.valid && email.touched) 
                             ? ('main-page.contact.form.email-placeholder-warning' | translate) 
                             : ('main-page.contact.form.email-placeholder' | translate)
-                            }}"
-                            required
-                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
+                            }}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
                     </label>
                 </div>
 
@@ -53,13 +50,11 @@
                         (!message.valid && message.touched)
                         ? ('main-page.contact.form.message-placeholder-warning' | translate)
                         : ('main-page.contact.form.message-placeholder' | translate)
-                        }}" 
-                        title="{{
+                        }}" title="{{
                         (!message.valid && message.touched)
                         ? ('main-page.contact.form.message-placeholder-warning' | translate)
                         : ('main-page.contact.form.message-placeholder' | translate)
-                        }}"
-                        required #message="ngModel" minlength="16">
+                        }}" required #message="ngModel" minlength="16">
                     </textarea>
                 </label>
 

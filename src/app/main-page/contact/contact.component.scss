@@ -6,6 +6,7 @@
 section {
   @include sectionBoxStyle($bc: $main-black);
   @include dFlex();
+  // max-height: 1065px;
 }
 
 .contact-wrapper {
@@ -19,6 +20,9 @@ section {
 .contact {
   @include dFlex($ai: flex-start, $jc: space-between);
   height: 100%;
+  max-height: min(640px, 59vw); //HIER! Wir stellen die Content begrenzung ein
+
+  // width: 100%;
 }
 
 #contact-text {
@@ -70,6 +74,7 @@ form {
     font-weight: bold;
     padding-left: 16px;
     margin-bottom: 4px;
+    transition: color 125ms ease;
   }
 
   input,
@@ -124,7 +129,7 @@ textarea:-webkit-autofill {
 .text-input input.warning-border,
 .text-input textarea.warning-border {
   border-bottom: 1px solid $main-warning;
-  
+
   &::placeholder {
     color: $main-warning;
   }
@@ -224,6 +229,7 @@ textarea:-webkit-autofill {
 
   a {
     color: $main-coral;
+    transition: all 125ms ease;
 
     &:hover {
       color: $main-ivory;
@@ -275,7 +281,7 @@ button {
 svg path {
   fill: #f8f7e5;
   transition: fill 125ms ease;
-  animation: jumpAnimation 1.6s ease-in-out infinite;
+  animation: jumpAnimation 1.4s ease-in-out infinite;
 }
 
 @keyframes jumpAnimation {
@@ -294,6 +300,7 @@ svg path {
 
 #back-to-start {
   transition: border-bottom 125ms ease;
+  border-bottom: 1px solid transparent;
 }
 
 #back-to-start:hover svg path {
@@ -302,6 +309,23 @@ svg path {
 
 #back-to-start:hover {
   border-bottom: 1px solid #ff5733;
+}
+// #endregion
+
+// #region Breakpoint Classes
+.setAspectRatio {
+  @media (max-width: 1600px) {
+    aspect-ratio: 16 / 10;
+    height: unset;
+  }
+
+  // @media (max-aspect-ratio: 16 / 10) and (max){
+  //   aspect-ratio: unset;
+  // }
+
+  @media (max-width: 800px) {
+    aspect-ratio: unset;
+  }
 }
 // #endregion
 
