@@ -3,11 +3,15 @@
 
 #colleague-quote {
   @include dFlex($fd: column, $ai: flex-end);
+
+  a {
+    margin-top: min(36px, 2vh);
+  }
 }
 
 #cq-card {
   @include cardBoxStyle($bc: $main-ivory);
-  @include dFlex($fd: column, $ai: flex-start, $g: 1rem);
+  @include dFlex($fd: column, $ai: flex-start, $g: 10px);
   text-align: start;
 
   #title {
@@ -30,4 +34,12 @@
 .cogwheel-marker-hovered {
   opacity: 1;
   transition: opacity 200ms;
+}
+
+@media (max-width: 800px) {
+  #colleague-quote {
+    a {
+      margin-top: 16px;
+    }
+  }
 }

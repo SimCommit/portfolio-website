@@ -3,21 +3,30 @@
 
 section {
   @include sectionBoxStyle();
-  @include dFlex($fd: column, $jc: flex-start, $g: 4rem);
+  @include dFlex();
+  min-height: 640px;
+  max-height: 1065px;
+}
+
+.references-wrapper {
+  @include dFlex($fd: column, $jc: flex-start, $ai: flex-start, $g: 40px);
+  @include sectionWrapperStyle();
+  @include maxWidth1600();
+  width: 100%;
+  height: 100%;
 
   div {
+    @include dFlex($ai: flex-start, $jc: space-between, $g: 2%);
     width: 100%;
-    height: 64%;
-    @include dFlex($ai: flex-start, $g: 2rem);
+    height: 75%;
   }
 }
 
 #app-colleague-quote-1,
 #app-colleague-quote-2,
 #app-colleague-quote-3 {
-    width: 30%;
+  flex: 1;
 }
-
 
 #app-colleague-quote-2 {
   align-self: center;
@@ -26,3 +35,27 @@ section {
 #app-colleague-quote-3 {
   align-self: flex-end;
 }
+
+// #region Media Queries
+@media (max-height: 700px) {
+  #app-colleague-quote-2,
+  #app-colleague-quote-3 {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 800px) {
+  section {
+    height: unset;
+    max-height: unset;
+  }
+
+  .references-wrapper {
+    div {
+      flex-direction: column;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+  }
+}
+// #endregion

@@ -2,9 +2,8 @@
 @use "./../../../../styles/_variables" as *;
 
 #project-showcase {
-  @include dFlex($g: 3rem, $jc: space-between);
+  @include dFlex($g: clamp(2rem, 5.013vw - 2.015rem, 4rem), $jc: space-between);
   height: 100%;
-  gap: clamp(2rem, 5.013vw - 2.015rem, 4rem);
 }
 
 #p-preview {
@@ -57,13 +56,6 @@
   @include dFlex($fd: column, $ai: space-between);
   flex: 1;
   height: 100%;
-  // @media (max-aspect-ratio: 7/6) {
-  //   width: 80%;
-  // }
-
-  // @media (max-width: 480px) {
-  //   width: 100%;
-  // }
 }
 
 #p-details {
@@ -134,10 +126,6 @@
   transform: translateY(-110%);
   transition: opacity 125ms ease;
 
-  // @media (max-aspect-ratio: 7/6) {
-  //   transform: translateY(-100%);
-  // }
-
   #learning-text {
     margin-top: 0;
     font-weight: 400;
@@ -183,10 +171,6 @@
     font-size: clamp(1.6rem, 3.333vw + 0.533rem, 1.8rem);
     font-weight: bold;
 
-    // @media (max-width: 400px) {
-    //   width: 120px;
-    // }
-
     &:hover {
       color: $main-coral;
     }
@@ -199,10 +183,6 @@
     padding: 16px clamp(1.2rem, 8.633vw - 5.715rem, 2.4rem) clamp(1.2rem, 8.633vw - 5.715rem, 2.4rem)
       clamp(1.2rem, 8.633vw - 5.715rem, 2.4rem);
   }
-
-  // #project-showcase {
-  //   gap: clamp(2rem, 14.388vw - 9.525rem, 4rem);
-  // }
 }
 
 @media (max-width: 800px) {
