@@ -57,7 +57,7 @@ export class MainPageScrollService {
     if (this.isScrolling) return;
 
     const element = this.sections[sectionIndex];
-    console.log(sectionIndex);
+    // console.log(sectionIndex);
 
     if (element) {
       this.isScrolling = true;
@@ -70,10 +70,10 @@ export class MainPageScrollService {
   }
 
   updateCurrentSection(newSectionIndex: number): void {
-    console.log("old index: " + this.currentSectionIndex, "new index: " + newSectionIndex);
+    // console.log("old index: " + this.currentSectionIndex, "new index: " + newSectionIndex);
     if (this.currentSectionIndex === newSectionIndex) return;
 
     this.currentSectionIndex = newSectionIndex;
-    console.log("final index: " + this.currentSectionIndex);
+    // console.log("final index: " + this.currentSectionIndex);
   }
 }

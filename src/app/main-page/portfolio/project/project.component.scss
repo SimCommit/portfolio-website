@@ -4,6 +4,7 @@
 #project-showcase {
   @include dFlex($g: 3rem, $jc: space-between);
   height: 100%;
+  gap: clamp(2rem, 5.013vw - 2.015rem, 4rem);
 }
 
 #p-preview {
@@ -125,7 +126,7 @@
   z-index: 8;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 8px;
   @include cardBoxStyle($bc: $main-ivory);
   width: 84%;
   background-color: $main-blue;
@@ -193,12 +194,15 @@
 }
 
 // #region Media Queries
-
 @media (max-width: 940px) {
   #p-details {
     padding: 16px clamp(1.2rem, 8.633vw - 5.715rem, 2.4rem) clamp(1.2rem, 8.633vw - 5.715rem, 2.4rem)
       clamp(1.2rem, 8.633vw - 5.715rem, 2.4rem);
   }
+
+  // #project-showcase {
+  //   gap: clamp(2rem, 14.388vw - 9.525rem, 4rem);
+  // }
 }
 
 @media (max-width: 800px) {
@@ -217,7 +221,7 @@
   }
 
   #p-details {
-    @include textPadding();    
+    @include textPadding();
   }
 
   #p-links {

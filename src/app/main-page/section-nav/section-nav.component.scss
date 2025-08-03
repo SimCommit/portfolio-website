@@ -31,6 +31,7 @@ nav {
   border-radius: 50%;
   background-color: $main-ivory;
   transition: all 450ms ease-in;
+  transition-delay: 25ms;
   rotate: 45deg;
 }
 

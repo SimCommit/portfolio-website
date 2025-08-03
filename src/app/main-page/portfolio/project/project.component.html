@@ -8,8 +8,11 @@
     <div id="p-content">
         <div id="p-details">
             <div id="p-header">
-                <div class="disappear" [style.background-color]="showcaseData.myProjects[showcaseData.currentProject].learningBgColor" [ngClass]="{'appear': emojiIsHovered}" id="learning-card">
-                    <p id="learning-text">{{showcaseData.myProjects[showcaseData.currentProject].learning | translate}}
+                <div class="disappear"
+                    [style.background-color]="showcaseData.myProjects[showcaseData.currentProject].learningBgColor"
+                    [ngClass]="{'appear': emojiIsHovered}" id="learning-card">
+                    <p id="learning-text">
+                        {{showcaseData.myProjects[showcaseData.currentProject].learning | translate}}
                     </p>
                 </div>
                 <h3>{{showcaseData.myProjects[showcaseData.currentProject].name}}</h3>
@@ -23,7 +26,8 @@
             <div id="p-links">
                 <a href="{{showcaseData.myProjects[showcaseData.currentProject].gitHubUrl}}" target="_blank">GitHub <img
                         src="./assets/img/icons/project/arrow-right.svg" alt="Icon Arrow Right"></a>
-                <a href="{{showcaseData.myProjects[showcaseData.currentProject].projectUrl}}" target="_blank">Live Test <img src="./assets/img/icons/project/arrow-right.svg" alt="Icon Arrow Right"></a>
+                <a href="{{showcaseData.myProjects[showcaseData.currentProject].projectUrl}}" target="_blank">Live Test
+                    <img src="./assets/img/icons/project/arrow-right.svg" alt="Icon Arrow Right"></a>
             </div>
         </div>
 

@@ -43,7 +43,7 @@ export class SectionLayoutService {
     const isSmall = sectionWidth / windowHeight <= 1.6;
     if (this.hasSmallAspectRatioSubject.value !== isSmall) {
       this.hasSmallAspectRatioSubject.next(isSmall);
-      console.log(isSmall);
+      // console.log(isSmall);
     }
 
     if (windowWidth > this.BREAKPOINT_MOBILE) {
