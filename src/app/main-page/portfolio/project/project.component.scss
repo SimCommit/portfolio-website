@@ -24,10 +24,10 @@
     z-index: 2;
   }
 
-  @media (max-height: 750px) {
+  @media (max-height: 850px) and (min-width: 801px) {
     width: auto;
-    height: 60vh;
-    min-height: 384px;
+    height: min(45vh, 39vw);
+    min-height: 300px;
   }
 }
 
