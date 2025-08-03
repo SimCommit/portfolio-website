@@ -115,6 +115,7 @@ textarea:-webkit-autofill {
 }
 
 .warning-text {
+  height: 20px;
   width: 100%;
   color: $main-warning;
   transition: color 125ms;
@@ -134,7 +135,7 @@ textarea:-webkit-autofill {
   @include dFlex($fd: column, $ai: flex-start, $jc: flex-start, $g: 8px);
 
   div {
-    @include dFlex($fd: column, $g: 1rem);
+    @include dFlex($ai: flex-start, $fd: column, $g: 10px);
   }
 }
 
@@ -259,7 +260,7 @@ button {
     overflow-y: hidden;
     height: 48px;
     // border: 2px dotted aqua;
-    
+
     svg {
       height: 48px;
     }
@@ -297,5 +298,10 @@ svg path {
 
 #back-to-start:hover {
   border-bottom: 1px solid #ff5733;
+}
+// #endregion
+
+// #region Media Queries
+.warning-text {
 }
 // #endregion

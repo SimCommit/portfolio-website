@@ -48,23 +48,26 @@
                                 | translate}}</a>
                             {{'main-page.contact.form.checkbox-text-3' | translate}}
                         </p>
-                        @if (!name.valid && name.touched) {
-                        <p class="warning-text">
-                            {{'main-page.contact.form.name-warning' | translate}}
-                        </p>
-                        } @else if (!email.valid && email.touched) {
-                        <p class="warning-text">
-                            {{'main-page.contact.form.email-warning' | translate}}
-                        </p>
-                        } @else if (!message.valid && message.touched) {
-                        <p class="warning-text">
-                            {{'main-page.contact.form.message-warning' | translate}}
-                        </p>
-                        } @else if (!checkbox.valid && checkbox.touched) {
-                        <p class="warning-text">
-                            {{'main-page.contact.form.checkbox-warning' | translate}}
-                        </p>
-                        }
+
+                        <div class="warning-text">
+                            @if (!name.valid && name.touched) {
+                            <p>
+                                {{'main-page.contact.form.name-warning' | translate}}
+                            </p>
+                            } @else if (!email.valid && email.touched) {
+                            <p>
+                                {{'main-page.contact.form.email-warning' | translate}}
+                            </p>
+                            } @else if (!message.valid && message.touched) {
+                            <p>
+                                {{'main-page.contact.form.message-warning' | translate}}
+                            </p>
+                            } @else if (!checkbox.valid && checkbox.touched) {
+                            <p>
+                                {{'main-page.contact.form.checkbox-warning' | translate}}
+                            </p>
+                            }
+                        </div>
                     </div>
                 </div>
                 <button type="submit" [disabled]="!contactForm.valid">{{'main-page.contact.form.button' |
