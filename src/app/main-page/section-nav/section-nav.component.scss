@@ -48,37 +48,3 @@ nav {
 .anchor-active-light-bg {
   background-color: $main-coral;
 }
-
-// #region back-to-start jump animation
-svg path {
-  fill: #f8f7e5;
-  transition: fill 125ms ease;
-  animation: jumpAnimation 1.6s ease-in-out infinite;
-}
-
-@keyframes jumpAnimation {
-  0% {
-    transform: translateY(95%) scaleY(1);
-  }
-
-  50% {
-    transform: translateY(-40%) scaleY(1.5);
-  }
-
-  100% {
-    transform: translateY(95%) scaleY(1);
-  }
-}
-
-#back-to-start {
-  transition: border-bottom 125ms ease;
-}
-
-#back-to-start:hover svg path {
-  fill: #ff5733;
-}
-
-#back-to-start:hover {
-  border-bottom: 1px solid #ff5733;
-}
-// #endregion

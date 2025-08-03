@@ -1,6 +1,8 @@
 @use "./../../../styles/_mixins" as *;
 @use "./../../../styles/_variables" as *;
 
+@include hostBlock();
+
 section {
   @include sectionBoxStyle();
   @include dFlex();

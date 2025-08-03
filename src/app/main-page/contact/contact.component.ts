@@ -6,6 +6,7 @@ import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { PageStateService } from '../../page-state.service';
+import { MainPageScrollService } from '../main-page-scroll.service';
 
 @Component({
   selector: 'app-contact',
@@ -24,7 +25,7 @@ export class ContactComponent {
     isChecked: false,
   };
 
-  constructor(public pageStateService: PageStateService) {}
+  constructor(public pageStateService: PageStateService, public mainPageScrollService: MainPageScrollService ) {}
 
   toggleCheckedState(inputToToggle: InputFieldStates): void {
     inputToToggle.isChecked = !inputToToggle.isChecked;
