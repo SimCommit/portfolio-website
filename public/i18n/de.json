@@ -4,7 +4,7 @@
     "hero.contact-button": "Schreibe mir",
     "about-me": {
       "headline":"Über mich",
-      "card-part-1": "Hey, ich heiße Simon. Zu sehen, wie Ideen durch meinen Code Wirklichkeit werden, erfüllt mich. Von Projekt zu Projekt, sind nicht nur die Herausforderungen gewachsen, sondern auch ich. Und im Team können wir noch höher hinaus.",
+      "card-part-1": "Hallo, ich bin Simon. Software zu entwickeln begeistert mich. Ich denke analytisch, habe ein gutes technisches Verständnis und Freude daran, Ideen in die Tat umzusetzen. Außerdem gefallen mir am Coden die vielen Möglichkeiten, unnötige Wiederholungen zu vermeiden. In meinem letzten Teamprojekt konnte ich das z. B. durch globale SCSS-Variablen und Mixins, die uns ein einheitliches Styling in allen Angular Komponenten erleichtert haben. Ich habe auch schon acht Projekte alleine umgesetzt, aber wie in kleinen Teams die Stärken der Einzelnen zusammenspielen, gefällt mir nochmal besser.",
       "card-part-2": "Lass uns zusammen etwas neues erschaffen!",
       "contact-button": "Zum Kontakt",
       "about-me-overlay": {
