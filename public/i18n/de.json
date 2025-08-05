@@ -3,8 +3,8 @@
     "hero.subheadline-part-1": "Hallo, ich bin",
     "hero.contact-button": "Schreibe mir",
     "about-me": {
-      "headline":"Über mich",
-      "card-part-1": "Hallo, ich bin Simon. Software zu entwickeln begeistert mich. Ich denke analytisch, habe ein gutes technisches Verständnis und Freude daran, Ideen in die Tat umzusetzen. Außerdem gefallen mir am Coden die vielen Möglichkeiten, unnötige Wiederholungen zu vermeiden. In meinem letzten Teamprojekt konnte ich das z. B. durch globale SCSS-Variablen und Mixins, die uns ein einheitliches Styling in allen Angular Komponenten erleichtert haben. Ich habe auch schon acht Projekte alleine umgesetzt, aber wie in kleinen Teams die Stärken der Einzelnen zusammenspielen, gefällt mir nochmal besser.",
+      "headline": "Über mich",
+      "card-part-1": "Hallo, ich bin Simon. Am Coden gefallen mir besonders die vielen Möglichkeiten, unnötige Wiederholungen zu vermeiden. In meinem letzten Teamprojekt konnte ich das zum Beispiel durch globale SCSS-Variablen und -Mixins umsetzen, die uns ein einheitliches Styling in allen Angular-Komponenten erleichtert haben. Ich habe auch schon acht Projekte alleine umgesetzt, aber wie in kleinen Teams die Stärken der Einzelnen zusammenspielen, gefällt mir noch besser.",
       "card-part-2": "Lass uns zusammen etwas neues erschaffen!",
       "contact-button": "Zum Kontakt",
       "about-me-overlay": {
@@ -18,7 +18,7 @@
     },
     "skills": {
       "headline": "Kernkompetenzen",
-      "description": "Mit TypeScript und Angular realisiere ich dynamische Single-Page-Anwendungen. Auch meine Projekte in vanilla JavaScript sind responsiv und interaktiv. Dabei setze ich auf modernes HTML und CSS, um strukturierte Layouts und ansprechende Designs umzusetzen.",
+      "description": "Ich arbeite sehr gerne mit Angular. Seine Modularität und die auf Wiederverwendbarkeit ausgelegte Struktur passen genau zu mir. Dennoch habe ich auch viel Freude daran, die Klassen alle selbst in Vanilla JavaScript zu schreiben. Wie in meinem Webbrowser-Spiel “El Pollo Loco”.",
       "growth-mindset": {
         "title": "Du vermisst eine bestimmte Fähigkeit?",
         "text": "Schreib mir gerne! Ich freue mich darauf, mein Wissen weiter auszubauen. Besonders interessiere ich mich für diese Technologien:"
