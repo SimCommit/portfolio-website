@@ -7,6 +7,7 @@ section {
   @include sectionBoxStyle($bc: $main-black);
   @include dFlex();
   // max-height: 1065px;
+  min-height: 640px;
 }
 
 .contact-wrapper {
@@ -18,7 +19,7 @@ section {
 }
 
 .contact {
-  @include dFlex($ai: flex-start, $jc: space-between);
+  @include dFlex($ai: flex-start, $jc: space-between, $g: clamp(1.6rem, 8.01vw - 4.816rem, 8rem));
   height: 100%;
   max-height: min(640px, 59vw); //HIER! Wir stellen die Content begrenzung ein
 
@@ -26,12 +27,18 @@ section {
 }
 
 #contact-text {
-  width: 40%;
+  // width: 40%;
+  flex: 38;
+
   @include dFlex($fd: column, $ai: flex-start);
 
   h2 {
     color: $main-yellow;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
+
+    // @media (max-height: 850px) {
+    //   margin-bottom: 16px;
+    // }
   }
 
   p {
@@ -47,9 +54,12 @@ section {
 }
 
 form {
-  width: 50%;
+  // width: 50%;
+  flex: 55;
   align-self: flex-end;
-  @include dFlex($fd: column, $g: 2rem);
+  @include dFlex($fd: column, $g: 20px);
+  // margin-bottom: 5vh;
+  // margin-top: 10vh;
 
   label {
     @include dFlex($fd: column, $ai: flex-start);
@@ -95,6 +105,7 @@ form {
 
     &:hover {
       cursor: pointer;
+      border-color: $main-coral;
     }
   }
 
@@ -315,7 +326,7 @@ svg path {
 // #region Breakpoint Classes
 .setAspectRatio {
   @media (max-width: 1600px) {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 20 / 10;
     height: unset;
   }
 
@@ -330,6 +341,16 @@ svg path {
 // #endregion
 
 // #region Media Queries
-.warning-text {
+@media (max-height: 720px) {
+  #contact-text {
+    h2 {
+      margin-bottom: 16px;
+
+      @media (min-width: 1300px) {
+        font-size: clamp(5rem, 2.806vw + 2.753rem, 6.4rem);
+      }
+    }
+  }
 }
+
 // #endregion
