@@ -13,26 +13,15 @@ export class PageStateService {
 
   constructor(private router: Router) {}
 
-  redirectIfOnLegalPage() {
+  redirectIfOnLegalPage(fragment: string): void {
     if (
       this.router.url === "/legal-notice/en" ||
       this.router.url === "/legal-notice/de" ||
       this.router.url === "/privacy-policy/en" ||
       this.router.url === "/privacy-policy/de"
     ) {
-      this.router.navigate(["/"], { fragment: "about-me" });
-
-      // this.router.navigate(['/'], { state: { scrollTo: 'about-me' } });
-
-      // this.router.navigate(['/']).then(() => {
-      //   console.log('111');
-
-      //   setTimeout(() => {
-      //     console.log('222');
-
-      //     this.scrollToSection('about-me');
-      //   }, 500);
-      // });
+      this.router.navigate(["/"], { fragment: fragment });
+      console.log("redirect from legal to: ", fragment);
     }
   }
 

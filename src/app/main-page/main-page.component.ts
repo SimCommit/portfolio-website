@@ -10,6 +10,7 @@ import { HeaderComponent } from "../shared/header/header.component";
 import { MainPageScrollService } from "./main-page-scroll.service";
 import { BreakpointObserverService } from "../breakpoint-observer.service";
 import { AsyncPipe } from "@angular/common";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-main-page",
@@ -34,13 +35,74 @@ export class MainPageComponent {
 
   constructor(
     private mainPageScrollService: MainPageScrollService,
-    public breakpointObserverService: BreakpointObserverService
+    public breakpointObserverService: BreakpointObserverService,
+    private route: ActivatedRoute
   ) {}
+
+  // #region Lifecycle
+  ngOnInit(): void {
+    // this.mainPageScrollService.isScrolling = true;
+    window.addEventListener("wheel", this.onWheel, { passive: false });
+    window.addEventListener("keydown", this.onKeyDown, { passive: false });
+    window.scrollTo({ top: 0, behavior: "auto" });
+    setTimeout(() => {
+      this.mainPageScrollService.isScrolling = false;
+    }, 500);
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener("wheel", this.onWheel);
+    window.removeEventListener("keydown", this.onKeyDown);
+  }
 
   ngAfterViewInit(): void {
     const elements = this.sectionRefs.map((ref) => ref.nativeElement);
     this.mainPageScrollService.setSectionRefs(elements);
+    this.route.fragment.subscribe((fragment) => {
+      if (fragment === "hero") {
+        setTimeout(() => {
+          console.log("hero");
+          this.mainPageScrollService.scrollToSection(0);
+        }, 10);
+      }
+
+      if (fragment === "about-me") {
+        setTimeout(() => {
+          console.log("about-me");
+          this.mainPageScrollService.scrollToSection(1);
+        }, 10);
+      }
+
+      if (fragment === "skills") {
+        setTimeout(() => {
+          console.log("skills");
+          this.mainPageScrollService.scrollToSection(2);
+        }, 10);
+      }
+
+      if (fragment === "portfolio") {
+        setTimeout(() => {
+          console.log("portfolio");
+          this.mainPageScrollService.scrollToSection(3);
+        }, 10);
+      }
+
+      if (fragment === "references") {
+        setTimeout(() => {
+          console.log("references");
+          this.mainPageScrollService.scrollToSection(4);
+        }, 10);
+      }
+
+      if (fragment === "contact") {
+        setTimeout(() => {
+          console.log("contact");
+          this.mainPageScrollService.scrollToSection(5);
+        }, 10);
+      }
+    });
   }
+  // #endregion
 
   private onWheel = (event: WheelEvent): void => {
     if (this.mainPageScrollService.isScrolling) return;
@@ -87,20 +149,5 @@ export class MainPageComponent {
     };
 
     return isEditableElement && isElementVisible() && !this.mainPageScrollService.isScrolling;
-  }
-
-  ngOnInit(): void {
-    this.mainPageScrollService.isScrolling = true;
-    window.addEventListener("wheel", this.onWheel, { passive: false });
-    window.addEventListener("keydown", this.onKeyDown, { passive: false });
-    window.scrollTo({ top: 0, behavior: "auto" });
-    setTimeout(() => {
-      this.mainPageScrollService.isScrolling = false;
-    }, 500);
-  }
-
-  ngOnDestroy(): void {
-    window.removeEventListener("wheel", this.onWheel);
-    window.removeEventListener("keydown", this.onKeyDown);
   }
 }

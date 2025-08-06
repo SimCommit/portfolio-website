@@ -7,31 +7,39 @@
             </div>
             <div class="nav-body">
                 <div>
-                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="">
+                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="cogwheel icon">
                     <a
-                        (click)="mainPageScrollService.updateCurrentSection(1); closeFromOverlay(); mainPageScrollService.scrollToSection(1); pageStateService.redirectIfOnLegalPage()">About
-                        Me</a>
+                        (click)="closeFromOverlay(); pageStateService.isOnLegalPage() ? pageStateService.redirectIfOnLegalPage('about-me') : mainPageScrollService.scrollToSection(1)">
+                        About Me
+                    </a>
                 </div>
                 <div>
-                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="">
+                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="cogwheel icon">
                     <a
-                        (click)="mainPageScrollService.updateCurrentSection(2); closeFromOverlay(); mainPageScrollService.scrollToSection(2)">Skillset</a>
+                        (click)="closeFromOverlay(); pageStateService.isOnLegalPage() ? pageStateService.redirectIfOnLegalPage('skills') : mainPageScrollService.scrollToSection(2)">
+                        Skillset
+                    </a>
                 </div>
                 <div>
-                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="">
+                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="cogwheel icon">
                     <a
-                        (click)="mainPageScrollService.updateCurrentSection(3); closeFromOverlay(); mainPageScrollService.scrollToSection(3)">Portfolio</a>
+                        (click)="closeFromOverlay(); pageStateService.isOnLegalPage() ? pageStateService.redirectIfOnLegalPage('portfolio') : mainPageScrollService.scrollToSection(3)">
+                        Portfolio
+                    </a>
                 </div>
                 <div>
-                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="">
+                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="cogwheel icon">
                     <a
-                        (click)="mainPageScrollService.updateCurrentSection(4); closeFromOverlay(); mainPageScrollService.scrollToSection(4)">References</a>
+                        (click)="closeFromOverlay(); pageStateService.isOnLegalPage() ? pageStateService.redirectIfOnLegalPage('references') : mainPageScrollService.scrollToSection(4)">
+                        References
+                    </a>
                 </div>
                 <div>
-                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="">
+                    <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="cogwheel icon">
                     <a
-                        (click)="mainPageScrollService.updateCurrentSection(5); closeFromOverlay(); mainPageScrollService.scrollToSection(5)">Contact
-                        Me</a>
+                        (click)="closeFromOverlay(); pageStateService.isOnLegalPage() ? pageStateService.redirectIfOnLegalPage('contact') : mainPageScrollService.scrollToSection(5)">
+                        Contact Me
+                    </a>
                 </div>
             </div>
             <app-social-links [isInBurgerMenu]="true" (click)="closeFromOverlay()"></app-social-links>

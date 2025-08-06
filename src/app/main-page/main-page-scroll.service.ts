@@ -1,5 +1,6 @@
 import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root",
@@ -11,7 +12,7 @@ export class MainPageScrollService {
 
   isScrolling: boolean = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {}
 
   setSectionRefs(refs: Element[]) {
     this.sections = refs;
@@ -53,11 +54,21 @@ export class MainPageScrollService {
     }
   }
 
+  /**
+   * Smoothly scrolls to a section based on its index in the section list and updates the URL fragment.
+   *
+   * - Ensures consistent reload behavior: reloading the page (e.g. via F5) will preserve the current section.
+   * - Sets a scroll lock (`isScrolling`) to prevent simultaneous or repeated scroll actions.
+   * - Resets the lock after a delay to allow further user-initiated navigation.
+   * - Updates the browser's URL fragment using `replaceUrl: true` to avoid adding redundant history entries.
+   *
+   * @param {number} sectionIndex - Index of the section to scroll to within the `sections` list.
+   */
   scrollToSection(sectionIndex: number): void {
     if (this.isScrolling) return;
 
     const element = this.sections[sectionIndex];
-    // console.log(sectionIndex);
+    const sectionId = element.id;
 
     if (element) {
       this.isScrolling = true;
@@ -66,6 +77,13 @@ export class MainPageScrollService {
         this.isScrolling = false;
       }, 500);
       this.currentSectionIndex = sectionIndex;
+    }
+
+    if (sectionId) {
+      this.router.navigate([], {
+        fragment: sectionId,
+        replaceUrl: true,
+      });
     }
   }
 
