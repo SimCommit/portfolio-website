@@ -49,7 +49,7 @@ export class ShowcaseDataService {
       name: 'Join',
       backgroundColor: '#F9AF42',
       learningBgColor: '#679AAC',
-      picUrl: './assets/img/portfolio/project-preview-placeholder.svg',
+      picUrl: './assets/img/portfolio/project/join-preview-board-2.png',
       cogwheelUrl: './assets/img/portfolio/project/cogwheel-180.svg',
       learning: 'main-page.portfolio.project.learning-join',
       emojiUrl: './assets/img/icons/project/emoji-checkmark.svg',
@@ -76,11 +76,11 @@ export class ShowcaseDataService {
       name: 'Pokédex',
       backgroundColor: '#FF834F',
       learningBgColor: '#679AAC',
-      picUrl: './assets/img/portfolio/project/pokedex-preview-1.svg',
+      picUrl: './assets/img/portfolio/project/pokedex-preview-1.png',
       cogwheelUrl: './assets/img/portfolio/project/cogwheel-180-yellow.svg',
       learning: 'main-page.portfolio.project.learning-pokedex',
       emojiUrl: './assets/img/icons/project/pokeball.svg',
-      usedSkills: 'JavaScript | CSS | HTML | API',
+      usedSkills: 'JavaScript | CSS | HTML | REST API',
       description: 'main-page.portfolio.project.description-pokedex',
       gitHubUrl: 'https://github.com/SimonMFuchs/pokedex',
       projectUrl:
@@ -88,7 +88,7 @@ export class ShowcaseDataService {
     },
   ];
 
-  currentProject: number = 1;
+  currentProject: number = 0;
 
   constructor() {}
 }
