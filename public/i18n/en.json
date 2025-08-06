@@ -3,7 +3,7 @@
     "hero.subheadline-part-1": "Hello there, I'm",
     "hero.contact-button": "Get in Touch",
     "about-me": {
-      "headline":"About Me",
+      "headline": "About Me",
       "card-part-1": "Hi, I'm Simon. I really enjoy how coding lets me create smart, reusable solutions. In my last team project, for example, I achieved this by creating global SCSS variables and mixins that helped maintain consistent styling across all Angular components. I've also completed eight projects on my own, but I enjoy even more how individual strengths come together when working in small teams.",
       "card-part-2": "Let's connect and build something new together!",
       "contact-button": "Let's talk",
@@ -41,11 +41,11 @@
     "references": {
       "headline": "What my colleagues say about me",
       "colleague-quote": {
-        "quote-1": "Simon created an amazing Dark Souls Remastered Zweihander Build. The coop was really efficiant and fun. The bosses fell like leaves in autumn.",
-        "role-1": "Frontend Developer",
-        "quote-2": "To work with Simon was a truly great experience. He was highly committed, proactive, and consistently reliable. Most of all, his creative ideas really helped move our project forward.",
+        "quote-1": "It was a pleasure working with Simon. His strength clearly lies in logical thinking. Even in challenging situations, he consistently found excellent solutions. Communication with him was always clear, reliable, and pleasant.",
+        "role-1": "Team Colleague",
+        "quote-2": "Working with Simon was a truly great experience. He was fully committed, always thought ahead, and worked with impressive reliability. His creative input, in particular, really enriched our project.",
         "role-2": "Team Colleague",
-        "quote-3": "Working with Simon on our Kochwelt project was a real pleasure. His dedication and insightful questions truly pushed the project forward. I would gladly start another project with him anytime.",
+        "quote-3": "Working with Simon on our website was a lot of fun. His commitment really moved the project forward. I'd happily start another project with him anytime.",
         "role-3": "Team Colleague"
       },
       "button-linkedin": "To Linkedin profile >>"
