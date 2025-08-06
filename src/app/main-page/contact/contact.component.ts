@@ -7,7 +7,6 @@ import { HttpClient } from "@angular/common/http";
 import { TranslateModule } from "@ngx-translate/core";
 import { PageStateService } from "../../page-state.service";
 import { MainPageScrollService } from "../main-page-scroll.service";
-import { SectionLayoutService } from "../services/section-layout.service";
 
 @Component({
   selector: "app-contact",
@@ -28,13 +27,8 @@ export class ContactComponent {
 
   constructor(
     public pageStateService: PageStateService,
-    public mainPageScrollService: MainPageScrollService,
-    public sectionLayoutService: SectionLayoutService
+    public mainPageScrollService: MainPageScrollService
   ) {}
-
-  ngOnInit(): void {
-    this.sectionLayoutService.startViewportObserver();
-  }
 
   toggleCheckedState(inputToToggle: InputFieldStates): void {
     inputToToggle.isChecked = !inputToToggle.isChecked;

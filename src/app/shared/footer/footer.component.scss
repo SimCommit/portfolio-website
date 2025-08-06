@@ -8,17 +8,16 @@
 #footer-content {
   width: 100%;
   @include dFlex($jc: space-between);
-  padding: 1.5rem 2.5rem;
 }
 
 #cogwheel-container {
-  margin-top: -96px;
+  margin-top: -128px;
   overflow: hidden;
 }
 
 // #region cogwheel animations
 #cogwheel-coral {
-  width: 10rem;
+  width: 180px;
   z-index: 2;
   animation: animateCogwheelCoral linear 10s infinite;
   transform-origin: center;
@@ -36,9 +35,9 @@
 }
 
 #cogwheel-blue {
-  width: 15rem;
+  width: 263px;
   z-index: 3;
-  margin-left: -60px;
+  margin-left: -78px;
   animation: animateCogwheelBlue linear 10s infinite;
   transform-origin: center;
   pointer-events: visible;
@@ -55,13 +54,9 @@
 }
 // #endregion
 
-#footer-links,
-#cogwheel-container {
-  width: 23rem;
-}
-
 #footer-links {
-  @include dFlex($jc: flex-end, $g: 32px);
+  @include dFlex($jc: flex-end, $g: clamp(1.6rem, 2.462vw - 0.738rem, 3.2rem));
+  height: 100px;
 
   a {
     &:hover {
@@ -69,3 +64,74 @@
     }
   }
 }
+
+// #region Media Queries
+@media (max-width: 950px) or (max-height: 820px) {
+  #cogwheel-container {
+    margin-top: -96px;
+  }
+
+  #cogwheel-coral {
+    width: 100px;
+  }
+
+  #cogwheel-blue {
+    margin-left: -45px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 800px) {
+  #footer-content {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+  }
+
+  #cogwheel-container {
+    order: 0;
+    width: unset;
+  }
+  #cogwheel-container {
+    margin-top: 32px;
+    order: 2;
+  }
+
+  #cogwheel-coral {
+    width: 180px;
+  }
+
+  #cogwheel-blue {
+    margin-left: -78px;
+    width: 263px;
+  }
+
+  #footer-links {
+    order: 1;
+    width: 100%;
+    height: unset;
+    @include dFlex($jc: space-between, $g: unset);
+
+    a {
+      // width: 82px;
+      text-align: center;
+
+      &:hover {
+        color: $main-coral;
+      }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  #cogwheel-coral {
+    width: 100px;
+  }
+
+  #cogwheel-blue {
+    margin-left: -45px;
+    width: 150px;
+  }
+}
+
+// #endregion

@@ -6,7 +6,7 @@
 section {
   @include sectionBoxStyle($bc: $main-black);
   @include dFlex();
-  // max-height: 1065px;
+  max-height: 2160px;
   min-height: 640px;
 }
 
@@ -21,13 +21,10 @@ section {
 .contact {
   @include dFlex($ai: flex-start, $jc: space-between, $g: clamp(1.6rem, 8.01vw - 4.816rem, 8rem));
   height: 100%;
-  max-height: min(640px, 59vw); //HIER! Wir stellen die Content begrenzung ein
-
-  // width: 100%;
+  max-height: 580px;
 }
 
 #contact-text {
-  // width: 40%;
   flex: 38;
 
   @include dFlex($fd: column, $ai: flex-start);
@@ -54,12 +51,9 @@ section {
 }
 
 form {
-  // width: 50%;
   flex: 55;
   align-self: flex-end;
   @include dFlex($fd: column, $g: 20px);
-  // margin-bottom: 5vh;
-  // margin-top: 10vh;
 
   label {
     @include dFlex($fd: column, $ai: flex-start);
@@ -323,23 +317,6 @@ svg path {
 }
 // #endregion
 
-// #region Breakpoint Classes
-.setAspectRatio {
-  @media (max-width: 1600px) {
-    aspect-ratio: 20 / 10;
-    height: unset;
-  }
-
-  // @media (max-aspect-ratio: 16 / 10) and (max){
-  //   aspect-ratio: unset;
-  // }
-
-  @media (max-width: 800px) {
-    aspect-ratio: unset;
-  }
-}
-// #endregion
-
 // #region Media Queries
 @media (max-height: 720px) {
   #contact-text {
@@ -350,6 +327,41 @@ svg path {
         font-size: clamp(5rem, 2.806vw + 2.753rem, 6.4rem);
       }
     }
+  }
+}
+
+@media (max-width: 800px) {
+  section {
+    height: unset;
+    max-height: unset;
+  }
+
+  .contact-wrapper {
+    padding-bottom: 0;
+  }
+
+  .contact {
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+      max-height: unset;
+  }
+
+  form {
+    margin-top: 20px;
+    width: 100%;
+
+
+    label {
+    }
+  }
+
+  #contact-info-group {
+    flex-direction: column;
+  }
+
+  .back-to-start-wrapper {
+    bottom: 44px;
   }
 }
 

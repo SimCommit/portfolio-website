@@ -1,8 +1,7 @@
 <section>
     <div class="contact-wrapper">
         <div class="spacer"></div>
-        @let isSmall = sectionLayoutService.hasSmallAspectRatio$ | async;
-        <div class="contact" [ngClass]="{'setAspectRatio': false}">
+        <div class="contact">
             <div id="contact-text">
                 <h2>{{"main-page.contact.headline" | translate}}</h2>
                 <p id="c-question">{{"main-page.contact.tagline" | translate}}</p>
