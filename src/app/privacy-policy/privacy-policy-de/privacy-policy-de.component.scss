@@ -5,8 +5,17 @@ section {
   @include dFlex($fd: column);
   @include maxWidth1600();
   color: $main-ivory;
+  background-color: $main-black;
   width: 100%;
-  padding: 160px 80px;
+  @include sectionWrapperStyle();
+  padding-bottom: 160px;
+  min-height: calc(100vh - 136px);
+}
+
+h1 {
+  margin-top: 32px;
+  margin-bottom: 2rem;
+  font-size: clamp(4rem, 5.006vw - 0.01rem, 8rem);
 }
 
 h2,
@@ -16,17 +25,17 @@ h3 {
 }
 
 h2 {
-    margin-top: 16px;
-    font-size: 32px;
+  margin-top: 16px;
+  font-size: 32px;
 }
 
 h3 {
-    text-align: start;
-    margin-top: 8px;
+  text-align: start;
+  margin-top: 8px;
 }
 
 ul {
-    padding-left: 24px;
+  padding-left: 24px;
 }
 
 strong {
@@ -34,9 +43,15 @@ strong {
 }
 
 a {
-    color: $main-yellow;
+  color: $main-yellow;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 950px) {
+  section {
+    min-height: calc(100vh - 100px);
+  }
 }

@@ -4,7 +4,6 @@
 section {
   @include dFlex($fd: column);
 
-
   div {
     height: 100%;
     width: 100%;
@@ -20,5 +19,6 @@ section {
   @include maxWidth1600();
   width: 100%;
   color: $main-ivory;
+  background-color: $main-black;
   padding: 0 40px;
 }
