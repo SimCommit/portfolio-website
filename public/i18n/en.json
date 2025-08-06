@@ -4,7 +4,7 @@
     "hero.contact-button": "Get in Touch",
     "about-me": {
       "headline":"About Me",
-      "card-part-1": "Hi, I'm Simon. What I particularly enjoy about coding is the many ways to avoid unnecessary repetition. In my last team project, for example, I applied this by creating global SCSS variables and mixins that helped us maintain consistent styling across all Angular components. I've also completed eight projects on my own, but I enjoy even more how individual strengths come together when working in small teams.",
+      "card-part-1": "Hi, I'm Simon. I really enjoy how coding lets me create smart, reusable solutions. In my last team project, for example, I achieved this by creating global SCSS variables and mixins that helped maintain consistent styling across all Angular components. I've also completed eight projects on my own, but I enjoy even more how individual strengths come together when working in small teams.",
       "card-part-2": "Let's connect and build something new together!",
       "contact-button": "Let's talk",
       "about-me-overlay": {
@@ -28,9 +28,9 @@
       "headline": "My Work",
       "text": "Take a look at a selection of my projects – You'll get the best sense of my skills by exploring my work yourself.",
       "project": {
-        "learning-join": "I can't see the future so far",
+        "learning-join": "I learned the most during Join by integrating Firebase using services and observables.",
         "learning-el-pollo-loco": "This is where I developed a deeper understanding of how to structure a project involving many objects. In particular, the interaction between classes across different levels became much clearer to me.",
-        "learning-pokedex": "Working with the API taught me how to structure asynchronous processes effectively and significantly deepened my understanding of accessing deeply nested data structures.",
+        "learning-pokedex": "While working with the API, I learned how to use asynchronous functions to access deeply nested data structures.",
         "description-join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         "description-pokedex": "Interactive Pokédex with data from the PokéAPI. Browse Pokémon by type, view details, and explore animated stats and sprites.",
         "description-el-pollo-loco": "2D jump-and-run game built with JavaScript and canvas. Battle enemies, collect bottles, and defeat the final boss with strategic timing.",
@@ -53,7 +53,7 @@
     "contact": {
       "headline": "Together we can achieve more!",
       "tagline": "Facing a challenge?",
-      "text": "In a shared project, we’ll make it work. I can bring your software design to life and implement interactive logic.",
+      "text": "In a collaborative project, we’ll make it work. I can bring your software design to life and implement interactive logic.",
       "form": {
         "name-title": "What's your name?",
         "name-placeholder": "Your name goes here",

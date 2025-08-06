@@ -4,8 +4,8 @@
     "hero.contact-button": "Schreibe mir",
     "about-me": {
       "headline": "Über mich",
-      "card-part-1": "Hallo, ich bin Simon. Am Coden gefallen mir besonders die vielen Möglichkeiten, unnötige Wiederholungen zu vermeiden. In meinem letzten Teamprojekt konnte ich das zum Beispiel durch globale SCSS-Variablen und -Mixins umsetzen, die uns ein einheitliches Styling in allen Angular-Komponenten erleichtert haben. Ich habe auch schon acht Projekte alleine umgesetzt, aber wie in kleinen Teams die Stärken der Einzelnen zusammenspielen, gefällt mir noch besser.",
-      "card-part-2": "Lass uns zusammen etwas neues erschaffen!",
+      "card-part-1": "Hallo, ich bin Simon. Beim Coden gefallen mir besonders die vielen Möglichkeiten, wiederverwendbare Lösungen zu schaffen. In meinem letzten Teamprojekt konnte ich das zum Beispiel durch globale SCSS-Variablen und -Mixins umsetzen, die uns ein einheitliches Styling in allen Angular-Komponenten erleichtert haben. Ich habe auch schon acht Projekte alleine umgesetzt, aber wie in kleinen Teams die Stärken der Einzelnen zusammenspielen, gefällt mir noch besser.",
+      "card-part-2": "Daher lass uns zusammen etwas Neues bauen!",
       "contact-button": "Zum Kontakt",
       "about-me-overlay": {
         "title": "Mehr über mich",
@@ -28,9 +28,9 @@
       "headline": "Meine Projekte",
       "text": "Sieh dir eine Auswahl meiner Arbeit an - Durch Ausprobieren erkennst du meine Fähigkeiten am besten.",
       "project": {
-        "learning-join": "Ich kann die Zukunft nicht sehen",
+        "learning-join": "Am meisten habe ich bei Join durch die Integration von Firebase mithilfe von Services und Observables gelernt.",
         "learning-el-pollo-loco": "Hier habe ich ein tieferes Verständnis für die Strukturierung eines Projekts mit vielen Objekten entwickelt. Besonders das Zusammenspiel der Klassen auf unterschiedlichen Ebenen wurde für mich dabei viel klarer.",
-        "learning-pokedex": "Im Umgang mit der API habe ich gelernt, asynchrone Abläufe gezielt zu gestalten und mein Verständnis für den Zugriff auf tief verschachtelte Datenstrukturen deutlich vertieft.",
+        "learning-pokedex": "Beim Arbeiten mit der API habe ich gelernt, mit asynchronen Funktionen auf tief verschachtelte Datenstrukturen zuzugreifen.",
         "description-join": "Ein vom Kanban-Prinzip inspiriertes Organisationstool. Per Drag & Drop lassen sich Aufgaben erstellen, verschieben, zuweisen und kategorisieren.",
         "description-el-pollo-loco": "Ein objektorientiert entwickeltes 2D-Jump’n’Run-Spiel, das per Canvas dargestellt wird. Besiege Gegner, sammle Flaschen und tritt im Endkampf gegen den Boss an.",
         "description-pokedex": "Interaktiver Pokédex mit Daten der PokéAPI. Durchsuche Pokémon nach Typ, sieh dir Details an und entdecke animierte Werte und Sprites.",
@@ -59,7 +59,7 @@
         "name-placeholder": "Dein Name hier rein",
         "name-placeholder-warning": "Ups, dein Name fehlt",
         "email-title": "Wie ist deine Email?",
-        "email-placeholder": "deine-email@email.com",
+        "email-placeholder": "deine-email@hier.com",
         "email-placeholder-warning": "Hoppla! Deine Email wird benötigt",
         "message-title": "Wie kann ich dir helfen?",
         "message-placeholder": "Hallo Simon, ich bin interessiert an...",
