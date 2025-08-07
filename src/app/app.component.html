@@ -1,7 +1,8 @@
 <main>
     <section>
         <app-menu-overlay (closeOrder)="closeBurgerOverlay()" [hidden]="pageStateService.hideMenu"
-            id="app-menu-overlay"></app-menu-overlay>
+            id="app-menu-overlay">
+        </app-menu-overlay>
         <router-outlet id="router-outlet" />
     </section>
 </main>
