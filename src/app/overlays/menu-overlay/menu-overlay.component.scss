@@ -4,7 +4,6 @@
 #overlay-wrapper {
   height: 100vh;
   height: 100dvh;
-  // background-color: rgba(0, 0, 0, 0.2); //nur zum testen
   overflow: hidden;
   @include dFlex();
 }
@@ -13,17 +12,13 @@
   @include maxWidth1600();
   height: 100%;
   width: 100%;
-  // padding: 1.5rem 0;
-  // margin: 0 2.5rem;
-    background-color: rgba(0, 0, 0, 0.2); //nur zum testen
+
 }
 
 nav {
   position: absolute;
-  // top: calc(1.5rem - 2px);
   top: 22px;
   right: calc(clamp(0.8rem, 5vw - 0.8rem, 7.2rem) - 6px);
-  // right: clamp(0.8rem, 5vw - 0.8rem, 7.2rem);
   border: 1px solid $main-black;
   border-radius: 4px;
   width: 208px;

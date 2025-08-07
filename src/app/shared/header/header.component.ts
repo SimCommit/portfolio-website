@@ -14,6 +14,7 @@ import { BreakpointObserverService } from "../../breakpoint-observer.service";
   styleUrl: "./header.component.scss",
 })
 export class HeaderComponent {
+  body: HTMLElement = document.body;
 
   constructor(
     private translate: TranslateService,
@@ -39,9 +40,14 @@ export class HeaderComponent {
    */
   openBurgerMenu(): void {
     this.mainPageScrollService.lockScroll();
+    this.hideOverflowOnBody();
     setTimeout(() => {
       this.pageStateService.burgerMenuIsOpen = true;
     }, 0);
+  }
+
+  hideOverflowOnBody() {
+    this.body.classList.add("scroll-locked");
   }
 
   toggleLanguage(): void {

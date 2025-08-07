@@ -17,6 +17,7 @@ html {
   font-size: 10px;
 }
 
+// scroll-unlocked for sectionScroll logic and scroll-locked for overlay logic
 body {
   font-size: 16px;
   overscroll-behavior: none;
@@ -27,6 +28,10 @@ body {
     overscroll-behavior: auto;
     scroll-behavior: smooth;
     overflow: visible;
+  }
+
+  &.scroll-locked {
+    overflow: hidden;
   }
 
   @media (max-width: 800px) {

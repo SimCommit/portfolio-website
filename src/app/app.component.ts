@@ -7,6 +7,7 @@ import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { marker as _ } from "@colsen1991/ngx-translate-extract-marker";
 import { filter } from "rxjs";
 import { PageStateService } from "./page-state.service";
+import { MainPageScrollService } from "./main-page/main-page-scroll.service";
 // import { Subscription } from 'rxjs';
 
 @Component({
@@ -16,11 +17,16 @@ import { PageStateService } from "./page-state.service";
   styleUrl: "./app.component.scss",
 })
 export class AppComponent {
-  title = "portfolio-website";
+  title: string = "portfolio-website";
 
-  // mainPageState = inject(MainPageStateService);
+  body: HTMLElement = document.body;
 
-  constructor(private translate: TranslateService, private router: Router, public pageStateService: PageStateService) {
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+    public pageStateService: PageStateService,
+    private mainPageScrollService: MainPageScrollService
+  ) {
     this.translate.addLangs(["de", "en"]);
     this.translate.setDefaultLang("en");
     this.translate.use("en");
@@ -28,16 +34,14 @@ export class AppComponent {
     this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        const body = document.body;
-
         if (
           ["/legal-notice/en", "/legal-notice/de", "/privacy-policy/en", "/privacy-policy/de"].includes(
             event.urlAfterRedirects
           )
         ) {
-          body.classList.add("scroll-unlocked");
+          this.body.classList.add("scroll-unlocked");
         } else {
-          body.classList.remove("scroll-unlocked");
+          this.body.classList.remove("scroll-unlocked");
         }
       });
   }
@@ -48,6 +52,7 @@ export class AppComponent {
   }
 
   closeBurgerOverlay(): void {
+    this.mainPageScrollService.unlockScroll();
     setTimeout(() => {
       this.pageStateService.hideMenu = true;
     }, 300);
