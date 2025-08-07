@@ -211,7 +211,7 @@
     justify-content: space-between;
 
     a {
-      font-size: 17px;
+      font-size: clamp(1.6rem, 0.217vw + 1.526rem, 1.7rem);
       padding: 10px 20px;
     }
   }
