@@ -33,6 +33,8 @@ export class MainPageComponent {
 
   isSpaceOnCooldown: boolean = false;
 
+  isMobile: boolean = false;
+
   constructor(
     private mainPageScrollService: MainPageScrollService,
     public breakpointObserverService: BreakpointObserverService,
@@ -45,9 +47,14 @@ export class MainPageComponent {
     window.addEventListener("wheel", this.onWheel, { passive: false });
     window.addEventListener("keydown", this.onKeyDown, { passive: false });
     window.scrollTo({ top: 0, behavior: "auto" });
-    setTimeout(() => {
-      this.mainPageScrollService.isScrolling = false;
-    }, 500);
+    this.initBreakpoint();
+    // setTimeout(() => {
+    //   this.mainPageScrollService.isScrolling = false;
+    // }, 500);
+  }
+
+  initBreakpoint() {
+    this.breakpointObserverService.isMobile$.subscribe(state => this.isMobile = state);
   }
 
   ngOnDestroy(): void {
@@ -105,7 +112,7 @@ export class MainPageComponent {
   // #endregion
 
   private onWheel = (event: WheelEvent): void => {
-    if (this.mainPageScrollService.isScrolling) return;
+    if (this.mainPageScrollService.isScrolling || this.isMobile) return;
 
     event.stopImmediatePropagation();
 
@@ -119,7 +126,7 @@ export class MainPageComponent {
   };
 
   private onKeyDown = (event: KeyboardEvent): void => {
-    if (this.mainPageScrollService.isScrolling) return;
+    if (this.mainPageScrollService.isScrolling || this.isMobile) return;
 
     event.stopImmediatePropagation();
 

@@ -1,6 +1,7 @@
 import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { BreakpointObserverService } from "../breakpoint-observer.service";
 
 @Injectable({
   providedIn: "root",
@@ -12,7 +13,15 @@ export class MainPageScrollService {
 
   isScrolling: boolean = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {}
+  isMobile: boolean = false;
+
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router, private breakpointObserverService: BreakpointObserverService) {
+    this.initBreakpoint();
+  }
+
+  initBreakpoint() {
+    this.breakpointObserverService.isMobile$.subscribe(state => this.isMobile = state)
+  }
 
   setSectionRefs(refs: Element[]) {
     this.sections = refs;
