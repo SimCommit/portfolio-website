@@ -3,6 +3,7 @@ import { SocialLinksComponent } from '../../shared/social-links/social-links.com
 import { CommonModule } from '@angular/common';
 import { MainPageScrollService } from '../../main-page/main-page-scroll.service';
 import { PageStateService } from '../../page-state.service';
+import { BreakpointObserverService } from '../../breakpoint-observer.service';
 
 @Component({
   selector: 'app-menu-overlay',
@@ -14,7 +15,7 @@ export class MenuOverlayComponent {
 
   @Output() closeOrder = new EventEmitter<boolean>();
 
-  constructor(public mainPageScrollService: MainPageScrollService, public pageStateService: PageStateService) {}
+  constructor(public mainPageScrollService: MainPageScrollService, public pageStateService: PageStateService, public breakpointObserverService: BreakpointObserverService) {}
 
   closeFromOverlay() {
     this.closeOrder.emit();

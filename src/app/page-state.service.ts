@@ -13,16 +13,9 @@ export class PageStateService {
 
   constructor(private router: Router) {}
 
-  redirectIfOnLegalPage(fragment: string): void {
-    if (
-      this.router.url === "/legal-notice/en" ||
-      this.router.url === "/legal-notice/de" ||
-      this.router.url === "/privacy-policy/en" ||
-      this.router.url === "/privacy-policy/de"
-    ) {
-      this.router.navigate(["/"], { fragment: fragment });
-      console.log("redirect from legal to: ", fragment);
-    }
+  redirectToMainPage(fragment: string): void {
+    this.router.navigate(["/"], { fragment: fragment });
+    console.log("redirect from legal to: ", fragment);
   }
 
   isOnLegalPage() {
@@ -31,6 +24,18 @@ export class PageStateService {
       this.router.url === "/legal-notice/de" ||
       this.router.url === "/privacy-policy/en" ||
       this.router.url === "/privacy-policy/de"
+    );
+  }
+
+  isNotOnMainPage() {
+    return (
+      this.router.url !== "/" &&
+      this.router.url !== "/#hero" &&
+      this.router.url !== "/#about-me" &&
+      this.router.url !== "/#skills" &&
+      this.router.url !== "/#portfolio" &&
+      this.router.url !== "/#references" &&
+      this.router.url !== "/#contact"
     );
   }
 }
