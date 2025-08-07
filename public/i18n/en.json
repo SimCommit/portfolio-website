@@ -4,7 +4,7 @@
     "hero.contact-button": "Get in Touch",
     "about-me": {
       "headline": "About Me",
-      "card-part-1": "Hi, I'm Simon. I develop software in a structured way. I often save my teams repetitive work by thinking ahead. For me, it's a combination of analysis and intuition. I like to take initiative when it comes to turning good ideas into action.",
+      "card-part-1": "Hi, I'm Simon. I develop software in a structured way. I often save my teams repetitive work by thinking ahead. That ability results from a combination of analysis and intuition. I like to take initiative when it comes to turning good ideas into action.",
       "card-part-2": "Feel free to get in touch if that sounds like a good fit for your team or if you'd like to build one with me.",
       "contact-button": "Let's talk",
       "about-me-overlay": {
@@ -12,8 +12,7 @@
         "bp-1": "Team Player",
         "bp-2": "Continuosly learning",
         "bp-3": "Creative Thinker",
-        "bp-4": "Based in Munich",
-        "bp-5": "Open to work remote"
+        "bp-4": "Based in Munich"
       }
     },
     "skills": {

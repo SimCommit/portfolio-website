@@ -1,6 +1,5 @@
 import { Component, inject } from "@angular/core";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
-// import { MainPageStateService } from './main-page/main-page-state.service';
 import { CommonModule } from "@angular/common";
 import { MenuOverlayComponent } from "./overlays/menu-overlay/menu-overlay.component";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
@@ -8,7 +7,6 @@ import { marker as _ } from "@colsen1991/ngx-translate-extract-marker";
 import { filter } from "rxjs";
 import { PageStateService } from "./page-state.service";
 import { MainPageScrollService } from "./main-page/main-page-scroll.service";
-// import { Subscription } from 'rxjs';
 
 @Component({
   selector: "app-root",
@@ -57,8 +55,4 @@ export class AppComponent {
       this.pageStateService.hideMenu = true;
     }, 300);
   }
-
-  // closeBurgerInstant() {
-  //   this.pageStateService.hideMenu = true;
-  // }
 }

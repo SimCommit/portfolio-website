@@ -54,7 +54,7 @@ export class MainPageComponent {
   }
 
   initBreakpoint() {
-    this.breakpointObserverService.isMobile$.subscribe(state => this.isMobile = state);
+    this.breakpointObserverService.isMobile$.subscribe((state) => (this.isMobile = state));
   }
 
   ngOnDestroy(): void {
@@ -144,6 +144,7 @@ export class MainPageComponent {
       event.preventDefault();
     }
   };
+
 
   preventSpaceScrolling(event: KeyboardEvent): boolean {
     const target = event.target as HTMLElement;
