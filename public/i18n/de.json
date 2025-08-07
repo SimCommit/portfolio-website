@@ -1,12 +1,12 @@
 {
   "main-page": {
     "hero.subheadline-part-1": "Hallo, ich bin",
-    "hero.contact-button": "Schreibe mir",
+    "hero.contact-button": "Zum Kontakt",
     "about-me": {
       "headline": "Über mich",
-      "card-part-1": "Hallo, ich bin Simon. Beim Coden gefallen mir besonders die vielen Möglichkeiten, wiederverwendbare Lösungen zu schaffen. In meinem letzten Teamprojekt konnte ich das zum Beispiel durch globale SCSS-Variablen und -Mixins umsetzen, die uns ein einheitliches Styling in allen Angular-Komponenten erleichtert haben. Ich habe auch schon acht Projekte alleine umgesetzt, aber wie in kleinen Teams die Stärken der Einzelnen zusammenspielen, gefällt mir noch besser.",
-      "card-part-2": "Daher lass uns zusammen etwas Neues bauen!",
-      "contact-button": "Zum Kontakt",
+      "card-part-1": "Hallo, ich bin Simon. Ich entwickle Software strukturiert. Meinen Teams erspare ich oft repetitive Arbeit durch vorausschauendes Denken. Das ist bei mir eine Mischung aus Analyse und Intuition. Für die Umsetzung von guten Ideen ergreife ich gerne die Initiative.",
+      "card-part-2": "Kontaktiere mich, wenn du das für dein Team suchst oder eines mit mir gründen willst!",
+      "contact-button": "Schreibe mir",
       "about-me-overlay": {
         "title": "Mehr über mich",
         "bp-1": "Team Player",
@@ -18,7 +18,7 @@
     },
     "skills": {
       "headline": "Kernkompetenzen",
-      "description": "Ich arbeite sehr gerne mit Angular. Die Modularität und auf Wiederverwendbarkeit ausgelegte Struktur passen genau zu mir. Dennoch habe ich auch viel Freude daran, die Klassen alle selbst in Vanilla JavaScript zu schreiben. Wie in meinem Webbrowser-Spiel “El Pollo Loco”.",
+      "description": "Mit TypeScript und Angular realisiere ich dynamische Single-Page-Anwendungen. Auch ohne Frameworks entwickle ich in Vanilla JavaScript responsive und interaktive Software. Ich setze dabei ansprechende Designs mit modernem HTML und CSS um.",
       "growth-mindset": {
         "title": "Du vermisst eine bestimmte Fähigkeit?",
         "text": "Schreib mir gerne! Ich freue mich darauf, mein Wissen weiter auszubauen. Besonders interessiere ich mich für diese Technologien:"

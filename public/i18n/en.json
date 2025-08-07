@@ -4,8 +4,8 @@
     "hero.contact-button": "Get in Touch",
     "about-me": {
       "headline": "About Me",
-      "card-part-1": "Hi, I'm Simon. I really enjoy how coding lets me create smart, reusable solutions. In my last team project, for example, I achieved this by creating global SCSS variables and mixins that helped maintain consistent styling across all Angular components. I've also completed eight projects on my own, but I enjoy even more how individual strengths come together when working in small teams.",
-      "card-part-2": "Let's connect and build something new together!",
+      "card-part-1": "Hi, I'm Simon. I develop software in a structured way. I often save my teams repetitive work by thinking ahead. For me, it's a combination of analysis and intuition. I like to take initiative when it comes to turning good ideas into action.",
+      "card-part-2": "Feel free to get in touch if that sounds like a good fit for your team or if you'd like to build one with me.",
       "contact-button": "Let's talk",
       "about-me-overlay": {
         "title": "More about me",
@@ -18,7 +18,7 @@
     },
     "skills": {
       "headline": "Core Competencies",
-      "description": "I really enjoy working with Angular. Its modularity and structure focused on reusability suit me perfectly. Still, I also enjoy writing all the classes myself in vanilla JavaScript, like I did in my browser game “El Pollo Loco”.",
+      "description": "I build dynamic single-page applications with TypeScript and Angular. I also develop responsive and interactive software without frameworks, using vanilla JavaScript. For that, I create appealing designs with modern HTML and CSS.",
       "growth-mindset": {
         "title": "Don't see the skill you are looking for?",
         "text": "Feel free to contact me. I look forward to expanding on my previous knowledge. Also I have a special interest in learning:"
