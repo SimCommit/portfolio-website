@@ -1,7 +1,8 @@
+@let isMobile = breakpointObserverService.isMobile$ | async;
 <header>
     <div>
         @if (mainPageScrollService.currentSectionIndex === 0 || pageStateService.isOnLegalPage()) {
-        @if (!(breakpointObserverService.isMobile$ | async)) {
+        @if (!isMobile) {
         <app-social-links id="app-social-links"></app-social-links>
         }
         }
@@ -12,7 +13,7 @@
             id="fs-logo" [routerLink]="['/']">
             <img src="./assets/img/logo-sf.svg" alt="Logo Simon Fuchs">
             <a id="logo-sf-text"
-                [ngClass]="{'header-element-color': mainPageScrollService.currentSectionIndex !== 0, 'header-element-color-black': mainPageScrollService.currentSectionIndex === 1 || mainPageScrollService.currentSectionIndex === 3 }">
+                [ngClass]="{'header-element-color': mainPageScrollService.currentSectionIndex !== 0, 'header-element-color-black': mainPageScrollService.currentSectionIndex === 1 && !isMobile || mainPageScrollService.currentSectionIndex === 3 && !isMobile }">
                 Fuchs
             </a>
         </div>
@@ -22,7 +23,7 @@
                 (click)="toggleLanguage()">
                 @if (pageStateService.currentLanguage === 'de') {
                 <svg class="svg-fill"
-                    [ngClass]="{'svg-fill-black': mainPageScrollService.currentSectionIndex === 1 || mainPageScrollService.currentSectionIndex === 3 }"
+                    [ngClass]="{'svg-fill-black': mainPageScrollService.currentSectionIndex === 1 && !isMobile || mainPageScrollService.currentSectionIndex === 3 && !isMobile }"
                     width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="currentColor" />
                     <path
@@ -31,7 +32,7 @@
                 </svg>
                 } @else {
                 <svg class="svg-fill"
-                    [ngClass]="{'svg-fill-black': mainPageScrollService.currentSectionIndex === 1 || mainPageScrollService.currentSectionIndex === 3 }"
+                    [ngClass]="{'svg-fill-black': mainPageScrollService.currentSectionIndex === 1 && !isMobile || mainPageScrollService.currentSectionIndex === 3 && !isMobile }"
                     width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="currentColor" />
                     <path
@@ -43,7 +44,7 @@
 
             <button (click)="openBurgerOverlay(); openBurgerMenu()" id="btn-burger">
                 <svg class="svg-fill"
-                    [ngClass]="{'svg-fill-black': mainPageScrollService.currentSectionIndex === 1 || mainPageScrollService.currentSectionIndex === 3 }"
+                    [ngClass]="{'svg-fill-black': mainPageScrollService.currentSectionIndex === 1 && !isMobile || mainPageScrollService.currentSectionIndex === 3 && !isMobile }"
                     width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_3_3371" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32"
                         height="32">
