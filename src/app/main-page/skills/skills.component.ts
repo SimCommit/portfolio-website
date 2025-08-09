@@ -17,7 +17,10 @@ export class SkillsComponent {
 
   emojiIsHovered: boolean = false;
 
-  constructor(public sectionLayoutService: SectionLayoutService, public breakpointObserverService: BreakpointObserverService) {}
+  constructor(
+    public sectionLayoutService: SectionLayoutService,
+    public breakpointObserverService: BreakpointObserverService
+  ) {}
 
   ngOnInit(): void {
     this.sectionLayoutService.startViewportObserver();

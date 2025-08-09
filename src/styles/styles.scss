@@ -50,7 +50,6 @@ h1 {
 h2 {
   font-family: "Eczar", serif;
   font-weight: 600;
-  // font-size: clamp(4rem, 3vw + 1.6rem, 6.4rem);
   font-size: clamp(4rem, 5.006vw - 0.01rem, 8rem);
   line-height: 1;
 
@@ -75,7 +74,6 @@ a {
   cursor: pointer;
   text-decoration: none;
   color: unset;
-  // display: inline-block;
 }
 // #endregion
 
@@ -90,10 +88,4 @@ a {
     color: $main-coral;
   }
 }
-
-// .setAspectRatio {
-//   aspect-ratio: 16 / 10;
-//   height: unset;
-// }
-
 // #endregion

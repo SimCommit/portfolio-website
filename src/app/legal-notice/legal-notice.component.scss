@@ -12,15 +12,11 @@ section {
 }
 
 #app-header {
-  // @include maxWidth1600();
   z-index: 2;
   width: 100%;
-  // color: $main-ivory;
-  // padding: 0 40px;
 }
 
 #app-footer {
-  // @include maxWidth1600();
   width: 100%;
   color: $main-ivory;
   padding: 0 40px;

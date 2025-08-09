@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-privacy-policy-en',
+  selector: "app-privacy-policy-en",
   imports: [],
-  templateUrl: './privacy-policy-en.component.html',
-  styleUrl: './privacy-policy-en.component.scss'
+  templateUrl: "./privacy-policy-en.component.html",
+  styleUrl: "./privacy-policy-en.component.scss",
 })
-export class PrivacyPolicyEnComponent {
-
-}
+export class PrivacyPolicyEnComponent {}

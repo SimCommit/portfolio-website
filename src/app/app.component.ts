@@ -43,7 +43,6 @@ export class AppComponent {
         }
       });
   }
-  // this.translate.getBrowserLang() ||
 
   useLanguage(language: string): void {
     this.translate.use(language);

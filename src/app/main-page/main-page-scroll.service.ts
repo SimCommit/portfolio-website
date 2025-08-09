@@ -1,5 +1,4 @@
-import { DOCUMENT } from "@angular/common";
-import { Inject, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { BreakpointObserverService } from "../breakpoint-observer.service";
 
@@ -15,7 +14,7 @@ export class MainPageScrollService {
 
   isMobile: boolean = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document, private router: Router, private breakpointObserverService: BreakpointObserverService) {
+  constructor(private router: Router, private breakpointObserverService: BreakpointObserverService) {
     this.initBreakpoint();
   }
 

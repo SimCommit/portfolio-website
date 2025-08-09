@@ -139,7 +139,6 @@
 .appear {
   opacity: 1;
 }
-
 // #endregion
 
 #p-used-skills {
@@ -153,7 +152,6 @@
     @include primaryButton();
 
     img {
-      // width: 1.2rem;
       transition: transform 125ms ease;
     }
 
@@ -205,7 +203,6 @@
   }
 
   #p-links {
-    // gap: clamp(1.2rem, 1.667vw + 0.667rem, 2rem);
     gap: unset;
     width: 100%;
     justify-content: space-between;

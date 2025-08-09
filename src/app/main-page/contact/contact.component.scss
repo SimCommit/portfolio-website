@@ -32,10 +32,6 @@ section {
   h2 {
     color: $main-yellow;
     margin-bottom: 30px;
-
-    // @media (max-height: 850px) {
-    //   margin-bottom: 16px;
-    // }
   }
 
   p {
@@ -47,7 +43,6 @@ section {
   font-size: 24px;
   font-weight: bold;
   color: $main-coral;
-  //   text-align: start;
 }
 
 form {
@@ -269,12 +264,10 @@ button {
   right: calc(5px + clamp(0.8rem, 5vw - 0.8rem, 7.2rem) - clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem));
   width: 30px;
   height: 20px;
-  // transform: translateX(26px);
   a {
     @include dFlex();
     overflow-y: hidden;
     height: 48px;
-    // border: 2px dotted aqua;
 
     svg {
       height: 48px;
@@ -344,16 +337,12 @@ svg path {
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
-      max-height: unset;
+    max-height: unset;
   }
 
   form {
     margin-top: 20px;
     width: 100%;
-
-
-    label {
-    }
   }
 
   #contact-info-group {

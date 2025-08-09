@@ -12,7 +12,8 @@
                     {{"main-page.about-me.card-part-2" | translate}}
                 </p>
                 <div>
-                    <a (click)="mainPageScrollService.scrollToSection(5)">{{"main-page.about-me.contact-button" | translate}}</a>
+                    <a (click)="mainPageScrollService.scrollToSection(5)">{{"main-page.about-me.contact-button" |
+                        translate}}</a>
                     <app-about-me-overlay class="disappear" [ngClass]="{'appear': emojiIsHovered}"
                         id="app-about-me-overlay" #appAboutMeOverlay>
                     </app-about-me-overlay>

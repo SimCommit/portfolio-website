@@ -29,7 +29,6 @@ a {
 }
 
 #fs-logo {
-
   &:hover {
     cursor: pointer;
   }
@@ -45,7 +44,6 @@ a {
 }
 
 .section-change {
-
   #logo-sf-text {
     transition: color 450ms ease-in;
   }
@@ -105,10 +103,6 @@ a {
     fill: $main-coral;
   }
 }
-// svg path {
-//   fill: $main-ivory;
-//   transition: fill 125ms ease, color 450ms ease-in;
-// }
 
 #app-social-links {
   width: 140px;

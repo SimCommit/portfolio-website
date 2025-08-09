@@ -99,8 +99,6 @@ a {
 }
 
 // #region media queries
-
-// Breit aber niedrig
 @media (min-width: 1100px) and (max-height: 750px) {
   .cogwheel-container {
     left: 50%;
@@ -108,7 +106,6 @@ a {
   }
 }
 
-// Switch zu Tablet
 @media (max-width: 800px) {
   #hero-wrapper {
     flex-direction: column;

@@ -7,13 +7,9 @@ import { map, Observable, shareReplay } from "rxjs";
 })
 export class BreakpointObserverService {
   readonly isMobile$: Observable<boolean>;
-
   readonly isDesktop$: Observable<boolean>;
-
   private readonly MOBILE_BREAKPOINT = "(max-width: 800px)";
-
   private readonly DESKTOP_BREAKPOINT = "(min-width: 801px)";
-
 
   /**
    * Size of the replay buffer for breakpoint observables.
