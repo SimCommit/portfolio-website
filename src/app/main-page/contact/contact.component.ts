@@ -25,10 +25,7 @@ export class ContactComponent {
     isChecked: false,
   };
 
-  constructor(
-    public pageStateService: PageStateService,
-    public mainPageScrollService: MainPageScrollService
-  ) {}
+  constructor(public pageStateService: PageStateService, public mainPageScrollService: MainPageScrollService) {}
 
   toggleCheckedState(inputToToggle: InputFieldStates): void {
     inputToToggle.isChecked = !inputToToggle.isChecked;
@@ -40,15 +37,16 @@ export class ContactComponent {
     message: "",
   };
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
-    endPoint: "https://simon-fuchs.developerakademie.net/angular-projects/simon-fuchs/sendMail.php",
+    endPoint: "https://simon-fuchs.net/sendMail.php",
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        "Content-Type": "text/plain",
-        responseType: "text",
+        "Content-Type": "application/json",
+        // responseType: "text",
+        responseType: "text" as const,
       },
     },
   };
