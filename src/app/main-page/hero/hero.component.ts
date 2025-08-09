@@ -85,24 +85,28 @@ export class HeroComponent {
   }
 
   private handleSectionOffsetResize = (entries: ResizeObserverEntry[]): void => {
-    const cogwheelEl = this.heroCogwheelRef.nativeElement;
     const textEl = this.heroTextRef.nativeElement;
+    const cogwheelEl = this.heroCogwheelRef.nativeElement;
 
     for (const entry of entries as ResizeObserverEntry[]) {
-      const windowWidth = window.innerWidth;
-      const sectionHeight = entry.contentRect.height;
-      const multiplierText = sectionHeight / 400;
-      const multiplier = sectionHeight / 600;
-
-      if (windowWidth > this.BREAKPOINT_MOBILE) {
-        textEl.style.marginTop = `${sectionHeight * 0.05 * multiplierText}px`;
-        cogwheelEl.style.bottom = `${sectionHeight * 0.05 * multiplier}px`;
-      } else {
-        textEl.style.marginTop = "clamp(1.6rem, 3.333vw + 0.533rem, 3.2rem)";
-        cogwheelEl.style.bottom = "clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem)";
-      }
+      this.updateSectionOffsetFromResize(entry, textEl, cogwheelEl);
     }
   };
+
+  private updateSectionOffsetFromResize(entry: ResizeObserverEntry, textEl: HTMLElement, cogwheelEl: HTMLElement) {
+    const windowWidth = window.innerWidth;
+    const sectionHeight = entry.contentRect.height;
+    const multiplierText = sectionHeight / 400;
+    const multiplier = sectionHeight / 600;
+
+    if (windowWidth > this.BREAKPOINT_MOBILE) {
+      textEl.style.marginTop = `${sectionHeight * 0.05 * multiplierText}px`;
+      cogwheelEl.style.bottom = `${sectionHeight * 0.05 * multiplier}px`;
+    } else {
+      textEl.style.marginTop = "clamp(1.6rem, 3.333vw + 0.533rem, 3.2rem)";
+      cogwheelEl.style.bottom = "clamp(1.6rem, 7.5vw - 0.8rem, 11.2rem)";
+    }
+  }
 
   private initSectionHeightObserver() {
     this.subscription = this.sectionLayoutService.sectionHeight$.subscribe((height) => {

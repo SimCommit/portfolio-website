@@ -28,7 +28,9 @@ export class AppComponent {
     this.translate.addLangs(["de", "en"]);
     this.translate.setDefaultLang("en");
     this.translate.use("en");
+  }
 
+  ngOnInit(): void {
     this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {

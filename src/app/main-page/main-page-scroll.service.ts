@@ -7,22 +7,19 @@ import { BreakpointObserverService } from "../breakpoint-observer.service";
 })
 export class MainPageScrollService {
   public sections: Element[] = [];
-
   currentSectionIndex: number = 0;
-
   isScrolling: boolean = false;
-
   isMobile: boolean = false;
 
   constructor(private router: Router, private breakpointObserverService: BreakpointObserverService) {
     this.initBreakpoint();
   }
 
-  initBreakpoint() {
-    this.breakpointObserverService.isMobile$.subscribe(state => this.isMobile = state)
+  private initBreakpoint(): void {
+    this.breakpointObserverService.isMobile$.subscribe((state) => (this.isMobile = state));
   }
 
-  setSectionRefs(refs: Element[]) {
+  setSectionRefs(refs: Element[]): void {
     this.sections = refs;
   }
 
@@ -77,20 +74,21 @@ export class MainPageScrollService {
     const sectionId = element.id;
 
     if (element) {
-      this.isScrolling = true;
-      element.scrollIntoView({ behavior: "smooth" });
-      setTimeout(() => {
-        this.isScrolling = false;
-      }, 500);
-      this.currentSectionIndex = sectionIndex;
+      this.handleScrollIntoView(element, sectionIndex);
     }
 
     if (sectionId) {
-      this.router.navigate([], {
-        fragment: sectionId,
-        replaceUrl: true,
-      });
+      this.router.navigate([], { fragment: sectionId, replaceUrl: true });
     }
+  }
+
+  private handleScrollIntoView(element: Element, sectionIndex: number): void {
+    this.isScrolling = true;
+    element.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      this.isScrolling = false;
+    }, 500);
+    this.currentSectionIndex = sectionIndex;
   }
 
   updateCurrentSection(newSectionIndex: number): void {

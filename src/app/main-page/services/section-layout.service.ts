@@ -17,6 +17,8 @@ export class SectionLayoutService {
 
   private hasStarted = false;
   private BREAKPOINT_MOBILE: number = 800;
+  private MAX_SECTION_ASPECT_RATIO = 1.5;
+
 
   constructor() {}
 
@@ -37,27 +39,30 @@ export class SectionLayoutService {
   calculateSectionHeight(windowWidth: number, windowHeight: number): string {
     const sectionWidth = Math.min(windowWidth, 1600);
     const sectionHeight = sectionWidth * 0.6;
-    const MAX_SECTION_ASPECT_RATIO = 1.5;
-    const MIN_SECTION_HEIGHT = 440;
-
     const isSmall = sectionWidth / windowHeight <= 1.6;
+    const fitsAspectRatio = sectionWidth / windowHeight <= this.MAX_SECTION_ASPECT_RATIO;
+
     if (this.hasSmallAspectRatioSubject.value !== isSmall) {
       this.hasSmallAspectRatioSubject.next(isSmall);
     }
 
     if (windowWidth > this.BREAKPOINT_MOBILE) {
-      const fitsAspectRatio = sectionWidth / windowHeight <= MAX_SECTION_ASPECT_RATIO;
-
-      if (fitsAspectRatio) {
-        this.sectionStateSubject.next("tall");
-        return `${Math.max(sectionHeight, MIN_SECTION_HEIGHT)}px`;
-      } else {
-        this.sectionStateSubject.next("regular");
-        return "clamp(640px, 100dvh, 1200px)";
-      }
+      return this.handleHeightOnDesktop(fitsAspectRatio, sectionHeight);
     } else {
       this.sectionStateSubject.next("mobile");
       return "unset";
+    }
+  }
+
+  private handleHeightOnDesktop(fitsAspectRatio: boolean, sectionHeight: number) {
+    const MIN_SECTION_HEIGHT = 440;
+
+    if (fitsAspectRatio) {
+      this.sectionStateSubject.next("tall");
+      return `${Math.max(sectionHeight, MIN_SECTION_HEIGHT)}px`;
+    } else {
+      this.sectionStateSubject.next("regular");
+      return "clamp(640px, 100dvh, 1200px)";
     }
   }
 }
