@@ -15,7 +15,6 @@ export class PageStateService {
 
   redirectToMainPage(fragment: string): void {
     this.router.navigate(["/"], { fragment: fragment });
-    console.log("redirect from legal to: ", fragment);
   }
 
   isOnLegalPage() {

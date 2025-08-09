@@ -1,4 +1,4 @@
-import { Component, ElementRef, QueryList, ViewChildren } from "@angular/core";
+import { afterNextRender, Component, ElementRef, QueryList, ViewChildren } from "@angular/core";
 import { HeroComponent } from "./hero/hero.component";
 import { SectionNavComponent } from "./section-nav/section-nav.component";
 import { AboutMeComponent } from "./about-me/about-me.component";
@@ -35,6 +35,8 @@ export class MainPageComponent {
 
   isMobile: boolean = false;
 
+  sectionIds: string[] = ["hero", "about-me", "skills", "portfolio", "references", "contact"];
+
   constructor(
     private mainPageScrollService: MainPageScrollService,
     public breakpointObserverService: BreakpointObserverService,
@@ -66,49 +68,22 @@ export class MainPageComponent {
     const elements = this.sectionRefs.map((ref) => ref.nativeElement);
     this.mainPageScrollService.setSectionRefs(elements);
     this.route.fragment.subscribe((fragment) => {
-      if (fragment === "hero") {
-        setTimeout(() => {
-          console.log("hero");
-          this.mainPageScrollService.scrollToSection(0);
-        }, 10);
-      }
-
-      if (fragment === "about-me") {
-        setTimeout(() => {
-          console.log("about-me");
-          this.mainPageScrollService.scrollToSection(1);
-        }, 10);
-      }
-
-      if (fragment === "skills") {
-        setTimeout(() => {
-          console.log("skills");
-          this.mainPageScrollService.scrollToSection(2);
-        }, 10);
-      }
-
-      if (fragment === "portfolio") {
-        setTimeout(() => {
-          console.log("portfolio");
-          this.mainPageScrollService.scrollToSection(3);
-        }, 10);
-      }
-
-      if (fragment === "references") {
-        setTimeout(() => {
-          console.log("references");
-          this.mainPageScrollService.scrollToSection(4);
-        }, 10);
-      }
-
-      if (fragment === "contact") {
-        setTimeout(() => {
-          console.log("contact");
-          this.mainPageScrollService.scrollToSection(5);
-        }, 10);
-      }
+      this.handleFragmentSectionScroll(fragment);
     });
   }
+
+  // Helper for fragment routing
+  handleFragmentSectionScroll(fragment: string | null): void {
+    if (fragment === null) return;
+    const sectionIndex: number = this.sectionIds.indexOf(fragment);
+
+    if (sectionIndex >= 0) {
+      setTimeout(() => {
+        this.mainPageScrollService.scrollToSection(sectionIndex);
+      }, 10);
+    }
+  }
+
   // #endregion
 
   private onWheel = (event: WheelEvent): void => {
@@ -144,7 +119,6 @@ export class MainPageComponent {
       event.preventDefault();
     }
   };
-
 
   preventSpaceScrolling(event: KeyboardEvent): boolean {
     const target = event.target as HTMLElement;

@@ -49,7 +49,6 @@ export class MainPageScrollService {
     if (this.currentSectionIndex < this.sections.length - 1) {
       this.currentSectionIndex++;
       this.scrollToSection(this.currentSectionIndex);
-      // console.log("nextSection", this.currentSectionIndex, this.sections[this.currentSectionIndex]);
     }
   }
 
@@ -59,7 +58,6 @@ export class MainPageScrollService {
     if (this.currentSectionIndex > 0) {
       this.currentSectionIndex--;
       this.scrollToSection(this.currentSectionIndex);
-      // console.log("perviousSection", this.currentSectionIndex, this.sections[this.currentSectionIndex]);
     }
   }
 
@@ -97,10 +95,8 @@ export class MainPageScrollService {
   }
 
   updateCurrentSection(newSectionIndex: number): void {
-    // console.log("old index: " + this.currentSectionIndex, "new index: " + newSectionIndex);
     if (this.currentSectionIndex === newSectionIndex) return;
 
     this.currentSectionIndex = newSectionIndex;
-    // console.log("final index: " + this.currentSectionIndex);
   }
 }

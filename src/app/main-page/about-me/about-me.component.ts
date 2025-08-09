@@ -37,7 +37,6 @@ export class AboutMeComponent {
   initSectionHeightObserver() {
     this.subscription = this.sectionLayoutService.sectionHeight$.subscribe((height) => {
       this.aboutMeSectionRef.nativeElement.style.height = height;
-      // console.log(height);
     });
   }
 

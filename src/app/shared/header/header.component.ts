@@ -62,7 +62,6 @@ export class HeaderComponent {
   }
 
   toggleLanguageLegalPages(): void {
-    // console.log(this.router.url);
 
     if (this.router.url === "/legal-notice/en" || this.router.url === "/legal-notice/de") {
       this.router.navigate(["/legal-notice", this.pageStateService.currentLanguage]);
@@ -73,5 +72,3 @@ export class HeaderComponent {
     }
   }
 }
-
-// currentPage: "main-page" | "legal-notice" | "privacy-policy" = "main-page";
