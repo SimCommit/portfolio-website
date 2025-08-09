@@ -165,11 +165,14 @@
   margin-top: 16px;
   @include dFlex($jc: space-between);
 
-  button {
+  button,
+  button:focus {
     font-size: clamp(1.6rem, 3.333vw + 0.533rem, 1.8rem);
     font-weight: bold;
+    color: $main-black;
 
-    &:hover {
+    &:hover,
+    &:active {
       color: $main-coral;
     }
   }

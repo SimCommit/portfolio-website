@@ -33,6 +33,7 @@ export class HeroComponent {
     private sectionLayoutService: SectionLayoutService
   ) {}
 
+  // #region Lifecycle
   ngAfterViewInit(): void {
     this.sectionLayoutService.startViewportObserver();
     this.initSectionHeightObserver();
@@ -40,7 +41,14 @@ export class HeroComponent {
     this.initSectionOffsetObserver();
   }
 
-  initHeadlineScaleObserver(): void {
+  ngOnDestroy(): void {
+    this.headlineObserver?.disconnect();
+    this.offsetObserver?.disconnect();
+    this.subscription?.unsubscribe();
+  }
+  // #endregion
+
+  private initHeadlineScaleObserver(): void {
     const contentEl = this.heroContentRef.nativeElement;
 
     this.headlineObserver = new ResizeObserver((entries: ResizeObserverEntry[]) => {
@@ -66,7 +74,7 @@ export class HeroComponent {
     }
   };
 
-  initSectionOffsetObserver() {
+  private initSectionOffsetObserver() {
     const sectionEl = this.heroSectionRef.nativeElement;
 
     this.offsetObserver = new ResizeObserver((entries: ResizeObserverEntry[]) => {
@@ -96,15 +104,9 @@ export class HeroComponent {
     }
   };
 
-  initSectionHeightObserver() {
+  private initSectionHeightObserver() {
     this.subscription = this.sectionLayoutService.sectionHeight$.subscribe((height) => {
       this.heroSectionRef.nativeElement.style.height = height;
     });
-  }
-
-  ngOnDestroy(): void {
-    this.headlineObserver?.disconnect();
-    this.offsetObserver?.disconnect();
-    this.subscription?.unsubscribe();
   }
 }
