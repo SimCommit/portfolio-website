@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component } from "@angular/core";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { MenuOverlayComponent } from "./overlays/menu-overlay/menu-overlay.component";
@@ -7,10 +7,11 @@ import { marker as _ } from "@colsen1991/ngx-translate-extract-marker";
 import { filter } from "rxjs";
 import { PageStateService } from "./page-state.service";
 import { MainPageScrollService } from "./main-page/main-page-scroll.service";
+import { EmailFeedbackOverlayComponent } from "./overlays/email-feedback-overlay/email-feedback-overlay.component";
 
 @Component({
   selector: "app-root",
-  imports: [RouterOutlet, MenuOverlayComponent, CommonModule, TranslateModule],
+  imports: [RouterOutlet, MenuOverlayComponent, CommonModule, TranslateModule, EmailFeedbackOverlayComponent],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })
@@ -54,6 +55,13 @@ export class AppComponent {
     this.mainPageScrollService.unlockScroll();
     setTimeout(() => {
       this.pageStateService.hideMenu = true;
+    }, 300);
+  }
+
+  closeEmailFeedbackOverlay(): void {
+    this.mainPageScrollService.unlockScroll();
+    setTimeout(() => {
+      this.pageStateService.hideEmailFeedback = true;
     }, 300);
   }
 }

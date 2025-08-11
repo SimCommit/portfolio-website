@@ -1,0 +1,19 @@
+<div id="overlay-wrapper" (click)="closeFromOverlay()">
+    <div class="disappear feedback-container" [ngClass]="{'appear': pageStateService.emailFeedbackIsOpen}" (click)="prevent($event)">
+        <div class="message-header">
+            @if(pageStateService.sendEmailWasSuccessful) {
+            <h3>Success</h3>
+            } @else {
+            <h3>Error</h3>
+            }
+            <button (click)="closeFromOverlay()"></button>
+        </div>
+        <div class="message-body">
+            @if(pageStateService.sendEmailWasSuccessful) {
+            <p>Your message was send.</p>
+            } @else {
+            <p>Something went wrong</p>
+            }
+        </div>
+    </div>
+</div>

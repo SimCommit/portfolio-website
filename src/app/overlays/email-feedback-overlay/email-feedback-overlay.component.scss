@@ -1,0 +1,58 @@
+@use "./../../../styles/_mixins" as *;
+@use "./../../../styles/_variables" as *;
+
+#overlay-wrapper {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  @include dFlex();
+}
+
+.feedback-container {
+  @include dFlex($fd: column, $ai: flex-end);
+  @include cardBoxStyle();
+  background-color: $main-ivory;
+  transition: transform 225ms ease-in-out;
+}
+
+.message-header {
+  width: 100%;
+  @include dFlex($jc: space-between);
+
+  h3 {
+    color: $main-blue;
+  }
+}
+
+.message-body {
+  margin-top: 12px;
+  p {
+    @include pFontSizeSwitch();
+    font-weight: 600;
+  }
+}
+
+button {
+  width: 32px;
+  height: 32px;
+  background: url("./../../../../public/assets/img/icons/close-default.svg") no-repeat center / cover;
+
+  &:hover {
+    cursor: pointer;
+    background: url("./../../../../public/assets/img/icons/close-hover.svg") no-repeat center / cover;
+  }
+
+  &:active {
+    background: url("./../../../../public/assets/img/icons/close-hover.svg") no-repeat center / cover;
+  }
+}
+
+// #region feedback slide-in animation
+.disappear {
+  transform: translateY(600%);
+}
+
+.appear {
+  transform: translateY(0%);
+}
+// #endregion

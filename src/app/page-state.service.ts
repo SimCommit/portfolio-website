@@ -8,8 +8,11 @@ export class PageStateService {
   currentLanguage: "de" | "en" = "en";
 
   hideMenu: boolean = true;
-
   burgerMenuIsOpen: boolean = false;
+
+  hideEmailFeedback: boolean = true;
+  emailFeedbackIsOpen: boolean = false;
+  sendEmailWasSuccessful: boolean = false;
 
   constructor(private router: Router) {}
 

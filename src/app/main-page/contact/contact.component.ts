@@ -37,7 +37,7 @@ export class ContactComponent {
     message: "",
   };
 
-  mailTest = false;
+  mailTest = true;
 
   post = {
     endPoint: "https://simon-fuchs.net/sendMail.php",
@@ -55,17 +55,36 @@ export class ContactComponent {
       this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
         next: (response) => {
           ngForm.resetForm();
+          this.openEmailFeedbackOverlay();
         },
         error: (error) => {
           console.error(error);
+          this.openEmailFeedbackOverlay();
         },
         complete: () => console.info("send post complete"),
       });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       console.log(this.contactData);
-
+      this.openEmailFeedbackOverlay();
       ngForm.resetForm();
     }
+  }
+
+  openEmailFeedbackOverlay(): void {
+    console.log("hideEmailFeedback ", this.pageStateService.hideEmailFeedback);
+    console.log("emailFeedbackIsOpen ", this.pageStateService.emailFeedbackIsOpen);
+
+    this.mainPageScrollService.lockScroll();
+    this.hideOverflowOnBody();
+    this.pageStateService.hideEmailFeedback = false;
+    setTimeout(() => {
+      this.pageStateService.emailFeedbackIsOpen = true;
+    }, 0);
+  }
+
+  hideOverflowOnBody() {
+    const body: HTMLElement = document.body;
+    body.classList.add("scroll-locked");
   }
 }
 

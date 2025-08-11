@@ -3,6 +3,8 @@
         <app-menu-overlay (closeOrder)="closeBurgerOverlay()" [hidden]="pageStateService.hideMenu"
             id="app-menu-overlay">
         </app-menu-overlay>
+        <app-email-feedback-overlay  (closeOrder)="closeEmailFeedbackOverlay()" [hidden]="pageStateService.hideEmailFeedback"
+        id="app-email-feedback-overlay"></app-email-feedback-overlay>
         <router-outlet id="router-outlet" />
     </section>
 </main>

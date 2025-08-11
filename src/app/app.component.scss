@@ -16,6 +16,15 @@ section {
   z-index: 11;
 }
 
+#app-email-feedback-overlay {
+  position: fixed;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  inset: 0;
+  z-index: 11;
+}
+
 #router-outlet {
   width: 100%;
 }

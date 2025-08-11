@@ -29,7 +29,6 @@ export class MenuOverlayComponent {
 
   showOverflowOnBody() {
     const body: HTMLElement = document.body;
-
     body.classList.remove("scroll-locked");
   }
 
