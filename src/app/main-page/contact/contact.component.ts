@@ -37,7 +37,7 @@ export class ContactComponent {
     message: "",
   };
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: "https://simon-fuchs.net/sendMail.php",
@@ -55,16 +55,19 @@ export class ContactComponent {
       this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
         next: (response) => {
           ngForm.resetForm();
+          this.pageStateService.sendEmailWasSuccessful = true;
           this.openEmailFeedbackOverlay();
         },
         error: (error) => {
           console.error(error);
+          this.pageStateService.sendEmailWasSuccessful = false;
           this.openEmailFeedbackOverlay();
         },
         complete: () => console.info("send post complete"),
       });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       console.log(this.contactData);
+      this.pageStateService.sendEmailWasSuccessful = true;
       this.openEmailFeedbackOverlay();
       ngForm.resetForm();
     }

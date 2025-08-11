@@ -73,5 +73,13 @@
         "button": "Drop a Line"
       }
     }
+  },
+  "overlays": {
+    "email-feedback-overlay": {
+      "message-head": "Success",
+      "message-head-error": "Error",
+      "message-body": "Your message has been sent.",
+      "message-body-error": "Your message could not be sent."
+    }
   }
 }

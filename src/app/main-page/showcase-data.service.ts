@@ -15,10 +15,10 @@ export class ShowcaseDataService {
     { imgUrl: "./assets/img/skills/git.svg", name: "Git" },
     { imgUrl: "./assets/img/skills/scrum.svg", name: "Scrum" },
     { imgUrl: "./assets/img/skills/figma.svg", name: "Figma" },
-    // { imgUrl: "./assets/img/skills/material-design.svg", name: "Material Design" },
   ];
-
+  
   techsOnMyRadar: Tech[] = [
+    // { imgUrl: "./assets/img/skills/material-design.svg", name: "Material Design" },
     { imgUrl: "./assets/img/skills/react.svg", name: "React" },
     { imgUrl: "./assets/img/skills/vue.js.svg", name: "Vue.js" },
   ];

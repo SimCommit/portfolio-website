@@ -107,7 +107,6 @@ export class MainPageComponent {
     return isEditableElement && isElementVisible() && !this.mainPageScrollService.isScrolling;
   }
 
-  // Helper for fragment routing
   private handleFragmentSectionScroll(fragment: string | null): void {
     if (fragment === null) return;
     const sectionIndex: number = this.sectionIds.indexOf(fragment);

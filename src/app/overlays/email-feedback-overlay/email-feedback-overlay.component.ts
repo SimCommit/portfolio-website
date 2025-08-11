@@ -2,10 +2,11 @@ import { Component, EventEmitter, Output } from "@angular/core";
 import { MainPageScrollService } from "../../main-page/main-page-scroll.service";
 import { PageStateService } from "../../page-state.service";
 import { CommonModule } from "@angular/common";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: "app-email-feedback-overlay",
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: "./email-feedback-overlay.component.html",
   styleUrl: "./email-feedback-overlay.component.scss",
 })

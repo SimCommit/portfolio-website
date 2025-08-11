@@ -2,17 +2,17 @@
     <div class="disappear feedback-container" [ngClass]="{'appear': pageStateService.emailFeedbackIsOpen}" (click)="prevent($event)">
         <div class="message-header">
             @if(pageStateService.sendEmailWasSuccessful) {
-            <h3>Success</h3>
+            <h3>{{"overlays.email-feedback-overlay.message-head" | translate}}</h3>
             } @else {
-            <h3>Error</h3>
+            <h3>{{"overlays.email-feedback-overlay.message-head-error" | translate}}</h3>
             }
             <button (click)="closeFromOverlay()"></button>
         </div>
         <div class="message-body">
             @if(pageStateService.sendEmailWasSuccessful) {
-            <p>Your message was send.</p>
+            <p>{{"overlays.email-feedback-overlay.message-body" | translate}}</p>
             } @else {
-            <p>Something went wrong</p>
+            <p>{{"overlays.email-feedback-overlay.message-body-error" | translate}}</p>
             }
         </div>
     </div>

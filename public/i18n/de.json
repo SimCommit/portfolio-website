@@ -73,5 +73,13 @@
         "button": "Schicke eine Nachricht"
       }
     }
+  },
+  "overlays": {
+    "email-feedback-overlay": {
+      "message-head": "Erfolgreich",
+      "message-head-error": "Fehlgeschlagen",
+      "message-body": "Deine Nachricht wurde gesendet.",
+      "message-body-error": "Deine Nachricht konnte nicht gesendet werden."
+    }
   }
 }
