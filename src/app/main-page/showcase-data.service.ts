@@ -56,7 +56,7 @@ export class ShowcaseDataService {
       usedSkills: "Angular | TypeScript | Firebase | HTML | CSS",
       description: "main-page.portfolio.project.description-join",
       gitHubUrl: "https://github.com/SimCommit/join",
-      projectUrl: "",
+      projectUrl: "https://join.simon-fuchs.net/",
     },
     {
       name: "El Pollo Loco",
@@ -69,7 +69,7 @@ export class ShowcaseDataService {
       usedSkills: "JavaScript | HTML | CSS",
       description: "main-page.portfolio.project.description-el-pollo-loco",
       gitHubUrl: "https://github.com/SimCommit/el-pollo-loco",
-      projectUrl: "https://simon-fuchs.developerakademie.net/el-pollo-loco/index.html",
+      projectUrl: "https://el-pollo-loco.simon-fuchs.net/",
     },
     {
       name: "Pokédex",
@@ -82,7 +82,7 @@ export class ShowcaseDataService {
       usedSkills: "JavaScript | CSS | HTML | REST API",
       description: "main-page.portfolio.project.description-pokedex",
       gitHubUrl: "https://github.com/SimCommit/pokedex",
-      projectUrl: "https://simon-fuchs.developerakademie.net/pokedex/index.html",
+      projectUrl: "https://pokedex.simon-fuchs.net/",
     },
   ];
 
