@@ -45,6 +45,7 @@ export class AppComponent {
           this.body.classList.remove("scroll-unlocked");
         }
       });
+    this.logWelcomeMessage();
   }
 
   useLanguage(language: string): void {
@@ -63,5 +64,14 @@ export class AppComponent {
     setTimeout(() => {
       this.pageStateService.hideEmailFeedback = true;
     }, 300);
+  }
+
+  logWelcomeMessage() {
+    console.log(
+      "%cHey there!%c\n\nCurious how my portfolio website was built?\nI built it myself with Angular 19.\n\nYou can see the full code on GitHub:\nhttps://github.com/SimCommit/portfolio-website\n%c",
+      "font-size:20px; font-weight:700;",
+      "font-size:16px;",
+      "font-weight:600;"
+    );
   }
 }
