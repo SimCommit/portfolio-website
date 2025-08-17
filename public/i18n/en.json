@@ -5,8 +5,8 @@
     "about-me": {
       "headline": "About Me",
       "card-part-1": "For me, software development is the perfect way to combine my creativity with my passion for structure and logic. I work with a mix of analysis and intuition to craft smooth interactive designs.",
-      "card-part-2": "I look forward to exchanging ideas, talking about projects, and hearing your suggestions.",
-      "contact-button": "Get in Touch",
+      "card-part-2": "Keep exploring my page to learn more or get in touch directly.",
+      "contact-button": "Contact Me",
       "about-me-overlay": {
         "title": "More about me",
         "bp-1": "Team Player",
@@ -29,7 +29,7 @@
       "project": {
         "learning-join": "My most important experience in Join was implementing the Firebase integration for login and database functions. Using services and observables, I made them available to the team across all components.",
         "learning-el-pollo-loco": "This is where I developed a deeper understanding of how to structure a project involving many objects. In particular, the interaction between classes across different levels became much clearer to me.",
-        "learning-pokedex": "While working with the API, I learned how to use asynchronous functions to access deeply nested data structures.",
+        "learning-pokedex": "While working with a REST API, I learned how to use asynchronous functions to access deeply nested data structures.",
         "description-join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         "description-pokedex": "Interactive Pokédex with data from the PokéAPI. Browse Pokémon by type, view details, and explore animated stats and sprites.",
         "description-el-pollo-loco": "2D jump-and-run game built with JavaScript and canvas. Battle enemies, collect bottles, and defeat the final boss with strategic timing.",
@@ -38,7 +38,7 @@
       }
     },
     "references": {
-      "headline": "What my colleagues say about me",
+      "headline": "What My Colleagues Say About Me",
       "colleague-quote": {
         "quote-1": "It was a pleasure working with Simon. His strength clearly lies in logical thinking. Even in challenging situations, he consistently found excellent solutions. Communication with him was always clear, reliable, and pleasant.",
         "role-1": "Team Colleague",
@@ -50,9 +50,9 @@
       "button-linkedin": "To Linkedin profile >>"
     },
     "contact": {
-      "headline": "Together we can achieve more!",
-      "tagline": "Facing a challenge?",
-      "text": "In a collaborative project, we’ll make it work. I can bring your software design to life and implement interactive logic.",
+      "headline": "Get in Touch with Me",
+      "tagline": "Feel free to send me a message!",
+      "text": "I look forward to exchanging ideas, talking about projects, or hearing your suggestions. I’ll be happy to answer your questions as well.",
       "form": {
         "name-title": "What's your name?",
         "name-placeholder": "First- & Lastname",

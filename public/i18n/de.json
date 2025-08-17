@@ -5,7 +5,7 @@
     "about-me": {
       "headline": "Über mich",
       "card-part-1": "Mich begeistert, in der Softwareentwicklung meine Kreativität mit meiner Vorliebe für Struktur und Logik zu verbinden. So arbeite ich mit einer Kombination aus Analyse und Intuition, um stimmige interaktive Designs umzusetzen.",
-      "card-part-2": "Ich freue mich auf Austausch zu Ideen, gemeinsamen Projekten und Anregungen.",
+      "card-part-2": "Erkunde meine Seite weiter, um mehr zu erfahren oder schreibe mir direkt.",
       "contact-button": "Zum Kontakt",
       "about-me-overlay": {
         "title": "Mehr über mich",
@@ -29,7 +29,7 @@
       "project": {
         "learning-join": "Meine wichtigste Erfahrung in Join war die Umsetzung der Firebase-Anbindung für Login- und Datenbankfunktionen. Mithilfe von Services und Observables konnte ich sie für das Team in allen Komponenten verfügbar machen.",
         "learning-el-pollo-loco": "Hier habe ich ein tieferes Verständnis für die Strukturierung eines Projekts mit vielen Objekten entwickelt. Besonders das Zusammenspiel der Klassen auf unterschiedlichen Ebenen wurde für mich dabei viel klarer.",
-        "learning-pokedex": "Beim Arbeiten mit der API habe ich gelernt, mit asynchronen Funktionen auf tief verschachtelte Datenstrukturen zuzugreifen.",
+        "learning-pokedex": "Bei der Arbeit mit einer REST-API habe ich gelernt, mit asynchronen Funktionen auf tief verschachtelte Datenstrukturen zuzugreifen.",
         "description-join": "Ein vom Kanban-Prinzip inspiriertes Organisationstool. Per Drag & Drop lassen sich Aufgaben erstellen, verschieben, zuweisen und kategorisieren.",
         "description-el-pollo-loco": "Ein objektorientiert entwickeltes 2D-Jump’n’Run-Spiel, das per Canvas dargestellt wird. Besiege Gegner, sammle Flaschen und tritt im Endkampf gegen den Boss an.",
         "description-pokedex": "Interaktiver Pokédex mit Daten der PokéAPI. Durchsuche Pokémon nach Typ, sieh dir Details an und entdecke animierte Werte und Sprites.",
