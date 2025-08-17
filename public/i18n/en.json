@@ -1,17 +1,17 @@
 {
   "main-page": {
     "hero.subheadline-part-1": "Hello there, I'm",
-    "hero.contact-button": "Get in Touch",
+    "hero.contact-button": "My Projects",
     "about-me": {
       "headline": "About Me",
-      "card-part-1": "Hi, I'm Simon. I develop software in a structured way. I often save my teams repetitive work by thinking ahead. That ability results from a combination of analysis and intuition. I like to take initiative when it comes to turning good ideas into action.",
-      "card-part-2": "Feel free to get in touch if that sounds like a good fit for your team or if you'd like to build one with me.",
-      "contact-button": "Let's talk",
+      "card-part-1": "For me, software development is the perfect way to combine my creativity with my passion for structure and logic. I work with a mix of analysis and intuition to craft smooth interactive designs.",
+      "card-part-2": "I look forward to exchanging ideas, talking about projects, or hearing your suggestions.",
+      "contact-button": "Get in Touch",
       "about-me-overlay": {
         "title": "More about me",
         "bp-1": "Team Player",
-        "bp-2": "Continuosly learning",
-        "bp-3": "Creative Thinker",
+        "bp-2": "Continuously learning",
+        "bp-3": "Clear Communicator",
         "bp-4": "Based in Munich"
       }
     },
@@ -25,7 +25,7 @@
     },
     "portfolio": {
       "headline": "My Work",
-      "text": "Take a look at a selection of my projects – You'll get the best sense of my skills by exploring my work yourself.",
+      "text": "Here I collect my best projects – feel free to try them out!",
       "project": {
         "learning-join": "I learned the most during Join by integrating Firebase using services and observables.",
         "learning-el-pollo-loco": "This is where I developed a deeper understanding of how to structure a project involving many objects. In particular, the interaction between classes across different levels became much clearer to me.",
@@ -55,14 +55,14 @@
       "text": "In a collaborative project, we’ll make it work. I can bring your software design to life and implement interactive logic.",
       "form": {
         "name-title": "What's your name?",
-        "name-placeholder": "Your name goes here",
+        "name-placeholder": "First- & Lastname",
         "name-placeholder-warning": "Oops! It seems your name is missing",
         "email-title": "What's your email?",
-        "email-placeholder": "youremail@email.com",
+        "email-placeholder": "your@email.com",
         "email-placeholder-warning": "Hoppla! your email is required",
         "message-title": "How can I help you?",
-        "message-placeholder": "Hello Simon, I am interested in...",
-        "message-placeholder-warning": "What do you need to develop?",
+        "message-placeholder": "Descripe what you are interested in",
+        "message-placeholder-warning": "What’s on your mind?",
         "checkbox-text-1": "I've read the",
         "checkbox-text-2": "privacy policy",
         "checkbox-text-3": "and agree to the processing of my data.",
