@@ -19,15 +19,15 @@
       "headline": "Kernkompetenzen",
       "description": "Mit TypeScript und Angular realisiere ich dynamische Single-Page-Anwendungen. Auch ohne Frameworks entwickle ich in Vanilla JavaScript responsive und interaktive Software. Ich setze dabei ansprechende Designs mit modernem HTML und CSS um.",
       "growth-mindset": {
-        "title": "Du vermisst eine bestimmte Fähigkeit?",
-        "text": "Schreib mir gerne! Ich freue mich darauf, mein Wissen weiter auszubauen. Besonders interessiere ich mich für diese Technologien:"
+        "title": "Weiterentwicklung ist essentiell",
+        "text": "Für meine Projekte lerne ich immer gerne neue Technologien. Besonders interessiere ich mich für:"
       }
     },
     "portfolio": {
       "headline": "Meine Projekte",
       "text": "Hier sammle ich meine besten Arbeiten. Probiere sie gerne selbst aus!",
       "project": {
-        "learning-join": "Am meisten habe ich bei Join durch die Integration von Firebase mithilfe von Services und Observables gelernt.",
+        "learning-join": "Meine wichtigste Erfahrung in Join war die Umsetzung der Firebase-Anbindung für Login- und Datenbankfunktionen. Mithilfe von Services und Observables konnte ich sie für das Team in allen Komponenten verfügbar machen.",
         "learning-el-pollo-loco": "Hier habe ich ein tieferes Verständnis für die Strukturierung eines Projekts mit vielen Objekten entwickelt. Besonders das Zusammenspiel der Klassen auf unterschiedlichen Ebenen wurde für mich dabei viel klarer.",
         "learning-pokedex": "Beim Arbeiten mit der API habe ich gelernt, mit asynchronen Funktionen auf tief verschachtelte Datenstrukturen zuzugreifen.",
         "description-join": "Ein vom Kanban-Prinzip inspiriertes Organisationstool. Per Drag & Drop lassen sich Aufgaben erstellen, verschieben, zuweisen und kategorisieren.",
@@ -50,9 +50,9 @@
       "button-linkedin": "Zum Linkedin Profil >>"
     },
     "contact": {
-      "headline": "Gemeinsam schaffen wir mehr!",
-      "tagline": "Stehst du vor einer Herausforderung?",
-      "text": "In einem gemeinsamen Projekt, können wir sie meistern. Ich kann das Design der Softrware umsetzen und interaktive Logik gestalten.",
+      "headline": "Kontakt herstellen",
+      "tagline": "Schreibe mir eine Nachricht!",
+      "text": "Ich freue mich auf Austausch zu Ideen, gemeinsamen Projekten und Anregungen. Gerne beantworte ich auch deine Fragen.",
       "form": {
         "name-title": "Wie heißt du?",
         "name-placeholder": "Vor- & Nachname",
@@ -70,7 +70,7 @@
         "email-warning": "Deine Email scheint unvollständig zu sein.",
         "message-warning": "Bitte gib mir etwas mehr Informationen in deiner Nachricht mit.",
         "checkbox-warning": "Bitte akzeptiere die Datenschutzerklärung.",
-        "button": "Schicke eine Nachricht"
+        "button": "Nachricht senden"
       }
     }
   },
@@ -80,6 +80,13 @@
       "message-head-error": "Fehlgeschlagen",
       "message-body": "Deine Nachricht wurde gesendet.",
       "message-body-error": "Deine Nachricht konnte nicht gesendet werden."
+    },
+    "menu-overlay": {
+      "link-about-me": "Über Mich",
+      "link-skills": "Skills",
+      "link-portfolio": "Portfolio",
+      "link-references": "Referenzen",
+      "link-contact": "Kontakt"
     }
   }
 }

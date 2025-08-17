@@ -16,11 +16,12 @@ export class ShowcaseDataService {
     { imgUrl: "./assets/img/skills/scrum.svg", name: "Scrum" },
     { imgUrl: "./assets/img/skills/figma.svg", name: "Figma" },
   ];
-  
+
   techsOnMyRadar: Tech[] = [
-    // { imgUrl: "./assets/img/skills/material-design.svg", name: "Material Design" },
+    { imgUrl: "./assets/img/skills/java.svg", name: "Java" },
     { imgUrl: "./assets/img/skills/react.svg", name: "React" },
-    { imgUrl: "./assets/img/skills/vue.js.svg", name: "Vue.js" },
+    // { imgUrl: "./assets/img/skills/vue.js.svg", name: "Vue.js" },
+    // { imgUrl: "./assets/img/skills/material-design.svg", name: "Material Design" },
   ];
 
   colleagueQuotes: Testimonial[] = [

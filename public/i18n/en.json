@@ -5,7 +5,7 @@
     "about-me": {
       "headline": "About Me",
       "card-part-1": "For me, software development is the perfect way to combine my creativity with my passion for structure and logic. I work with a mix of analysis and intuition to craft smooth interactive designs.",
-      "card-part-2": "I look forward to exchanging ideas, talking about projects, or hearing your suggestions.",
+      "card-part-2": "I look forward to exchanging ideas, talking about projects, and hearing your suggestions.",
       "contact-button": "Get in Touch",
       "about-me-overlay": {
         "title": "More about me",
@@ -19,15 +19,15 @@
       "headline": "Core Competencies",
       "description": "I build dynamic single-page applications with TypeScript and Angular. I also develop responsive and interactive software without frameworks, using vanilla JavaScript. For that, I create appealing designs with modern HTML and CSS.",
       "growth-mindset": {
-        "title": "Don't see the skill you are looking for?",
-        "text": "Feel free to contact me. I look forward to expanding on my previous knowledge. Also I have a special interest in learning:"
+        "title": "Growth is essential",
+        "text": "For my projects, I always enjoy learning new technologies. Right now, I’m especially curious about:"
       }
     },
     "portfolio": {
       "headline": "My Work",
       "text": "Here I collect my best projects – feel free to try them out!",
       "project": {
-        "learning-join": "I learned the most during Join by integrating Firebase using services and observables.",
+        "learning-join": "My most important experience in Join was implementing the Firebase integration for login and database functions. Using services and observables, I made them available to the team across all components.",
         "learning-el-pollo-loco": "This is where I developed a deeper understanding of how to structure a project involving many objects. In particular, the interaction between classes across different levels became much clearer to me.",
         "learning-pokedex": "While working with the API, I learned how to use asynchronous functions to access deeply nested data structures.",
         "description-join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
@@ -80,6 +80,13 @@
       "message-head-error": "Error",
       "message-body": "Your message has been sent.",
       "message-body-error": "Your message could not be sent."
+    },
+    "menu-overlay": {
+      "link-about-me": "About Me",
+      "link-skills": "Skills",
+      "link-portfolio": "Portfolio",
+      "link-references": "References",
+      "link-contact": "Contact Me"
     }
   }
 }

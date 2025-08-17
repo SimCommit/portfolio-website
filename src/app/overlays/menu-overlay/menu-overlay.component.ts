@@ -4,10 +4,11 @@ import { CommonModule } from "@angular/common";
 import { MainPageScrollService } from "../../main-page/main-page-scroll.service";
 import { PageStateService } from "../../page-state.service";
 import { BreakpointObserverService } from "../../breakpoint-observer.service";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: "app-menu-overlay",
-  imports: [SocialLinksComponent, CommonModule],
+  imports: [SocialLinksComponent, CommonModule, TranslateModule],
   templateUrl: "./menu-overlay.component.html",
   styleUrl: "./menu-overlay.component.scss",
 })

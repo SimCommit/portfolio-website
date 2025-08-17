@@ -10,35 +10,39 @@
                     <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="cogwheel icon">
                     <a
                         (click)="closeFromOverlay(); pageStateService.isNotOnMainPage() ? pageStateService.redirectToMainPage('about-me') : mainPageScrollService.scrollToSection(1)">
-                        About Me
+                        {{"overlays.menu-overlay.link-about-me" | translate}}
                     </a>
                 </div>
                 <div>
                     <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="cogwheel icon">
                     <a
                         (click)="closeFromOverlay(); pageStateService.isNotOnMainPage() ? pageStateService.redirectToMainPage('skills') : mainPageScrollService.scrollToSection(2)">
-                        Skillset
+                        {{"overlays.menu-overlay.link-skills" | translate}}
+
                     </a>
                 </div>
                 <div>
                     <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="cogwheel icon">
                     <a
                         (click)="closeFromOverlay(); pageStateService.isNotOnMainPage() ? pageStateService.redirectToMainPage('portfolio') : mainPageScrollService.scrollToSection(3)">
-                        Portfolio
+                        {{"overlays.menu-overlay.link-portfolio" | translate}}
+
                     </a>
                 </div>
                 <div>
                     <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="cogwheel icon">
                     <a
                         (click)="closeFromOverlay(); pageStateService.isNotOnMainPage() ? pageStateService.redirectToMainPage('references') : mainPageScrollService.scrollToSection(4)">
-                        References
+                        {{"overlays.menu-overlay.link-references" | translate}}
+
                     </a>
                 </div>
                 <div>
                     <img src="./assets/img/icons/burger-menu-btns/Capa_1.svg" alt="cogwheel icon">
                     <a
                         (click)="closeFromOverlay(); pageStateService.isNotOnMainPage() ? pageStateService.redirectToMainPage('contact') : mainPageScrollService.scrollToSection(5)">
-                        Contact Me
+                        {{"overlays.menu-overlay.link-contact" | translate}}
+
                     </a>
                 </div>
             </div>
