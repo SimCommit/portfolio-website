@@ -12,14 +12,14 @@
                 <div id="contact-info-group">
                     <label class="text-input">
                         <span>{{"main-page.contact.form.name-title" | translate}}</span>
-                        <input [(ngModel)]="contactData.name"
-                            [ngClass]="{'warning-border': !name.valid && name.touched}" id="name" name="name"
+                        <input [(ngModel)]="contactData.name" (focus)="nameIsFocused = true" (blur)="nameIsFocused = false"
+                            [ngClass]="{'warning-border': !name.valid && name.touched && !nameIsFocused }" id="name" name="name"
                             type="text" placeholder="{{ 
-                            ( !name.valid && name.touched )
+                            ( !name.valid && name.touched && !nameIsFocused )
                             ? ('main-page.contact.form.name-placeholder-warning' | translate)
                             : ('main-page.contact.form.name-placeholder' | translate) 
                             }}" title="{{ 
-                            ( !name.valid && name.touched )
+                            ( !name.valid && name.touched && !nameIsFocused )
                             ? ('main-page.contact.form.name-placeholder-warning' | translate)
                             : ('main-page.contact.form.name-placeholder' | translate) 
                             }}" required #name="ngModel" minlength="3">
@@ -27,14 +27,14 @@
 
                     <label class="text-input">
                         <span>{{'main-page.contact.form.email-title' | translate}}</span>
-                        <input [(ngModel)]="contactData.email"
-                            [ngClass]="{'warning-border': !email.valid && email.touched}" id="email" name="email"
+                        <input [(ngModel)]="contactData.email" (focus)="emailIsFocused = true" (blur)="emailIsFocused = false"
+                            [ngClass]="{'warning-border': !email.valid && email.touched && !emailIsFocused }" id="email" name="email"
                             type="email" placeholder="{{ 
-                            (!email.valid && email.touched) 
+                            (!email.valid && email.touched && !emailIsFocused ) 
                             ? ('main-page.contact.form.email-placeholder-warning' | translate) 
                             : ('main-page.contact.form.email-placeholder' | translate)
                             }}" title="{{ 
-                            (!email.valid && email.touched) 
+                            (!email.valid && email.touched && !emailIsFocused ) 
                             ? ('main-page.contact.form.email-placeholder-warning' | translate) 
                             : ('main-page.contact.form.email-placeholder' | translate)
                             }}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
@@ -43,14 +43,14 @@
 
                 <label class="text-input">
                     <span>{{'main-page.contact.form.message-title' | translate}}</span>
-                    <textarea [(ngModel)]="contactData.message"
-                        [ngClass]="{'warning-border': !message.valid && message.touched}" id="message" name="message"
+                    <textarea [(ngModel)]="contactData.message" (focus)="messageIsFocused = true" (blur)="messageIsFocused = false"
+                        [ngClass]="{'warning-border': !message.valid && message.touched && !messageIsFocused }" id="message" name="message"
                         type="text" rows="1" placeholder="{{
-                        (!message.valid && message.touched)
+                        (!message.valid && message.touched && !messageIsFocused )
                         ? ('main-page.contact.form.message-placeholder-warning' | translate)
                         : ('main-page.contact.form.message-placeholder' | translate)
                         }}" title="{{
-                        (!message.valid && message.touched)
+                        (!message.valid && message.touched && !messageIsFocused )
                         ? ('main-page.contact.form.message-placeholder-warning' | translate)
                         : ('main-page.contact.form.message-placeholder' | translate)
                         }}" required #message="ngModel" minlength="16">

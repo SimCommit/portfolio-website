@@ -17,6 +17,10 @@ import { MainPageScrollService } from "../main-page-scroll.service";
 export class ContactComponent {
   http = inject(HttpClient);
 
+  nameIsFocused: boolean = false;
+  emailIsFocused: boolean = false;
+  messageIsFocused: boolean = false;
+
   nameInput: InputFieldStates = {
     isChecked: false,
   };
