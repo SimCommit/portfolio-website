@@ -32,10 +32,10 @@ export class ShowcaseDataService {
       profileUrl: "https://www.linkedin.com/in/vadim-michel-088792239/",
     },
     {
-      name: "Mirkan Polat",
+      name: "Robin Angelé",
       quote: "main-page.references.colleague-quote.quote-2",
       role: "main-page.references.colleague-quote.role-2",
-      profileUrl: "https://github.com/MirkanPolat",
+      profileUrl: "https://www.linkedin.com/in/robin-angel%C3%A9/",
     },
     {
       name: "Markus Fischer",
@@ -43,6 +43,12 @@ export class ShowcaseDataService {
       role: "main-page.references.colleague-quote.role-3",
       profileUrl: "https://www.linkedin.com/in/markus-fischer-mideasdesign/",
     },
+    {
+      name: "Mirkan Polat",
+      quote: "main-page.references.colleague-quote.quote-2",
+      role: "main-page.references.colleague-quote.role-2",
+      profileUrl: "https://github.com/MirkanPolat",
+    }    
   ];
 
   myProjects: Project[] = [
