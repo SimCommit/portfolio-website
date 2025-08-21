@@ -32,18 +32,22 @@ section {
   h2 {
     color: $main-yellow;
     margin-bottom: 30px;
+
+    
   }
 
   p {
     margin-top: 1rem;
+    @include pFontSizeSwitch();
+  }
+  
+  #c-question {
+    font-size: 24px;
+    font-weight: bold;
+    color: $main-coral;
   }
 }
 
-#c-question {
-  font-size: 24px;
-  font-weight: bold;
-  color: $main-coral;
-}
 
 form {
   flex: 55;
