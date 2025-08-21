@@ -30,6 +30,10 @@
   }
 }
 
+#cq-body {
+  @include pFontSizeSwitch();
+}
+
 .cogwheel-marker {
   opacity: 0;
   transition: opacity 200ms;
