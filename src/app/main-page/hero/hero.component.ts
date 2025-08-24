@@ -17,7 +17,9 @@ export class HeroComponent {
   @ViewChild("heroHeadline") heroHeadlineRef!: ElementRef<HTMLElement>;
   @ViewChild("heroGreeting") heroGreetingRef!: ElementRef<HTMLElement>;
   @ViewChild("heroPosition") heroPositionRef!: ElementRef<HTMLElement>;
+  @ViewChild("heroCogwheelContainer") heroCogwheelContainerRef!: ElementRef<HTMLElement>;
   @ViewChild("heroCogwheel") heroCogwheelRef!: ElementRef<HTMLElement>;
+  @ViewChild("heroArrow") heroArrowRef!: ElementRef<HTMLElement>;
 
   private headlineObserver!: ResizeObserver;
   private offsetObserver!: ResizeObserver;
@@ -27,6 +29,9 @@ export class HeroComponent {
   private MAX_HEADLINE_SIZE: number = 140;
   private MAX_TAGLINE_SIZE: number = 61;
   private MAX_COGWHEEL_SIZE: number = 148;
+
+  private rotateAnimation!: Animation;
+  private intervalIds: IntervalId[] = [];
 
   constructor(
     public mainPageScrollService: MainPageScrollService,
@@ -39,6 +44,7 @@ export class HeroComponent {
     this.initSectionHeightObserver();
     this.initHeadlineScaleObserver();
     this.initSectionOffsetObserver();
+    this.initCogwheelRotation();
   }
 
   ngOnDestroy(): void {
@@ -47,6 +53,50 @@ export class HeroComponent {
     this.subscription?.unsubscribe();
   }
   // #endregion
+
+  onEnterCogwheel(): void {
+    const factor: number = 0.12;
+    this.speedUp(factor);
+  }
+
+  onLeaveCogwheel(): void {
+    // const cogwheelEl = this.heroCogwheelRef.nativeElement;
+    // const arrowEl = this.heroArrowRef.nativeElement;
+    const factor: number = 0.12;
+    this.slowDown(factor);
+  }
+
+  speedUp(factor: number) {
+    for (let i = 1; i <= 100 * factor; i++) {
+      setTimeout(() => {
+        this.rotateAnimation.playbackRate = this.rotateAnimation.playbackRate + factor;
+        // console.log("schneller");
+        
+      }, 10 * i);
+    }
+  }
+
+  slowDown(factor: number) {
+    for (let i = 1; i <= 100 * factor; i++) {
+      setTimeout(() => {
+        this.rotateAnimation.playbackRate = this.rotateAnimation.playbackRate - factor;
+        // console.log("langsamer");
+        
+      }, 10 * i);
+    }
+  }
+
+  initCogwheelRotation() {
+    const cogwheelEl = this.heroCogwheelRef.nativeElement;
+
+    this.rotateAnimation = cogwheelEl.animate([{ transform: "rotate(0deg)" }, { transform: "rotate(360deg)" }], {
+      duration: 10000,
+      easing: "linear",
+      iterations: Infinity,
+    });
+
+    this.rotateAnimation.playbackRate = 1;
+  }
 
   private initHeadlineScaleObserver(): void {
     const contentEl = this.heroContentRef.nativeElement;
@@ -62,7 +112,7 @@ export class HeroComponent {
     const headlineEl = this.heroHeadlineRef.nativeElement;
     const greetingTaglineEl = this.heroGreetingRef.nativeElement;
     const positionTaglineEl = this.heroPositionRef.nativeElement;
-    const cogwheelEl = this.heroCogwheelRef.nativeElement;
+    const cogwheelEl = this.heroCogwheelContainerRef.nativeElement;
 
     for (const entry of entries as ResizeObserverEntry[]) {
       const containerWidth = entry.contentRect.width;
@@ -86,7 +136,7 @@ export class HeroComponent {
 
   private handleSectionOffsetResize = (entries: ResizeObserverEntry[]): void => {
     const textEl = this.heroTextRef.nativeElement;
-    const cogwheelEl = this.heroCogwheelRef.nativeElement;
+    const cogwheelEl = this.heroCogwheelContainerRef.nativeElement;
 
     for (const entry of entries as ResizeObserverEntry[]) {
       this.updateSectionOffsetFromResize(entry, textEl, cogwheelEl);
@@ -114,3 +164,5 @@ export class HeroComponent {
     });
   }
 }
+
+type IntervalId = ReturnType<typeof setInterval>;
