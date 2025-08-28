@@ -62,16 +62,15 @@ export class HeroComponent {
   onLeaveCogwheel(): void {
     // const cogwheelEl = this.heroCogwheelRef.nativeElement;
     // const arrowEl = this.heroArrowRef.nativeElement;
-    const factor: number = 0.12;
+    const factor: number = 0.11;
     this.slowDown(factor);
   }
 
   speedUp(factor: number) {
     for (let i = 1; i <= 100 * factor; i++) {
       setTimeout(() => {
+        if (this.rotateAnimation.playbackRate > 2) return;
         this.rotateAnimation.playbackRate = this.rotateAnimation.playbackRate + factor;
-        // console.log("schneller");
-        
       }, 10 * i);
     }
   }
@@ -79,9 +78,8 @@ export class HeroComponent {
   slowDown(factor: number) {
     for (let i = 1; i <= 100 * factor; i++) {
       setTimeout(() => {
+        if (this.rotateAnimation.playbackRate < 1) return;
         this.rotateAnimation.playbackRate = this.rotateAnimation.playbackRate - factor;
-        // console.log("langsamer");
-        
       }, 10 * i);
     }
   }
@@ -90,7 +88,7 @@ export class HeroComponent {
     const cogwheelEl = this.heroCogwheelRef.nativeElement;
 
     this.rotateAnimation = cogwheelEl.animate([{ transform: "rotate(0deg)" }, { transform: "rotate(360deg)" }], {
-      duration: 10000,
+      duration: 12000,
       easing: "linear",
       iterations: Infinity,
     });

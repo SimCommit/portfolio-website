@@ -79,7 +79,7 @@ section {
   height: 50px;
   width: 32px;
   img {
-    animation: slide-up-and-down 1.8s ease-in-out infinite;
+    animation: slide-up-and-down 1.5s ease-in-out infinite;
     &:hover {
       animation-play-state: paused;
     }
