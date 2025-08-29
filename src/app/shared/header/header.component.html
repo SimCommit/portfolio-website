@@ -7,7 +7,6 @@
         }
         }
 
-
         <div [ngClass]="{ 'section-change': mainPageScrollService.isScrolling}"
             (click)="pageStateService.isNotOnMainPage() ? pageStateService.redirectToMainPage('hero') : mainPageScrollService.scrollToSection(0)"
             id="fs-logo" [routerLink]="['/']">

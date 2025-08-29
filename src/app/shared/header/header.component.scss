@@ -13,7 +13,7 @@ header {
 
     > div {
       width: 140px;
-      @include dFlex($g: 0.5rem);
+      @include dFlex();
     }
   }
 }
@@ -33,20 +33,19 @@ a {
     cursor: pointer;
   }
 
-  &:hover .header-element-color {
-    color: $main-coral;
-  }
+  // &:hover .header-element-color {
+  //   color: $main-coral;
+  // }
 
-  a {
-    margin-left: -6px;
-    transition: color 125ms ease;
-  }
+  // a {
+  //   transition: color 125ms ease;
+  // }
 }
 
 .section-change {
-  #logo-sf-text {
-    transition: color 450ms ease-in;
-  }
+  // #logo-sf-text {
+  //   transition: color 450ms ease-in;
+  // }
 }
 
 .header-element-color {
@@ -69,9 +68,9 @@ a {
   transition: color 450ms ease-in;
 }
 
-.header-element-color:hover {
-  color: $main-coral;
-}
+// .header-element-color:hover {
+//   color: $main-coral;
+// }
 
 .english,
 .german,
