@@ -31,7 +31,6 @@ export class HeroComponent {
   private MAX_COGWHEEL_SIZE: number = 148;
 
   private rotateAnimation!: Animation;
-  private intervalIds: IntervalId[] = [];
 
   constructor(
     public mainPageScrollService: MainPageScrollService,
@@ -162,5 +161,3 @@ export class HeroComponent {
     });
   }
 }
-
-type IntervalId = ReturnType<typeof setInterval>;

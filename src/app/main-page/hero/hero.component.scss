@@ -49,7 +49,7 @@ section {
   }
 }
 
-// #region cogwheel-scroll-down down animation
+// #region cogwheel-scroll-down
 .cogwheel-container {
   z-index: 3;
   position: absolute;
@@ -64,27 +64,8 @@ section {
   width: 100%;
   height: 100%;
   z-index: 1;
-  // animation: animateCogwheel linear 12s infinite;
   transform-origin: center;
   pointer-events: visible;
-
-  &:hover {
-    animation-play-state: paused;
-  }
-
-  // &:hover + .arrow-down {
-  //   animation: slide-up-and-down 1.8s ease-in-out infinite;
-  // }
-}
-
-@keyframes animateCogwheel {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .arrow-down {
@@ -96,20 +77,6 @@ section {
   width: clamp(3.2rem, 2.273vw + 2.473rem, 4.8rem);
   height: clamp(3.2rem, 2.273vw + 2.473rem, 4.8rem);
   pointer-events: none;
-}
-
-@keyframes slide-up-and-down {
-  0% {
-    transform: translate(-50%, -50%);
-  }
-
-  50% {
-    transform: translate(-50%, -10%);
-  }
-
-  100% {
-    transform: translate(-50%, -50%);
-  }
 }
 // #endregion
 
