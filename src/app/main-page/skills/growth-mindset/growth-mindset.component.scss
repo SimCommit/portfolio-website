@@ -8,16 +8,26 @@
   max-width: 360px;
   background-color: $main-yellow;
 
+  color: $main-black;
+
+  h3 {
+    @include h3FontSizeSwitch();
+  }
+
   p {
     margin-top: 16px;
     font-weight: 400;
+    @include pFontSizeSwitch();
   }
 
   div {
     margin-top: 16px;
     @include dFlex($ai: flex-start, $g: 24px);
+
     label {
       text-align: center;
+      font-weight: 500;
+      // color: $main-ivory;
       @include dFlex($fd: column, $jc: flex-start, $g: 8px);
       width: 56px;
 
