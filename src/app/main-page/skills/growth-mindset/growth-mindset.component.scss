@@ -2,7 +2,7 @@
 @use "./../../../../styles/_variables" as *;
 
 #growth-mindset {
-  @include cardBoxStyle($bc: $main-ivory);
+  @include cardBoxStyle($bc: $main-black);
   @include dFlex($fd: column);
   width: 300px;
   max-width: 360px;

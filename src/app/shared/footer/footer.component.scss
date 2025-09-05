@@ -64,7 +64,7 @@
 // #region Media Queries
 @media (max-width: 950px) or (max-height: 820px) {
   #cogwheel-container {
-    margin-top: -96px;
+    margin-top: -48px;
   }
 
   #cogwheel-coral {
@@ -87,8 +87,6 @@
   #cogwheel-container {
     order: 0;
     width: unset;
-  }
-  #cogwheel-container {
     margin-top: 32px;
     order: 2;
   }
