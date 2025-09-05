@@ -54,22 +54,36 @@ nav {
   @include dFlex($ai: flex-start, $fd: column);
 
   div {
-    &:hover img {
-      width: 20px;
-    }
+    height: 31px;
 
     img {
       width: 0;
       transition: width 125ms ease;
+      margin-right: 4px;
+    }
+
+    &:hover img {
+      width: 20px;
     }
 
     a {
-      display: inline-block;
-      margin: 4px;
-      color: $main-black;
-      font-size: 18px;
-      font-weight: bold;
-      &:hover {
+      height: 31px;
+      display: flex;
+      align-items: flex-start;
+
+      div {
+        height: 24px;
+        display: flex;
+        align-items: flex-end;
+
+        span {
+          color: $main-black;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+
+      &:hover div span {
         color: $main-blue;
       }
     }
