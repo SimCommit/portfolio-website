@@ -63,7 +63,7 @@ section {
   }
 
   div {
-    @include dFlex($jc: space-between);
+    @include dFlex($jc: flex-end);
   }
 }
 
@@ -108,7 +108,7 @@ a {
 // #region app-about-me-overlay
 #app-about-me-overlay {
   position: absolute;
-  top: 72px;
+  top: 64px;
   right: -450px;
   transition: transform 225ms ease-in-out;
 
@@ -120,17 +120,21 @@ a {
   @media (max-width: 1600px) {
     right: -148px;
   }
-
+  
   @media (max-width: 1200px) {
-    right: -102px;
+    right: -60px;
   }
-
+  
   @media (max-width: 960px) {
-    right: -68px;
+    right: -42px;
   }
-
+  
   @media (max-width: 900px) {
     top: -124px;
+  }
+  
+  @media (max-height: 639px) and (max-width: 960px) {
+    right: 2px;
   }
 }
 

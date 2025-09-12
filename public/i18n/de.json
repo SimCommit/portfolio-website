@@ -1,15 +1,15 @@
 {
   "main-page": {
     "hero.subheadline-part-1": "Hallo, ich bin",
-    "hero.contact-button": "Zum Portfolio",
+    "hero.contact-button": "Meine Projekte",
     "about-me": {
       "headline": "Über mich",
       "card-part-1": "Mich begeistert, in der Softwareentwicklung meine Kreativität mit meiner Vorliebe für Struktur und Logik zu verbinden. So arbeite ich mit einer Kombination aus Analyse und Intuition, um stimmige interaktive Designs umzusetzen.",
-      "card-part-2": "Erkunde meine Seite weiter, um mehr zu erfahren oder schreibe mir direkt.",
+      "card-part-2": "Ich arbeite gerne in kleinen, agilen Teams und schätze die Zusammenarbeit über längere Projekte hinweg.",
       "contact-button": "Zum Kontakt",
       "about-me-overlay": {
         "title": "Mehr über mich",
-        "bp-1": "Team Player",
+        "bp-1": "Auge für Details",
         "bp-2": "Immer am Lernen",
         "bp-3": "Klare Kommunikation",
         "bp-4": "In München daheim"
@@ -54,7 +54,7 @@
     "contact": {
       "headline": "Kontakt herstellen",
       "tagline": "Schreibe mir eine Nachricht!",
-      "text": "Ich freue mich auf Austausch zu Ideen, gemeinsamen Projekten und Anregungen. Gerne beantworte ich auch deine Fragen.",
+      "text": "Ich freue mich auf Austausch über Ideen, gemeinsamen Projekten und Anregungen. Gerne beantworte ich auch deine Fragen.",
       "form": {
         "name-title": "Wie heißt du?",
         "name-placeholder": "Vor- & Nachname",
