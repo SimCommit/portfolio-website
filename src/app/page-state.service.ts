@@ -1,3 +1,4 @@
+import { StickyDirection } from "@angular/cdk/table";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 
@@ -5,7 +6,9 @@ import { Router } from "@angular/router";
   providedIn: "root",
 })
 export class PageStateService {
-  currentLanguage: "de" | "en" = "en";
+  userLang: string = navigator.language.slice(0,2);
+
+  currentLanguage: "de" | "en";
 
   hideMenu: boolean = true;
   burgerMenuIsOpen: boolean = false;
@@ -14,7 +17,23 @@ export class PageStateService {
   emailFeedbackIsOpen: boolean = false;
   sendEmailWasSuccessful: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.currentLanguage = this.convertString(this.userLang);
+    console.log(this.currentLanguage);    
+  }
+
+  convertString(userLang: string): "de" | "en" {
+    let lang: "de" | "en";
+    console.log(userLang);    
+
+    if (userLang !== "de" && userLang !== "en") {
+      lang = "en";
+    } else {
+      lang = userLang;  
+    }
+
+    return lang;
+  }
 
   redirectToMainPage(fragment: string): void {
     this.router.navigate(["/"], { fragment: fragment });

@@ -20,6 +20,8 @@ export class AppComponent {
 
   body: HTMLElement = document.body;
 
+  userLang = navigator.language;
+
   constructor(
     private translate: TranslateService,
     private router: Router,
@@ -28,7 +30,7 @@ export class AppComponent {
   ) {
     this.translate.addLangs(["de", "en"]);
     this.translate.setDefaultLang("en");
-    this.translate.use("en");
+    this.translate.use(this.userLang.slice(0, 2));
   }
 
   ngOnInit(): void {
