@@ -19,12 +19,10 @@ export class PageStateService {
 
   constructor(private router: Router) {
     this.currentLanguage = this.convertString(this.userLang);
-    console.log(this.currentLanguage);    
   }
 
   convertString(userLang: string): "de" | "en" {
     let lang: "de" | "en";
-    console.log(userLang);    
 
     if (userLang !== "de" && userLang !== "en") {
       lang = "en";
