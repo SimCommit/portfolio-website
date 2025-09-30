@@ -1,5 +1,28 @@
 @use "./../styles/_variables" as *;
 
+.custom-cursor {
+  width: 24px;
+  height: 24px;
+  border: 1px solid $main-ivory;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+
+  // &::after {
+  //   content: "";
+  //   width: 2px;
+  //   height: 2px;
+  //   background-color: $main-ivory;
+  //   border-radius: 50%;
+  // }
+}
+
+.expand {
+  scale: 1.1;
+  transition: scale 100ms ease-in-out;
+}
+
 section {
   display: flex;
   align-items: center;

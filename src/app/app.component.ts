@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { MenuOverlayComponent } from "./overlays/menu-overlay/menu-overlay.component";
@@ -20,7 +20,14 @@ export class AppComponent {
 
   body: HTMLElement = document.body;
 
+  @ViewChild("customCursor", { static: false, read: ElementRef }) customCursorRef!: ElementRef<HTMLDivElement>;
+
+  doc: Document = document;
+
   userLang = navigator.language;
+
+  mouseY: number = 0;
+  mouseX: number = 0;
 
   constructor(
     private translate: TranslateService,
@@ -50,9 +57,52 @@ export class AppComponent {
     this.logWelcomeMessage();
   }
 
+  ngAfterViewInit(): void {
+    // this.initCustomCursor();
+    this.mouseMovementListener();
+    this.customCursorRAFMovement();
+  }
+
   useLanguage(language: string): void {
     this.translate.use(language);
   }
+
+  mouseMovementListener() {
+    window.addEventListener("mousemove", (e) => {
+      this.mouseY = e.pageY - 12;
+      this.mouseX = e.pageX - 12;
+    });
+  }
+
+  customCursorRAFMovement() {
+    // console.log("toast");
+
+    this.customCursorRef.nativeElement.setAttribute(
+      "style",
+      // "top: " + (this.mouseY) + "px; left: " + (this.mouseX) + "px;"
+      "transform: translate3d(" + (this.mouseX) + "px, " + (this.mouseY) + "px, 0)"
+    );
+
+    requestAnimationFrame(() => this.customCursorRAFMovement());
+  }
+
+  // initCustomCursor(): void {
+  //   window.addEventListener("mousemove", (e) => {
+  //     this.customCursorRef.nativeElement.setAttribute(
+  //       "style",
+  //       // "transform: translate3d(" + (e.pageX - 12) + "px, " + (e.pageY - 12) + "px, 0)"
+  //       "top: " + (e.pageY - 12) + "px; left: " + (e.pageX - 12) + "px;"
+  //     );
+  //   });
+
+  //   this.doc.addEventListener("click", () => {
+  //     this.customCursorRef.nativeElement.classList.add("expand");
+
+  //     setTimeout(() => {
+  //       this.customCursorRef.nativeElement.classList.remove("expand");
+  //     }, 200);
+  //   });
+  // }
 
   closeBurgerOverlay(): void {
     this.mainPageScrollService.unlockScroll();
