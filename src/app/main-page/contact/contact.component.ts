@@ -6,7 +6,7 @@ import { RouterLink } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { TranslateModule } from "@ngx-translate/core";
 import { PageStateService } from "../../page-state.service";
-import { MainPageScrollService } from "../main-page-scroll.service";
+import { MainPageScrollService } from "../services/main-page-scroll.service";
 
 @Component({
   selector: "app-contact",

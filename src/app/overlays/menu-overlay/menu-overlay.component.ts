@@ -1,10 +1,10 @@
 import { Component, EventEmitter, inject, Output } from "@angular/core";
 import { SocialLinksComponent } from "../../shared/social-links/social-links.component";
 import { CommonModule } from "@angular/common";
-import { MainPageScrollService } from "../../main-page/main-page-scroll.service";
 import { PageStateService } from "../../page-state.service";
 import { BreakpointObserverService } from "../../breakpoint-observer.service";
 import { TranslateModule } from "@ngx-translate/core";
+import { MainPageScrollService } from "../../main-page/services/main-page-scroll.service";
 
 @Component({
   selector: "app-menu-overlay",

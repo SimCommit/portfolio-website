@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { ShowcaseDataService } from '../../showcase-data.service';
 import { CommonModule } from '@angular/common';
+import { ShowcaseDataService } from '../../services/showcase-data.service';
 
 @Component({
   selector: 'app-project',

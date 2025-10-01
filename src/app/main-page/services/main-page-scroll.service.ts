@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { BreakpointObserverService } from "../breakpoint-observer.service";
+import { BreakpointObserverService } from "../../breakpoint-observer.service";
 
 @Injectable({
   providedIn: "root",

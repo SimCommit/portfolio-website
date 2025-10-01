@@ -7,10 +7,10 @@ import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ReferencesComponent } from "./references/references.component";
 import { ContactComponent } from "./contact/contact.component";
 import { HeaderComponent } from "../shared/header/header.component";
-import { MainPageScrollService } from "./main-page-scroll.service";
 import { BreakpointObserverService } from "../breakpoint-observer.service";
 import { AsyncPipe } from "@angular/common";
 import { ActivatedRoute } from "@angular/router";
+import { MainPageScrollService } from "./services/main-page-scroll.service";
 
 @Component({
   selector: "app-main-page",

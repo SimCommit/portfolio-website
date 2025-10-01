@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Output } from "@angular/core";
-import { MainPageScrollService } from "../../main-page/main-page-scroll.service";
 import { PageStateService } from "../../page-state.service";
 import { CommonModule } from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
+import { MainPageScrollService } from "../../main-page/services/main-page-scroll.service";
 
 @Component({
   selector: "app-email-feedback-overlay",

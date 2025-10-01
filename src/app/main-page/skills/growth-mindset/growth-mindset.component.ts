@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
-import { ShowcaseDataService } from "../../showcase-data.service";
 import { TranslateModule } from "@ngx-translate/core";
 import { BreakpointObserverService } from "../../../breakpoint-observer.service";
 import { AsyncPipe } from "@angular/common";
+import { ShowcaseDataService } from "../../services/showcase-data.service";
 
 @Component({
   selector: "app-growth-mindset",

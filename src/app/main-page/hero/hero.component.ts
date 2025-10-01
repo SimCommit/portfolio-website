@@ -1,8 +1,8 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
-import { MainPageScrollService } from "../main-page-scroll.service";
 import { SectionLayoutService } from "../services/section-layout.service";
 import { Subscription } from "rxjs";
+import { MainPageScrollService } from "../services/main-page-scroll.service";
 
 @Component({
   selector: "app-hero",

@@ -2,9 +2,9 @@ import { Component, ElementRef, inject, ViewChild } from "@angular/core";
 import { AboutMeOverlayComponent } from "./about-me-overlay/about-me-overlay.component";
 import { TranslateModule } from "@ngx-translate/core";
 import { CommonModule } from "@angular/common";
-import { MainPageScrollService } from "../main-page-scroll.service";
 import { SectionLayoutService } from "../services/section-layout.service";
 import { Subscription } from "rxjs";
+import { MainPageScrollService } from "../services/main-page-scroll.service";
 
 @Component({
   selector: "app-about-me",

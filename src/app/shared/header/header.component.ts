@@ -3,9 +3,9 @@ import { SocialLinksComponent } from "../social-links/social-links.component";
 import { CommonModule } from "@angular/common";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { Router, RouterLink } from "@angular/router";
-import { MainPageScrollService } from "../../main-page/main-page-scroll.service";
 import { PageStateService } from "../../page-state.service";
 import { BreakpointObserverService } from "../../breakpoint-observer.service";
+import { MainPageScrollService } from "../../main-page/services/main-page-scroll.service";
 
 @Component({
   selector: "app-header",

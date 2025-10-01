@@ -1,10 +1,10 @@
 import { Component, inject } from "@angular/core";
 import { GrowthMindsetComponent } from "./growth-mindset/growth-mindset.component";
-import { ShowcaseDataService } from "../showcase-data.service";
 import { TranslateModule } from "@ngx-translate/core";
 import { CommonModule } from "@angular/common";
 import { SectionLayoutService } from "../services/section-layout.service";
 import { BreakpointObserverService } from "../../breakpoint-observer.service";
+import { ShowcaseDataService } from "../services/showcase-data.service";
 
 @Component({
   selector: "app-skills",

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, NgZone, ViewChild } from "@angular/core";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { MenuOverlayComponent } from "./overlays/menu-overlay/menu-overlay.component";
@@ -6,8 +6,8 @@ import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { marker as _ } from "@colsen1991/ngx-translate-extract-marker";
 import { filter } from "rxjs";
 import { PageStateService } from "./page-state.service";
-import { MainPageScrollService } from "./main-page/main-page-scroll.service";
 import { EmailFeedbackOverlayComponent } from "./overlays/email-feedback-overlay/email-feedback-overlay.component";
+import { MainPageScrollService } from "./main-page/services/main-page-scroll.service";
 
 @Component({
   selector: "app-root",
@@ -33,7 +33,8 @@ export class AppComponent {
     private translate: TranslateService,
     private router: Router,
     public pageStateService: PageStateService,
-    private mainPageScrollService: MainPageScrollService
+    private mainPageScrollService: MainPageScrollService,
+    private ngZone: NgZone
   ) {
     this.translate.addLangs(["de", "en"]);
     this.translate.setDefaultLang("en");
@@ -57,51 +58,27 @@ export class AppComponent {
     this.logWelcomeMessage();
   }
 
-  ngAfterViewInit(): void {
-    // this.initCustomCursor();
-    this.mouseMovementListener();
-    this.customCursorRAFMovement();
-  }
+  // ngAfterViewInit(): void {
+  //   this.mouseMovementListener();
+  //   this.customCursorRAFMovement();
+  // }
 
   useLanguage(language: string): void {
     this.translate.use(language);
   }
 
-  mouseMovementListener() {
-    window.addEventListener("mousemove", (e) => {
-      this.mouseY = e.pageY - 12;
-      this.mouseX = e.pageX - 12;
-    });
-  }
-
-  customCursorRAFMovement() {
-    // console.log("toast");
-
-    this.customCursorRef.nativeElement.setAttribute(
-      "style",
-      // "top: " + (this.mouseY) + "px; left: " + (this.mouseX) + "px;"
-      "transform: translate3d(" + (this.mouseX) + "px, " + (this.mouseY) + "px, 0)"
-    );
-
-    requestAnimationFrame(() => this.customCursorRAFMovement());
-  }
-
-  // initCustomCursor(): void {
-  //   window.addEventListener("mousemove", (e) => {
-  //     this.customCursorRef.nativeElement.setAttribute(
-  //       "style",
-  //       // "transform: translate3d(" + (e.pageX - 12) + "px, " + (e.pageY - 12) + "px, 0)"
-  //       "top: " + (e.pageY - 12) + "px; left: " + (e.pageX - 12) + "px;"
-  //     );
+  // mouseMovementListener() {
+  //   this.ngZone.runOutsideAngular(() => {
+  //     window.addEventListener("mousemove", (e) => {
+  //       this.mouseY = e.pageY - 12;
+  //       this.mouseX = e.pageX - 12;
+  //     });
   //   });
+  // }
 
-  //   this.doc.addEventListener("click", () => {
-  //     this.customCursorRef.nativeElement.classList.add("expand");
-
-  //     setTimeout(() => {
-  //       this.customCursorRef.nativeElement.classList.remove("expand");
-  //     }, 200);
-  //   });
+  // customCursorRAFMovement() {
+  //   this.customCursorRef.nativeElement.style.transform = "translate3d(" + this.mouseX + "px, " + this.mouseY + "px, 0)";
+  //   requestAnimationFrame(() => this.customCursorRAFMovement());
   // }
 
   closeBurgerOverlay(): void {
