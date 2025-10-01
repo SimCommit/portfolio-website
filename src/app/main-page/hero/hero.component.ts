@@ -3,6 +3,7 @@ import { TranslateModule } from "@ngx-translate/core";
 import { SectionLayoutService } from "../services/section-layout.service";
 import { Subscription } from "rxjs";
 import { MainPageScrollService } from "../services/main-page-scroll.service";
+import { CustomCursorPositioningService } from "../../shared/services/custom-cursor-positioning.service";
 
 @Component({
   selector: "app-hero",
@@ -34,7 +35,8 @@ export class HeroComponent {
 
   constructor(
     public mainPageScrollService: MainPageScrollService,
-    private sectionLayoutService: SectionLayoutService
+    private sectionLayoutService: SectionLayoutService,
+    private customCursorPositioningService: CustomCursorPositioningService
   ) {}
 
   // #region Lifecycle
@@ -56,6 +58,7 @@ export class HeroComponent {
   onEnterCogwheel(): void {
     const factor: number = 0.12;
     this.speedUp(factor);
+    this.showMouseCogwheel();
   }
 
   onLeaveCogwheel(): void {
@@ -63,6 +66,17 @@ export class HeroComponent {
     // const arrowEl = this.heroArrowRef.nativeElement;
     const factor: number = 0.11;
     this.slowDown(factor);
+    this.hideMouseCogwheel();
+  }
+
+  showMouseCogwheel() {
+    document.body.style.cursor = "none";
+    this.customCursorPositioningService.setCursorState("scroll");
+  }
+
+  hideMouseCogwheel() {
+    document.body.style.cursor = "default";
+    this.customCursorPositioningService.setCursorState("default");
   }
 
   speedUp(factor: number) {

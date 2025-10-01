@@ -8,10 +8,17 @@ import { filter } from "rxjs";
 import { PageStateService } from "./page-state.service";
 import { EmailFeedbackOverlayComponent } from "./overlays/email-feedback-overlay/email-feedback-overlay.component";
 import { MainPageScrollService } from "./main-page/services/main-page-scroll.service";
+import { CustomCursorPositioningService } from "./shared/services/custom-cursor-positioning.service";
 
 @Component({
   selector: "app-root",
-  imports: [RouterOutlet, MenuOverlayComponent, CommonModule, TranslateModule, EmailFeedbackOverlayComponent],
+  imports: [
+    RouterOutlet,
+    MenuOverlayComponent,
+    CommonModule,
+    TranslateModule,
+    EmailFeedbackOverlayComponent,
+  ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })
@@ -22,19 +29,14 @@ export class AppComponent {
 
   @ViewChild("customCursor", { static: false, read: ElementRef }) customCursorRef!: ElementRef<HTMLDivElement>;
 
-  doc: Document = document;
-
   userLang = navigator.language;
-
-  mouseY: number = 0;
-  mouseX: number = 0;
 
   constructor(
     private translate: TranslateService,
     private router: Router,
     public pageStateService: PageStateService,
     private mainPageScrollService: MainPageScrollService,
-    private ngZone: NgZone
+    private customCursorPositioningService: CustomCursorPositioningService
   ) {
     this.translate.addLangs(["de", "en"]);
     this.translate.setDefaultLang("en");
@@ -58,28 +60,32 @@ export class AppComponent {
     this.logWelcomeMessage();
   }
 
-  // ngAfterViewInit(): void {
-  //   this.mouseMovementListener();
-  //   this.customCursorRAFMovement();
-  // }
+  ngAfterViewInit(): void {
+    this.customCursorExecuter(this.customCursorPositioningService.cursorState);
+    this.customCursorRAFMovement();
+  }
+
+  customCursorRAFMovement() {
+    this.customCursorRef.nativeElement.style.transform =
+      "translate3d(" +
+      this.customCursorPositioningService.mouseX +
+      "px, " +
+      this.customCursorPositioningService.mouseY +
+      "px, 0)";
+    requestAnimationFrame(() => this.customCursorRAFMovement());
+  }
+
+  customCursorExecuter(state: "default" | "scroll") {
+    if ((state = "scroll")) {
+      this.customCursorRef.nativeElement.classList.add("cursor-scroll");
+    } else {
+      this.customCursorRef.nativeElement.classList.remove("cursor-scroll");
+    }
+  }
 
   useLanguage(language: string): void {
     this.translate.use(language);
   }
-
-  // mouseMovementListener() {
-  //   this.ngZone.runOutsideAngular(() => {
-  //     window.addEventListener("mousemove", (e) => {
-  //       this.mouseY = e.pageY - 12;
-  //       this.mouseX = e.pageX - 12;
-  //     });
-  //   });
-  // }
-
-  // customCursorRAFMovement() {
-  //   this.customCursorRef.nativeElement.style.transform = "translate3d(" + this.mouseX + "px, " + this.mouseY + "px, 0)";
-  //   requestAnimationFrame(() => this.customCursorRAFMovement());
-  // }
 
   closeBurgerOverlay(): void {
     this.mainPageScrollService.unlockScroll();

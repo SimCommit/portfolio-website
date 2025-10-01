@@ -79,6 +79,15 @@ a {
   text-decoration: none;
   color: unset;
 }
+
+.cursor-scroll {
+  background-image: url("./../../public/assets/img/cogwheel/cursor-scrolling-1.svg");
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+}
 // #endregion
 
 // #region Utility Classes

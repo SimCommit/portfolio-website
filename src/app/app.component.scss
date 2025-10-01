@@ -1,14 +1,9 @@
 @use "./../styles/_variables" as *;
 
-// .custom-cursor {
-//   width: 24px;
-//   height: 24px;
-//   border: 1px solid $main-ivory;
-//   border-radius: 50%;
-//   position: absolute;
-//   z-index: 1000;
-//   pointer-events: none;
-// }
+.custom-cursor {
+  z-index: 1000;
+  pointer-events: none;
+}
 
 section {
   display: flex;
