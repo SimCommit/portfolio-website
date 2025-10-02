@@ -20,10 +20,9 @@
                 id="app-growth-mindset"></app-growth-mindset>
 
             <div id="tech-card">
-                @let isMobile = breakpointObserverService.isMobile$ | async;
                 @for (tech of showcaseData.myTechs; track $index) {
                 <label>
-                    <img [ngClass]="{'animateTechCard': isMobile}" src="{{tech.imgUrl}}" alt="Placeholder Tech">
+                    <img src="{{tech.imgUrl}}" alt="Placeholder Tech">
                     <span>{{tech.name}}</span>
                 </label>
                 }

@@ -68,23 +68,23 @@ section {
 // #endregion
 
 // #region Tech Card Animation on mobile
-.animateTechCard {
-  animation: animateTechCard ease-in-out 4s infinite;
-}
+// .animateTechCard {
+//   animation: animateTechCard ease-in-out 4s infinite;
+// }
 
-@keyframes animateTechCard {
-  0% {
-    transform: scale(1);
-  }
+// @keyframes animateTechCard {
+//   0% {
+//     transform: scale(1);
+//   }
 
-  50% {
-    transform: scale(1.2);
-  }
+//   50% {
+//     transform: scale(1.2);
+//   }
 
-  100% {
-    transform: scale(1);
-  }
-}
+//   100% {
+//     transform: scale(1);
+//   }
+// }
 // #endregion
 
 // #region cogwheel mortarboard animation
