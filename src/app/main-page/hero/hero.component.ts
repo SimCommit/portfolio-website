@@ -4,10 +4,11 @@ import { SectionLayoutService } from "../services/section-layout.service";
 import { Subscription } from "rxjs";
 import { MainPageScrollService } from "../services/main-page-scroll.service";
 import { CustomCursorPositioningService } from "../../shared/services/custom-cursor-positioning.service";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-hero",
-  imports: [TranslateModule],
+  imports: [TranslateModule, CommonModule],
   templateUrl: "./hero.component.html",
   styleUrl: "./hero.component.scss",
 })
@@ -36,7 +37,7 @@ export class HeroComponent {
   constructor(
     public mainPageScrollService: MainPageScrollService,
     private sectionLayoutService: SectionLayoutService,
-    private customCursorPositioningService: CustomCursorPositioningService
+    public customCursorPositioningService: CustomCursorPositioningService
   ) {}
 
   // #region Lifecycle
@@ -62,24 +63,24 @@ export class HeroComponent {
   }
 
   onLeaveCogwheel(): void {
-    // const cogwheelEl = this.heroCogwheelRef.nativeElement;
-    // const arrowEl = this.heroArrowRef.nativeElement;
     const factor: number = 0.11;
     this.slowDown(factor);
     this.hideMouseCogwheel();
   }
 
-  showMouseCogwheel() {
+  // set cursorScroll signal to true to show custom cursor svg and hide default cursor
+  showMouseCogwheel(): void {
     document.body.style.cursor = "none";
-    this.customCursorPositioningService.setCursorState("scroll");
+    this.customCursorPositioningService.cursorScroll.set(true);
   }
 
-  hideMouseCogwheel() {
+  // set cursorScroll signal to false to hide custom cursor svg and show default cursor
+  hideMouseCogwheel(): void {
     document.body.style.cursor = "default";
-    this.customCursorPositioningService.setCursorState("default");
+    this.customCursorPositioningService.cursorScroll.set(false);
   }
 
-  speedUp(factor: number) {
+  speedUp(factor: number): void {
     for (let i = 1; i <= 100 * factor; i++) {
       setTimeout(() => {
         if (this.rotateAnimation.playbackRate > 2) return;
@@ -88,7 +89,7 @@ export class HeroComponent {
     }
   }
 
-  slowDown(factor: number) {
+  slowDown(factor: number): void {
     for (let i = 1; i <= 100 * factor; i++) {
       setTimeout(() => {
         if (this.rotateAnimation.playbackRate < 1) return;
@@ -97,7 +98,7 @@ export class HeroComponent {
     }
   }
 
-  initCogwheelRotation() {
+  initCogwheelRotation(): void {
     const cogwheelEl = this.heroCogwheelRef.nativeElement;
 
     this.rotateAnimation = cogwheelEl.animate([{ transform: "rotate(0deg)" }, { transform: "rotate(360deg)" }], {
@@ -135,7 +136,7 @@ export class HeroComponent {
     }
   };
 
-  private initSectionOffsetObserver() {
+  private initSectionOffsetObserver(): void {
     const sectionEl = this.heroSectionRef.nativeElement;
 
     this.offsetObserver = new ResizeObserver((entries: ResizeObserverEntry[]) => {
@@ -154,7 +155,7 @@ export class HeroComponent {
     }
   };
 
-  private updateSectionOffsetFromResize(entry: ResizeObserverEntry, textEl: HTMLElement, cogwheelEl: HTMLElement) {
+  private updateSectionOffsetFromResize(entry: ResizeObserverEntry, textEl: HTMLElement, cogwheelEl: HTMLElement): void {
     const windowWidth = window.innerWidth;
     const sectionHeight = entry.contentRect.height;
     const multiplierText = sectionHeight / 400;
@@ -169,7 +170,7 @@ export class HeroComponent {
     }
   }
 
-  private initSectionHeightObserver() {
+  private initSectionHeightObserver(): void {
     this.subscription = this.sectionLayoutService.sectionHeight$.subscribe((height) => {
       this.heroSectionRef.nativeElement.style.height = height;
     });

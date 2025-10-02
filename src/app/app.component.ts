@@ -12,13 +12,7 @@ import { CustomCursorPositioningService } from "./shared/services/custom-cursor-
 
 @Component({
   selector: "app-root",
-  imports: [
-    RouterOutlet,
-    MenuOverlayComponent,
-    CommonModule,
-    TranslateModule,
-    EmailFeedbackOverlayComponent,
-  ],
+  imports: [RouterOutlet, MenuOverlayComponent, CommonModule, TranslateModule, EmailFeedbackOverlayComponent],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })
@@ -36,7 +30,7 @@ export class AppComponent {
     private router: Router,
     public pageStateService: PageStateService,
     private mainPageScrollService: MainPageScrollService,
-    private customCursorPositioningService: CustomCursorPositioningService
+    public customCursorPositioningService: CustomCursorPositioningService
   ) {
     this.translate.addLangs(["de", "en"]);
     this.translate.setDefaultLang("en");
@@ -61,27 +55,24 @@ export class AppComponent {
   }
 
   ngAfterViewInit(): void {
-    this.customCursorExecuter(this.customCursorPositioningService.cursorState);
+    // this.customCursorExecuter();
     this.customCursorRAFMovement();
   }
 
   customCursorRAFMovement() {
-    this.customCursorRef.nativeElement.style.transform =
-      "translate3d(" +
-      this.customCursorPositioningService.mouseX +
-      "px, " +
-      this.customCursorPositioningService.mouseY +
-      "px, 0)";
+    this.customCursorRef.nativeElement.style.top = this.customCursorPositioningService.mouseY + "px";
+    this.customCursorRef.nativeElement.style.left = this.customCursorPositioningService.mouseX + "px";
+
     requestAnimationFrame(() => this.customCursorRAFMovement());
   }
 
-  customCursorExecuter(state: "default" | "scroll") {
-    if ((state = "scroll")) {
-      this.customCursorRef.nativeElement.classList.add("cursor-scroll");
-    } else {
-      this.customCursorRef.nativeElement.classList.remove("cursor-scroll");
-    }
-  }
+  // customCursorExecuter(state: "default" | "scroll") {
+  //   if ((state = "scroll")) {
+  //     this.customCursorRef.nativeElement.classList.add("cursor-scroll");
+  //   } else {
+  //     this.customCursorRef.nativeElement.classList.remove("cursor-scroll");
+  //   }
+  // }
 
   useLanguage(language: string): void {
     this.translate.use(language);
