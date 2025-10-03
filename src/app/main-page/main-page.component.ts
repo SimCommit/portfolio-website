@@ -34,6 +34,8 @@ export class MainPageComponent {
   isSpaceOnCooldown: boolean = false;
   isMobile: boolean = false;
 
+  yOnTouchStart: number = 0;
+
   constructor(
     private mainPageScrollService: MainPageScrollService,
     public breakpointObserverService: BreakpointObserverService,
@@ -44,6 +46,9 @@ export class MainPageComponent {
   ngOnInit(): void {
     window.addEventListener("wheel", this.onWheel, { passive: false });
     window.addEventListener("keydown", this.onKeyDown, { passive: false });
+    window.addEventListener("touchstart", this.onTouchStart);
+    window.addEventListener("touchend", this.onTouchEnd);
+
     window.scrollTo({ top: 0, behavior: "auto" });
     this.initBreakpoint();
   }
@@ -51,6 +56,8 @@ export class MainPageComponent {
   ngOnDestroy(): void {
     window.removeEventListener("wheel", this.onWheel);
     window.removeEventListener("keydown", this.onKeyDown);
+    window.removeEventListener("touchstart", this.onTouchStart);
+    window.removeEventListener("touchend", this.onTouchEnd);
   }
 
   ngAfterViewInit(): void {
@@ -90,6 +97,30 @@ export class MainPageComponent {
       event.preventDefault();
     }
   };
+
+  private onTouchStart = (event: TouchEvent): void => {
+    if (this.mainPageScrollService.isScrolling || this.isMobile) return;
+    event.stopImmediatePropagation();
+
+    this.yOnTouchStart = event.touches[0].clientY;
+  };
+
+  private onTouchEnd = (event: TouchEvent): void => {
+    if (this.mainPageScrollService.isScrolling || this.isMobile) return;
+    event.stopImmediatePropagation();
+
+    const yOnTouchEnd = event.changedTouches[0].clientY;
+    const swipeThreshold = window.innerHeight * 0.02;
+
+    if (this.yOnTouchStart > yOnTouchEnd && Math.abs(this.yOnTouchStart - yOnTouchEnd) > swipeThreshold) {
+      this.mainPageScrollService.nextSection();
+    }
+
+    if (this.yOnTouchStart < yOnTouchEnd && Math.abs(this.yOnTouchStart - yOnTouchEnd) > swipeThreshold) {
+      this.mainPageScrollService.previousSection();
+    }
+  };
+
   // #endregion
 
   // #region Helpers
