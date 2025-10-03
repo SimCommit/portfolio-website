@@ -82,6 +82,7 @@ section {
     animation: slide-up-and-down 1.5s ease-in-out infinite;
     &:hover {
       animation-play-state: paused;
+      cursor: grabbing;
     }
   }
 }
