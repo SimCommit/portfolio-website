@@ -43,7 +43,7 @@ export class ProjectComponent {
       if (video.paused && this.cogwheelIsHovered) {
         video.play();
       }
-    }, 5000);
+    }, 500);
   }
 
   previousProjcet(): void {

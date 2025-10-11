@@ -23,7 +23,7 @@ export class ShowcaseDataService {
     { imgUrl: "./assets/img/skills/java.svg", name: "Java" },
     { imgUrl: "./assets/img/skills/react.svg", name: "React" },
     // { imgUrl: "./assets/img/skills/vue.js.svg", name: "Vue.js" },
-    // { imgUrl: "./assets/img/skills/material-design.svg", name: "Material Design" }, 
+    // { imgUrl: "./assets/img/skills/material-design.svg", name: "Material Design" },
   ];
 
   colleagueQuotes: Testimonial[] = [
@@ -50,7 +50,7 @@ export class ShowcaseDataService {
       quote: "main-page.references.colleague-quote.quote-2",
       role: "main-page.references.colleague-quote.role-2",
       profileUrl: "https://github.com/MirkanPolat",
-    }    
+    },
   ];
 
   // reduce video size of join-preview and add video URLs to all projects!
@@ -60,7 +60,7 @@ export class ShowcaseDataService {
       backgroundColor: "#F9AF42",
       learningBgColor: "#679AAC",
       // videoUrl: "./assets/img/portfolio/project/join-preview-board-3.png",
-      videoUrl: "./assets/img/portfolio/project/join-preview-video-3.mp4",
+      videoUrl: "./assets/img/portfolio/project/join-preview-video-5.mp4",
       cogwheelUrl: "./assets/img/portfolio/project/cogwheel-180.svg",
       learning: "main-page.portfolio.project.learning-join",
       emojiUrl: "./assets/img/icons/project/emoji-checkmark.svg",
@@ -73,7 +73,8 @@ export class ShowcaseDataService {
       name: "El Pollo Loco",
       backgroundColor: "#679AAC",
       learningBgColor: "#FF834F",
-      videoUrl: "./assets/img/portfolio/project/el-pollo-loco.png",
+      // videoUrl: "./assets/img/portfolio/project/el-pollo-loco.png",
+      videoUrl: "./assets/img/portfolio/project/el-pollo-loco-preview-video-1.mp4",
       cogwheelUrl: "./assets/img/portfolio/project/cogwheel-180.svg",
       learning: "main-page.portfolio.project.learning-el-pollo-loco",
       emojiUrl: "./assets/img/icons/project/emoji-chick.svg",
@@ -86,7 +87,8 @@ export class ShowcaseDataService {
       name: "Pokédex",
       backgroundColor: "#FF834F",
       learningBgColor: "#679AAC",
-      videoUrl: "./assets/img/portfolio/project/pokedex-preview-2.png",
+      // videoUrl: "./assets/img/portfolio/project/pokedex-preview-2.png",
+      videoUrl: "./assets/img/portfolio/project/pokedex-preview-video-5.mp4",
       cogwheelUrl: "./assets/img/portfolio/project/cogwheel-180-yellow.svg",
       learning: "main-page.portfolio.project.learning-pokedex",
       emojiUrl: "./assets/img/icons/project/pokeball.svg",
