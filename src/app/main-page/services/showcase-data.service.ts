@@ -53,13 +53,12 @@ export class ShowcaseDataService {
     },
   ];
 
-  // reduce video size of join-preview and add video URLs to all projects!
   myProjects: Project[] = [
     {
       name: "Join",
       backgroundColor: "#F9AF42",
       learningBgColor: "#679AAC",
-      // videoUrl: "./assets/img/portfolio/project/join-preview-board-3.png",
+      posterUrl: "./assets/img/portfolio/project/join-poster-1.png",
       videoUrl: "./assets/img/portfolio/project/join-preview-video-5.mp4",
       cogwheelUrl: "./assets/img/portfolio/project/cogwheel-180.svg",
       learning: "main-page.portfolio.project.learning-join",
@@ -73,7 +72,7 @@ export class ShowcaseDataService {
       name: "El Pollo Loco",
       backgroundColor: "#679AAC",
       learningBgColor: "#FF834F",
-      // videoUrl: "./assets/img/portfolio/project/el-pollo-loco.png",
+      posterUrl: "./assets/img/portfolio/project/el-pollo-loco-poster-1.png",
       videoUrl: "./assets/img/portfolio/project/el-pollo-loco-preview-video-1.mp4",
       cogwheelUrl: "./assets/img/portfolio/project/cogwheel-180.svg",
       learning: "main-page.portfolio.project.learning-el-pollo-loco",
@@ -87,7 +86,7 @@ export class ShowcaseDataService {
       name: "Pokédex",
       backgroundColor: "#FF834F",
       learningBgColor: "#679AAC",
-      // videoUrl: "./assets/img/portfolio/project/pokedex-preview-2.png",
+      posterUrl: "./assets/img/portfolio/project/pokedex-poster-1.png",
       videoUrl: "./assets/img/portfolio/project/pokedex-preview-video-5.mp4",
       cogwheelUrl: "./assets/img/portfolio/project/cogwheel-180-yellow.svg",
       learning: "main-page.portfolio.project.learning-pokedex",
@@ -120,6 +119,7 @@ interface Project {
   name: string;
   backgroundColor: string;
   learningBgColor: string;
+  posterUrl: string;
   videoUrl: string;
   cogwheelUrl: string;
   learning: string;

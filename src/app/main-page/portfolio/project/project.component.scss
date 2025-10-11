@@ -23,6 +23,7 @@
     z-index: 2;
     animation-play-state: paused;
     border-radius: 4px;
+    object-fit: cover;
   }
 
   @media (max-height: 850px) and (min-width: 801px) {
@@ -45,6 +46,10 @@
   &:hover {
     animation-play-state: paused;
     cursor: grabbing;
+  }
+
+  &:hover #p-video {
+    border: 1px solid $main-black;
   }
 }
 
