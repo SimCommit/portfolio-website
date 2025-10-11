@@ -1,7 +1,8 @@
 <div id="project-showcase">
     <div id="p-preview" [style.background-color]="showcaseData.myProjects[showcaseData.currentProject].backgroundColor">
-        <img id="p-pic" src="{{showcaseData.myProjects[showcaseData.currentProject].picUrl}}" alt="Project-$ pic">
+        <video id="p-video" #previewVideo></video>
         <img id="cogwheel-bg" src="{{showcaseData.myProjects[showcaseData.currentProject].cogwheelUrl}}"
+        (mouseenter)="playVideo(); cogwheelIsHovered = true" (mouseleave)="pauseVideo(); cogwheelIsHovered = false"
             alt="cogwheel animation">
     </div>
 
@@ -32,8 +33,8 @@
         </div>
 
         <div id="p-switch">
-            <button (click)="previousProjcet()">{{"main-page.portfolio.project.button-previous" | translate}}</button>
-            <button (click)="nextProjcet()">{{"main-page.portfolio.project.button-next" | translate}}</button>
+            <button (click)="previousProjcet(); loadVideo()">{{"main-page.portfolio.project.button-previous" | translate}}</button>
+            <button (click)="nextProjcet(); loadVideo()">{{"main-page.portfolio.project.button-next" | translate}}</button>
         </div>
     </div>
 
