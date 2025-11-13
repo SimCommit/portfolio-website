@@ -4,7 +4,7 @@
     "hero.contact-button": "Meine Projekte",
     "about-me": {
       "headline": "Über mich",
-      "card-part-1": "Mich begeistert, in der Softwareentwicklung meine Kreativität mit meiner Vorliebe für Struktur und Logik zu verbinden. So arbeite ich mit einer Kombination aus Analyse und Intuition, um stimmige interaktive Designs umzusetzen.",
+      "card-part-1": "Mich begeistert, in der Softwareentwicklung meine Kreativität mit meiner Vorliebe für Struktur und Logik zu verbinden. Beim Coden fühle ich mich wie früher beim Bauen mit Lego ohne Anleitung, nur nach einem Bild auf der Rückseite der Verpackung.",
       "card-part-2": "Ich arbeite gerne in kleinen, agilen Teams und schätze die Zusammenarbeit über längere Projekte hinweg.",
       "contact-button": "Zum Kontakt",
       "about-me-overlay": {
@@ -19,8 +19,8 @@
       "headline": "Kernkompetenzen",
       "description": "Mit TypeScript und Angular realisiere ich dynamische Single-Page-Anwendungen. Auch ohne Frameworks entwickle ich in Vanilla JavaScript responsive und interaktive Software. Ich setze dabei ansprechende Designs mit modernem HTML und CSS um.",
       "growth-mindset": {
-        "title": "Weiterentwicklung ist essentiell",
-        "text": "Für meine Projekte lerne ich immer gerne neue Technologien. Besonders interessiere ich mich für:"
+        "title": "Im Fokus",
+        "text": "Momentan erweitere ich meinen Stack um:"
       }
     },
     "portfolio": {

@@ -4,7 +4,7 @@
     "hero.contact-button": "My Projects",
     "about-me": {
       "headline": "About Me",
-      "card-part-1": "For me, software development is the perfect way to combine my creativity with my passion for structure and logic. I work with a mix of analysis and intuition to craft smooth interactive designs.",
+      "card-part-1": "For me, software development is the perfect way to combine my creativity with my passion for structure and logic. When I code, it feels like building with Lego as a kid without instructions, guided only by a picture on the back of the box.",
       "card-part-2": "I enjoy working in small, agile teams and value long-term collaboration.",
       "contact-button": "Contact Me",
       "about-me-overlay": {
@@ -19,8 +19,8 @@
       "headline": "Core Competencies",
       "description": "I build dynamic single-page applications with TypeScript and Angular. I also develop responsive and interactive software without frameworks, using vanilla JavaScript. For that, I create appealing designs with modern HTML and CSS.",
       "growth-mindset": {
-        "title": "Growth is essential",
-        "text": "For my projects, I always enjoy learning new technologies. Right now, I’m especially curious about:"
+        "title": "In Focus",
+        "text": "I’m currently expanding my stack with:"
       }
     },
     "portfolio": {
