@@ -31,33 +31,21 @@ import { MainPageScrollService } from "./services/main-page-scroll.service";
 export class MainPageComponent {
   @ViewChildren("section", { read: ElementRef }) private sectionRefs!: QueryList<ElementRef>;
   readonly sectionIds: string[] = ["hero", "about-me", "skills", "portfolio", "references", "contact"];
-  isSpaceOnCooldown: boolean = false;
   isMobile: boolean = false;
+  yOnTouchStart: number = 0;
 
   SCROLL_DOWN_THRESHOLD_SINGLE: number = 80;
   SCROLL_UP_THRESHOLD_SINGLE: number = -80;
-
   SCROLL_DOWN_THRESHOLD_SUM: number = 80;
   SCROLL_UP_THRESHOLD_SUM: number = -80;
 
-  latestWheelEvent: number = 0;
-  latestWheelScroll: number = 0;
-  currentDeltaYSum: number = 0;
-  wheelEventCount: number = 0;
-
   eventsOfLast120Ms: { deltaY: number; time: number }[] = [];
-
-  timeSlotClosed: boolean = false;
-
-  yOnTouchStart: number = 0;
-
-  // MEHR STRUKTUR
-  newEventTime: number = 1000;
-  previousEventTime: number = 0;
+  eventsOfLast2000Ms: { deltaY: number; time: number }[] = [];
   onCooldown: boolean = false;
-  timeSlotStart: number = 0;
+  newWheelEventStartTime: number = 0;
 
-  WINDOW_MS: number = 120;
+  SMALL_WINDOW_MS: number = 120;
+  LARGE_WINDOW_MS: number = 2000;
   COOLDOWN_MS: number = 300;
 
   constructor(
@@ -68,8 +56,8 @@ export class MainPageComponent {
 
   // #region Lifecycle
   ngOnInit(): void {
-    window.addEventListener("wheel", this.onWheelLogDeltaY, { passive: false });
-    window.addEventListener("wheel", this.onWheelBETTER, { passive: false });
+    // window.addEventListener("wheel", this.onWheelLogDeltaY, { passive: false });
+    window.addEventListener("wheel", this.onWheel, { passive: false });
     window.addEventListener("keydown", this.onKeyDown, { passive: false });
     window.addEventListener("touchstart", this.onTouchStart);
     window.addEventListener("touchend", this.onTouchEnd);
@@ -79,8 +67,8 @@ export class MainPageComponent {
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener("wheel", this.onWheelLogDeltaY);
-    window.removeEventListener("wheel", this.onWheelBETTER);
+    // window.removeEventListener("wheel", this.onWheelLogDeltaY);
+    window.removeEventListener("wheel", this.onWheel);
     window.removeEventListener("keydown", this.onKeyDown);
     window.removeEventListener("touchstart", this.onTouchStart);
     window.removeEventListener("touchend", this.onTouchEnd);
@@ -96,99 +84,98 @@ export class MainPageComponent {
   // #endregion
 
   // #region Event Handlers
-  // private onWheelBETTER = (event: WheelEvent): void => {
-  //   this.newEventTime = performance.now();
-
-  //   if (this.mainPageScrollService.isScrolling || this.isMobile) return;
-
-  //   event.stopImmediatePropagation();
-
-  //   if (this.previousEventTime + 250 < this.newEventTime) {
-  //     this.eventsOfLast120Ms = [];
-  //     // this.timeSlotStart = performance.now();
-  //     this.onCooldown = false;
-  //     // vollständig frische Geste erkennen?
-  //   }
-
-  //   let sum: number = 0;
-
-  //   if (this.onCooldown) return;
-
-  //   this.previousEventTime = this.newEventTime;
-
-  //   this.eventsOfLast120Ms.push({ deltaY: event.deltaY, time: performance.now() });
-
-  //   this.eventsOfLast120Ms = this.eventsOfLast120Ms.filter((e) => {
-  //     return e.time + 120 > performance.now();
-  //   });
-
-  //   this.eventsOfLast120Ms.forEach((e) => {
-  //     sum = sum + e.deltaY;
-  //   });
-
-  //   if (event.deltaY > this.SCROLL_DOWN_THRESHOLD_SINGLE || sum > this.SCROLL_DOWN_THRESHOLD_SUM) {
-  //     this.mainPageScrollService.nextSection();
-  //     this.onCooldown = true;
-  //     setTimeout(() => {
-  //       this.onCooldown = false;
-  //     }, 300);
-  //     // Zeitfenster beenden
-  //   }
-
-  //   if (event.deltaY < this.SCROLL_UP_THRESHOLD_SINGLE || sum < this.SCROLL_UP_THRESHOLD_SUM) {
-  //     this.mainPageScrollService.previousSection();
-  //     this.onCooldown = true;
-  //     setTimeout(() => {
-  //       this.onCooldown = false;
-  //     }, 300);
-  //   }
-
-  //   event.preventDefault();
-  // };
-
-  private onWheelBETTER = (event: WheelEvent): void => {
+  private onWheel = (event: WheelEvent): void => {
+    this.newWheelEventStartTime = performance.now();
+    this.eventsOfLast2000Ms.push({ deltaY: event.deltaY, time: this.newWheelEventStartTime });
     if (this.mainPageScrollService.isScrolling || this.isMobile) return;
-    
-        event.stopImmediatePropagation();
 
+    event.stopImmediatePropagation();
+
+    // STOP when on scroll cooldown
     if (this.onCooldown) {
-      // Wir wollen jeglichen Nachlauf blocken
       event.preventDefault();
       return;
     }
 
-    const now: number = performance.now();
+    // push Event into arrays
+    this.eventsOfLast120Ms.push({ deltaY: event.deltaY, time: this.newWheelEventStartTime });
 
-    this.eventsOfLast120Ms.push({ deltaY: event.deltaY, time: now });
-
+    // remove old events from arrays
     this.eventsOfLast120Ms = this.eventsOfLast120Ms.filter((e) => {
-      return e.time + this.WINDOW_MS > now;
+      return e.time + this.SMALL_WINDOW_MS > this.newWheelEventStartTime;
+    });
+    this.eventsOfLast2000Ms = this.eventsOfLast2000Ms.filter((e) => {
+      return e.time + this.LARGE_WINDOW_MS > this.newWheelEventStartTime;
     });
 
+    // calculate deltaY sum of events younger than 120ms
     let sum: number = 0;
-    for (const e of this.eventsOfLast120Ms) {
+    let sumDifferenceDown: number = Infinity;
+    let sumDifferenceUp: number = -Infinity;
+
+    sum = this.getDeltaYSumOfArray(this.eventsOfLast120Ms);
+
+    // Compare new Events with older
+    if (this.eventsOfLast2000Ms.length > 10) {
+      let arrayOf5NewestEvents = this.eventsOfLast2000Ms.slice(-5);
+      let arrayOf5OlderEvents = this.eventsOfLast2000Ms.slice(-10, -5);
+
+      let sumNew = this.getDeltaYSumOfArray(arrayOf5NewestEvents);
+      let sumOld = this.getDeltaYSumOfArray(arrayOf5OlderEvents);
+
+      sumDifferenceDown = sumNew - sumOld;
+      sumDifferenceUp = sumOld - sumNew;
+    }
+
+    // Scroll conditions
+    const triggerDown: boolean =
+      event.deltaY > this.SCROLL_DOWN_THRESHOLD_SINGLE ||
+      (sum > this.SCROLL_DOWN_THRESHOLD_SUM && sumDifferenceDown > 15);
+    const triggerUp: boolean =
+      event.deltaY < this.SCROLL_UP_THRESHOLD_SINGLE || (sum < this.SCROLL_UP_THRESHOLD_SUM && sumDifferenceUp > 15);
+
+    // console.log("sum =", sum, "sumDiffDown =", sumDifferenceDown, "sumDiffUp =", sumDifferenceUp);
+
+    // Scroll functions
+    if (triggerDown) {
+      // this.logTrigger(
+      //   event.deltaY > this.SCROLL_DOWN_THRESHOLD_SINGLE,
+      //   sum > this.SCROLL_DOWN_THRESHOLD_SUM && sumDifferenceDown > 15
+      // );
+      this.triggerScrollDown();
+      this.startCooldown();
+      event.preventDefault();
+      return;
+    }
+    if (triggerUp) {
+      // this.logTrigger(
+      //   event.deltaY < this.SCROLL_UP_THRESHOLD_SINGLE,
+      //   sum < this.SCROLL_UP_THRESHOLD_SUM && sumDifferenceUp > 15
+      // );
+      this.triggerScrollUp();
+      this.startCooldown();
+      event.preventDefault();
+      return;
+    }
+
+    // event.preventDefault(); ?
+  };
+
+  getDeltaYSumOfArray(array: { deltaY: number; time: number }[]): number {
+    let sum: number = 0;
+    for (const e of array) {
       sum += e.deltaY;
     }
+    return sum;
+  }
 
-    const triggerDown: boolean =
-      event.deltaY > this.SCROLL_DOWN_THRESHOLD_SINGLE || sum > this.SCROLL_DOWN_THRESHOLD_SUM;
-
-    const triggerUp: boolean = event.deltaY < this.SCROLL_UP_THRESHOLD_SINGLE || sum < this.SCROLL_UP_THRESHOLD_SUM;
-
-    if (triggerDown) {
-      this.triggerScrollDown();
-      event.preventDefault();
-      return;
+  logTrigger(condition1: boolean, condition2: boolean) {
+    if (condition1) {
+      console.log("trigger: SINGLE");
+    } else if (condition2) {
+      console.log("trigger: SUM");
     }
-
-    if (triggerUp) {
-      this.triggerScrollUp();
-      event.preventDefault();
-      return;
-    }
-
-    event.preventDefault();
-  };
+  }
 
   private triggerScrollDown(): void {
     this.mainPageScrollService.nextSection();
@@ -209,18 +196,10 @@ export class MainPageComponent {
     }, this.COOLDOWN_MS);
   }
 
-  // shouldScrollDown(deltaY: number) {
-  //   return this.currentDeltaYSum > this.SCROLL_DOWN_THRESHOLD_SUM || deltaY > this.SCROLL_DOWN_THRESHOLD_SINGLE;
-  // }
-
-  // shouldScrollUp(deltaY: number) {
-  //   return this.currentDeltaYSum < this.SCROLL_UP_THRESHOLD_SUM || deltaY < this.SCROLL_UP_THRESHOLD_SINGLE;
-  // }
-
   // nur für debugging
-  private onWheelLogDeltaY = (event: WheelEvent): void => {
-    console.log("deltaY: ", event.deltaY); //lösch mich
-  };
+  // private onWheelLogDeltaY = (event: WheelEvent): void => {
+  //   console.log("deltaY: ", event.deltaY);
+  // };
 
   private onKeyDown = (event: KeyboardEvent): void => {
     if (this.mainPageScrollService.isScrolling || this.isMobile) return;
@@ -260,7 +239,6 @@ export class MainPageComponent {
       this.mainPageScrollService.previousSection();
     }
   };
-
   // #endregion
 
   // #region Helpers
