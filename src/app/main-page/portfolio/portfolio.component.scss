@@ -64,5 +64,9 @@ section {
     flex-direction: column;
     gap: clamp(2rem, 4.167vw + 0.667rem, 4rem);
   }
+
+  .portfolio-wrapper {
+    gap: 24px;
+  }
 }
 // #endregion
