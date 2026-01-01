@@ -27,6 +27,11 @@
     border: 1px solid transparent;
   }
 
+  img {
+    border-radius: 50%;
+    pointer-events: visible;
+  }
+
   @media (max-height: 850px) and (min-width: 801px) {
     width: auto;
     height: min(45vh, 39vw);
