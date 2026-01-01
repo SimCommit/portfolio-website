@@ -22,6 +22,14 @@ export class ProjectComponent {
     this.loadVideo();
   }
 
+  setButtonText(direction: "next" | "previous") {
+    if (window.innerWidth > 920) {
+      return `main-page.portfolio.project.button-${direction}`
+    } else {
+      return `main-page.portfolio.project.button-${direction}-mobile`
+    }
+  }
+
   loadVideo(): void {
     let video = this.previewVideo.nativeElement;
     video.muted = true;

@@ -188,6 +188,12 @@
       color: $main-coral;
     }
   }
+
+  span {
+    font-size: clamp(1.6rem, 3.333vw + 0.533rem, 1.8rem);
+    font-weight: 700;
+    color: $main-black;
+  }
 }
 
 // #region Media Queries
