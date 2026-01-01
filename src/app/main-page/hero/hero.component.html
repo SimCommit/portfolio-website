@@ -12,7 +12,7 @@
         </div>
 
         <div class="cogwheel-container" #heroCogwheelContainer>
-            <img id="cogwheel-scroll-down" #heroCogwheel (mouseenter)="onEnterCogwheel()" (mouseleave)="onLeaveCogwheel()" src="./assets/img/hero/cogwheel-scroll-down-148-bg-blue.svg" alt="">
+            <img (click)="this.mainPageScrollService.scrollToSection(1)" id="cogwheel-scroll-down" #heroCogwheel (mouseenter)="onEnterCogwheel()" (mouseleave)="onLeaveCogwheel()" src="./assets/img/hero/cogwheel-scroll-down-148-bg-blue.svg" alt="">
             <img class="arrow-down" #heroArrow src="./assets/img/hero/arrow-down.svg" alt="">
         </div>
 
