@@ -18,11 +18,12 @@ export class ShowcaseDataService {
   ];
 
   techsOnMyRadar: Tech[] = [
+    { imgUrl: "./assets/img/skills/python.svg", name: "Python" },
+    { imgUrl: "./assets/img/skills/a11y.svg", name: "A11y" },
     // { imgUrl: "./assets/img/skills/java-with-black-bg.svg", name: "Java" },
     // { imgUrl: "./assets/img/skills/react-with-black-bg.svg", name: "React" },
     // { imgUrl: "./assets/img/skills/java.svg", name: "Java" },
-    { imgUrl: "./assets/img/skills/a11y.svg", name: "A11y" },
-    { imgUrl: "./assets/img/skills/react.svg", name: "React" },
+    // { imgUrl: "./assets/img/skills/react.svg", name: "React" },
     // { imgUrl: "./assets/img/skills/vue.js.svg", name: "Vue.js" },
     // { imgUrl: "./assets/img/skills/material-design.svg", name: "Material Design" },
   ];

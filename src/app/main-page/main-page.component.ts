@@ -157,8 +157,6 @@ export class MainPageComponent {
       event.preventDefault();
       return;
     }
-
-    // event.preventDefault(); ?
   };
 
   getDeltaYSumOfArray(array: { deltaY: number; time: number }[]): number {
@@ -196,7 +194,7 @@ export class MainPageComponent {
     }, this.COOLDOWN_MS);
   }
 
-  // nur für debugging
+  // For debugging
   // private onWheelLogDeltaY = (event: WheelEvent): void => {
   //   console.log("deltaY: ", event.deltaY);
   // };
@@ -233,10 +231,12 @@ export class MainPageComponent {
 
     if (this.yOnTouchStart > yOnTouchEnd && Math.abs(this.yOnTouchStart - yOnTouchEnd) > swipeThreshold) {
       this.mainPageScrollService.nextSection();
+      // console.log(this.yOnTouchStart - yOnTouchEnd);
     }
 
     if (this.yOnTouchStart < yOnTouchEnd && Math.abs(this.yOnTouchStart - yOnTouchEnd) > swipeThreshold) {
       this.mainPageScrollService.previousSection();
+      // console.log(this.yOnTouchStart - yOnTouchEnd);
     }
   };
   // #endregion
