@@ -14,7 +14,7 @@
                         <span>{{"main-page.contact.form.name-title" | translate}}</span>
                         <input [(ngModel)]="contactData.name" (focus)="nameIsFocused = true" (blur)="nameIsFocused = false"
                             [ngClass]="{'warning-border': !name.valid && name.touched && !nameIsFocused }" id="name" name="name"
-                            type="text" placeholder="{{ 
+                            autocomplete="on" type="text" placeholder="{{ 
                             ( !name.valid && name.touched && !nameIsFocused )
                             ? ('main-page.contact.form.name-placeholder-warning' | translate)
                             : ('main-page.contact.form.name-placeholder' | translate) 
@@ -29,7 +29,7 @@
                         <span>{{'main-page.contact.form.email-title' | translate}}</span>
                         <input [(ngModel)]="contactData.email" (focus)="emailIsFocused = true" (blur)="emailIsFocused = false"
                             [ngClass]="{'warning-border': !email.valid && email.touched && !emailIsFocused }" id="email" name="email"
-                            type="email" placeholder="{{ 
+                            autocomplete="on" type="email" placeholder="{{ 
                             (!email.valid && email.touched && !emailIsFocused ) 
                             ? ('main-page.contact.form.email-placeholder-warning' | translate) 
                             : ('main-page.contact.form.email-placeholder' | translate)
