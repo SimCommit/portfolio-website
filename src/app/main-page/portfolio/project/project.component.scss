@@ -19,7 +19,7 @@
   #p-video {
     width: 90%;
     align-self: center;
-    justify-self: center;
+    // justify-self: center;
     z-index: 2;
     animation-play-state: paused;
     border-radius: 4px;
@@ -27,9 +27,34 @@
     border: 1px solid transparent;
   }
 
-  img {
-    border-radius: 50%;
-    pointer-events: visible;
+  > div {
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    @include dFlex();
+
+    img {
+      border-radius: 50%;
+      pointer-events: visible;
+
+      &:hover + .icon {
+        background-image: url("../../../../../public/assets/img/icons/project/pause_btn_white_no_bg.svg");
+      }
+    }
+
+    .icon {
+      position: absolute;
+      z-index: 1;
+      border-radius: unset;
+      width: 20%;
+      height: 20%;
+      // height: 24px;
+      background-image: url("../../../../../public/assets/img/icons/project/play_btn_white_no_bg.svg");
+      background-position: center;
+      background-size: cover;
+      pointer-events: none;
+    }
   }
 
   @media (max-height: 850px) and (min-width: 801px) {
@@ -41,9 +66,9 @@
 
 // #region cogwheel-bg animation
 #cogwheel-bg {
-  position: absolute;
-  bottom: 0;
-  width: 30%;
+  border-radius: 50%;
+  pointer-events: visible;
+  width: 100%;
   z-index: 1;
   animation: animateCogwheel linear 10s infinite;
   transform-origin: center;

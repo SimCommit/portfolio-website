@@ -2,9 +2,13 @@
     <div id="p-preview" [style.background-color]="showcaseData.myProjects[showcaseData.currentProject].backgroundColor">
         <video id="p-video" poster="{{showcaseData.myProjects[showcaseData.currentProject].posterUrl}}"
             #previewVideo></video>
-        <img id="cogwheel-bg" src="{{showcaseData.myProjects[showcaseData.currentProject].cogwheelUrl}}"
-            (mouseenter)="playVideo(); cogwheelIsHovered = true" (mouseleave)="pauseVideo(); cogwheelIsHovered = false"
-            alt="cogwheel animation">
+
+        <div>
+            <img id="cogwheel-bg" src="{{showcaseData.myProjects[showcaseData.currentProject].cogwheelUrl}}"
+                (mouseenter)="playVideo(); cogwheelIsHovered = true"
+                (mouseleave)="pauseVideo(); cogwheelIsHovered = false" alt="cogwheel animation">
+                <div class="icon"></div>
+        </div>
     </div>
 
     <div id="p-content">
