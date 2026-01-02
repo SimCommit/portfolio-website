@@ -6,10 +6,12 @@
     <p>{{"main-page.skills.growth-mindset.text" | translate}}</p>
     <div>
         @for (tech of showcaseData.techsOnMyRadar; track $index) {
-        <label for="">
+        <figure for="">
             <img src="{{tech.imgUrl}}" alt="">
-            {{tech.name}}
-        </label>
+            <figcaption>
+                {{tech.name}}
+            </figcaption>
+        </figure>
         }
     </div>
 </div>

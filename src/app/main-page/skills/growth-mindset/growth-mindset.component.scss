@@ -24,15 +24,18 @@
     margin-top: 16px;
     @include dFlex($ai: flex-start, $g: 24px);
 
-    label {
+    figure {
       text-align: center;
-      font-weight: 500;
-      // color: $main-ivory;
+
       @include dFlex($fd: column, $jc: flex-start, $g: 8px);
       width: 56px;
 
       img {
         width: 40px;
+      }
+
+      figcaption {
+      font-weight: 500;
       }
     }
   }

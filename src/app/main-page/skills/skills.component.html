@@ -21,10 +21,10 @@
 
             <div id="tech-card">
                 @for (tech of showcaseData.myTechs; track $index) {
-                <label>
+                <figure>
                     <img src="{{tech.imgUrl}}" alt="Placeholder Tech">
-                    <span>{{tech.name}}</span>
-                </label>
+                    <figcaption>{{tech.name}}</figcaption>
+                </figure>
                 }
             </div>
         </div>
