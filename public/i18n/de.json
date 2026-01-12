@@ -32,7 +32,7 @@
         "learning-pokedex": "Bei der Arbeit mit einer REST-API habe ich gelernt, mit asynchronen Funktionen auf tief verschachtelte Datenstrukturen zuzugreifen.",
         "description-join": "Ein vom Kanban-Prinzip inspiriertes Organisationstool. Per Drag & Drop lassen sich Aufgaben erstellen, verschieben, zuweisen und kategorisieren.",
         "description-el-pollo-loco": "Ein objektorientiert entwickeltes 2D-Jump’n’Run-Spiel, das per Canvas dargestellt wird. Besiege Gegner, sammle Flaschen und tritt im Endkampf gegen den Boss an.",
-        "description-pokedex": "Interaktiver Pokédex mit Daten der PokéAPI. Durchsuche Pokémon nach Typ, sieh dir Details an und entdecke animierte Werte und Sprites.",
+        "description-pokedex": "Interaktiver Pokédex mit Daten der PokéAPI. Suche Pokémon nach Namen, sieh dir Details an und entdecke animierte Werte und Sprites.",
         "button-previous": "<< Vorheriges Projekt",
         "button-previous-mobile": "<< Vorheriges",
         "button-next": "Nächstes Projekt >>",
