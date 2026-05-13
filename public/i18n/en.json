@@ -27,9 +27,11 @@
       "headline": "My Work",
       "text": "Here I collect my best projects – feel free to try them out!",
       "project": {
+        "learning-donation-page": "The key aspects of this project were state management across the steps of a nested submit form, implementing IBAN validation logic with BigInt, and integrating multiple payment methods.",
         "learning-join": "My most important experience in Join was implementing the Firebase integration for login and database functions. Using services, signals and observables, I made them available to the team across all components.",
         "learning-el-pollo-loco": "This is where I developed a deeper understanding of how to structure a project involving many objects. In particular, the interaction between classes across different levels became much clearer to me.",
         "learning-pokedex": "While working with a REST API, I learned how to use asynchronous functions to access deeply nested data structures.",
+        "description-donation-page": "Multi-step donation page for the non-profit organization unyt.org e.V. Donate via SEPA bank transfer, SEPA direct debit or PayPal.",
         "description-join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         "description-pokedex": "Interactive Pokédex using PokéAPI data. Search Pokémon by name, view details, and explore animated stats and sprites.",
         "description-el-pollo-loco": "2D jump-and-run game built with JavaScript and canvas. Battle enemies, collect bottles, and defeat the final boss with strategic timing.",

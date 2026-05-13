@@ -7,7 +7,9 @@
             <img id="cogwheel-bg" src="{{showcaseData.myProjects[showcaseData.currentProject].cogwheelUrl}}"
                 (mouseenter)="playVideo(); cogwheelIsHovered = true"
                 (mouseleave)="pauseVideo(); cogwheelIsHovered = false" alt="cogwheel animation">
-                <div class="icon"></div>
+            @if (showcaseData.myProjects[showcaseData.currentProject].videoUrl !== "") {
+            <div class="icon"></div>
+            }
         </div>
     </div>
 
@@ -30,8 +32,10 @@
             <p id="p-used-skills">{{showcaseData.myProjects[showcaseData.currentProject].usedSkills}}</p>
             <p id="p-description">{{showcaseData.myProjects[showcaseData.currentProject].description | translate }}</p>
             <div id="p-links">
+                @if (showcaseData.myProjects[showcaseData.currentProject].gitHubUrl !== "") {
                 <a href="{{showcaseData.myProjects[showcaseData.currentProject].gitHubUrl}}" target="_blank">GitHub <img
                         src="./assets/img/icons/project/arrow-right.svg" alt="Icon Arrow Right"></a>
+                }
                 <a href="{{showcaseData.myProjects[showcaseData.currentProject].projectUrl}}" target="_blank">Live Test
                     <img src="./assets/img/icons/project/arrow-right.svg" alt="Icon Arrow Right"></a>
             </div>

@@ -18,15 +18,18 @@ export class ProjectComponent {
 
   emojiIsHovered: boolean = false;
 
+  // Intervall for video loop
+  videoLoopInterval: ReturnType<typeof setInterval> | undefined = undefined;
+
   ngAfterViewInit(): void {
     this.loadVideo();
   }
 
   setButtonText(direction: "next" | "previous") {
     if (window.innerWidth > 920) {
-      return `main-page.portfolio.project.button-${direction}`
+      return `main-page.portfolio.project.button-${direction}`;
     } else {
-      return `main-page.portfolio.project.button-${direction}-mobile`
+      return `main-page.portfolio.project.button-${direction}-mobile`;
     }
   }
 
@@ -45,9 +48,14 @@ export class ProjectComponent {
 
   playVideo(): void {
     let video = this.previewVideo.nativeElement;
-    video.play();
 
-    setInterval(() => {
+    if (video.getAttribute("src") === "") {
+      return;
+    }
+
+    clearInterval(this.videoLoopInterval);
+    video.play();
+    this.videoLoopInterval = setInterval(() => {
       if (video.paused && this.cogwheelIsHovered) {
         video.play();
       }
@@ -55,6 +63,7 @@ export class ProjectComponent {
   }
 
   previousProjcet(): void {
+    clearInterval(this.videoLoopInterval);
     if (this.showcaseData.currentProject > 0) {
       this.showcaseData.currentProject--;
     } else {
@@ -63,6 +72,7 @@ export class ProjectComponent {
   }
 
   nextProjcet(): void {
+    clearInterval(this.videoLoopInterval);
     if (this.showcaseData.currentProject < this.showcaseData.myProjects.length - 1) {
       this.showcaseData.currentProject++;
     } else {

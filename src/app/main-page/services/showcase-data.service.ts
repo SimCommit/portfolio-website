@@ -57,12 +57,26 @@ export class ShowcaseDataService {
 
   myProjects: Project[] = [
     {
-      name: "Join",
+      name: "Donation Page",
       backgroundColor: "#F9AF42",
+      learningBgColor: "#679AAC",
+      posterUrl: "./assets/img/portfolio/project/donate-poster-4.png",
+      videoUrl: "",
+      cogwheelUrl: "./assets/img/portfolio/project/cogwheel-180.svg",
+      learning: "main-page.portfolio.project.learning-donation-page",
+      emojiUrl: "./assets/img/icons/project/emoji-checkmark.svg",
+      usedSkills: "UIX | TypeScript | HTML | CSS",
+      description: "main-page.portfolio.project.description-donation-page",
+      gitHubUrl: "",
+      projectUrl: "https://unyt.org/donate",
+    },
+    {
+      name: "Join",
+      backgroundColor: "#FF834F",
       learningBgColor: "#679AAC",
       posterUrl: "./assets/img/portfolio/project/join-poster-10.png",
       videoUrl: "./assets/img/portfolio/project/join-preview-video-10.mp4",
-      cogwheelUrl: "./assets/img/portfolio/project/cogwheel-180.svg",
+      cogwheelUrl: "./assets/img/portfolio/project/cogwheel-180-yellow.svg",
       learning: "main-page.portfolio.project.learning-join",
       emojiUrl: "./assets/img/icons/project/emoji-checkmark.svg",
       usedSkills: "Angular | TypeScript | Firebase | HTML | CSS",
