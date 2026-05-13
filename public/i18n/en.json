@@ -48,10 +48,12 @@
         "role-1": "Team Colleague",
         "quote-2": "I was impressed by Simons ability to keep a clear overview of the project at all times. His strong communication skills helped the team stay coordinated and motivated, and his attention to detail ensured that the final result met high standards. A reliable and thoughtful collaborator!",
         "role-2": "Team Colleague",
-        "quote-3": "Our collaboration on the website was both effective and fun. Simon's commitment really pushed the project forward. I'd happily start another project with him anytime.",
-        "role-3": "Team Colleague",
-        "quote-4": "Working with Simon was a truly great experience. He was fully committed, always thought ahead, and worked with impressive reliability. His creative input, in particular, really enriched our project.",
-        "role-4": "Team Colleague"
+        "quote-3": "Coding with Simon has been truly impressive: he is highly conscientious and eager to learn. He actively seeks feedback on his projects, reflects on it, and consistently applies the insights gained. His calm manner makes it easy to collaborate in a focused and structured way.",
+        "role-3": "Frontend Developer",
+        "quote-4": "Our collaboration on the website was both effective and fun. Simon's commitment really pushed the project forward. I'd happily start another project with him anytime.",
+        "role-4": "Team Colleague",
+        "quote-5": "Working with Simon was a truly great experience. He was fully committed, always thought ahead, and worked with impressive reliability. His creative input, in particular, really enriched our project.",
+        "role-5": "Team Colleague"
       },
       "button-linkedin": "To Linkedin profile >>"
     },

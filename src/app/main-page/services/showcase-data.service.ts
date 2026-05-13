@@ -42,15 +42,21 @@ export class ShowcaseDataService {
       profileUrl: "https://www.linkedin.com/in/robin-angel%C3%A9/",
     },
     {
-      name: "Markus Fischer",
+      name: "Andreas Brem",
       quote: "main-page.references.colleague-quote.quote-3",
       role: "main-page.references.colleague-quote.role-3",
+      profileUrl: "https://www.linkedin.com/in/andreas-brem-473853b4/",
+    },
+    {
+      name: "Markus Fischer",
+      quote: "main-page.references.colleague-quote.quote-4",
+      role: "main-page.references.colleague-quote.role-4",
       profileUrl: "https://www.linkedin.com/in/markus-fischer-mideasdesign/",
     },
     {
       name: "Mirkan Polat",
-      quote: "main-page.references.colleague-quote.quote-2",
-      role: "main-page.references.colleague-quote.role-2",
+      quote: "main-page.references.colleague-quote.quote-5",
+      role: "main-page.references.colleague-quote.role-5",
       profileUrl: "https://github.com/MirkanPolat",
     },
   ];
