@@ -64,7 +64,7 @@ export class ShowcaseDataService {
       videoUrl: "",
       cogwheelUrl: "./assets/img/portfolio/project/cogwheel-180.svg",
       learning: "main-page.portfolio.project.learning-donation-page",
-      emojiUrl: "./assets/img/icons/project/emoji-checkmark.svg",
+      emojiUrl: "./assets/img/icons/project/globe.svg",
       usedSkills: "UIX | TypeScript | HTML | CSS",
       description: "main-page.portfolio.project.description-donation-page",
       gitHubUrl: "",
